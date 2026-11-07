@@ -98,11 +98,52 @@
   }
 
   /* ───── 2. Cercles : moiré de cercles concentriques ───── */
+  /* Centres propres aux cercles : la position, l'écart et l'agencement
+     varient fortement d'un seed à l'autre pour que deux articles
+     ne se ressemblent jamais. */
+  function centresCercles(n, r) {
+    var out = [];
+    if (n === 1) {
+      out.push({ x: W * (0.25 + r() * 0.55), y: H * (0.2 + r() * 0.6), w: 0.45 + r() * 0.95 });
+    } else if (n === 2) {
+      var cx = W * (0.38 + r() * 0.26), cy = H * (0.38 + r() * 0.24);
+      var d = W * (0.04 + r() * 0.2), a = (r() - 0.5) * 2;
+      out.push({ x: cx - Math.cos(a) * d, y: cy - Math.sin(a) * d, w: 0.7 + r() * 0.6 });
+      out.push({ x: cx + Math.cos(a) * d, y: cy + Math.sin(a) * d, w: 0.7 + r() * 0.6 });
+    } else if (r() < 0.3) {
+      /* présences alignées en diagonale */
+      var a2 = (r() - 0.5) * 1.4, len = W * (0.35 + r() * 0.3), x0 = W * (0.5 + (r() - 0.5) * 0.2), y0 = H * 0.5;
+      for (var j = 0; j < n; j++) {
+        var t2 = (j / (n - 1) - 0.5) * len;
+        out.push({ x: x0 + Math.cos(a2) * t2, y: y0 + Math.sin(a2) * t2 + (r() - 0.5) * H * 0.12, w: 0.5 + r() * 0.45 });
+      }
+    } else {
+      var ox = W * (0.35 + r() * 0.3), oy = H * (0.4 + r() * 0.2);
+      var rad = Math.min(W, H) * (0.14 + r() * 0.2), rot = r() * Math.PI * 2;
+      for (var i = 0; i < n; i++) {
+        var t = rot + i / n * Math.PI * 2 + (r() - 0.5) * 0.7;
+        var rr = rad * (0.6 + r() * 0.7);
+        out.push({ x: ox + Math.cos(t) * rr * 1.3, y: oy + Math.sin(t) * rr, w: (n > 3 ? 0.5 : 0.7) + r() * 0.45 });
+      }
+    }
+    return out;
+  }
+
   function cercles(svg, n, r, ink) {
-    var cs = centres(n, r), g = el('g', { fill: 'none', stroke: ink, 'stroke-width': 0.7, 'vector-effect': 'non-scaling-stroke' });
-    var gap = 6 + r() * 2, count = n > 3 ? 26 : 34;
+    var cs = centresCercles(n, r), g = el('g', { fill: 'none', stroke: ink, 'stroke-width': 0.7, 'vector-effect': 'non-scaling-stroke' });
+    /* 0 anneaux réguliers · 1 anneaux qui s'élargissent · 2 un anneau accentué sur k · 3 pointillés */
+    var mode = Math.floor(r() * 4);
+    if (mode === 3) g.setAttribute('stroke-dasharray', f1(4 + r() * 5) + ' ' + f1(1.5 + r() * 2.5));
+    var gap = (5.5 + r() * 4.5) * (n > 3 ? 0.85 : 1) * (mode === 3 ? 1.25 : 1), every = 3 + Math.floor(r() * 4);
+    var count = Math.round((n > 6 ? 16 : n > 3 ? 24 : 32) * (0.75 + r() * 0.5));
     cs.forEach(function (c) {
-      for (var k = 1; k <= count; k++) g.appendChild(el('circle', { cx: f1(c.x), cy: f1(c.y), r: f1(k * gap * (n > 3 ? 0.85 : 1)) }));
+      var gg = gap * c.w * (0.85 + r() * 0.3), kmax = Math.round(count * (0.8 + r() * 0.4));
+      for (var k = 1; k <= kmax; k++) {
+        var rad = mode === 1 ? gg * 0.55 * Math.pow(k, 1.22) : k * gg;
+        var at = { cx: f1(c.x), cy: f1(c.y), r: f1(rad) };
+        if (mode === 2 && k % every === 0) at['stroke-width'] = 1.5;
+        g.appendChild(el('circle', at));
+      }
     });
     svg.appendChild(g);
   }
