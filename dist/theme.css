@@ -616,3 +616,18 @@ main:not(.home) > section.grid {
   margin-right: max(var(--gutter), calc((100% - var(--wrap)) / 2));
 }
 main:not(.home) > section:not([class*="px-"]) > .grid { border-left: 1px solid var(--line); border-right: 1px solid var(--line); }
+
+/* Cartes « Ce que l'Ennéagramme éclaire » : cercles en filigrane */
+.h-services .card { position: relative; overflow: hidden; min-height: 300px; justify-content: flex-end; }
+.h-services .card > :not(.card__art) { position: relative; z-index: 1; }
+.h-services .card h3 { margin-top: 0; }
+.h-services .card p { max-width: 34ch; }
+.h-services .card__art {
+  position: absolute; inset: 0; z-index: 0; aspect-ratio: auto; background: transparent !important; opacity: .22;
+  -webkit-mask-image: linear-gradient(90deg, transparent 25%, #000 75%); mask-image: linear-gradient(90deg, transparent 25%, #000 75%);
+  transition: opacity 1.2s var(--ease);
+}
+.h-services .card__art svg { width: 100%; height: 100%; display: block; transform-origin: 70% 50%; transition: transform 3s var(--ease); }
+.h-services .card:hover .card__art { opacity: .34; }
+.h-services .card:hover .card__art svg { transform: scale(1.06) translateX(-2%); }
+@media (max-width: 767px) { .h-services .card { min-height: 260px; } .h-services .card__art { opacity: .16; } }
