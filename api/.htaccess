@@ -1,0 +1,5 @@
+# Bloque l'accès direct au fichier de configuration et au modèle
+<FilesMatch "^newsletter-config(\.example)?\.php$">
+  Require all denied
+</FilesMatch>
+Options -Indexes
