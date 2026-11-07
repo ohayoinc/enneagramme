@@ -48,7 +48,7 @@
       el.classList.add('split');
     }
 
-    var headings = main.querySelectorAll('h1.font-headline, section > div h2.font-headline:not([style*="clamp(20px"])');
+    var headings = main.querySelectorAll('h1.font-headline, .h-display, .title-xl, .h-statement, .cta-panel h2, section > div h2.font-headline:not([style*="clamp(20px"])');
     Array.prototype.forEach.call(headings, function (h) {
       if (h.closest('a, button, .faq-item')) return;
       if (h.textContent.length > 140) return;
@@ -57,6 +57,7 @@
 
     /* ───── 2. Éléments à révéler ───── */
     var SEL = [
+      '.card', '.post', '.quote', '.steps li', '.tile', '.feature', '.stats', '.emblem', '.cta-panel form', '.faq-item',
       'h1', 'h2', 'h3', 'h4', 'p', 'blockquote', 'li', 'figure', 'img',
       'a.group', 'article', '.faq-item', 'table',
       'section > .grid > div', 'section > .flex > a', '.w-px', '.h-px', 'span.font-label.block'
@@ -64,7 +65,7 @@
 
     var claimed = [];
     Array.prototype.forEach.call(main.querySelectorAll(SEL), function (el) {
-      if (el.closest('.faq-ans, header, nav, #mobile-menu')) return;
+      if (el.closest('.faq-ans, header, nav, #mobile-menu, .finder')) return;
       if (el.parentElement && el.parentElement.closest('.rv, .rv-img, .split')) return;
       if (el.classList.contains('split')) { claimed.push(el); return; }
 
