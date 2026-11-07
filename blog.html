@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark" lang="fr-CA">
+<html lang="fr-CA">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -24,15 +24,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>"/>
-<link rel="stylesheet" href="/dist/styles.css"/>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=Noto+Serif:ital,wght@0,400;1,400&family=Inter:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
-<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=Noto+Serif:ital,wght@0,400;1,400&family=Inter:wght@400;700&display=swap" rel="stylesheet"/></noscript>
+<link rel="stylesheet" href="/dist/styles.css?v=202611071501"/>
+<link rel="stylesheet" href="/dist/theme.css?v=202611071501"/>
+<script src="/dist/motion.js?v=202611071501" defer></script>
+<script src="/dist/art.js?v=202611071501" defer></script>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet"/></noscript>
 <style>
-body{background-color:#000000;color:#ffffff;margin:0;padding:0;overflow-x:hidden;}
-::selection{background:#ffffff;color:#000000;}
-* { cursor: none !important; }
-#cursor-dot { position:fixed; width:8px; height:8px; background:#ffffff; border-radius:50%; pointer-events:none; transform:translate(-50%,-50%); z-index:9999; transition:opacity .15s; }
-.article-card { min-height: 260px; }
+  .article-card { min-height: 260px; }
 </style>
 <script type="application/ld+json">
 {
@@ -51,42 +50,41 @@ body{background-color:#000000;color:#ffffff;margin:0;padding:0;overflow-x:hidden
 </script>
 </head>
 <body class="font-body bg-background text-primary">
-<div id="cursor-dot"></div>
 
-<header class="bg-[#000000] border-b-[0.5px] border-[#474747] w-full h-24 flex items-center sticky top-0 z-50">
+<header class="bg-[#ffffff] border-b-[0.5px] border-[#e4e4e4] w-full h-24 flex items-center sticky top-0 z-50">
   <nav class="flex justify-between items-center px-12 w-full">
-    <a href="landing-e.html" class="text-2xl font-bold tracking-tighter uppercase text-white font-headline">ENNÉAGRAMME</a>
+    <a href="/" class="text-2xl font-bold tracking-tighter uppercase text-white font-headline">ENNÉAGRAMME</a>
     <div class="hidden md:flex gap-12">
       <div class="relative group">
-        <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e2] hover:text-white transition-colors duration-400" href="lenneagramme.html">L'ENNÉAGRAMME <span class="text-outline text-[10px]">▾</span></a>
-        <div class="absolute top-full left-0 bg-[#000000] border-[0.5px] border-[#474747] min-w-[200px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-          <a href="enneagramme-personnel.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] border-b-[0.5px] border-[#474747] transition-colors duration-200">Personnel</a>
-          <a href="enneagramme-professionnel.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] border-b-[0.5px] border-[#474747] transition-colors duration-200">Professionnel</a>
-          <a href="enneagramme-couple.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] transition-colors duration-200">Couple</a>
+        <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors duration-400" href="lenneagramme.html">L'Ennéagramme <span class="text-outline text-[10px]">▾</span></a>
+        <div class="absolute top-full left-0 bg-[#ffffff] border-[0.5px] border-[#e4e4e4] min-w-[200px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <a href="enneagramme-personnel.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Personnel</a>
+          <a href="enneagramme-professionnel.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Professionnel</a>
+          <a href="enneagramme-couple.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] transition-colors duration-200">Couple</a>
         </div>
       </div>
       <div class="relative group">
-        <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e2] hover:text-white transition-colors duration-400" href="ateliers.html">ATELIERS <span class="text-outline text-[10px]">▾</span></a>
-        <div class="absolute top-full left-0 bg-[#000000] border-[0.5px] border-[#474747] min-w-[240px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-          <a href="atelier-introduction.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] border-b-[0.5px] border-[#474747] transition-colors duration-200">Introduction</a>
-          <a href="atelier-les-bases.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] border-b-[0.5px] border-[#474747] transition-colors duration-200">Les bases</a>
-          <a href="atelier-chez-vous.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] border-b-[0.5px] border-[#474747] transition-colors duration-200">Chez vous</a>
-          <a href="atelier-sur-mesure.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] transition-colors duration-200">Sur-mesure</a>
+        <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors duration-400" href="ateliers.html">Ateliers <span class="text-outline text-[10px]">▾</span></a>
+        <div class="absolute top-full left-0 bg-[#ffffff] border-[0.5px] border-[#e4e4e4] min-w-[240px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <a href="atelier-introduction.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Introduction</a>
+          <a href="atelier-les-bases.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Les bases</a>
+          <a href="atelier-chez-vous.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Chez vous</a>
+          <a href="atelier-sur-mesure.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] transition-colors duration-200">Sur-mesure</a>
         </div>
       </div>
       <div class="relative group">
-        <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e2] hover:text-white transition-colors duration-400" href="accompagnements.html">ACCOMPAGNEMENTS <span class="text-outline text-[10px]">▾</span></a>
-        <div class="absolute top-full left-0 bg-[#000000] border-[0.5px] border-[#474747] min-w-[280px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-          <a href="https://calendar.google.com/calendar/u/0/r" target="_blank" rel="noopener" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] border-b-[0.5px] border-[#474747] transition-colors duration-200">Entretien exploratoire</a>
-          <a href="seance-accompagnement.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] border-b-[0.5px] border-[#474747] transition-colors duration-200">Séance individuelle</a>
-          <a href="accompagnement-exploratoire.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] transition-colors duration-200">Accompagnement exploratoire</a>
+        <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors duration-400" href="accompagnements.html">Accompagnements <span class="text-outline text-[10px]">▾</span></a>
+        <div class="absolute top-full left-0 bg-[#ffffff] border-[0.5px] border-[#e4e4e4] min-w-[280px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <a href="https://calendar.google.com/calendar/u/0/r" target="_blank" rel="noopener" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Entretien exploratoire</a>
+          <a href="seance-accompagnement.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Séance individuelle</a>
+          <a href="accompagnement-exploratoire.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] transition-colors duration-200">Accompagnement exploratoire</a>
         </div>
       </div>
-      <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e2] hover:text-white transition-colors duration-400" href="a-propos.html">À PROPOS</a>
-      <a class="font-headline font-bold tracking-tighter uppercase text-sm text-white border-b border-white pb-1" href="blog.html">BLOG</a>
+      <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors duration-400" href="a-propos.html">À propos</a>
+      <a class="font-headline font-bold tracking-tighter uppercase text-sm text-white border-b border-white pb-1" href="blog.html">Blog</a>
     </div>
     <div class="flex items-center gap-4">
-      <a class="hidden md:block bg-white text-[#000000] font-label font-bold text-[11px] tracking-widest uppercase px-8 py-3 hover:bg-[#e2e2e2] transition-colors duration-300" href="mailto:benjamin@ohayo.io">CONTACT</a>
+      <a class="hidden md:block bg-white text-[#ffffff] font-label font-bold text-[11px] tracking-widest uppercase px-8 py-3 hover:bg-[#333333] transition-colors duration-300" href="mailto:benjamin@ohayo.io">Contact</a>
       <button id="burger" class="md:hidden flex flex-col justify-center gap-[5px] p-2" onclick="toggleMenu()" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
         <span class="block w-6 h-[1.5px] bg-white"></span>
         <span class="block w-6 h-[1.5px] bg-white"></span>
@@ -95,24 +93,24 @@ body{background-color:#000000;color:#ffffff;margin:0;padding:0;overflow-x:hidden
     </div>
   </nav>
 </header>
-<div id="mobile-menu" class="hidden fixed top-24 left-0 w-full bg-[#000000] border-b-[0.5px] border-[#474747] z-40 px-12 py-8 flex-col gap-6">
-  <a href="lenneagramme.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e2] hover:text-white transition-colors">L'ENNÉAGRAMME</a>
-  <div class="pl-4 flex flex-col gap-4 border-l-[0.5px] border-[#474747]">
-    <a href="enneagramme-personnel.html" class="font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white transition-colors">Personnel</a>
-    <a href="enneagramme-professionnel.html" class="font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white transition-colors">Professionnel</a>
-    <a href="enneagramme-couple.html" class="font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white transition-colors">Couple</a>
+<div id="mobile-menu" class="hidden fixed top-24 left-0 w-full bg-[#ffffff] border-b-[0.5px] border-[#e4e4e4] z-40 px-12 py-8 flex-col gap-6">
+  <a href="lenneagramme.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors">L'Ennéagramme</a>
+  <div class="pl-4 flex flex-col gap-4 border-l-[0.5px] border-[#e4e4e4]">
+    <a href="enneagramme-personnel.html" class="font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white transition-colors">Personnel</a>
+    <a href="enneagramme-professionnel.html" class="font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white transition-colors">Professionnel</a>
+    <a href="enneagramme-couple.html" class="font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white transition-colors">Couple</a>
   </div>
-  <a href="ateliers.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e2] hover:text-white transition-colors">ATELIERS</a>
-  <a href="accompagnements.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e2] hover:text-white transition-colors">ACCOMPAGNEMENTS</a>
-  <a href="a-propos.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e2] hover:text-white transition-colors">À PROPOS</a>
-  <a href="blog.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-white border-b border-white pb-1 w-fit">BLOG</a>
-  <a href="mailto:benjamin@ohayo.io" class="bg-white text-[#000000] font-label font-bold text-[11px] tracking-widest uppercase px-8 py-3 hover:bg-[#e2e2e2] transition-colors duration-300 text-center mt-2">CONTACT</a>
+  <a href="ateliers.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors">Ateliers</a>
+  <a href="accompagnements.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors">Accompagnements</a>
+  <a href="a-propos.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors">À propos</a>
+  <a href="blog.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-white border-b border-white pb-1 w-fit">Blog</a>
+  <a href="mailto:benjamin@ohayo.io" class="bg-white text-[#ffffff] font-label font-bold text-[11px] tracking-widest uppercase px-8 py-3 hover:bg-[#333333] transition-colors duration-300 text-center mt-2">Contact</a>
 </div>
 <script>function toggleMenu(){var m=document.getElementById('mobile-menu');var b=document.getElementById('burger');var open=m.style.display==='flex';m.style.display=open?'none':'flex';b.setAttribute('aria-expanded',open?'false':'true');b.setAttribute('aria-label',open?'Ouvrir le menu':'Fermer le menu');}</script>
 
 <div class="px-12 py-4 border-b-[0.5px] border-outline-variant">
   <p class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">
-    <a href="landing-e.html" class="hover:text-white transition-colors duration-300">Accueil</a>
+    <a href="/" class="hover:text-white transition-colors duration-300">Accueil</a>
     <span class="mx-3">·</span>
     <span class="text-on-surface">Blog</span>
   </p>
@@ -121,10 +119,11 @@ body{background-color:#000000;color:#ffffff;margin:0;padding:0;overflow-x:hidden
 <main class="flex flex-col">
 
   <!-- HERO -->
-  <section class="border-b-[0.5px] border-outline-variant px-12 md:px-16 pt-24 pb-20">
+  <section class="page-hero border-b-[0.5px] border-outline-variant px-12 md:px-16 pt-24 pb-20">
+    <div class="page-hero__art" data-style="hero" data-centres="0.689,0.221,7,8;0.83,0.158,7,8;0.78,0.393,7,8;0.575,0.506,7,8;0.566,0.447,7,8;0.58,0.173,7,8;0.733,0.761,7,8;0.603,0.279,7,8;0.82,0.858,7,8;0.798,0.417,7,8;0.97,0.137,7,8;0.919,0.332,7,8;0.612,0.194,7,8;0.683,0.753,7,8;0.628,0.565,7,8" aria-hidden="true"></div>
     <div class="grid grid-cols-1 md:grid-cols-2 gap-16 items-end">
       <div>
-        <p class="font-label text-[11px] uppercase tracking-[0.2em] mb-10 text-outline">BLOG · 15 ARTICLES</p>
+        <p class="font-label text-[11px] uppercase tracking-[0.2em] mb-10 text-outline">BLOG · 30 ARTICLES</p>
         <h1 class="font-headline font-bold uppercase leading-[0.88] tracking-[-0.03em] text-primary" style="font-size:clamp(48px,7vw,96px)">
           <span class="block whitespace-nowrap">Articles.</span>
         </h1>
@@ -133,7 +132,7 @@ body{background-color:#000000;color:#ffffff;margin:0;padding:0;overflow-x:hidden
         <p class="font-body text-xl italic leading-relaxed text-on-surface max-w-md">Technique, couple, collectif, développement personnel — des articles pour explorer l'Ennéagramme en profondeur, entre les séances ou avant de commencer.</p>
         <div class="grid grid-cols-4 gap-3">
           <div class="border-[0.5px] border-outline-variant p-4 text-center">
-            <p class="font-headline font-bold text-2xl text-primary">15</p>
+            <p class="font-headline font-bold text-2xl text-primary">30</p>
             <p class="font-label text-[10px] uppercase tracking-[0.12em] text-outline mt-1">Articles</p>
           </div>
           <div class="border-[0.5px] border-outline-variant p-4 text-center">
@@ -179,7 +178,7 @@ body{background-color:#000000;color:#ffffff;margin:0;padding:0;overflow-x:hidden
       </div>
 
       <!-- Compteur -->
-      <p id="result-count" class="font-label text-[10px] uppercase tracking-[0.15em] text-outline shrink-0">15 articles</p>
+      <p id="result-count" class="font-label text-[10px] uppercase tracking-[0.15em] text-outline shrink-0">30 articles</p>
     </div>
   </section>
 
@@ -187,10 +186,236 @@ body{background-color:#000000;color:#ffffff;margin:0;padding:0;overflow-x:hidden
   <section class="border-b-[0.5px] border-outline-variant">
     <div id="articles-grid" class="grid grid-cols-1 md:grid-cols-2 gap-px bg-outline-variant border-b-[0.5px] border-outline-variant">
       
+    <a href="vertus-fixations-enneagramme.html"
+       class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
+       data-cat="Technique"
+       data-search="vertus et fixations de lennéagramme : la boussole intérieure des 9 profils ressentiment, flatterie, vanité, mélancolie... découvrez les fixations mentales des 9 profils et les vertus qui leur répondent, à la lumière des travaux de sandra maitri.">
+      <div>
+        <div class="flex items-center gap-3 mb-6 flex-wrap">
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">TECHNIQUE</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">27 juillet 2026</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">8 min</span>
+        </div>
+        <h2 class="font-headline font-bold uppercase text-xl tracking-tight text-primary leading-tight group-hover:tracking-wide transition-all duration-500 mb-4">Vertus et fixations de l'Ennéagramme : la boussole intérieure des 9 profils</h2>
+        <p class="font-body text-sm text-on-surface-variant leading-relaxed">Ressentiment, flatterie, vanité, mélancolie... Découvrez les fixations mentales des 9 profils et les vertus qui leur répondent, à la lumière des travaux de Sandra Maitri.</p>
+      </div>
+      <p class="font-label text-[11px] uppercase tracking-[0.15em] text-primary mt-6 pt-6 border-t-[0.5px] border-outline-variant">Lire →</p>
+    </a>
+    <a href="stress-resilience-equipe-enneagramme-edmondson.html"
+       class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
+       data-cat="Collectif"
+       data-search="stress et résilience en équipe : lennéagramme et la sécurité psychologique dedmondson comment prévenir lépuisement collectif ? en croisant la sécurité psychologique damy edmondson et lennéagramme, installez des pratiques de régulation et de soutien mutuel adaptées à chacun.">
+      <div>
+        <div class="flex items-center gap-3 mb-6 flex-wrap">
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">COLLECTIF</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">20 juillet 2026</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">8 min</span>
+        </div>
+        <h2 class="font-headline font-bold uppercase text-xl tracking-tight text-primary leading-tight group-hover:tracking-wide transition-all duration-500 mb-4">Stress et résilience en équipe : l'Ennéagramme et la sécurité psychologique d'Edmondson</h2>
+        <p class="font-body text-sm text-on-surface-variant leading-relaxed">Comment prévenir l'épuisement collectif ? En croisant la sécurité psychologique d'Amy Edmondson et l'Ennéagramme, installez des pratiques de régulation et de soutien mutuel adaptées à chacun.</p>
+      </div>
+      <p class="font-label text-[11px] uppercase tracking-[0.15em] text-primary mt-6 pt-6 border-t-[0.5px] border-outline-variant">Lire →</p>
+    </a>
+    <a href="langages-amour-couple-enneagramme-chapman.html"
+       class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
+       data-cat="Couple"
+       data-search="les 5 langages de lamour et lennéagramme : aimer votre partenaire comme il en a besoin paroles valorisantes, moments de qualité, cadeaux, services rendus, toucher : découvrez comment la motivation profonde de chaque profil ennéagramme colore la façon de donner et de recevoir lamour.">
+      <div>
+        <div class="flex items-center gap-3 mb-6 flex-wrap">
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">COUPLE</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">13 juillet 2026</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">9 min</span>
+        </div>
+        <h2 class="font-headline font-bold uppercase text-xl tracking-tight text-primary leading-tight group-hover:tracking-wide transition-all duration-500 mb-4">Les 5 langages de l'amour et l'Ennéagramme : aimer votre partenaire comme il en a besoin</h2>
+        <p class="font-body text-sm text-on-surface-variant leading-relaxed">Paroles valorisantes, moments de qualité, cadeaux, services rendus, toucher : découvrez comment la motivation profonde de chaque profil Ennéagramme colore la façon de donner et de recevoir l'amour.</p>
+      </div>
+      <p class="font-label text-[11px] uppercase tracking-[0.15em] text-primary mt-6 pt-6 border-t-[0.5px] border-outline-variant">Lire →</p>
+    </a>
+    <a href="conflits-projet-collectif-enneagramme-lencioni.html"
+       class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
+       data-cat="Collectif"
+       data-search="conflits en équipe : lennéagramme et les 5 dysfonctionnements de patrick lencioni fuir le conflit ou sy perdre ? en croisant le modèle de patrick lencioni et lennéagramme, découvrez comment transformer les tensions dun projet collectif en règles du jeu partagées.">
+      <div>
+        <div class="flex items-center gap-3 mb-6 flex-wrap">
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">COLLECTIF</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">6 juillet 2026</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">8 min</span>
+        </div>
+        <h2 class="font-headline font-bold uppercase text-xl tracking-tight text-primary leading-tight group-hover:tracking-wide transition-all duration-500 mb-4">Conflits en équipe : l'Ennéagramme et les 5 dysfonctionnements de Patrick Lencioni</h2>
+        <p class="font-body text-sm text-on-surface-variant leading-relaxed">Fuir le conflit ou s'y perdre ? En croisant le modèle de Patrick Lencioni et l'Ennéagramme, découvrez comment transformer les tensions d'un projet collectif en règles du jeu partagées.</p>
+      </div>
+      <p class="font-label text-[11px] uppercase tracking-[0.15em] text-primary mt-6 pt-6 border-t-[0.5px] border-outline-variant">Lire →</p>
+    </a>
+    <a href="communication-consciente-couple-enneagramme.html"
+       class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
+       data-cat="Couple"
+       data-search="communication consciente en couple : écouter vraiment et traverser le pont vers lautre parler sans attaquer, écouter sans se défendre : découvrez la métaphore du pont dhedy schleifer, la cnv et le reflet, adaptés à chaque profil de lennéagramme.">
+      <div>
+        <div class="flex items-center gap-3 mb-6 flex-wrap">
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">COUPLE</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">29 juin 2026</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">8 min</span>
+        </div>
+        <h2 class="font-headline font-bold uppercase text-xl tracking-tight text-primary leading-tight group-hover:tracking-wide transition-all duration-500 mb-4">Communication consciente en couple : écouter vraiment et traverser le pont vers l'autre</h2>
+        <p class="font-body text-sm text-on-surface-variant leading-relaxed">Parler sans attaquer, écouter sans se défendre : découvrez la métaphore du pont d'Hedy Schleifer, la CNV et le reflet, adaptés à chaque profil de l'Ennéagramme.</p>
+      </div>
+      <p class="font-label text-[11px] uppercase tracking-[0.15em] text-primary mt-6 pt-6 border-t-[0.5px] border-outline-variant">Lire →</p>
+    </a>
+    <a href="contre-sous-types-enneagramme.html"
+       class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
+       data-cat="Technique"
+       data-search="les contre-sous-types de lennéagramme : quand linstinct se retourne un 6 qui fonce, un 8 qui protège, un 4 qui ne se plaint jamais : les contre-sous-types déroutent. comprendre ces expressions paradoxales des passions, profil par profil.">
+      <div>
+        <div class="flex items-center gap-3 mb-6 flex-wrap">
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">TECHNIQUE</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">22 juin 2026</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">9 min</span>
+        </div>
+        <h2 class="font-headline font-bold uppercase text-xl tracking-tight text-primary leading-tight group-hover:tracking-wide transition-all duration-500 mb-4">Les contre-sous-types de l'Ennéagramme : quand l'instinct se retourne</h2>
+        <p class="font-body text-sm text-on-surface-variant leading-relaxed">Un 6 qui fonce, un 8 qui protège, un 4 qui ne se plaint jamais : les contre-sous-types déroutent. Comprendre ces expressions paradoxales des passions, profil par profil.</p>
+      </div>
+      <p class="font-label text-[11px] uppercase tracking-[0.15em] text-primary mt-6 pt-6 border-t-[0.5px] border-outline-variant">Lire →</p>
+    </a>
+    <a href="dynamiques-pouvoir-groupe-enneagramme-crozier.html"
+       class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
+       data-cat="Collectif"
+       data-search="pouvoir et influence en équipe : lennéagramme éclaire les jeux dacteurs de crozier qui détient vraiment le pouvoir dans votre groupe ? en croisant lanalyse stratégique de michel crozier et lennéagramme, rendez visibles les jeux dinfluence pour rééquilibrer la coopération.">
+      <div>
+        <div class="flex items-center gap-3 mb-6 flex-wrap">
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">COLLECTIF</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">15 juin 2026</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">8 min</span>
+        </div>
+        <h2 class="font-headline font-bold uppercase text-xl tracking-tight text-primary leading-tight group-hover:tracking-wide transition-all duration-500 mb-4">Pouvoir et influence en équipe : l'Ennéagramme éclaire les jeux d'acteurs de Crozier</h2>
+        <p class="font-body text-sm text-on-surface-variant leading-relaxed">Qui détient vraiment le pouvoir dans votre groupe ? En croisant l'analyse stratégique de Michel Crozier et l'Ennéagramme, rendez visibles les jeux d'influence pour rééquilibrer la coopération.</p>
+      </div>
+      <p class="font-label text-[11px] uppercase tracking-[0.15em] text-primary mt-6 pt-6 border-t-[0.5px] border-outline-variant">Lire →</p>
+    </a>
+    <a href="blessures-attachement-couple-enneagramme.html"
+       class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
+       data-cat="Couple"
+       data-search="blessures dattachement dans le couple : quand le passé se rejoue à deux un silence, un retard, un regard ailleurs, et soudain tout sembrase. découvrez comment les blessures dattachement se réactivent dans le couple et comment sécuriser le lien avec lennéagramme.">
+      <div>
+        <div class="flex items-center gap-3 mb-6 flex-wrap">
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">COUPLE</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">8 juin 2026</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">8 min</span>
+        </div>
+        <h2 class="font-headline font-bold uppercase text-xl tracking-tight text-primary leading-tight group-hover:tracking-wide transition-all duration-500 mb-4">Blessures d'attachement dans le couple : quand le passé se rejoue à deux</h2>
+        <p class="font-body text-sm text-on-surface-variant leading-relaxed">Un silence, un retard, un regard ailleurs, et soudain tout s'embrase. Découvrez comment les blessures d'attachement se réactivent dans le couple et comment sécuriser le lien avec l'Ennéagramme.</p>
+      </div>
+      <p class="font-label text-[11px] uppercase tracking-[0.15em] text-primary mt-6 pt-6 border-t-[0.5px] border-outline-variant">Lire →</p>
+    </a>
+    <a href="sous-types-instinctifs-enneagramme.html"
+       class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
+       data-cat="Technique"
+       data-search="sous-types de lennéagramme : comment survie, social et sexuel transforment un profil conservation, social, tête-à-tête : découvrez avec beatrice chestnut comment votre instinct dominant reconfigure un même profil de lennéagramme en 27 sous-types aux priorités très différentes.">
+      <div>
+        <div class="flex items-center gap-3 mb-6 flex-wrap">
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">TECHNIQUE</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">1 juin 2026</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">8 min</span>
+        </div>
+        <h2 class="font-headline font-bold uppercase text-xl tracking-tight text-primary leading-tight group-hover:tracking-wide transition-all duration-500 mb-4">Sous-types de l'Ennéagramme : comment survie, social et sexuel transforment un profil</h2>
+        <p class="font-body text-sm text-on-surface-variant leading-relaxed">Conservation, social, tête-à-tête : découvrez avec Beatrice Chestnut comment votre instinct dominant reconfigure un même profil de l'Ennéagramme en 27 sous-types aux priorités très différentes.</p>
+      </div>
+      <p class="font-label text-[11px] uppercase tracking-[0.15em] text-primary mt-6 pt-6 border-t-[0.5px] border-outline-variant">Lire →</p>
+    </a>
+    <a href="decisions-equipe-enneagramme-kurt-lewin.html"
+       class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
+       data-cat="Collectif"
+       data-search="décisions en équipe : kurt lewin, lennéagramme et le choix du bon processus décision rapide, consultative ou par consensus ? en croisant les travaux de kurt lewin et lennéagramme, apprenez à choisir le bon processus selon lenjeu et les personnes autour de la table.">
+      <div>
+        <div class="flex items-center gap-3 mb-6 flex-wrap">
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">COLLECTIF</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">25 mai 2026</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">7 min</span>
+        </div>
+        <h2 class="font-headline font-bold uppercase text-xl tracking-tight text-primary leading-tight group-hover:tracking-wide transition-all duration-500 mb-4">Décisions en équipe : Kurt Lewin, l'Ennéagramme et le choix du bon processus</h2>
+        <p class="font-body text-sm text-on-surface-variant leading-relaxed">Décision rapide, consultative ou par consensus ? En croisant les travaux de Kurt Lewin et l'Ennéagramme, apprenez à choisir le bon processus selon l'enjeu et les personnes autour de la table.</p>
+      </div>
+      <p class="font-label text-[11px] uppercase tracking-[0.15em] text-primary mt-6 pt-6 border-t-[0.5px] border-outline-variant">Lire →</p>
+    </a>
+    <a href="attentes-implicites-explicites-couple-enneagramme.html"
+       class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
+       data-cat="Couple"
+       data-search="attentes implicites dans le couple : nommer les contrats invisibles avec lennéagramme ce que vous attendez de lautre sans jamais le dire finit souvent en reproche. avec lennéagramme et lapproche de david daniels, apprenez à nommer vos attentes sans blesser.">
+      <div>
+        <div class="flex items-center gap-3 mb-6 flex-wrap">
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">COUPLE</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">18 mai 2026</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">9 min</span>
+        </div>
+        <h2 class="font-headline font-bold uppercase text-xl tracking-tight text-primary leading-tight group-hover:tracking-wide transition-all duration-500 mb-4">Attentes implicites dans le couple : nommer les contrats invisibles avec l'Ennéagramme</h2>
+        <p class="font-body text-sm text-on-surface-variant leading-relaxed">Ce que vous attendez de l'autre sans jamais le dire finit souvent en reproche. Avec l'Ennéagramme et l'approche de David Daniels, apprenez à nommer vos attentes sans blesser.</p>
+      </div>
+      <p class="font-label text-[11px] uppercase tracking-[0.15em] text-primary mt-6 pt-6 border-t-[0.5px] border-outline-variant">Lire →</p>
+    </a>
+    <a href="neuf-profils-cartographie-enneagramme.html"
+       class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
+       data-cat="Technique"
+       data-search="les 9 profils de lennéagramme : la cartographie essentielle des motivations humaines motivation, peur, désir, attention habituelle : un tour dhorizon clair des 9 profils de lennéagramme, inspiré dhelen palmer, pour mieux comprendre votre fonctionnement et celui des autres.">
+      <div>
+        <div class="flex items-center gap-3 mb-6 flex-wrap">
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">TECHNIQUE</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">11 mai 2026</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">9 min</span>
+        </div>
+        <h2 class="font-headline font-bold uppercase text-xl tracking-tight text-primary leading-tight group-hover:tracking-wide transition-all duration-500 mb-4">Les 9 profils de l'Ennéagramme : la cartographie essentielle des motivations humaines</h2>
+        <p class="font-body text-sm text-on-surface-variant leading-relaxed">Motivation, peur, désir, attention habituelle : un tour d'horizon clair des 9 profils de l'Ennéagramme, inspiré d'Helen Palmer, pour mieux comprendre votre fonctionnement et celui des autres.</p>
+      </div>
+      <p class="font-label text-[11px] uppercase tracking-[0.15em] text-primary mt-6 pt-6 border-t-[0.5px] border-outline-variant">Lire →</p>
+    </a>
+    <a href="enneagramme-leadership-ginger-lapid-bogda.html"
+       class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
+       data-cat="Collectif"
+       data-search="ennéagramme et leadership : forces, angles morts et croissance des 9 profils de leader inspiré des travaux de ginger lapid-bogda, découvrez comment observer votre style de leadership naturel, repérer vos angles morts et lajuster aux besoins réels de votre équipe.">
+      <div>
+        <div class="flex items-center gap-3 mb-6 flex-wrap">
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">COLLECTIF</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">4 mai 2026</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">8 min</span>
+        </div>
+        <h2 class="font-headline font-bold uppercase text-xl tracking-tight text-primary leading-tight group-hover:tracking-wide transition-all duration-500 mb-4">Ennéagramme et leadership : forces, angles morts et croissance des 9 profils de leader</h2>
+        <p class="font-body text-sm text-on-surface-variant leading-relaxed">Inspiré des travaux de Ginger Lapid-Bogda, découvrez comment observer votre style de leadership naturel, repérer vos angles morts et l'ajuster aux besoins réels de votre équipe.</p>
+      </div>
+      <p class="font-label text-[11px] uppercase tracking-[0.15em] text-primary mt-6 pt-6 border-t-[0.5px] border-outline-variant">Lire →</p>
+    </a>
+    <a href="enneagramme-couple-comprendre-helen-palmer.html"
+       class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
+       data-cat="Couple"
+       data-search="pourquoi lennéagramme aide à comprendre son couple, avec helen palmer disputes qui reviennent, besoins mal compris : lennéagramme éclaire les malentendus du couple et ouvre un langage commun pour mieux saimer, dans la lignée dhelen palmer.">
+      <div>
+        <div class="flex items-center gap-3 mb-6 flex-wrap">
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">COUPLE</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">27 avril 2026</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">7 min</span>
+        </div>
+        <h2 class="font-headline font-bold uppercase text-xl tracking-tight text-primary leading-tight group-hover:tracking-wide transition-all duration-500 mb-4">Pourquoi l'Ennéagramme aide à comprendre son couple, avec Helen Palmer</h2>
+        <p class="font-body text-sm text-on-surface-variant leading-relaxed">Disputes qui reviennent, besoins mal compris : l'Ennéagramme éclaire les malentendus du couple et ouvre un langage commun pour mieux s'aimer, dans la lignée d'Helen Palmer.</p>
+      </div>
+      <p class="font-label text-[11px] uppercase tracking-[0.15em] text-primary mt-6 pt-6 border-t-[0.5px] border-outline-variant">Lire →</p>
+    </a>
+    <a href="histoire-origines-enneagramme-ichazo-naranjo.html"
+       class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
+       data-cat="Technique"
+       data-search="histoire de lennéagramme : de gurdjieff à ichazo et naranjo, aux origines des 9 profils symbole ésotérique devenu outil de connaissance de soi : découvrez comment gurdjieff, oscar ichazo et claudio naranjo ont façonné lennéagramme, et pourquoi il reste pertinent aujourdhui.">
+      <div>
+        <div class="flex items-center gap-3 mb-6 flex-wrap">
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">TECHNIQUE</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">20 avril 2026</span>
+          <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">9 min</span>
+        </div>
+        <h2 class="font-headline font-bold uppercase text-xl tracking-tight text-primary leading-tight group-hover:tracking-wide transition-all duration-500 mb-4">Histoire de l'Ennéagramme : de Gurdjieff à Ichazo et Naranjo, aux origines des 9 profils</h2>
+        <p class="font-body text-sm text-on-surface-variant leading-relaxed">Symbole ésotérique devenu outil de connaissance de soi : découvrez comment Gurdjieff, Oscar Ichazo et Claudio Naranjo ont façonné l'Ennéagramme, et pourquoi il reste pertinent aujourd'hui.</p>
+      </div>
+      <p class="font-label text-[11px] uppercase tracking-[0.15em] text-primary mt-6 pt-6 border-t-[0.5px] border-outline-variant">Lire →</p>
+    </a>
     <a href="enneagramme-equipe-vision-partagee-peter-senge.html"
        class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
        data-cat="Collectif"
        data-search="ennéagramme en équipe : construire une vision partagée grâce aux 9 profils découvrez comment lennéagramme et les principes de peter senge permettent de construire une vision partagée en équipe. rôles naturels, gestion des tensions et processus concrets pour transformer la diversité en force collective.">
+      <div class="art" data-style="cercles" data-n="6" data-seed="enneagramme-equipe-vision-partagee-peter-senge.html" aria-hidden="true"></div>
       <div>
         <div class="flex items-center gap-3 mb-6 flex-wrap">
           <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">COLLECTIF</span>
@@ -206,6 +431,7 @@ body{background-color:#000000;color:#ffffff;margin:0;padding:0;overflow-x:hidden
        class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
        data-cat="Couple"
        data-search="ennéagramme et couple : construire une vision commune grâce aux 9 profils comment construire une vision commune dans le couple avec lennéagramme et les enseignements desther perel. exercices concrets, rituels de connexion et stratégies de négociation adaptés à chaque profil.">
+      <div class="art" data-style="cercles" data-n="2" data-seed="enneagramme-couple-vision-commune-esther-perel.html" aria-hidden="true"></div>
       <div>
         <div class="flex items-center gap-3 mb-6 flex-wrap">
           <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">COUPLE</span>
@@ -221,6 +447,7 @@ body{background-color:#000000;color:#ffffff;margin:0;padding:0;overflow-x:hidden
        class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
        data-cat="Personnel"
        data-search="ennéagramme au quotidien : applications pratiques pour chaque profil comment utiliser lennéagramme concrètement au travail et dans vos relations. exercices progressifs, outils de gestion des conflits et techniques dobservation des automatismes pour chaque profil, inspirés par eric salmon.">
+      <div class="art" data-style="cercles" data-n="1" data-seed="enneagramme-quotidien-applications-pratiques-eric-salmon.html" aria-hidden="true"></div>
       <div>
         <div class="flex items-center gap-3 mb-6 flex-wrap">
           <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">PERSONNEL</span>
@@ -236,6 +463,7 @@ body{background-color:#000000;color:#ffffff;margin:0;padding:0;overflow-x:hidden
        class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
        data-cat="Collectif"
        data-search="ennéagramme et feedback : comment chaque profil donne et reçoit la critique découvrez comment adapter votre style de feedback à chaque profil ennéagramme grâce au concept de candeur radicale de kim scott. guide pratique pour donner et recevoir du feedback constructif en équipe.">
+      <div class="art" data-style="cercles" data-n="5" data-seed="enneagramme-feedback-candeur-radicale-kim-scott.html" aria-hidden="true"></div>
       <div>
         <div class="flex items-center gap-3 mb-6 flex-wrap">
           <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">COLLECTIF</span>
@@ -251,6 +479,7 @@ body{background-color:#000000;color:#ffffff;margin:0;padding:0;overflow-x:hidden
        class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
        data-cat="Couple"
        data-search="ennéagramme et couple : les scénarios familiaux invisibles qui dirigent votre relation découvrez comment chaque profil ennéagramme reproduit des schémas familiaux dans le couple. théorie de lattachement de bowlby, questions dintrospection et exercices concrets pour transformer vos répétitions en choix conscients.">
+      <div class="art" data-style="cercles" data-n="2" data-seed="enneagramme-couple-scenarios-familiaux-bowlby.html" aria-hidden="true"></div>
       <div>
         <div class="flex items-center gap-3 mb-6 flex-wrap">
           <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">COUPLE</span>
@@ -266,6 +495,7 @@ body{background-color:#000000;color:#ffffff;margin:0;padding:0;overflow-x:hidden
        class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
        data-cat="Technique"
        data-search="les 9 passions de lennéagramme : comprendre vos excès pour mieux vous transformer découvrez comment chaque profil de lennéagramme est gouverné par une passion dominante et comment les transformer en forces constructives.">
+      <div class="art" data-style="cercles" data-n="1" data-seed="structure-dynamique-passions-enneagramme.html" aria-hidden="true"></div>
       <div>
         <div class="flex items-center gap-3 mb-6 flex-wrap">
           <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">TECHNIQUE</span>
@@ -281,6 +511,7 @@ body{background-color:#000000;color:#ffffff;margin:0;padding:0;overflow-x:hidden
        class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
        data-cat="Personnel"
        data-search="lennéagramme décrypte vos styles de communication : apprenez à vous traduire mutuellement en équipe découvrez comment chaque profil ennéagramme communique différemment et apprenez à traduire les styles pour une collaboration harmonieuse.">
+      <div class="art" data-style="cercles" data-n="7" data-seed="styles-communication-enneagramme.html" aria-hidden="true"></div>
       <div>
         <div class="flex items-center gap-3 mb-6 flex-wrap">
           <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">PERSONNEL</span>
@@ -296,6 +527,7 @@ body{background-color:#000000;color:#ffffff;margin:0;padding:0;overflow-x:hidden
        class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
        data-cat="Couple"
        data-search="lennéagramme dévoile les clés de lintimité : osez la vulnérabilité pour transformer votre couple découvrez comment chaque profil de lennéagramme aborde la vulnérabilité et lintimité, et les chemins pour créer une connexion authentique dans le couple.">
+      <div class="art" data-style="cercles" data-n="2" data-seed="intimite-vulnerabilite-couple-enneagramme.html" aria-hidden="true"></div>
       <div>
         <div class="flex items-center gap-3 mb-6 flex-wrap">
           <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">COUPLE</span>
@@ -311,6 +543,7 @@ body{background-color:#000000;color:#ffffff;margin:0;padding:0;overflow-x:hidden
        class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
        data-cat="Technique"
        data-search="lennéagramme révèle vos niveaux dévolution : identifiez où vous en êtes dans votre croissance découvrez les 9 niveaux de développement de lennéagramme et mappez précisément votre position sur léchelle de santé psychologique et de croissance personnelle.">
+      <div class="art" data-style="cercles" data-n="1" data-seed="niveaux-developpement-enneagramme.html" aria-hidden="true"></div>
       <div>
         <div class="flex items-center gap-3 mb-6 flex-wrap">
           <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">TECHNIQUE</span>
@@ -326,6 +559,7 @@ body{background-color:#000000;color:#ffffff;margin:0;padding:0;overflow-x:hidden
        class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
        data-cat="Collectif"
        data-search="lennéagramme révèle les 3 clés de la motivation : autonomie, maîtrise et sens pour transformer vos équipes découvrez comment combiner la théorie de lautodétermination avec lennéagramme pour créer une motivation durable et authentique dans vos équipes.">
+      <div class="art" data-style="cercles" data-n="5" data-seed="motivation-individuelle-collective-enneagramme.html" aria-hidden="true"></div>
       <div>
         <div class="flex items-center gap-3 mb-6 flex-wrap">
           <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">COLLECTIF</span>
@@ -341,6 +575,7 @@ body{background-color:#000000;color:#ffffff;margin:0;padding:0;overflow-x:hidden
        class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
        data-cat="Couple"
        data-search="synchroniser les rythmes émotionnels du couple selon lennéagramme découvrez comment lennéagramme explique les différences de rythme émotionnel dans le couple et comment créer lharmonie malgré les décalages.">
+      <div class="art" data-style="cercles" data-n="2" data-seed="rythme-emotionnel-couple-enneagramme.html" aria-hidden="true"></div>
       <div>
         <div class="flex items-center gap-3 mb-6 flex-wrap">
           <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">COUPLE</span>
@@ -356,6 +591,7 @@ body{background-color:#000000;color:#ffffff;margin:0;padding:0;overflow-x:hidden
        class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
        data-cat="Technique"
        data-search="les ailes dans lennéagramme : comment vos profils voisins transforment votre personnalité explorez les ailes de lennéagramme et découvrez comment les profils adjacents nuancent et enrichissent votre profil principal selon helen palmer.">
+      <div class="art" data-style="cercles" data-n="3" data-seed="ailes-influence-enneagramme.html" aria-hidden="true"></div>
       <div>
         <div class="flex items-center gap-3 mb-6 flex-wrap">
           <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">TECHNIQUE</span>
@@ -371,6 +607,7 @@ body{background-color:#000000;color:#ffffff;margin:0;padding:0;overflow-x:hidden
        class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
        data-cat="Personnel"
        data-search="la confiance comme fondation : construire une équipe résiliente avec lennéagramme découvrez comment utiliser lennéagramme et stephen covey pour bâtir une confiance durable et adaptée à chaque profil de personnalité.">
+      <div class="art" data-style="cercles" data-n="5" data-seed="confiance-fondation-enneagramme.html" aria-hidden="true"></div>
       <div>
         <div class="flex items-center gap-3 mb-6 flex-wrap">
           <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">PERSONNEL</span>
@@ -386,6 +623,7 @@ body{background-color:#000000;color:#ffffff;margin:0;padding:0;overflow-x:hidden
        class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
        data-cat="Couple"
        data-search="transformer les disputes en opportunités : cycles de conflits et réconciliation selon lennéagramme découvrez comment lennéagramme et harville hendrix transforment les disputes répétitives du couple en moments de croissance et dintimité profonde.">
+      <div class="art" data-style="cercles" data-n="2" data-seed="cycles-conflits-reconciliations-enneagramme.html" aria-hidden="true"></div>
       <div>
         <div class="flex items-center gap-3 mb-6 flex-wrap">
           <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">COUPLE</span>
@@ -401,6 +639,7 @@ body{background-color:#000000;color:#ffffff;margin:0;padding:0;overflow-x:hidden
        class="article-card bg-background p-10 md:p-12 flex flex-col justify-between group hover:bg-surface-container transition-colors duration-300 cursor-pointer"
        data-cat="Technique"
        data-search="les triades de lennéagramme : découvrez votre vrai centre de décision (tête, cœur ou ventre) explorez les trois centres dintelligence de lennéagramme selon don riso et russ hudson. apprenez comment tête, cœur et ventre influencent vos décisions.">
+      <div class="art" data-style="cercles" data-n="3" data-seed="triades-tete-coeur-ventre-enneagramme.html" aria-hidden="true"></div>
       <div>
         <div class="flex items-center gap-3 mb-6 flex-wrap">
           <span class="font-label text-[10px] uppercase tracking-[0.15em] text-outline border-[0.5px] border-outline-variant px-3 py-1">TECHNIQUE</span>
@@ -435,14 +674,14 @@ body{background-color:#000000;color:#ffffff;margin:0;padding:0;overflow-x:hidden
 
 </main>
 
-<footer class="bg-[#000000] w-full py-10 border-t-[0.5px] border-[#474747]">
+<footer class="bg-[#ffffff] w-full py-10 border-t-[0.5px] border-[#e4e4e4]">
   <div class="flex justify-between items-center px-12 w-full">
-    <div class="font-label text-[11px] tracking-[0.1em] uppercase text-[#e2e2e2]">© 2026 BENJAMIN ALI ABOUDOU — FRANCE &amp; QUÉBEC</div>
+    <div class="font-label text-[11px] tracking-[0.1em] uppercase text-[#333333]">© 2026 BENJAMIN ALI ABOUDOU — FRANCE &amp; QUÉBEC</div>
     <div class="flex gap-10">
-      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#919191] hover:text-white transition-colors duration-400" href="mentions-legales.html">MENTIONS LÉGALES</a>
-      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#919191] hover:text-white transition-colors duration-400" href="cgv.html">CGV</a>
-      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#919191] hover:text-white transition-colors duration-400" href="confidentialite.html">CONFIDENTIALITÉ</a>
-      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#919191] hover:text-white transition-colors duration-400" href="ethique.html">ÉTHIQUE</a>
+      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#767676] hover:text-white transition-colors duration-400" href="mentions-legales.html">MENTIONS LÉGALES</a>
+      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#767676] hover:text-white transition-colors duration-400" href="cgv.html">CGV</a>
+      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#767676] hover:text-white transition-colors duration-400" href="confidentialite.html">CONFIDENTIALITÉ</a>
+      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#767676] hover:text-white transition-colors duration-400" href="ethique.html">ÉTHIQUE</a>
     </div>
   </div>
 </footer>
@@ -491,12 +730,6 @@ function resetFilters() {
   setFilter(document.querySelector('[data-filter="tous"]'), 'tous');
 }
 
-(function() {
-  var d = document.getElementById('cursor-dot');
-  document.addEventListener('mousemove', function(e) { d.style.left = e.clientX + 'px'; d.style.top = e.clientY + 'px'; });
-  document.addEventListener('mouseleave', function() { d.style.opacity = '0'; });
-  document.addEventListener('mouseenter', function() { d.style.opacity = '1'; });
-})();
 </script>
 </body>
 </html>

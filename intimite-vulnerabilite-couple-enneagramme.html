@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark" lang="fr-CA">
+<html lang="fr-CA">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -24,10 +24,13 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>"/>
-<link rel="stylesheet" href="/dist/styles.css"/>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=Noto+Serif:ital,wght@0,400;1,400&family=Inter:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
-<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=Noto+Serif:ital,wght@0,400;1,400&family=Inter:wght@400;700&display=swap" rel="stylesheet"/></noscript>
-<style>body{background-color:#000000;color:#ffffff;margin:0;padding:0;overflow-x:hidden;}::selection{background:#ffffff;color:#000000;}* { cursor: none !important; } #cursor-dot { position:fixed; width:8px; height:8px; background:#ffffff; border-radius:50%; pointer-events:none; transform:translate(-50%,-50%); z-index:9999; transition:opacity .15s; }</style>
+<link rel="stylesheet" href="/dist/styles.css?v=202611071501"/>
+<link rel="stylesheet" href="/dist/theme.css?v=202611071501"/>
+<script src="/dist/motion.js?v=202611071501" defer></script>
+<script src="/dist/art.js?v=202611071501" defer></script>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet"/></noscript>
+
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -51,41 +54,40 @@
 </script>
 </head>
 <body class="font-body bg-background text-primary">
-<div id="cursor-dot"></div>
-<header class="bg-[#000000] border-b-[0.5px] border-[#474747] w-full h-24 flex items-center sticky top-0 z-50">
+<header class="bg-[#ffffff] border-b-[0.5px] border-[#e4e4e4] w-full h-24 flex items-center sticky top-0 z-50">
   <nav class="flex justify-between items-center px-12 w-full">
-    <a href="landing-e.html" class="text-2xl font-bold tracking-tighter uppercase text-white font-headline">ENNÉAGRAMME</a>
+    <a href="/" class="text-2xl font-bold tracking-tighter uppercase text-white font-headline">ENNÉAGRAMME</a>
     <div class="hidden md:flex gap-12">
       <div class="relative group">
-        <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e2] hover:text-white transition-colors duration-400" href="lenneagramme.html">L'ENNÉAGRAMME <span class="text-outline text-[10px]">▾</span></a>
-        <div class="absolute top-full left-0 bg-[#000000] border-[0.5px] border-[#474747] min-w-[200px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-          <a href="enneagramme-personnel.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] border-b-[0.5px] border-[#474747] transition-colors duration-200">Personnel</a>
-          <a href="enneagramme-professionnel.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] border-b-[0.5px] border-[#474747] transition-colors duration-200">Professionnel</a>
-          <a href="enneagramme-couple.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] transition-colors duration-200">Couple</a>
+        <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors duration-400" href="lenneagramme.html">L'Ennéagramme <span class="text-outline text-[10px]">▾</span></a>
+        <div class="absolute top-full left-0 bg-[#ffffff] border-[0.5px] border-[#e4e4e4] min-w-[200px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <a href="enneagramme-personnel.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Personnel</a>
+          <a href="enneagramme-professionnel.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Professionnel</a>
+          <a href="enneagramme-couple.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] transition-colors duration-200">Couple</a>
         </div>
       </div>
       <div class="relative group">
-        <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e2] hover:text-white transition-colors duration-400" href="ateliers.html">ATELIERS <span class="text-outline text-[10px]">▾</span></a>
-        <div class="absolute top-full left-0 bg-[#000000] border-[0.5px] border-[#474747] min-w-[240px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-          <a href="atelier-introduction.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] border-b-[0.5px] border-[#474747] transition-colors duration-200">Introduction</a>
-          <a href="atelier-les-bases.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] border-b-[0.5px] border-[#474747] transition-colors duration-200">Les bases</a>
-          <a href="atelier-chez-vous.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] border-b-[0.5px] border-[#474747] transition-colors duration-200">Chez vous</a>
-          <a href="atelier-sur-mesure.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] transition-colors duration-200">Sur-mesure</a>
+        <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors duration-400" href="ateliers.html">Ateliers <span class="text-outline text-[10px]">▾</span></a>
+        <div class="absolute top-full left-0 bg-[#ffffff] border-[0.5px] border-[#e4e4e4] min-w-[240px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <a href="atelier-introduction.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Introduction</a>
+          <a href="atelier-les-bases.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Les bases</a>
+          <a href="atelier-chez-vous.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Chez vous</a>
+          <a href="atelier-sur-mesure.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] transition-colors duration-200">Sur-mesure</a>
         </div>
       </div>
       <div class="relative group">
-        <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e2] hover:text-white transition-colors duration-400" href="accompagnements.html">ACCOMPAGNEMENTS <span class="text-outline text-[10px]">▾</span></a>
-        <div class="absolute top-full left-0 bg-[#000000] border-[0.5px] border-[#474747] min-w-[280px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-          <a href="https://calendar.google.com/calendar/u/0/r" target="_blank" rel="noopener" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] border-b-[0.5px] border-[#474747] transition-colors duration-200">Entretien exploratoire</a>
-          <a href="seance-accompagnement.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] border-b-[0.5px] border-[#474747] transition-colors duration-200">Séance individuelle</a>
-          <a href="accompagnement-exploratoire.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] transition-colors duration-200">Accompagnement exploratoire</a>
+        <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors duration-400" href="accompagnements.html">Accompagnements <span class="text-outline text-[10px]">▾</span></a>
+        <div class="absolute top-full left-0 bg-[#ffffff] border-[0.5px] border-[#e4e4e4] min-w-[280px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <a href="https://calendar.google.com/calendar/u/0/r" target="_blank" rel="noopener" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Entretien exploratoire</a>
+          <a href="seance-accompagnement.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Séance individuelle</a>
+          <a href="accompagnement-exploratoire.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] transition-colors duration-200">Accompagnement exploratoire</a>
         </div>
       </div>
-      <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e2] hover:text-white transition-colors duration-400" href="a-propos.html">À PROPOS</a>
-      <a class="font-headline font-bold tracking-tighter uppercase text-sm text-white border-b border-white pb-1" href="blog.html">BLOG</a>
+      <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors duration-400" href="a-propos.html">À propos</a>
+      <a class="font-headline font-bold tracking-tighter uppercase text-sm text-white border-b border-white pb-1" href="blog.html">Blog</a>
     </div>
     <div class="flex items-center gap-4">
-      <a class="hidden md:block bg-white text-[#000000] font-label font-bold text-[11px] tracking-widest uppercase px-8 py-3 hover:bg-[#e2e2e2] transition-colors duration-300" href="mailto:benjamin@ohayo.io">CONTACT</a>
+      <a class="hidden md:block bg-white text-[#ffffff] font-label font-bold text-[11px] tracking-widest uppercase px-8 py-3 hover:bg-[#333333] transition-colors duration-300" href="mailto:benjamin@ohayo.io">Contact</a>
       <button id="burger" class="md:hidden flex flex-col justify-center gap-[5px] p-2" onclick="toggleMenu()" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
         <span class="block w-6 h-[1.5px] bg-white"></span>
         <span class="block w-6 h-[1.5px] bg-white"></span>
@@ -94,24 +96,24 @@
     </div>
   </nav>
 </header>
-<div id="mobile-menu" class="hidden fixed top-24 left-0 w-full bg-[#000000] border-b-[0.5px] border-[#474747] z-40 px-12 py-8 flex-col gap-6">
-  <a href="lenneagramme.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e2] hover:text-white transition-colors">L'ENNÉAGRAMME</a>
-  <div class="pl-4 flex flex-col gap-4 border-l-[0.5px] border-[#474747]">
-    <a href="enneagramme-personnel.html" class="font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white transition-colors">Personnel</a>
-    <a href="enneagramme-professionnel.html" class="font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white transition-colors">Professionnel</a>
-    <a href="enneagramme-couple.html" class="font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white transition-colors">Couple</a>
+<div id="mobile-menu" class="hidden fixed top-24 left-0 w-full bg-[#ffffff] border-b-[0.5px] border-[#e4e4e4] z-40 px-12 py-8 flex-col gap-6">
+  <a href="lenneagramme.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors">L'Ennéagramme</a>
+  <div class="pl-4 flex flex-col gap-4 border-l-[0.5px] border-[#e4e4e4]">
+    <a href="enneagramme-personnel.html" class="font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white transition-colors">Personnel</a>
+    <a href="enneagramme-professionnel.html" class="font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white transition-colors">Professionnel</a>
+    <a href="enneagramme-couple.html" class="font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white transition-colors">Couple</a>
   </div>
-  <a href="ateliers.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e2] hover:text-white transition-colors">ATELIERS</a>
-  <a href="accompagnements.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e2] hover:text-white transition-colors">ACCOMPAGNEMENTS</a>
-  <a href="a-propos.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e2] hover:text-white transition-colors">À PROPOS</a>
-  <a href="blog.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-white border-b border-white pb-1 w-fit">BLOG</a>
-  <a href="mailto:benjamin@ohayo.io" class="bg-white text-[#000000] font-label font-bold text-[11px] tracking-widest uppercase px-8 py-3 hover:bg-[#e2e2e2] transition-colors duration-300 text-center mt-2">CONTACT</a>
+  <a href="ateliers.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors">Ateliers</a>
+  <a href="accompagnements.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors">Accompagnements</a>
+  <a href="a-propos.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors">À propos</a>
+  <a href="blog.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-white border-b border-white pb-1 w-fit">Blog</a>
+  <a href="mailto:benjamin@ohayo.io" class="bg-white text-[#ffffff] font-label font-bold text-[11px] tracking-widest uppercase px-8 py-3 hover:bg-[#333333] transition-colors duration-300 text-center mt-2">Contact</a>
 </div>
 <script>function toggleMenu(){var m=document.getElementById('mobile-menu');var b=document.getElementById('burger');var open=m.style.display==='flex';m.style.display=open?'none':'flex';b.setAttribute('aria-expanded',open?'false':'true');b.setAttribute('aria-label',open?'Ouvrir le menu':'Fermer le menu');}</script>
 
 <div class="px-12 py-4 border-b-[0.5px] border-outline-variant">
   <p class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">
-    <a href="landing-e.html" class="hover:text-white transition-colors duration-300">Accueil</a><span class="mx-3">·</span>
+    <a href="/" class="hover:text-white transition-colors duration-300">Accueil</a><span class="mx-3">·</span>
     <a href="blog.html" class="hover:text-white transition-colors duration-300">Blog</a><span class="mx-3">·</span>
     <span class="text-on-surface">Couple</span>
   </p>
@@ -129,6 +131,7 @@
       <h1 class="font-headline font-bold uppercase leading-[0.88] tracking-[-0.03em] text-primary" style="font-size:clamp(28px,4vw,60px)">L'Ennéagramme Dévoile les Clés de l'Intimité : Osez la Vulnérabilité pour Transformer votre Couple</h1>
       <p class="font-body text-xl italic leading-relaxed text-on-surface mt-8 max-w-2xl">Découvrez comment chaque profil de l'Ennéagramme aborde la vulnérabilité et l'intimité, et les chemins pour créer une connexion authentique dans le couple.</p>
     </div>
+    <div class="art art--banner" data-style="cercles" data-n="2" data-seed="intimite-vulnerabilite-couple-enneagramme.html" aria-hidden="true"></div>
   </section>
 
   <section class="px-12 md:px-16 py-16 border-b-[0.5px] border-outline-variant">
@@ -224,7 +227,7 @@
       <aside class="md:col-span-3 md:col-start-10">
         <div class="sticky top-32 space-y-8">
           <div class="border-[0.5px] border-outline-variant p-6">
-            <p class="font-label text-[10px] uppercase tracking-[0.15em] text-outline mb-4">À PROPOS</p>
+            <p class="font-label text-[10px] uppercase tracking-[0.15em] text-outline mb-4">À propos</p>
             <p class="font-body text-sm text-on-surface leading-relaxed">Benjamin Ali Aboudou — formateur certifié Ennéagramme, coach A.C.C (ICF). Montréal & France.</p>
             <a href="a-propos.html" class="font-label text-[10px] uppercase tracking-[0.15em] text-primary mt-4 block hover:text-outline transition-colors">En savoir plus →</a>
           </div>
@@ -282,24 +285,16 @@
   </section>
 
 </main>
-<footer class="bg-[#000000] w-full py-10 border-t-[0.5px] border-[#474747]">
+<footer class="bg-[#ffffff] w-full py-10 border-t-[0.5px] border-[#e4e4e4]">
   <div class="flex justify-between items-center px-12 w-full">
-    <div class="font-label text-[11px] tracking-[0.1em] uppercase text-[#e2e2e2]">© 2026 BENJAMIN ALI ABOUDOU — FRANCE &amp; QUÉBEC</div>
+    <div class="font-label text-[11px] tracking-[0.1em] uppercase text-[#333333]">© 2026 BENJAMIN ALI ABOUDOU — FRANCE &amp; QUÉBEC</div>
     <div class="flex gap-10">
-      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#919191] hover:text-white transition-colors duration-400" href="mentions-legales.html">MENTIONS LÉGALES</a>
-      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#919191] hover:text-white transition-colors duration-400" href="cgv.html">CGV</a>
-      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#919191] hover:text-white transition-colors duration-400" href="confidentialite.html">CONFIDENTIALITÉ</a>
-      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#919191] hover:text-white transition-colors duration-400" href="ethique.html">ÉTHIQUE</a>
+      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#767676] hover:text-white transition-colors duration-400" href="mentions-legales.html">MENTIONS LÉGALES</a>
+      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#767676] hover:text-white transition-colors duration-400" href="cgv.html">CGV</a>
+      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#767676] hover:text-white transition-colors duration-400" href="confidentialite.html">CONFIDENTIALITÉ</a>
+      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#767676] hover:text-white transition-colors duration-400" href="ethique.html">ÉTHIQUE</a>
     </div>
   </div>
 </footer>
-<script>
-(function(){{
-  var d=document.getElementById('cursor-dot');
-  document.addEventListener('mousemove',function(e){{d.style.left=e.clientX+'px';d.style.top=e.clientY+'px';}});
-  document.addEventListener('mouseleave',function(){{d.style.opacity='0';}});
-  document.addEventListener('mouseenter',function(){{d.style.opacity='1';}});
-}})();
-</script>
 </body>
 </html>

@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="fr-CA">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Test — illustrations des articles</title>
+<meta name="robots" content="noindex, nofollow"/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>"/>
+<link rel="stylesheet" href="/dist/styles.css?v=202611071501"/>
+<link rel="stylesheet" href="/dist/theme.css?v=202611071501"/>
+<script src="/dist/motion.js?v=202611071501" defer></script>
+<script src="/dist/art.js?v=202611071501" defer></script>
+<style>
+  .t-intro { padding-top: clamp(3.5rem, 8vw, 7rem); }
+  .t-nav { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: 2rem; }
+  .t-dir { padding-top: var(--section); }
+  .t-head { display: grid; gap: 1rem; margin-bottom: 2.5rem; }
+  .t-switch { display: flex; gap: .5rem; margin-top: .5rem; }
+  .t-switch [aria-pressed="true"] { background: var(--ink); color: #fff; }
+  .t-big .art { aspect-ratio: 16 / 7; border-radius: var(--r-lg); }
+  .t-big .post__meta { margin-top: .75rem; }
+  .cards--4 { margin-top: 14px; }
+  @media (min-width: 768px) { .cards--4 { grid-template-columns: repeat(2, 1fr); } }
+  @media (min-width: 1100px) { .cards--4 { grid-template-columns: repeat(4, 1fr); } }
+  .art { aspect-ratio: 16 / 10; overflow: hidden; transition: background-color .8s var(--ease); }
+  .art svg { width: 100%; height: 100%; display: block; transition: transform 2.4s var(--ease); }
+  .post:hover .art svg { transform: scale(1.05); }
+  .art--light { background: var(--stone); }
+  .art--dark { background: #0d0d0d; }
+</style>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet"/></noscript>
+</head>
+<body class="font-body bg-background text-primary">
+
+<!-- ══════════════════════════════════
+  NAV
+══════════════════════════════════ -->
+<header class="bg-[#ffffff] border-b-[0.5px] border-[#e4e4e4] w-full h-24 flex items-center sticky top-0 z-50">
+  <nav class="flex justify-between items-center px-12 w-full mx-auto">
+    <div class="text-2xl font-bold tracking-tighter uppercase text-white font-headline">ENNÉAGRAMME</div>
+    <div class="hidden md:flex gap-12">
+      <div class="relative group">
+      <a class="font-headline font-bold tracking-tighter uppercase text-sm text-white border-b border-white pb-1" href="lenneagramme.html">L'Ennéagramme <span class="text-outline text-[10px]">▾</span></a>
+      <div class="absolute top-full left-0 mt-0 bg-[#ffffff] border-[0.5px] border-[#e4e4e4] min-w-[200px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+        <a href="enneagramme-personnel.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Personnel</a>
+        <a href="enneagramme-professionnel.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Professionnel</a>
+        <a href="enneagramme-couple.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] transition-colors duration-200">Couple</a>
+      </div>
+    </div>
+      <div class="relative group">
+        <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors duration-400" href="ateliers.html">Ateliers <span class="text-outline text-[10px]">▾</span></a>
+        <div class="absolute top-full left-0 bg-[#ffffff] border-[0.5px] border-[#e4e4e4] min-w-[240px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <a href="atelier-introduction.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Introduction</a>
+          <a href="atelier-les-bases.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Les bases</a>
+          <a href="atelier-chez-vous.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Chez vous</a>
+          <a href="atelier-sur-mesure.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] transition-colors duration-200">Sur-mesure</a>
+        </div>
+      </div>
+      <div class="relative group">
+        <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors duration-400" href="accompagnements.html">Accompagnements <span class="text-outline text-[10px]">▾</span></a>
+        <div class="absolute top-full left-0 bg-[#ffffff] border-[0.5px] border-[#e4e4e4] min-w-[280px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <a href="https://calendar.google.com/calendar/u/0/r" target="_blank" rel="noopener" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Entretien exploratoire</a>
+          <a href="seance-accompagnement.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Séance individuelle</a>
+          <a href="accompagnement-exploratoire.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] transition-colors duration-200">Accompagnement exploratoire</a>
+        </div>
+      </div>
+      <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors duration-400" href="a-propos.html">À propos</a>
+      <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors duration-400" href="blog.html">Blog</a>
+    </div>
+    <div class="flex items-center gap-4">
+      <a class="hidden md:block bg-white text-[#ffffff] font-label font-bold text-[11px] tracking-widest uppercase px-8 py-3 hover:bg-[#333333] transition-colors duration-300" href="mailto:benjamin@ohayo.io">Contact</a>
+      <button id="burger" class="md:hidden flex flex-col justify-center gap-[5px] p-2" onclick="toggleMenu()" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
+        <span class="block w-6 h-[1.5px] bg-white"></span>
+        <span class="block w-6 h-[1.5px] bg-white"></span>
+        <span class="block w-6 h-[1.5px] bg-white"></span>
+      </button>
+    </div>
+  </nav>
+</header>
+<div id="mobile-menu" class="hidden fixed top-24 left-0 w-full bg-[#ffffff] border-b-[0.5px] border-[#e4e4e4] z-40 px-12 py-8 flex-col gap-6">
+  <a href="lenneagramme.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors">L'Ennéagramme</a>
+  <div class="pl-4 flex flex-col gap-4 border-l-[0.5px] border-[#e4e4e4]">
+    <a href="enneagramme-personnel.html" class="font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white transition-colors">Personnel</a>
+    <a href="enneagramme-professionnel.html" class="font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white transition-colors">Professionnel</a>
+    <a href="enneagramme-couple.html" class="font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white transition-colors">Couple</a>
+  </div>
+  <a href="ateliers.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors">Ateliers</a>
+  <a href="accompagnements.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors">Accompagnements</a>
+  <a href="a-propos.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors">À propos</a>
+  <a href="blog.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors">Blog</a>
+  <a href="mailto:benjamin@ohayo.io" class="bg-white text-[#ffffff] font-label font-bold text-[11px] tracking-widest uppercase px-8 py-3 hover:bg-[#333333] transition-colors duration-300 text-center mt-2">Contact</a>
+</div>
+<script>function toggleMenu(){var m=document.getElementById('mobile-menu');var b=document.getElementById('burger');var open=m.style.display==='flex';m.style.display=open?'none':'flex';b.setAttribute('aria-expanded',open?'false':'true');b.setAttribute('aria-label',open?'Ouvrir le menu':'Fermer le menu');}</script>
+
+<main class="home">
+  <section class="wrap t-intro">
+    <p class="eyebrow">Page de test, non référencée</p>
+    <h1 class="h-display" style="font-size:clamp(2.4rem,5.4vw,5rem)">Illustrer <em>les articles</em></h1>
+    <p class="lede" style="margin-top:1.5rem">Trois directions graphiques, toutes calculées : chaque article obtient un dessin unique, toujours le même, à partir de son sujet. Le nombre de « présences » suit le thème : une pour soi, deux pour le couple, trois pour les triades, cinq à sept pour l'équipe.</p>
+    <nav class="t-nav" aria-label="Directions">
+      <a class="pill pill--sm pill--line" href="#champ">1. Champs</a>
+      <a class="pill pill--sm pill--line" href="#cercles">2. Cercles</a>
+      <a class="pill pill--sm pill--line" href="#ennea">3. Symbole recadré</a>
+    </nav>
+  </section>
+  <section class="wrap t-dir" id="champ">
+    <div class="t-head">
+      <p class="eyebrow">Direction 1 sur 3</p>
+      <h2 class="title-xl">Champs</h2>
+      <p class="lede">Des lignes de niveau autour de une, deux ou plusieurs présences qui s'attirent. Une seule présence pour soi, deux qui se rejoignent pour le couple, plusieurs pour l'équipe.</p>
+      <div class="t-switch" role="group" aria-label="Fond des illustrations">
+        <button class="pill pill--sm pill--line" data-tone="light" aria-pressed="true">Fond blanc</button>
+        <button class="pill pill--sm pill--line" data-tone="dark" aria-pressed="false">Fond noir</button>
+      </div>
+    </div>
+    <div class="t-big">
+      <div class="art art--light" data-style="champ" data-n="2" data-seed="grand-champ" data-tone="light"></div>
+      <p class="post__meta">Format bandeau, en tête d'article (ici : couple)</p>
+    </div>
+    <div class="cards cards--3">
+        <a class="post" href="enneagramme-equipe-vision-partagee-peter-senge.html">
+          <div class="art art--light" data-style="champ" data-n="6" data-seed="enneagramme-equipe-vision-partagee-peter-senge.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Équipe</p>
+            <h3 class="post__title">Construire une vision partagée en équipe</h3>
+            <div class="post__foot"><span class="post__meta">6 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="enneagramme-couple-vision-commune-esther-perel.html">
+          <div class="art art--light" data-style="champ" data-n="2" data-seed="enneagramme-couple-vision-commune-esther-perel.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Couple</p>
+            <h3 class="post__title">Construire une vision commune à deux</h3>
+            <div class="post__foot"><span class="post__meta">2 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="enneagramme-quotidien-applications-pratiques-eric-salmon.html">
+          <div class="art art--light" data-style="champ" data-n="1" data-seed="enneagramme-quotidien-applications-pratiques-eric-salmon.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Personnel</p>
+            <h3 class="post__title">L'Ennéagramme au quotidien</h3>
+            <div class="post__foot"><span class="post__meta">1 présence</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+    </div>
+    <div class="cards cards--4">
+        <a class="post" href="triades-tete-coeur-ventre-enneagramme.html">
+          <div class="art art--light" data-style="champ" data-n="3" data-seed="triades-tete-coeur-ventre-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Fondamentaux</p>
+            <h3 class="post__title">Les triades : tête, cœur ou ventre</h3>
+            <div class="post__foot"><span class="post__meta">3 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="cycles-conflits-reconciliations-enneagramme.html">
+          <div class="art art--light" data-style="champ" data-n="2" data-seed="cycles-conflits-reconciliations-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Couple</p>
+            <h3 class="post__title">Cycles de conflits et réconciliation</h3>
+            <div class="post__foot"><span class="post__meta">2 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="intimite-vulnerabilite-couple-enneagramme.html">
+          <div class="art art--light" data-style="champ" data-n="2" data-seed="intimite-vulnerabilite-couple-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Couple</p>
+            <h3 class="post__title">Intimité et vulnérabilité</h3>
+            <div class="post__foot"><span class="post__meta">2 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="enneagramme-couple-scenarios-familiaux-bowlby.html">
+          <div class="art art--light" data-style="champ" data-n="2" data-seed="enneagramme-couple-scenarios-familiaux-bowlby.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Couple</p>
+            <h3 class="post__title">Les scénarios familiaux invisibles</h3>
+            <div class="post__foot"><span class="post__meta">2 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="rythme-emotionnel-couple-enneagramme.html">
+          <div class="art art--light" data-style="champ" data-n="2" data-seed="rythme-emotionnel-couple-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Couple</p>
+            <h3 class="post__title">Synchroniser les rythmes émotionnels</h3>
+            <div class="post__foot"><span class="post__meta">2 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="confiance-fondation-enneagramme.html">
+          <div class="art art--light" data-style="champ" data-n="5" data-seed="confiance-fondation-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Équipe</p>
+            <h3 class="post__title">La confiance comme fondation</h3>
+            <div class="post__foot"><span class="post__meta">5 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="enneagramme-feedback-candeur-radicale-kim-scott.html">
+          <div class="art art--light" data-style="champ" data-n="5" data-seed="enneagramme-feedback-candeur-radicale-kim-scott.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Équipe</p>
+            <h3 class="post__title">Donner et recevoir le feedback</h3>
+            <div class="post__foot"><span class="post__meta">5 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="styles-communication-enneagramme.html">
+          <div class="art art--light" data-style="champ" data-n="7" data-seed="styles-communication-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Équipe</p>
+            <h3 class="post__title">Les styles de communication</h3>
+            <div class="post__foot"><span class="post__meta">7 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="motivation-individuelle-collective-enneagramme.html">
+          <div class="art art--light" data-style="champ" data-n="5" data-seed="motivation-individuelle-collective-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Équipe</p>
+            <h3 class="post__title">Autonomie, maîtrise et sens</h3>
+            <div class="post__foot"><span class="post__meta">5 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="structure-dynamique-passions-enneagramme.html">
+          <div class="art art--light" data-style="champ" data-n="1" data-seed="structure-dynamique-passions-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Fondamentaux</p>
+            <h3 class="post__title">Les 9 passions</h3>
+            <div class="post__foot"><span class="post__meta">1 présence</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="niveaux-developpement-enneagramme.html">
+          <div class="art art--light" data-style="champ" data-n="1" data-seed="niveaux-developpement-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Fondamentaux</p>
+            <h3 class="post__title">Les niveaux de développement</h3>
+            <div class="post__foot"><span class="post__meta">1 présence</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="ailes-influence-enneagramme.html">
+          <div class="art art--light" data-style="champ" data-n="3" data-seed="ailes-influence-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Fondamentaux</p>
+            <h3 class="post__title">Les ailes et les profils voisins</h3>
+            <div class="post__foot"><span class="post__meta">3 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+    </div>
+  </section>
+  <section class="wrap t-dir" id="cercles">
+    <div class="t-head">
+      <p class="eyebrow">Direction 2 sur 3</p>
+      <h2 class="title-xl">Cercles</h2>
+      <p class="lede">Des cercles concentriques qui se superposent et créent une vibration (moiré). Le cercle de l'Ennéagramme, répété : chaque personne a ses ondes, et c'est leur rencontre qui fait le motif.</p>
+      <div class="t-switch" role="group" aria-label="Fond des illustrations">
+        <button class="pill pill--sm pill--line" data-tone="light" aria-pressed="true">Fond blanc</button>
+        <button class="pill pill--sm pill--line" data-tone="dark" aria-pressed="false">Fond noir</button>
+      </div>
+    </div>
+    <div class="t-big">
+      <div class="art art--light" data-style="cercles" data-n="2" data-seed="grand-cercles" data-tone="light"></div>
+      <p class="post__meta">Format bandeau, en tête d'article (ici : couple)</p>
+    </div>
+    <div class="cards cards--3">
+        <a class="post" href="enneagramme-equipe-vision-partagee-peter-senge.html">
+          <div class="art art--light" data-style="cercles" data-n="6" data-seed="enneagramme-equipe-vision-partagee-peter-senge.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Équipe</p>
+            <h3 class="post__title">Construire une vision partagée en équipe</h3>
+            <div class="post__foot"><span class="post__meta">6 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="enneagramme-couple-vision-commune-esther-perel.html">
+          <div class="art art--light" data-style="cercles" data-n="2" data-seed="enneagramme-couple-vision-commune-esther-perel.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Couple</p>
+            <h3 class="post__title">Construire une vision commune à deux</h3>
+            <div class="post__foot"><span class="post__meta">2 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="enneagramme-quotidien-applications-pratiques-eric-salmon.html">
+          <div class="art art--light" data-style="cercles" data-n="1" data-seed="enneagramme-quotidien-applications-pratiques-eric-salmon.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Personnel</p>
+            <h3 class="post__title">L'Ennéagramme au quotidien</h3>
+            <div class="post__foot"><span class="post__meta">1 présence</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+    </div>
+    <div class="cards cards--4">
+        <a class="post" href="triades-tete-coeur-ventre-enneagramme.html">
+          <div class="art art--light" data-style="cercles" data-n="3" data-seed="triades-tete-coeur-ventre-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Fondamentaux</p>
+            <h3 class="post__title">Les triades : tête, cœur ou ventre</h3>
+            <div class="post__foot"><span class="post__meta">3 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="cycles-conflits-reconciliations-enneagramme.html">
+          <div class="art art--light" data-style="cercles" data-n="2" data-seed="cycles-conflits-reconciliations-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Couple</p>
+            <h3 class="post__title">Cycles de conflits et réconciliation</h3>
+            <div class="post__foot"><span class="post__meta">2 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="intimite-vulnerabilite-couple-enneagramme.html">
+          <div class="art art--light" data-style="cercles" data-n="2" data-seed="intimite-vulnerabilite-couple-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Couple</p>
+            <h3 class="post__title">Intimité et vulnérabilité</h3>
+            <div class="post__foot"><span class="post__meta">2 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="enneagramme-couple-scenarios-familiaux-bowlby.html">
+          <div class="art art--light" data-style="cercles" data-n="2" data-seed="enneagramme-couple-scenarios-familiaux-bowlby.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Couple</p>
+            <h3 class="post__title">Les scénarios familiaux invisibles</h3>
+            <div class="post__foot"><span class="post__meta">2 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="rythme-emotionnel-couple-enneagramme.html">
+          <div class="art art--light" data-style="cercles" data-n="2" data-seed="rythme-emotionnel-couple-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Couple</p>
+            <h3 class="post__title">Synchroniser les rythmes émotionnels</h3>
+            <div class="post__foot"><span class="post__meta">2 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="confiance-fondation-enneagramme.html">
+          <div class="art art--light" data-style="cercles" data-n="5" data-seed="confiance-fondation-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Équipe</p>
+            <h3 class="post__title">La confiance comme fondation</h3>
+            <div class="post__foot"><span class="post__meta">5 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="enneagramme-feedback-candeur-radicale-kim-scott.html">
+          <div class="art art--light" data-style="cercles" data-n="5" data-seed="enneagramme-feedback-candeur-radicale-kim-scott.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Équipe</p>
+            <h3 class="post__title">Donner et recevoir le feedback</h3>
+            <div class="post__foot"><span class="post__meta">5 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="styles-communication-enneagramme.html">
+          <div class="art art--light" data-style="cercles" data-n="7" data-seed="styles-communication-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Équipe</p>
+            <h3 class="post__title">Les styles de communication</h3>
+            <div class="post__foot"><span class="post__meta">7 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="motivation-individuelle-collective-enneagramme.html">
+          <div class="art art--light" data-style="cercles" data-n="5" data-seed="motivation-individuelle-collective-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Équipe</p>
+            <h3 class="post__title">Autonomie, maîtrise et sens</h3>
+            <div class="post__foot"><span class="post__meta">5 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="structure-dynamique-passions-enneagramme.html">
+          <div class="art art--light" data-style="cercles" data-n="1" data-seed="structure-dynamique-passions-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Fondamentaux</p>
+            <h3 class="post__title">Les 9 passions</h3>
+            <div class="post__foot"><span class="post__meta">1 présence</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="niveaux-developpement-enneagramme.html">
+          <div class="art art--light" data-style="cercles" data-n="1" data-seed="niveaux-developpement-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Fondamentaux</p>
+            <h3 class="post__title">Les niveaux de développement</h3>
+            <div class="post__foot"><span class="post__meta">1 présence</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="ailes-influence-enneagramme.html">
+          <div class="art art--light" data-style="cercles" data-n="3" data-seed="ailes-influence-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Fondamentaux</p>
+            <h3 class="post__title">Les ailes et les profils voisins</h3>
+            <div class="post__foot"><span class="post__meta">3 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+    </div>
+  </section>
+  <section class="wrap t-dir" id="ennea">
+    <div class="t-head">
+      <p class="eyebrow">Direction 3 sur 3</p>
+      <h2 class="title-xl">Symbole recadré</h2>
+      <p class="lede">Le symbole de l'Ennéagramme en très gros plan, coupé par le cadre, avec un seul élément mis en avant : un point, une ligne entre deux profils, le triangle ou l'hexade.</p>
+      <div class="t-switch" role="group" aria-label="Fond des illustrations">
+        <button class="pill pill--sm pill--line" data-tone="light" aria-pressed="true">Fond blanc</button>
+        <button class="pill pill--sm pill--line" data-tone="dark" aria-pressed="false">Fond noir</button>
+      </div>
+    </div>
+    <div class="t-big">
+      <div class="art art--light" data-style="ennea" data-n="2" data-seed="grand-ennea" data-tone="light"></div>
+      <p class="post__meta">Format bandeau, en tête d'article (ici : couple)</p>
+    </div>
+    <div class="cards cards--3">
+        <a class="post" href="enneagramme-equipe-vision-partagee-peter-senge.html">
+          <div class="art art--light" data-style="ennea" data-n="6" data-seed="enneagramme-equipe-vision-partagee-peter-senge.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Équipe</p>
+            <h3 class="post__title">Construire une vision partagée en équipe</h3>
+            <div class="post__foot"><span class="post__meta">6 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="enneagramme-couple-vision-commune-esther-perel.html">
+          <div class="art art--light" data-style="ennea" data-n="2" data-seed="enneagramme-couple-vision-commune-esther-perel.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Couple</p>
+            <h3 class="post__title">Construire une vision commune à deux</h3>
+            <div class="post__foot"><span class="post__meta">2 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="enneagramme-quotidien-applications-pratiques-eric-salmon.html">
+          <div class="art art--light" data-style="ennea" data-n="1" data-seed="enneagramme-quotidien-applications-pratiques-eric-salmon.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Personnel</p>
+            <h3 class="post__title">L'Ennéagramme au quotidien</h3>
+            <div class="post__foot"><span class="post__meta">1 présence</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+    </div>
+    <div class="cards cards--4">
+        <a class="post" href="triades-tete-coeur-ventre-enneagramme.html">
+          <div class="art art--light" data-style="ennea" data-n="3" data-seed="triades-tete-coeur-ventre-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Fondamentaux</p>
+            <h3 class="post__title">Les triades : tête, cœur ou ventre</h3>
+            <div class="post__foot"><span class="post__meta">3 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="cycles-conflits-reconciliations-enneagramme.html">
+          <div class="art art--light" data-style="ennea" data-n="2" data-seed="cycles-conflits-reconciliations-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Couple</p>
+            <h3 class="post__title">Cycles de conflits et réconciliation</h3>
+            <div class="post__foot"><span class="post__meta">2 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="intimite-vulnerabilite-couple-enneagramme.html">
+          <div class="art art--light" data-style="ennea" data-n="2" data-seed="intimite-vulnerabilite-couple-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Couple</p>
+            <h3 class="post__title">Intimité et vulnérabilité</h3>
+            <div class="post__foot"><span class="post__meta">2 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="enneagramme-couple-scenarios-familiaux-bowlby.html">
+          <div class="art art--light" data-style="ennea" data-n="2" data-seed="enneagramme-couple-scenarios-familiaux-bowlby.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Couple</p>
+            <h3 class="post__title">Les scénarios familiaux invisibles</h3>
+            <div class="post__foot"><span class="post__meta">2 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="rythme-emotionnel-couple-enneagramme.html">
+          <div class="art art--light" data-style="ennea" data-n="2" data-seed="rythme-emotionnel-couple-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Couple</p>
+            <h3 class="post__title">Synchroniser les rythmes émotionnels</h3>
+            <div class="post__foot"><span class="post__meta">2 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="confiance-fondation-enneagramme.html">
+          <div class="art art--light" data-style="ennea" data-n="5" data-seed="confiance-fondation-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Équipe</p>
+            <h3 class="post__title">La confiance comme fondation</h3>
+            <div class="post__foot"><span class="post__meta">5 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="enneagramme-feedback-candeur-radicale-kim-scott.html">
+          <div class="art art--light" data-style="ennea" data-n="5" data-seed="enneagramme-feedback-candeur-radicale-kim-scott.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Équipe</p>
+            <h3 class="post__title">Donner et recevoir le feedback</h3>
+            <div class="post__foot"><span class="post__meta">5 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="styles-communication-enneagramme.html">
+          <div class="art art--light" data-style="ennea" data-n="7" data-seed="styles-communication-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Équipe</p>
+            <h3 class="post__title">Les styles de communication</h3>
+            <div class="post__foot"><span class="post__meta">7 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="motivation-individuelle-collective-enneagramme.html">
+          <div class="art art--light" data-style="ennea" data-n="5" data-seed="motivation-individuelle-collective-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Équipe</p>
+            <h3 class="post__title">Autonomie, maîtrise et sens</h3>
+            <div class="post__foot"><span class="post__meta">5 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="structure-dynamique-passions-enneagramme.html">
+          <div class="art art--light" data-style="ennea" data-n="1" data-seed="structure-dynamique-passions-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Fondamentaux</p>
+            <h3 class="post__title">Les 9 passions</h3>
+            <div class="post__foot"><span class="post__meta">1 présence</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="niveaux-developpement-enneagramme.html">
+          <div class="art art--light" data-style="ennea" data-n="1" data-seed="niveaux-developpement-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Fondamentaux</p>
+            <h3 class="post__title">Les niveaux de développement</h3>
+            <div class="post__foot"><span class="post__meta">1 présence</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="ailes-influence-enneagramme.html">
+          <div class="art art--light" data-style="ennea" data-n="3" data-seed="ailes-influence-enneagramme.html" data-tone="light"></div>
+          <div class="post__body">
+            <p class="post__meta">Fondamentaux</p>
+            <h3 class="post__title">Les ailes et les profils voisins</h3>
+            <div class="post__foot"><span class="post__meta">3 présences</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+    </div>
+  </section>
+</main>
+
+<!-- ══════════════════════════════════
+  FOOTER
+══════════════════════════════════ -->
+<footer class="bg-[#ffffff] w-full py-10 mt-auto border-t-[0.5px] border-[#e4e4e4]">
+  <div class="flex justify-between items-center px-12 w-full">
+    <div class="font-label text-[11px] tracking-[0.1em] uppercase text-[#333333]">© 2026 BENJAMIN ALI ABOUDOU — FRANCE &amp; QUÉBEC</div>
+    <div class="flex gap-10">
+      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#767676] hover:text-white transition-colors duration-400" href="mentions-legales.html">MENTIONS LÉGALES</a>
+      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#767676] hover:text-white transition-colors duration-400" href="cgv.html">CGV</a>
+      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#767676] hover:text-white transition-colors duration-400" href="confidentialite.html">CONFIDENTIALITÉ</a>
+      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#767676] hover:text-white transition-colors duration-400" href="ethique.html">ÉTHIQUE</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  document.querySelectorAll('.t-switch button').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var sec = b.closest('.t-dir'), tone = b.getAttribute('data-tone');
+      sec.querySelectorAll('.t-switch button').forEach(function (o) { o.setAttribute('aria-pressed', o === b); });
+      sec.querySelectorAll('.art').forEach(function (a) {
+        a.setAttribute('data-tone', tone);
+        a.className = 'art art--' + tone;
+        a.innerHTML = '';
+        window.EnneaArt.render(a);
+      });
+    });
+  });
+</script>
+</body>
+</html>

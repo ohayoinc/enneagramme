@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="dark" lang="fr-CA">
+<html lang="fr-CA">
 <head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
@@ -104,79 +104,52 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>"/>
-<link rel="stylesheet" href="/dist/styles.css"/>
-<link rel="preload" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=Noto+Serif:ital,wght@0,400;1,400&family=Inter:wght@400;700&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
-<noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&family=Noto+Serif:ital,wght@0,400;1,400&family=Inter:wght@400;700&display=swap" rel="stylesheet"/></noscript>
-<style>
-  body { background-color:#000000; color:#ffffff; margin:0; padding:0; overflow-x:hidden; }
-  ::selection { background:#ffffff; color:#000000; }
-  /* Enneagram — animation de dessin séquentiel */
-  @keyframes draw-stroke {
-    to { stroke-dashoffset: 0; }
-  }
-  @keyframes appear-point {
-    from { opacity: 0; transform: scale(0); }
-    to   { opacity: 1; transform: scale(1); }
-  }
-  @keyframes ennea-breathe {
-    0%, 100% { opacity: 0.22; }
-    50%       { opacity: 0.12; }
-  }
-  @keyframes dots-appear {
-    from { opacity: 0; }
-    to   { opacity: 1; }
-  }
-  @keyframes dots-rotate {
-    from { transform: rotate(0deg); }
-    to   { transform: rotate(360deg); }
-  }
-  /* FAQ */
-  .faq-ans { max-height:0; overflow:hidden; transition:max-height .35s ease, padding .35s ease; }
-  .faq-item.open .faq-ans { max-height:280px; padding-bottom:1.75rem; }
-  .faq-item.open .faq-plus { transform:rotate(45deg); }
-*:not(:focus-visible) { cursor: none !important; } #cursor-dot { position:fixed; width:8px; height:8px; background:#ffffff; border-radius:50%; pointer-events:none; transform:translate(-50%,-50%); z-index:9999; transition:opacity .15s; }
-</style>
+<link rel="stylesheet" href="/dist/styles.css?v=202611071501"/>
+<link rel="stylesheet" href="/dist/theme.css?v=202611071501"/>
+<script src="/dist/motion.js?v=202611071501" defer></script>
+<script src="/dist/art.js?v=202611071501" defer></script>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
+<noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet"/></noscript>
 </head>
 <body class="font-body bg-background text-primary">
-<div id="cursor-dot"></div>
 
 <!-- ══════════════════════════════════
   NAV
 ══════════════════════════════════ -->
-<header class="bg-[#000000] border-b-[0.5px] border-[#474747] w-full h-24 flex items-center sticky top-0 z-50">
+<header class="bg-[#ffffff] border-b-[0.5px] border-[#e4e4e4] w-full h-24 flex items-center sticky top-0 z-50">
   <nav class="flex justify-between items-center px-12 w-full mx-auto">
     <div class="text-2xl font-bold tracking-tighter uppercase text-white font-headline">ENNÉAGRAMME</div>
     <div class="hidden md:flex gap-12">
       <div class="relative group">
-      <a class="font-headline font-bold tracking-tighter uppercase text-sm text-white border-b border-white pb-1" href="lenneagramme.html">L'ENNÉAGRAMME <span class="text-outline text-[10px]">▾</span></a>
-      <div class="absolute top-full left-0 mt-0 bg-[#000000] border-[0.5px] border-[#474747] min-w-[200px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-        <a href="enneagramme-personnel.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] border-b-[0.5px] border-[#474747] transition-colors duration-200">Personnel</a>
-        <a href="enneagramme-professionnel.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] border-b-[0.5px] border-[#474747] transition-colors duration-200">Professionnel</a>
-        <a href="enneagramme-couple.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] transition-colors duration-200">Couple</a>
+      <a class="font-headline font-bold tracking-tighter uppercase text-sm text-white border-b border-white pb-1" href="lenneagramme.html">L'Ennéagramme <span class="text-outline text-[10px]">▾</span></a>
+      <div class="absolute top-full left-0 mt-0 bg-[#ffffff] border-[0.5px] border-[#e4e4e4] min-w-[200px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+        <a href="enneagramme-personnel.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Personnel</a>
+        <a href="enneagramme-professionnel.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Professionnel</a>
+        <a href="enneagramme-couple.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] transition-colors duration-200">Couple</a>
       </div>
     </div>
       <div class="relative group">
-        <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e2] hover:text-white transition-colors duration-400" href="ateliers.html">ATELIERS <span class="text-outline text-[10px]">▾</span></a>
-        <div class="absolute top-full left-0 bg-[#000000] border-[0.5px] border-[#474747] min-w-[240px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-          <a href="atelier-introduction.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] border-b-[0.5px] border-[#474747] transition-colors duration-200">Introduction</a>
-          <a href="atelier-les-bases.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] border-b-[0.5px] border-[#474747] transition-colors duration-200">Les bases</a>
-          <a href="atelier-chez-vous.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] border-b-[0.5px] border-[#474747] transition-colors duration-200">Chez vous</a>
-          <a href="atelier-sur-mesure.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] transition-colors duration-200">Sur-mesure</a>
+        <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors duration-400" href="ateliers.html">Ateliers <span class="text-outline text-[10px]">▾</span></a>
+        <div class="absolute top-full left-0 bg-[#ffffff] border-[0.5px] border-[#e4e4e4] min-w-[240px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <a href="atelier-introduction.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Introduction</a>
+          <a href="atelier-les-bases.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Les bases</a>
+          <a href="atelier-chez-vous.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Chez vous</a>
+          <a href="atelier-sur-mesure.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] transition-colors duration-200">Sur-mesure</a>
         </div>
       </div>
       <div class="relative group">
-        <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e2] hover:text-white transition-colors duration-400" href="accompagnements.html">ACCOMPAGNEMENTS <span class="text-outline text-[10px]">▾</span></a>
-        <div class="absolute top-full left-0 bg-[#000000] border-[0.5px] border-[#474747] min-w-[280px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
-          <a href="https://calendar.google.com/calendar/u/0/r" target="_blank" rel="noopener" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] border-b-[0.5px] border-[#474747] transition-colors duration-200">Entretien exploratoire</a>
-          <a href="seance-accompagnement.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] border-b-[0.5px] border-[#474747] transition-colors duration-200">Séance individuelle</a>
-          <a href="accompagnement-exploratoire.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white hover:bg-[#0a0a0a] transition-colors duration-200">Accompagnement exploratoire</a>
+        <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors duration-400" href="accompagnements.html">Accompagnements <span class="text-outline text-[10px]">▾</span></a>
+        <div class="absolute top-full left-0 bg-[#ffffff] border-[0.5px] border-[#e4e4e4] min-w-[280px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-200 z-50">
+          <a href="https://calendar.google.com/calendar/u/0/r" target="_blank" rel="noopener" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Entretien exploratoire</a>
+          <a href="seance-accompagnement.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] border-b-[0.5px] border-[#e4e4e4] transition-colors duration-200">Séance individuelle</a>
+          <a href="accompagnement-exploratoire.html" class="block px-6 py-4 font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white hover:bg-[#f8f8f8] transition-colors duration-200">Accompagnement exploratoire</a>
         </div>
       </div>
-      <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e2] hover:text-white transition-colors duration-400" href="a-propos.html">À PROPOS</a>
-      <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e2] hover:text-white transition-colors duration-400" href="blog.html">BLOG</a>
+      <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors duration-400" href="a-propos.html">À propos</a>
+      <a class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors duration-400" href="blog.html">Blog</a>
     </div>
     <div class="flex items-center gap-4">
-      <a class="hidden md:block bg-white text-[#000000] font-label font-bold text-[11px] tracking-widest uppercase px-8 py-3 hover:bg-[#e2e2e2] transition-colors duration-300" href="mailto:benjamin@ohayo.io">CONTACT</a>
+      <a class="hidden md:block bg-white text-[#ffffff] font-label font-bold text-[11px] tracking-widest uppercase px-8 py-3 hover:bg-[#333333] transition-colors duration-300" href="mailto:benjamin@ohayo.io">Contact</a>
       <button id="burger" class="md:hidden flex flex-col justify-center gap-[5px] p-2" onclick="toggleMenu()" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="mobile-menu">
         <span class="block w-6 h-[1.5px] bg-white"></span>
         <span class="block w-6 h-[1.5px] bg-white"></span>
@@ -185,563 +158,293 @@
     </div>
   </nav>
 </header>
-<div id="mobile-menu" class="hidden fixed top-24 left-0 w-full bg-[#000000] border-b-[0.5px] border-[#474747] z-40 px-12 py-8 flex-col gap-6">
-  <a href="lenneagramme.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e2] hover:text-white transition-colors">L'ENNÉAGRAMME</a>
-  <div class="pl-4 flex flex-col gap-4 border-l-[0.5px] border-[#474747]">
-    <a href="enneagramme-personnel.html" class="font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white transition-colors">Personnel</a>
-    <a href="enneagramme-professionnel.html" class="font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white transition-colors">Professionnel</a>
-    <a href="enneagramme-couple.html" class="font-label text-[11px] uppercase tracking-[0.15em] text-[#919191] hover:text-white transition-colors">Couple</a>
+<div id="mobile-menu" class="hidden fixed top-24 left-0 w-full bg-[#ffffff] border-b-[0.5px] border-[#e4e4e4] z-40 px-12 py-8 flex-col gap-6">
+  <a href="lenneagramme.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors">L'Ennéagramme</a>
+  <div class="pl-4 flex flex-col gap-4 border-l-[0.5px] border-[#e4e4e4]">
+    <a href="enneagramme-personnel.html" class="font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white transition-colors">Personnel</a>
+    <a href="enneagramme-professionnel.html" class="font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white transition-colors">Professionnel</a>
+    <a href="enneagramme-couple.html" class="font-label text-[11px] uppercase tracking-[0.15em] text-[#767676] hover:text-white transition-colors">Couple</a>
   </div>
-  <a href="ateliers.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e2] hover:text-white transition-colors">ATELIERS</a>
-  <a href="accompagnements.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e2] hover:text-white transition-colors">ACCOMPAGNEMENTS</a>
-  <a href="a-propos.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e2] hover:text-white transition-colors">À PROPOS</a>
-  <a href="blog.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#e2e2e2] hover:text-white transition-colors">BLOG</a>
-  <a href="mailto:benjamin@ohayo.io" class="bg-white text-[#000000] font-label font-bold text-[11px] tracking-widest uppercase px-8 py-3 hover:bg-[#e2e2e2] transition-colors duration-300 text-center mt-2">CONTACT</a>
+  <a href="ateliers.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors">Ateliers</a>
+  <a href="accompagnements.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors">Accompagnements</a>
+  <a href="a-propos.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors">À propos</a>
+  <a href="blog.html" class="font-headline font-bold tracking-tighter uppercase text-sm text-[#333333] hover:text-white transition-colors">Blog</a>
+  <a href="mailto:benjamin@ohayo.io" class="bg-white text-[#ffffff] font-label font-bold text-[11px] tracking-widest uppercase px-8 py-3 hover:bg-[#333333] transition-colors duration-300 text-center mt-2">Contact</a>
 </div>
 <script>function toggleMenu(){var m=document.getElementById('mobile-menu');var b=document.getElementById('burger');var open=m.style.display==='flex';m.style.display=open?'none':'flex';b.setAttribute('aria-expanded',open?'false':'true');b.setAttribute('aria-label',open?'Ouvrir le menu':'Fermer le menu');}</script>
 
-<main class="min-h-screen flex flex-col">
+<main class="home">
 
-  <!-- ══════════════════════════════════
-    HERO — Le manifeste
-  ══════════════════════════════════ -->
-  <section class="relative min-h-screen flex flex-col justify-center px-12 md:px-16 pt-20 pb-16 border-b-[0.5px] border-outline-variant overflow-hidden">
-
-    <!-- Enneagram — droite du hero -->
-    <div class="absolute inset-y-0 right-[-8%] w-[58%] flex items-center justify-center pointer-events-none" style="opacity:0.22; animation: ennea-breathe 10s ease-in-out 11s infinite;">
-      <svg viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg" style="width:min(90vh,90vw);">
-        <defs>
-          <!-- Gradient radial pour les halos de points -->
-          <radialGradient id="pt-halo" cx="50%" cy="50%" r="50%">
-            <stop offset="0%"   stop-color="white" stop-opacity="1"/>
-            <stop offset="30%"  stop-color="white" stop-opacity="0.6"/>
-            <stop offset="100%" stop-color="white" stop-opacity="0"/>
-          </radialGradient>
-        </defs>
-
-        <!-- 1. CERCLE — couche floue + couche nette -->
-        <circle cx="220" cy="220" r="176" fill="none" stroke="white" stroke-width="4" stroke-opacity="0.25"
-          style="stroke-dasharray:1107; stroke-dashoffset:1107;
-                 animation: draw-stroke 2.5s cubic-bezier(.4,0,.2,1) 0s forwards;"/>
-        <circle cx="220" cy="220" r="176" fill="none" stroke="white" stroke-width="0.8"
-          style="stroke-dasharray:1107; stroke-dashoffset:1107;
-                 animation: draw-stroke 2.5s cubic-bezier(.4,0,.2,1) 0s forwards;"/>
-
-        <!-- 2. TRIANGLE — couche floue + couche nette -->
-        <polygon points="220,44 373,308 67,308" fill="none" stroke="white" stroke-width="4" stroke-opacity="0.25"
-          style="stroke-dasharray:917; stroke-dashoffset:917;
-                 animation: draw-stroke 2.5s cubic-bezier(.4,0,.2,1) 2.5s forwards;"/>
-        <polygon points="220,44 373,308 67,308" fill="none" stroke="white" stroke-width="0.8"
-          style="stroke-dasharray:917; stroke-dashoffset:917;
-                 animation: draw-stroke 2.5s cubic-bezier(.4,0,.2,1) 2.5s forwards;"/>
-
-        <!-- 3. LES 9 POINTS — halo radial + core -->
-        <g>
-          <!-- Halos -->
-          <circle cx="220" cy="44"  r="7" fill="url(#pt-halo)" style="opacity:0; transform-origin:220px  44px; animation: appear-point 0.5s ease 5.00s forwards;"/>
-          <circle cx="333" cy="85"  r="7" fill="url(#pt-halo)" style="opacity:0; transform-origin:333px  85px; animation: appear-point 0.5s ease 5.15s forwards;"/>
-          <circle cx="393" cy="189" r="7" fill="url(#pt-halo)" style="opacity:0; transform-origin:393px 189px; animation: appear-point 0.5s ease 5.30s forwards;"/>
-          <circle cx="373" cy="308" r="7" fill="url(#pt-halo)" style="opacity:0; transform-origin:373px 308px; animation: appear-point 0.5s ease 5.45s forwards;"/>
-          <circle cx="280" cy="386" r="7" fill="url(#pt-halo)" style="opacity:0; transform-origin:280px 386px; animation: appear-point 0.5s ease 5.60s forwards;"/>
-          <circle cx="160" cy="386" r="7" fill="url(#pt-halo)" style="opacity:0; transform-origin:160px 386px; animation: appear-point 0.5s ease 5.75s forwards;"/>
-          <circle cx="67"  cy="308" r="7" fill="url(#pt-halo)" style="opacity:0; transform-origin: 67px 308px; animation: appear-point 0.5s ease 5.90s forwards;"/>
-          <circle cx="47"  cy="189" r="7" fill="url(#pt-halo)" style="opacity:0; transform-origin: 47px 189px; animation: appear-point 0.5s ease 6.05s forwards;"/>
-          <circle cx="107" cy="85"  r="7" fill="url(#pt-halo)" style="opacity:0; transform-origin:107px  85px; animation: appear-point 0.5s ease 6.20s forwards;"/>
-          <!-- Cores -->
-          <circle cx="220" cy="44"  r="2" fill="white" style="opacity:0; transform-origin:220px  44px; animation: appear-point 0.35s ease 5.00s forwards;"/>
-          <circle cx="333" cy="85"  r="2" fill="white" style="opacity:0; transform-origin:333px  85px; animation: appear-point 0.35s ease 5.15s forwards;"/>
-          <circle cx="393" cy="189" r="2" fill="white" style="opacity:0; transform-origin:393px 189px; animation: appear-point 0.35s ease 5.30s forwards;"/>
-          <circle cx="373" cy="308" r="2" fill="white" style="opacity:0; transform-origin:373px 308px; animation: appear-point 0.35s ease 5.45s forwards;"/>
-          <circle cx="280" cy="386" r="2" fill="white" style="opacity:0; transform-origin:280px 386px; animation: appear-point 0.35s ease 5.60s forwards;"/>
-          <circle cx="160" cy="386" r="2" fill="white" style="opacity:0; transform-origin:160px 386px; animation: appear-point 0.35s ease 5.75s forwards;"/>
-          <circle cx="67"  cy="308" r="2" fill="white" style="opacity:0; transform-origin: 67px 308px; animation: appear-point 0.35s ease 5.90s forwards;"/>
-          <circle cx="47"  cy="189" r="2" fill="white" style="opacity:0; transform-origin: 47px 189px; animation: appear-point 0.35s ease 6.05s forwards;"/>
-          <circle cx="107" cy="85"  r="2" fill="white" style="opacity:0; transform-origin:107px  85px; animation: appear-point 0.35s ease 6.20s forwards;"/>
-        </g>
-
-        <!-- 4. HEXAD — couche floue + couche nette -->
-        <polyline points="333,85 280,386 393,189 107,85 160,386 47,189 333,85"
-          fill="none" stroke="white" stroke-width="4" stroke-opacity="0.25"
-          style="stroke-dasharray:1675; stroke-dashoffset:1675;
-                 animation: draw-stroke 3.5s cubic-bezier(.4,0,.2,1) 6.5s forwards;"/>
-        <polyline points="333,85 280,386 393,189 107,85 160,386 47,189 333,85"
-          fill="none" stroke="white" stroke-width="0.8"
-          style="stroke-dasharray:1675; stroke-dashoffset:1675;
-                 animation: draw-stroke 3.5s cubic-bezier(.4,0,.2,1) 6.5s forwards;"/>
-
-        <!-- 5. CERCLE POINTILLÉ ROTATIF — apparaît après toutes les animations (10.5s) -->
-        <circle cx="220" cy="220" r="192"
-          fill="none" stroke="white" stroke-width="0.6"
-          stroke-dasharray="2 11"
-          style="opacity:0;
-                 transform-origin: 220px 220px;
-                 animation: dots-appear 1.5s ease 10.5s forwards,
-                             dots-rotate 40s linear 10.5s infinite;"/>
-
-      </svg>
-    </div>
-
-    <div class="relative z-10 max-w-2xl">
-      <p class="font-label text-[11px] uppercase tracking-[0.2em] mb-10 text-outline">Benjamin Ali Aboudou</p>
-      <h1 class="font-headline font-bold leading-[1.0] tracking-[-0.03em] uppercase text-primary" style="font-size:clamp(52px,6.5vw,96px)">
-        <span class="block whitespace-nowrap">Mieux se connaître,</span>
-        <span class="block whitespace-nowrap">mieux se relier.</span>
-      </h1>
-      <p class="font-body text-lg mt-8 italic text-on-surface leading-relaxed">
-        Ateliers et accompagnements Ennéagramme.
-      </p>
-      <a class="mt-10 inline-block bg-primary text-on-primary px-10 py-4 font-label font-bold text-[11px] tracking-[0.2em] uppercase hover:bg-on-surface transition-colors duration-500" href="#">
-        DÉCOUVRIR
-      </a>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-    L'ENNÉAGRAMME — SEO BLOCK
-  ══════════════════════════════════ -->
-  <section class="border-b-[0.5px] border-outline-variant px-12 md:px-16 py-20">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-12 items-start">
-      <div class="md:col-span-4">
-        <p class="font-label text-[11px] uppercase tracking-[0.2em] mb-6 text-outline">L'ENNÉAGRAMME</p>
-        <h2 class="font-headline font-bold uppercase tracking-tighter leading-[0.9] text-primary" style="font-size:clamp(32px,4vw,56px)">Un système<br/>vivant.</h2>
+  <!-- ══════════ ACCUEIL ══════════ -->
+  <section class="h-hero wrap" aria-labelledby="hero-title">
+    <div class="h-hero__top">
+      <div class="h-hero__art" data-style="hero" data-variant="c" aria-hidden="true"></div>
+      <div class="h-hero__title">
+        <h1 id="hero-title" class="h-display">Mieux se connaître,<br/>mieux se relier</h1>
+        <a class="pill pill--line h-hero__cta" href="#demarche">Découvrir</a>
       </div>
-      <div class="md:col-span-7 md:col-start-6 space-y-5">
-        <p class="font-body text-lg leading-relaxed text-on-surface">
-          L'Ennéagramme est une cartographie des personnalités qui identifie <strong class="font-body text-primary">neuf profils dominants</strong>, chacun structuré autour d'une motivation centrale, d'une peur profonde et d'un désir de base. Né à la croisée de traditions contemplatives et de la psychologie moderne, il est aujourd'hui utilisé en développement personnel, en coaching, en entreprise et dans les relations de couple.
-        </p>
-        <p class="font-body text-lg leading-relaxed text-on-surface-variant">
-          Ce qui distingue l'Ennéagramme d'autres outils comme le MBTI ou le DISC : il ne décrit pas <em>ce que vous faites</em>, il révèle <em>pourquoi vous le faites</em>. Il cartographie les mécanismes inconscients qui orientent silencieusement chaque décision, chaque réaction, chaque relation.
-        </p>
-        <p class="font-body text-lg leading-relaxed text-on-surface-variant">
-          Chaque profil possède également <strong class="font-body text-white">27 sous-types instinctuels</strong> — conservation, social, sexuel — qui affinent encore la compréhension. Ce n'est pas un outil de catégorisation : c'est une invitation à se voir avec plus de précision, et donc plus de liberté.
-        </p>
-        <div class="pt-4">
-          <a class="font-label text-[11px] uppercase tracking-[0.2em] text-primary border-b-[0.5px] border-primary pb-1 hover:text-outline hover:border-outline transition-colors duration-400" href="#">EN SAVOIR PLUS SUR L'ENNÉAGRAMME →</a>
+      <div class="h-hero__aside">
+        <dl class="stats">
+          <div><dt>9</dt><dd>profils de personnalité</dd></div>
+          <div><dt>3</dt><dd>centres d'intelligence</dd></div>
+        </dl>
+      </div>
+    </div>
+
+    <div class="h-hero__media">
+      <figure class="media">
+        <picture>
+          <source media="(max-width: 767px)" type="image/webp" srcset="/images/photos/conference-enneagramme-mobile-1000.webp 1000w, /images/photos/conference-enneagramme-mobile-2000.webp 2000w" sizes="100vw"/>
+          <source type="image/webp" srcset="/images/photos/conference-enneagramme-1000.webp 1000w, /images/photos/conference-enneagramme-2000.webp 2000w, /images/photos/conference-enneagramme-2800.webp 2800w" sizes="(min-width: 1400px) 1320px, 100vw"/>
+          <img src="/images/photos/conference-enneagramme.jpg" alt="Benjamin Ali Aboudou présente l'Ennéagramme et ses 9 profils devant une salle comble" width="2000" height="1026" fetchpriority="high"/>
+        </picture>
+      </figure>
+
+      <div class="finder">
+        <div class="finder__tabs" role="tablist" aria-label="Choisir un format">
+          <button role="tab" id="tab-ateliers" aria-selected="true" aria-controls="panel-ateliers">Ateliers</button>
+          <button role="tab" id="tab-accomp" aria-selected="false" aria-controls="panel-accomp" tabindex="-1">Accompagnements</button>
+        </div>
+        <div class="finder__panel" id="panel-ateliers" role="tabpanel" aria-labelledby="tab-ateliers" style="--cols:4">
+          <a class="finder__opt" href="atelier-introduction.html"><b>Introduction</b><span>3 h · en groupe, 5 à 15 pers.</span></a>
+          <a class="finder__opt" href="atelier-les-bases.html"><b>Les bases</b><span>3 h · présentiel ou en ligne</span></a>
+          <a class="finder__opt" href="atelier-chez-vous.html"><b>Chez vous</b><span>3 h · privé, 3 à 8 pers.</span></a>
+          <a class="finder__opt" href="atelier-sur-mesure.html"><b>Sur mesure</b><span>Équipes et organisations</span></a>
+          <a class="pill pill--ink" href="ateliers.html">Tous les ateliers</a>
+        </div>
+        <div class="finder__panel" id="panel-accomp" role="tabpanel" aria-labelledby="tab-accomp" style="--cols:3" hidden>
+          <a class="finder__opt" href="entretien-exploratoire.html"><b>Entretien exploratoire</b><span>30 min · gratuit</span></a>
+          <a class="finder__opt" href="seance-accompagnement.html"><b>Séance individuelle</b><span>75 min · en ligne</span></a>
+          <a class="finder__opt" href="accompagnement-exploratoire.html"><b>Accompagnement exploratoire</b><span>4 à 6 séances</span></a>
+          <a class="pill pill--ink" href="accompagnements.html">Tous les accompagnements</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- ══════════════════════════════════
-    DEUX PRINCIPES
-  ══════════════════════════════════ -->
-  <section class="grid grid-cols-1 md:grid-cols-2 min-h-[580px] border-b-[0.5px] border-outline-variant">
-    <div class="border-r-[0.5px] border-outline-variant p-12 md:p-16 flex flex-col justify-between">
+  <!-- ══════════ L'ENNÉAGRAMME ══════════ -->
+  <section class="wrap" aria-labelledby="about-title">
+    <div class="h-statement-wrap">
+      <p class="eyebrow">L'Ennéagramme</p>
+      <h2 id="about-title" class="h-statement">Il ne décrit pas ce que vous faites. Il révèle <em>pourquoi vous le faites</em>, et ce qui devient possible <em>quand vous le voyez.</em></h2>
+    </div>
+    <div class="h-about">
+      <div class="h-about__text lede">
+        <p>L'Ennéagramme est une cartographie des personnalités qui identifie <strong>neuf profils dominants</strong>, chacun structuré autour d'une motivation centrale, d'une peur profonde et d'un désir de base. Né à la croisée de traditions contemplatives et de la psychologie moderne, il est aujourd'hui utilisé en développement personnel, en coaching, en entreprise et dans les relations de couple.</p>
+        <p>Ce qui le distingue d'outils comme le MBTI ou le DISC : il cartographie les mécanismes inconscients qui orientent silencieusement chaque décision, chaque réaction, chaque relation.</p>
+        <p>Chaque profil se décline en <strong>27 sous-types instinctuels</strong> (conservation, social, sexuel) qui affinent encore la compréhension. Ce n'est pas un outil de catégorisation : c'est une invitation à se voir avec plus de précision, et donc plus de liberté.</p>
+        <a class="textlink" href="lenneagramme.html">Comprendre l'Ennéagramme <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+      <div class="tile">
+        <svg viewBox="0 0 440 440" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle class="draw" style="--len:1106;--dl:.3s" cx="220" cy="220" r="176" fill="none" stroke="#000" stroke-width="1.6"/>
+            <polygon class="draw" style="--len:918;--dl:1.4s" points="220,44 373,308 67,308" fill="none" stroke="#000" stroke-width="1.6" stroke-linejoin="round"/>
+            <polyline class="draw" style="--len:1680;--dl:2.4s" points="333,85 280,386 393,189 107,85 160,386 47,189 333,85" fill="none" stroke="#000" stroke-width="1.6" stroke-linejoin="round"/>
+            <circle cx="220" cy="44" r="4" fill="#000"/><text x="220" y="26" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="15" fill="#6e6e6e">9</text><circle cx="333" cy="85" r="4" fill="#000"/><text x="348" y="72" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="15" fill="#6e6e6e">1</text><circle cx="393" cy="189" r="4" fill="#000"/><text x="415" y="190" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="15" fill="#6e6e6e">2</text><circle cx="373" cy="308" r="4" fill="#000"/><text x="393" y="324" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="15" fill="#6e6e6e">3</text><circle cx="280" cy="386" r="4" fill="#000"/><text x="288" y="413" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="15" fill="#6e6e6e">4</text><circle cx="160" cy="386" r="4" fill="#000"/><text x="152" y="413" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="15" fill="#6e6e6e">5</text><circle cx="67" cy="308" r="4" fill="#000"/><text x="47" y="324" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="15" fill="#6e6e6e">6</text><circle cx="47" cy="189" r="4" fill="#000"/><text x="25" y="190" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="15" fill="#6e6e6e">7</text><circle cx="107" cy="85" r="4" fill="#000"/><text x="92" y="72" text-anchor="middle" font-family="Instrument Sans, sans-serif" font-size="15" fill="#6e6e6e">8</text>
+          </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ LA DÉMARCHE ══════════ -->
+  <section id="demarche" class="h-steps wrap" aria-labelledby="steps-title">
+    <h2 id="steps-title" class="title-xl">Votre démarche, <em>pas à pas</em></h2>
+    <ol class="steps">
+      <li><a href="entretien-exploratoire.html"><span class="num">1</span><b>Entretien exploratoire</b><span class="meta">30 min, gratuit</span></a></li>
+      <li><a href="atelier-introduction.html"><span class="num">2</span><b>Atelier d'introduction</b><span class="meta">3 h en groupe</span></a></li>
+      <li><a href="seance-accompagnement.html"><span class="num">3</span><b>Séance individuelle</b><span class="meta">75 min en ligne</span></a></li>
+      <li><a href="accompagnement-exploratoire.html"><span class="num">4</span><b>Accompagnement</b><span class="meta">4 à 6 séances</span></a></li>
+    </ol>
+
+    <div class="feature">
+      <img src="/images/photos/atelier-mains-levees.jpg" srcset="/images/photos/atelier-mains-levees-1000.webp 1000w, /images/photos/atelier-mains-levees-2000.webp 2000w, /images/photos/atelier-mains-levees-2800.webp 2800w" sizes="(min-width: 1400px) 1320px, 100vw" alt="Les participants lèvent la main pour répondre à une question de Benjamin pendant une conférence" width="2000" height="951" loading="lazy"/>
+      <div class="feature__card">
+        <h3>Benjamin <em>Ali Aboudou</em></h3>
+        <p>Je m'intéresse depuis de nombreuses années à qui nous sommes : nos motivations, nos comportements, nos relations. Praticien-formateur certifié et coach accrédité A.C.C par l'International Coaching Federation, j'interviens en France et au Québec depuis 2021, en collaboration avec Dixit Ennéagramme à Montréal.</p>
+        <ul>
+          <li><span>Coach A.C.C, International Coaching Federation</span><span>2025</span></li>
+          <li><span>Praticien-formateur, Dixit Ennéagramme</span><span>2021</span></li>
+          <li><span>Membre IEA et Canada Ennéagramme</span><span>2021</span></li>
+        </ul>
+        <a class="textlink" href="a-propos.html">Mon parcours <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ══════════ POUR QUI ══════════ -->
+  <section class="h-services wrap" aria-labelledby="services-title">
+    <div class="h-services__head">
+      <h2 id="services-title" class="title-xl">Ce que l'Ennéagramme <em>éclaire</em></h2>
+      <p class="lede">Le même outil, quatre terrains. On l'explore seul, à deux ou en équipe, toujours à partir de ce qui vous anime vraiment.</p>
+    </div>
+    <div class="cards cards--2">
+      <a class="card" href="enneagramme-personnel.html">
+        <div class="card__art art" data-style="cercles" data-n="1" data-seed="carte-0" aria-hidden="true"></div>
+        <h3>Pour vous</h3>
+        <p>Comprendre vos réactions, sortir des schémas qui se répètent, retrouver une marge de choix.</p>
+        <span class="more">Personnel <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="card" href="enneagramme-couple.html">
+        <div class="card__art art" data-style="cercles" data-n="2" data-seed="carte-1" aria-hidden="true"></div>
+        <h3>À deux</h3>
+        <p>Voir ce que l'autre protège quand il se ferme, et parler enfin de la même chose.</p>
+        <span class="more">Couple <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="card" href="enneagramme-professionnel.html">
+        <div class="card__art art" data-style="cercles" data-n="4" data-seed="carte-2" aria-hidden="true"></div>
+        <h3>Au travail</h3>
+        <p>Mieux collaborer, donner du feedback qui porte, comprendre ce qui motive chaque personne.</p>
+        <span class="more">Professionnel <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+      <a class="card" href="atelier-sur-mesure.html">
+        <div class="card__art art" data-style="cercles" data-n="7" data-seed="carte-3" aria-hidden="true"></div>
+        <h3>Pour votre organisation</h3>
+        <p>Un atelier conçu pour votre équipe, en présentiel ou en ligne, partout au Québec et en France.</p>
+        <span class="more">Sur mesure <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ══════════ ARTICLES ══════════ -->
+  <section class="h-articles" aria-labelledby="posts-title">
+    <div class="wrap">
+      <h2 id="posts-title" class="title-xl">Derniers <em>articles</em></h2>
+      <div class="cards cards--3">
+        <a class="post" href="enneagramme-equipe-vision-partagee-peter-senge.html">
+          <div class="art" data-style="cercles" data-n="6" data-seed="enneagramme-equipe-vision-partagee-peter-senge.html" aria-hidden="true"></div>
+          <div class="post__body">
+            <p class="post__meta">13 avril 2026 · Collectif</p>
+            <h3 class="post__title">Ennéagramme en équipe : construire une vision partagée grâce aux 9 profils</h3>
+            <div class="post__foot"><span class="post__meta">D'après Peter Senge</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="enneagramme-couple-vision-commune-esther-perel.html">
+          <div class="art" data-style="cercles" data-n="2" data-seed="enneagramme-couple-vision-commune-esther-perel.html" aria-hidden="true"></div>
+          <div class="post__body">
+            <p class="post__meta">6 avril 2026 · Couple</p>
+            <h3 class="post__title">Ennéagramme et couple : construire une vision commune grâce aux 9 profils</h3>
+            <div class="post__foot"><span class="post__meta">D'après Esther Perel</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+        <a class="post" href="enneagramme-quotidien-applications-pratiques-eric-salmon.html">
+          <div class="art" data-style="cercles" data-n="1" data-seed="enneagramme-quotidien-applications-pratiques-eric-salmon.html" aria-hidden="true"></div>
+          <div class="post__body">
+            <p class="post__meta">30 mars 2026 · Personnel</p>
+            <h3 class="post__title">Ennéagramme au quotidien : applications pratiques pour chaque profil</h3>
+            <div class="post__foot"><span class="post__meta">D'après Éric Salmon</span><span class="pill pill--sm">Lire</span></div>
+          </div>
+        </a>
+      </div>
+      <a class="pill pill--line" href="blog.html" style="margin-top:3rem">Tous les articles <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+    </div>
+  </section>
+
+  <!-- ══════════ TÉMOIGNAGES ══════════ -->
+  <section class="h-quotes wrap" aria-labelledby="quotes-title">
+    <figure class="band">
+      <img src="/images/photos/conference-superpouvoir.jpg" srcset="/images/photos/conference-superpouvoir-1000.webp 1000w, /images/photos/conference-superpouvoir-2000.webp 2000w, /images/photos/conference-superpouvoir-2800.webp 2800w" sizes="(min-width: 1400px) 1320px, 100vw" alt="Une salle attentive devant la question « Savez-vous quel est votre superpouvoir d'équipier ? »" width="2000" height="833" loading="lazy"/>
+    </figure>
+    <h2 id="quotes-title" class="title-xl">Ils en <em>parlent</em></h2>
+    <div class="cards cards--3">
+      <figure class="quote">
+        <blockquote>« L'atelier m'a permis de mettre des mots sur des comportements que je ne comprenais pas chez moi depuis des années. Une vraie révélation. »</blockquote>
+        <figcaption><b>Marie-Claude T.</b><span>Montréal, atelier d'introduction</span></figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>« Benjamin a cette capacité rare de rendre un outil complexe accessible et profondément humain. Mon équipe en parle encore six mois plus tard. »</blockquote>
+        <figcaption><b>Sébastien L.</b><span>Québec, atelier en entreprise</span></figcaption>
+      </figure>
+      <figure class="quote">
+        <blockquote>« L'accompagnement individuel a changé ma façon de me voir et de voir mes proches. Je comprends enfin d'où viennent mes réactions. »</blockquote>
+        <figcaption><b>Isabelle M.</b><span>En ligne, accompagnement individuel</span></figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- ══════════ FAQ ══════════ -->
+  <section class="wrap" aria-labelledby="faq-title">
+    <div class="h-faq">
       <div>
-        <span class="font-label text-[11px] uppercase tracking-[0.2em] text-outline block mb-8">PRINCIPE 01</span>
-        <h2 class="font-headline font-bold text-5xl uppercase tracking-tighter mb-10 text-primary">LES MOTIVATIONS</h2>
-        <p class="font-body text-lg leading-relaxed max-w-md text-on-surface">
-          L'Ennéagramme n'identifie pas ce que vous faites — il révèle pourquoi vous le faites. Derrière chaque comportement se cache une peur fondamentale et un désir profond qui orientent silencieusement chaque décision.
-        </p>
+        <h2 id="faq-title" class="title-xl">Questions <em>fréquentes</em></h2>
+        <p class="lede" style="margin-top:1.5rem">Vous ne trouvez pas la réponse ? Posez-moi directement votre question.</p>
+        <a class="textlink" href="mailto:benjamin@ohayo.io">Écrire à Benjamin <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
       </div>
-      <div class="mt-16">
-        <a class="bg-primary text-on-primary px-8 py-4 font-label font-bold text-[11px] uppercase tracking-widest hover:bg-on-surface transition-colors duration-400 inline-block" href="#">EXPLORER L'ARCHIVE</a>
+      <div itemscope itemtype="https://schema.org/FAQPage">
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-1">
+            <span itemprop="name">Qu'est-ce que l'Ennéagramme ?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-ans" id="faq-1" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">L'Ennéagramme est une cartographie des personnalités qui identifie neuf profils fondamentaux, chacun structuré autour d'une motivation centrale, d'une peur profonde et d'un désir de base. Contrairement à d'autres outils, il ne décrit pas ce que vous faites, mais <em>pourquoi</em> vous le faites — ce qui en fait un outil puissant de connaissance de soi et de transformation durable.</p>
+          </div>
+        </div>
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-2">
+            <span itemprop="name">Comment découvrir mon profil Ennéagramme ?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-ans" id="faq-2" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">La découverte du profil se fait idéalement en atelier ou en accompagnement guidé. Les tests en ligne donnent une première indication, mais le profil se confirme surtout par une exploration honnête des motivations profondes — pas des comportements de surface. Je propose des ateliers d'introduction et des entretiens exploratoires pour vous guider.</p>
+          </div>
+        </div>
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-3">
+            <span itemprop="name">Quelle est la différence entre l'Ennéagramme et le MBTI ?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-ans" id="faq-3" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Le MBTI décrit des préférences comportementales observables — comment vous agissez. L'Ennéagramme va plus loin en explorant les motivations inconscientes derrière ces comportements — pourquoi vous agissez ainsi. Il est aussi un outil de développement : il montre non seulement qui vous êtes aujourd'hui, mais vers qui vous pouvez évoluer.</p>
+          </div>
+        </div>
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-4">
+            <span itemprop="name">L'Ennéagramme est-il fait pour moi ?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-ans" id="faq-4" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">L'Ennéagramme s'adresse à toute personne curieuse de se comprendre plus profondément — améliorer ses relations, dépasser des schémas répétitifs, mieux collaborer. Il est utilisé en développement personnel, en coaching, en entreprise et en contexte de couple. Si certains comportements ou réactions se répètent dans votre vie, l'Ennéagramme peut offrir un éclairage décisif.</p>
+          </div>
+        </div>
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-5">
+            <span itemprop="name">Comment se déroule un entretien exploratoire ?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-ans" id="faq-5" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">L'entretien exploratoire est une rencontre gratuite de 30 minutes, sans engagement. Il permet de faire connaissance, de clarifier vos questions et d'identifier le profil d'accompagnement ou d'atelier le plus adapté à votre situation. Il se déroule en ligne via visioconférence.</p>
+          </div>
+        </div>
+        <div class="faq-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="faq-q" aria-expanded="false" aria-controls="faq-6">
+            <span itemprop="name">Proposez-vous des ateliers Ennéagramme en ligne au Québec ?</span>
+            <span class="faq-plus" aria-hidden="true">+</span>
+          </button>
+          <div class="faq-ans" id="faq-6" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">Oui. Tous mes ateliers sont disponibles en ligne, ce qui me permet d'intervenir partout au Québec — Montréal, Québec, Trois-Rivières, Sherbrooke — ainsi qu'en France. Certains ateliers sont également proposés en présentiel à Montréal.</p>
+          </div>
+        </div>
       </div>
     </div>
-    <div class="p-12 md:p-16 flex flex-col justify-between bg-surface-container-lowest">
+  </section>
+
+  <!-- ══════════ COMMENCER ══════════ -->
+  <section class="h-cta wrap" aria-labelledby="cta-title">
+    <div class="cta-panel">
       <div>
-        <span class="font-label text-[11px] uppercase tracking-[0.2em] text-outline block mb-8">PRINCIPE 02</span>
-        <h2 class="font-headline font-bold text-5xl uppercase tracking-tighter mb-10 text-primary">LA TRANSFORMATION</h2>
-        <p class="font-body text-lg leading-relaxed max-w-md text-on-surface italic">
-          "L'Ennéagramme ne décrit pas ce que nous faisons, mais pourquoi nous le faisons."
-        </p>
-        <p class="font-label text-[10px] tracking-[0.12em] uppercase text-outline mt-4">— Helen Palmer</p>
+        <h2 id="cta-title">Démarrer <em>la démarche</em></h2>
+        <p>Un entretien exploratoire gratuit de 30 minutes, sans engagement. Juste de la curiosité.</p>
       </div>
-      <div class="flex justify-end items-end">
-        <span class="font-label text-[11px] uppercase tracking-[0.2em] text-outline">02 // 05</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-    SECTION ÉDITORIALE — La vérité de fond
-  ══════════════════════════════════ -->
-  <section class="py-48 md:py-64 px-12 flex items-center justify-center border-b-[0.5px] border-outline-variant">
-    <div class="max-w-4xl text-center">
-      <p class="font-body text-2xl md:text-4xl lg:text-5xl leading-tight text-on-surface">
-        Vous n'êtes pas votre profil.<br/>Vous êtes ce qui se passe quand vous commencez à le voir.
-      </p>
-      <div class="mt-16 w-px h-32 bg-primary mx-auto"></div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-    MÉTADONNÉES — 9 profils, France & Québec...
-  ══════════════════════════════════ -->
-  <section class="border-b-[0.5px] border-outline-variant grid grid-cols-3 font-label text-[10px] tracking-[0.15em] uppercase text-outline">
-    <div class="p-8 border-r-[0.5px] border-outline-variant">
-      <span class="block mb-2 text-primary text-2xl font-headline font-bold tracking-tighter">9</span>
-      Profils de personnalité
-    </div>
-    <div class="p-8 border-r-[0.5px] border-outline-variant">
-      <span class="block mb-2 text-primary text-2xl font-headline font-bold tracking-tighter">27</span>
-      Sous-types
-    </div>
-    <div class="p-8">
-      <span class="block mb-2 text-primary text-2xl font-headline font-bold tracking-tighter">3</span>
-      Centres
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-    SERVICES
-  ══════════════════════════════════ -->
-  <section class="border-b-[0.5px] border-outline-variant">
-    <div class="px-12 md:px-16 pt-20 pb-0">
-      <div class="flex justify-between items-end mb-0">
-        <p class="font-label text-[11px] uppercase tracking-[0.2em] text-outline">03 // ATELIERS & ACCOMPAGNEMENTS</p>
-        <p class="font-label text-[10px] uppercase tracking-[0.15em] text-outline">7 services</p>
-      </div>
-    </div>
-
-    <!-- ATELIERS -->
-    <div class="px-12 md:px-16 pt-12 pb-2">
-      <p class="font-label text-[10px] uppercase tracking-[0.2em] text-outline mb-0">Ateliers</p>
-    </div>
-    <div class="border-t-[0.5px] border-outline-variant mx-12 md:mx-16">
-      <a href="atelier-introduction.html" class="group flex flex-col md:flex-row md:items-center md:justify-between py-5 border-b-[0.5px] border-outline-variant hover:bg-surface-container transition-colors duration-300 px-4 -mx-4 gap-2 md:gap-0">
-        <div class="flex items-baseline gap-6 md:gap-10">
-          <span class="font-label text-[10px] uppercase tracking-[0.12em] text-outline w-24 shrink-0">Atelier 01</span>
-          <h3 class="font-headline font-bold uppercase text-lg text-primary tracking-tight group-hover:tracking-wide transition-all duration-500">Introduction à l'Ennéagramme</h3>
-        </div>
-        <div class="flex items-center justify-between md:justify-end gap-8 pl-[7.5rem] md:pl-0">
-          <span class="font-label text-[10px] uppercase tracking-[0.12em] text-outline">3h · Groupe · 5–15 pers.</span>
-          <span class="font-label text-[11px] uppercase tracking-[0.15em] text-primary shrink-0">→</span>
-        </div>
-      </a>
-      <a href="atelier-les-bases.html" class="group flex flex-col md:flex-row md:items-center md:justify-between py-5 border-b-[0.5px] border-outline-variant hover:bg-surface-container transition-colors duration-300 px-4 -mx-4 gap-2 md:gap-0">
-        <div class="flex items-baseline gap-6 md:gap-10">
-          <span class="font-label text-[10px] uppercase tracking-[0.12em] text-outline w-24 shrink-0">Atelier 02</span>
-          <h3 class="font-headline font-bold uppercase text-lg text-primary tracking-tight group-hover:tracking-wide transition-all duration-500">Les bases de l'Ennéagramme</h3>
-        </div>
-        <div class="flex items-center justify-between md:justify-end gap-8 pl-[7.5rem] md:pl-0">
-          <span class="font-label text-[10px] uppercase tracking-[0.12em] text-outline">3h · Présentiel ou en ligne</span>
-          <span class="font-label text-[11px] uppercase tracking-[0.15em] text-primary shrink-0">→</span>
-        </div>
-      </a>
-      <a href="atelier-chez-vous.html" class="group flex flex-col md:flex-row md:items-center md:justify-between py-5 border-b-[0.5px] border-outline-variant hover:bg-surface-container transition-colors duration-300 px-4 -mx-4 gap-2 md:gap-0">
-        <div class="flex items-baseline gap-6 md:gap-10">
-          <span class="font-label text-[10px] uppercase tracking-[0.12em] text-outline w-24 shrink-0">Atelier 03</span>
-          <h3 class="font-headline font-bold uppercase text-lg text-primary tracking-tight group-hover:tracking-wide transition-all duration-500">L'Ennéagramme chez vous</h3>
-        </div>
-        <div class="flex items-center justify-between md:justify-end gap-8 pl-[7.5rem] md:pl-0">
-          <span class="font-label text-[10px] uppercase tracking-[0.12em] text-outline">3h · Privé · 3–8 pers.</span>
-          <span class="font-label text-[11px] uppercase tracking-[0.15em] text-primary shrink-0">→</span>
-        </div>
-      </a>
-      <a href="atelier-sur-mesure.html" class="group flex flex-col md:flex-row md:items-center md:justify-between py-5 border-b-[0.5px] border-outline-variant hover:bg-surface-container transition-colors duration-300 px-4 -mx-4 gap-2 md:gap-0">
-        <div class="flex items-baseline gap-6 md:gap-10">
-          <span class="font-label text-[10px] uppercase tracking-[0.12em] text-outline w-24 shrink-0">Atelier 04</span>
-          <h3 class="font-headline font-bold uppercase text-lg text-primary tracking-tight group-hover:tracking-wide transition-all duration-500">Sur-mesure</h3>
-        </div>
-        <div class="flex items-center justify-between md:justify-end gap-8 pl-[7.5rem] md:pl-0">
-          <span class="font-label text-[10px] uppercase tracking-[0.12em] text-outline">Tout groupe · Tout format</span>
-          <span class="font-label text-[11px] uppercase tracking-[0.15em] text-primary shrink-0">→</span>
-        </div>
-      </a>
-    </div>
-
-    <!-- ACCOMPAGNEMENTS -->
-    <div class="px-12 md:px-16 pt-10 pb-2">
-      <p class="font-label text-[10px] uppercase tracking-[0.2em] text-outline">Accompagnements</p>
-    </div>
-    <div class="border-t-[0.5px] border-outline-variant mx-12 md:mx-16">
-      <a href="https://calendar.google.com/calendar/u/0/r" target="_blank" rel="noopener" class="group flex flex-col md:flex-row md:items-center md:justify-between py-5 border-b-[0.5px] border-outline-variant hover:bg-surface-container transition-colors duration-300 px-4 -mx-4 gap-2 md:gap-0">
-        <div class="flex items-baseline gap-6 md:gap-10">
-          <span class="font-label text-[10px] uppercase tracking-[0.12em] text-outline w-24 shrink-0">Étape 01</span>
-          <h3 class="font-headline font-bold uppercase text-lg text-primary tracking-tight group-hover:tracking-wide transition-all duration-500">Entretien exploratoire</h3>
-        </div>
-        <div class="flex items-center justify-between md:justify-end gap-8 pl-[7.5rem] md:pl-0">
-          <span class="font-label text-[10px] uppercase tracking-[0.12em] text-outline">30 min · <span class="text-primary">Gratuit</span></span>
-          <span class="font-label text-[11px] uppercase tracking-[0.15em] text-primary shrink-0">→</span>
-        </div>
-      </a>
-      <a href="seance-accompagnement.html" class="group flex flex-col md:flex-row md:items-center md:justify-between py-5 border-b-[0.5px] border-outline-variant hover:bg-surface-container transition-colors duration-300 px-4 -mx-4 gap-2 md:gap-0">
-        <div class="flex items-baseline gap-6 md:gap-10">
-          <span class="font-label text-[10px] uppercase tracking-[0.12em] text-outline w-24 shrink-0">Séance</span>
-          <h3 class="font-headline font-bold uppercase text-lg text-primary tracking-tight group-hover:tracking-wide transition-all duration-500">Séance individuelle</h3>
-        </div>
-        <div class="flex items-center justify-between md:justify-end gap-8 pl-[7.5rem] md:pl-0">
-          <span class="font-label text-[10px] uppercase tracking-[0.12em] text-outline">75 min · En ligne</span>
-          <span class="font-label text-[11px] uppercase tracking-[0.15em] text-primary shrink-0">→</span>
-        </div>
-      </a>
-      <a href="accompagnement-exploratoire.html" class="group flex flex-col md:flex-row md:items-center md:justify-between py-5 border-b-[0.5px] border-outline-variant hover:bg-surface-container transition-colors duration-300 px-4 -mx-4 gap-2 md:gap-0">
-        <div class="flex items-baseline gap-6 md:gap-10">
-          <span class="font-label text-[10px] uppercase tracking-[0.12em] text-outline w-24 shrink-0">Programme</span>
-          <h3 class="font-headline font-bold uppercase text-lg text-primary tracking-tight group-hover:tracking-wide transition-all duration-500">Accompagnement exploratoire</h3>
-        </div>
-        <div class="flex items-center justify-between md:justify-end gap-8 pl-[7.5rem] md:pl-0">
-          <span class="font-label text-[10px] uppercase tracking-[0.12em] text-outline">4–6 séances · Sur mesure</span>
-          <span class="font-label text-[11px] uppercase tracking-[0.15em] text-primary shrink-0">→</span>
-        </div>
-      </a>
-    </div>
-
-    <!-- Liens hub -->
-    <div class="px-12 md:px-16 py-8 flex flex-col md:flex-row gap-4 md:gap-8 border-t-[0.5px] border-outline-variant mt-6">
-      <a href="ateliers.html" class="font-label text-[10px] uppercase tracking-[0.15em] text-outline hover:text-white transition-colors duration-300">Tous les ateliers →</a>
-      <a href="accompagnements.html" class="font-label text-[10px] uppercase tracking-[0.15em] text-outline hover:text-white transition-colors duration-300">Tous les accompagnements →</a>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-    LE FORMATEUR
-  ══════════════════════════════════ -->
-  <section class="grid grid-cols-1 md:grid-cols-2 border-b-[0.5px] border-outline-variant">
-    <div class="border-r-[0.5px] border-outline-variant p-12 md:p-16 flex flex-col justify-between min-h-[560px]">
-      <div>
-        <span class="font-label text-[11px] uppercase tracking-[0.2em] text-outline block mb-8">04 // À PROPOS</span>
-        <div class="w-full aspect-square overflow-hidden mb-8">
-          <img src="/benjamin-ali-aboudou.jpg" alt="Benjamin Ali Aboudou — Formateur Ennéagramme" class="w-full h-full object-cover" width="800" height="800" loading="lazy"/>
-        </div>
-        <span class="font-label text-[10px] tracking-[0.12em] uppercase text-outline">Formateur certifié · Coach A.C.C · IEA</span>
-      </div>
-    </div>
-    <div class="p-12 md:p-16 flex flex-col justify-between bg-surface-container-lowest">
-      <div class="space-y-8">
-        <h3 class="font-headline font-bold text-5xl uppercase tracking-tighter text-primary leading-tight">
-          BENJAMIN<br/>
-          <span class="text-outline">ALI ABOUDOU</span>
-        </h3>
-        <p class="font-body text-lg leading-relaxed text-on-surface">
-          Je m'intéresse depuis de nombreuses années à qui nous sommes — nos motivations, nos comportements, nos relations. Praticien-Formateur certifié et Coach Professionnel accrédité <span class="not-italic font-label font-bold text-white text-[11px]">A.C.C</span> par l'International Coach Federation, j'interviens en France et au Québec depuis 2021.
-        </p>
-        <p class="font-body text-lg leading-relaxed text-on-surface italic">
-          Je travaille en collaboration avec Dixit Ennéagramme, basé à Montréal, et suis membre de l'IEA et de Canada Ennéagramme.
-        </p>
-      </div>
-      <!-- Certifications -->
-      <div class="border-t-[0.5px] border-outline-variant mt-12">
-        <div class="flex justify-between py-3 border-b-[0.5px] border-outline-variant">
-          <span class="font-label text-[11px] text-on-surface">Certification A.C.C — International Coach Federation</span>
-          <span class="font-label text-[10px] text-outline ml-4 shrink-0">2025</span>
-        </div>
-        <div class="flex justify-between py-3 border-b-[0.5px] border-outline-variant">
-          <span class="font-label text-[11px] text-on-surface">Praticien-Formateur — Dixit Ennéagramme</span>
-          <span class="font-label text-[10px] text-outline ml-4 shrink-0">2021</span>
-        </div>
-        <div class="flex justify-between py-3 border-b-[0.5px] border-outline-variant">
-          <span class="font-label text-[11px] text-on-surface">Coach Professionnel — Mobius Coaching Management</span>
-          <span class="font-label text-[10px] text-outline ml-4 shrink-0">2021</span>
-        </div>
-        <div class="flex justify-between py-3">
-          <span class="font-label text-[11px] text-on-surface">Membre IEA &amp; Canada Ennéagramme</span>
-          <span class="font-label text-[10px] text-outline ml-4 shrink-0">2021 —</span>
-        </div>
-      </div>
-      <div class="flex justify-end mt-8">
-        <span class="font-label text-[11px] uppercase tracking-[0.2em] text-outline">04 // 05</span>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-    TÉMOIGNAGES
-  ══════════════════════════════════ -->
-  <section class="border-b-[0.5px] border-outline-variant px-12 md:px-16 pt-20 pb-0">
-    <p class="font-label text-[11px] uppercase tracking-[0.2em] mb-16 text-outline">05 // TÉMOIGNAGES</p>
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-outline-variant border-t-[0.5px] border-outline-variant">
-
-      <div class="bg-background p-10 md:p-12 flex flex-col justify-between">
-        <p class="font-body text-lg italic leading-relaxed text-on-surface">
-          « L'atelier m'a permis de mettre des mots sur des comportements que je ne comprenais pas chez moi depuis des années. Une vraie révélation. »
-        </p>
-        <div class="mt-8 pt-6 border-t-[0.5px] border-outline-variant">
-          <p class="font-label text-[11px] uppercase tracking-[0.15em] text-primary">Marie-Claude T.</p>
-          <p class="font-label text-[10px] uppercase tracking-[0.12em] text-outline mt-1">Montréal · Atelier Introduction</p>
-        </div>
-      </div>
-
-      <div class="bg-background p-10 md:p-12 flex flex-col justify-between border-l-[0.5px] border-r-[0.5px] border-outline-variant">
-        <p class="font-body text-lg italic leading-relaxed text-on-surface">
-          « Benjamin a cette capacité rare de rendre un outil complexe accessible et profondément humain. Mon équipe en parle encore six mois plus tard. »
-        </p>
-        <div class="mt-8 pt-6 border-t-[0.5px] border-outline-variant">
-          <p class="font-label text-[11px] uppercase tracking-[0.15em] text-primary">Sébastien L.</p>
-          <p class="font-label text-[10px] uppercase tracking-[0.12em] text-outline mt-1">Québec · Atelier Entreprise</p>
-        </div>
-      </div>
-
-      <div class="bg-background p-10 md:p-12 flex flex-col justify-between">
-        <p class="font-body text-lg italic leading-relaxed text-on-surface">
-          « L'accompagnement individuel a changé ma façon de me voir et de voir mes proches. Je comprends enfin d'où viennent mes réactions. »
-        </p>
-        <div class="mt-8 pt-6 border-t-[0.5px] border-outline-variant">
-          <p class="font-label text-[11px] uppercase tracking-[0.15em] text-primary">Isabelle M.</p>
-          <p class="font-label text-[10px] uppercase tracking-[0.12em] text-outline mt-1">En ligne · Accompagnement individuel</p>
-        </div>
-      </div>
-
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-    FAQ
-  ══════════════════════════════════ -->
-  <section class="border-b-[0.5px] border-outline-variant px-12 md:px-16 py-20">
-    <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
-      <div class="md:col-span-4">
-        <p class="font-label text-[11px] uppercase tracking-[0.2em] mb-6 text-outline">06 // FAQ</p>
-        <h2 class="font-headline font-bold uppercase tracking-tighter leading-[0.9] text-primary" style="font-size:clamp(32px,4vw,56px)">Questions<br/>fréquentes.</h2>
-        <p class="font-body text-base italic text-on-surface-variant mt-6 leading-relaxed">Vous ne trouvez pas la réponse ? Posez-moi directement votre question.</p>
-        <a class="mt-6 inline-block font-label text-[11px] uppercase tracking-[0.2em] text-primary border-b-[0.5px] border-primary pb-1 hover:text-outline hover:border-outline transition-colors duration-400" href="#">NOUS ÉCRIRE →</a>
-      </div>
-      <div class="md:col-span-7 md:col-start-6" itemscope itemtype="https://schema.org/FAQPage">
-
-        <div class="faq-item border-t-[0.5px] border-outline-variant" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <button class="faq-q w-full flex justify-between items-center py-6 text-left gap-8" aria-expanded="false">
-            <span class="font-headline font-bold text-lg uppercase tracking-tight text-primary" itemprop="name">Qu'est-ce que l'Ennéagramme ?</span>
-            <span class="faq-plus font-label text-xl text-outline shrink-0 transition-transform duration-300">+</span>
-          </button>
-          <div class="faq-ans" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p class="font-body text-base leading-relaxed text-on-surface pb-6" itemprop="text">L'Ennéagramme est une cartographie des personnalités qui identifie neuf profils fondamentaux, chacun structuré autour d'une motivation centrale, d'une peur profonde et d'un désir de base. Contrairement à d'autres outils, il ne décrit pas ce que vous faites, mais <em>pourquoi</em> vous le faites — ce qui en fait un outil puissant de connaissance de soi et de transformation durable.</p>
-          </div>
-        </div>
-
-        <div class="faq-item border-t-[0.5px] border-outline-variant" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <button class="faq-q w-full flex justify-between items-center py-6 text-left gap-8" aria-expanded="false">
-            <span class="font-headline font-bold text-lg uppercase tracking-tight text-primary" itemprop="name">Comment découvrir mon profil Ennéagramme ?</span>
-            <span class="faq-plus font-label text-xl text-outline shrink-0 transition-transform duration-300">+</span>
-          </button>
-          <div class="faq-ans" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p class="font-body text-base leading-relaxed text-on-surface pb-6" itemprop="text">La découverte du profil se fait idéalement en atelier ou en accompagnement guidé. Les tests en ligne donnent une première indication, mais le profil se confirme surtout par une exploration honnête des motivations profondes — pas des comportements de surface. Je propose des ateliers d'introduction et des entretiens exploratoires pour vous guider.</p>
-          </div>
-        </div>
-
-        <div class="faq-item border-t-[0.5px] border-outline-variant" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <button class="faq-q w-full flex justify-between items-center py-6 text-left gap-8" aria-expanded="false">
-            <span class="font-headline font-bold text-lg uppercase tracking-tight text-primary" itemprop="name">Quelle est la différence entre l'Ennéagramme et le MBTI ?</span>
-            <span class="faq-plus font-label text-xl text-outline shrink-0 transition-transform duration-300">+</span>
-          </button>
-          <div class="faq-ans" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p class="font-body text-base leading-relaxed text-on-surface pb-6" itemprop="text">Le MBTI décrit des préférences comportementales observables — comment vous agissez. L'Ennéagramme va plus loin en explorant les motivations inconscientes derrière ces comportements — pourquoi vous agissez ainsi. Il est aussi un outil de développement : il montre non seulement qui vous êtes aujourd'hui, mais vers qui vous pouvez évoluer.</p>
-          </div>
-        </div>
-
-        <div class="faq-item border-t-[0.5px] border-outline-variant" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <button class="faq-q w-full flex justify-between items-center py-6 text-left gap-8" aria-expanded="false">
-            <span class="font-headline font-bold text-lg uppercase tracking-tight text-primary" itemprop="name">L'Ennéagramme est-il fait pour moi ?</span>
-            <span class="faq-plus font-label text-xl text-outline shrink-0 transition-transform duration-300">+</span>
-          </button>
-          <div class="faq-ans" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p class="font-body text-base leading-relaxed text-on-surface pb-6" itemprop="text">L'Ennéagramme s'adresse à toute personne curieuse de se comprendre plus profondément — améliorer ses relations, dépasser des schémas répétitifs, mieux collaborer. Il est utilisé en développement personnel, en coaching, en entreprise et en contexte de couple. Si certains comportements ou réactions se répètent dans votre vie, l'Ennéagramme peut offrir un éclairage décisif.</p>
-          </div>
-        </div>
-
-        <div class="faq-item border-t-[0.5px] border-outline-variant" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <button class="faq-q w-full flex justify-between items-center py-6 text-left gap-8" aria-expanded="false">
-            <span class="font-headline font-bold text-lg uppercase tracking-tight text-primary" itemprop="name">Comment se déroule un entretien exploratoire ?</span>
-            <span class="faq-plus font-label text-xl text-outline shrink-0 transition-transform duration-300">+</span>
-          </button>
-          <div class="faq-ans" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p class="font-body text-base leading-relaxed text-on-surface pb-6" itemprop="text">L'entretien exploratoire est une rencontre gratuite de 30 minutes, sans engagement. Il permet de faire connaissance, de clarifier vos questions et d'identifier le profil d'accompagnement ou d'atelier le plus adapté à votre situation. Il se déroule en ligne via visioconférence.</p>
-          </div>
-        </div>
-
-        <div class="faq-item border-t-[0.5px] border-b-[0.5px] border-outline-variant" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
-          <button class="faq-q w-full flex justify-between items-center py-6 text-left gap-8" aria-expanded="false">
-            <span class="font-headline font-bold text-lg uppercase tracking-tight text-primary" itemprop="name">Proposez-vous des ateliers Ennéagramme en ligne au Québec ?</span>
-            <span class="faq-plus font-label text-xl text-outline shrink-0 transition-transform duration-300">+</span>
-          </button>
-          <div class="faq-ans" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
-            <p class="font-body text-base leading-relaxed text-on-surface pb-6" itemprop="text">Oui. Tous mes ateliers sont disponibles en ligne, ce qui me permet d'intervenir partout au Québec — Montréal, Québec, Trois-Rivières, Sherbrooke — ainsi qu'en France. Certains ateliers sont également proposés en présentiel à Montréal.</p>
-          </div>
-        </div>
-
-      </div>
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-    BLOG — Derniers articles
-  ══════════════════════════════════ -->
-  <section class="border-b-[0.5px] border-outline-variant px-12 md:px-16 pt-20 pb-0">
-    <div class="flex justify-between items-end mb-16">
-      <div>
-        <p class="font-label text-[11px] uppercase tracking-[0.2em] mb-4 text-outline">07 // BLOG</p>
-        <h2 class="font-headline font-bold uppercase tracking-tighter text-primary" style="font-size:clamp(28px,3.5vw,48px)">Derniers articles.</h2>
-      </div>
-      <a class="font-label text-[11px] uppercase tracking-[0.2em] text-outline hover:text-primary transition-colors duration-400 pb-1 border-b-[0.5px] border-outline hover:border-primary" href="#">VOIR TOUS LES ARTICLES →</a>
-    </div>
-
-    <div class="grid grid-cols-1 md:grid-cols-3 gap-px bg-outline-variant border-t-[0.5px] border-outline-variant">
-
-      <article class="bg-background p-10 md:p-12 flex flex-col justify-between group cursor-pointer">
-        <div>
-          <p class="font-label text-[10px] uppercase tracking-[0.15em] text-outline mb-6">13 AVRIL 2026 · COLLECTIF</p>
-          <h3 class="font-headline font-bold text-xl uppercase tracking-tight text-primary leading-tight group-hover:tracking-wide transition-all duration-500">Ennéagramme en équipe : construire une vision partagée grâce aux 9 profils</h3>
-          <p class="font-body text-sm italic text-on-surface-variant mt-4 leading-relaxed">Comment l'Ennéagramme permet de dépasser les angles morts collectifs et d'aligner une équipe autour d'une vision commune — selon les travaux de Peter Senge.</p>
-        </div>
-        <a class="mt-8 font-label text-[11px] uppercase tracking-[0.15em] text-outline group-hover:text-primary transition-colors duration-400 border-b-[0.5px] border-outline group-hover:border-primary pb-1 self-start" href="enneagramme-equipe-vision-partagee-peter-senge.html">LIRE L'ARTICLE →</a>
-      </article>
-
-      <article class="bg-background p-10 md:p-12 flex flex-col justify-between border-l-[0.5px] border-r-[0.5px] border-outline-variant group cursor-pointer">
-        <div>
-          <p class="font-label text-[10px] uppercase tracking-[0.15em] text-outline mb-6">06 AVRIL 2026 · COUPLE</p>
-          <h3 class="font-headline font-bold text-xl uppercase tracking-tight text-primary leading-tight group-hover:tracking-wide transition-all duration-500">Ennéagramme et couple : construire une vision commune grâce aux 9 profils</h3>
-          <p class="font-body text-sm italic text-on-surface-variant mt-4 leading-relaxed">Comment l'Ennéagramme aide les couples à dépasser leurs divergences profondes et à construire une vision commune — inspiré d'Esther Perel.</p>
-        </div>
-        <a class="mt-8 font-label text-[11px] uppercase tracking-[0.15em] text-outline group-hover:text-primary transition-colors duration-400 border-b-[0.5px] border-outline group-hover:border-primary pb-1 self-start" href="enneagramme-couple-vision-commune-esther-perel.html">LIRE L'ARTICLE →</a>
-      </article>
-
-      <article class="bg-background p-10 md:p-12 flex flex-col justify-between group cursor-pointer">
-        <div>
-          <p class="font-label text-[10px] uppercase tracking-[0.15em] text-outline mb-6">30 MARS 2026 · PERSONNEL</p>
-          <h3 class="font-headline font-bold text-xl uppercase tracking-tight text-primary leading-tight group-hover:tracking-wide transition-all duration-500">Ennéagramme au quotidien : applications pratiques pour chaque profil</h3>
-          <p class="font-body text-sm italic text-on-surface-variant mt-4 leading-relaxed">Comment intégrer l'Ennéagramme dans la vie de tous les jours — décisions, relations, stress — à travers les pratiques concrètes d'Éric Salmon.</p>
-        </div>
-        <a class="mt-8 font-label text-[11px] uppercase tracking-[0.15em] text-outline group-hover:text-primary transition-colors duration-400 border-b-[0.5px] border-outline group-hover:border-primary pb-1 self-start" href="enneagramme-quotidien-applications-pratiques-eric-salmon.html">LIRE L'ARTICLE →</a>
-      </article>
-
-    </div>
-  </section>
-
-  <!-- ══════════════════════════════════
-    COMMENCER — CTA + FORM
-  ══════════════════════════════════ -->
-  <section class="relative min-h-[760px] flex items-center border-t-[0.5px] border-outline-variant overflow-hidden">
-    <div class="px-12 w-full grid grid-cols-1 md:grid-cols-4 gap-12">
-      <div class="md:col-start-2 md:col-span-2 space-y-12">
-        <div>
-          <p class="font-label text-[11px] uppercase tracking-[0.2em] mb-8 text-outline">05 // COMMENCER</p>
-          <h2 class="font-headline font-bold tracking-tighter uppercase text-primary leading-none" style="font-size:clamp(40px,7vw,88px)">
-            DÉMARRER<br/>LA DÉMARCHE
-          </h2>
-        </div>
-        <p class="font-body text-xl max-w-md italic text-on-surface leading-relaxed">
-          Un entretien exploratoire gratuit de 30 minutes — sans engagement, juste de la curiosité.
-        </p>
-        <form class="space-y-10">
-          <div class="relative">
-            <label for="contact-nom" class="sr-only">Nom</label>
-            <input id="contact-nom" name="nom" class="w-full bg-transparent border-0 border-b-[0.5px] border-outline-variant py-4 px-0 font-label text-[11px] tracking-widest text-white placeholder:text-outline focus:ring-0 focus:border-white transition-colors duration-500 outline-none" placeholder="NOM" type="text" autocomplete="name"/>
-          </div>
-          <div class="relative">
-            <label for="contact-email" class="sr-only">Email</label>
-            <input id="contact-email" name="email" class="w-full bg-transparent border-0 border-b-[0.5px] border-outline-variant py-4 px-0 font-label text-[11px] tracking-widest text-white placeholder:text-outline focus:ring-0 focus:border-white transition-colors duration-500 outline-none" placeholder="EMAIL" type="email" autocomplete="email"/>
-          </div>
-          <div class="relative">
-            <label for="contact-message" class="sr-only">Message</label>
-            <textarea id="contact-message" name="message" class="w-full bg-transparent border-0 border-b-[0.5px] border-outline-variant py-4 px-0 font-label text-[11px] tracking-widest text-white placeholder:text-outline focus:ring-0 focus:border-white transition-colors duration-500 outline-none resize-none" placeholder="MESSAGE" rows="1"></textarea>
-          </div>
-          <button class="font-headline text-2xl font-bold text-primary hover:tracking-[0.15em] transition-all duration-700 uppercase flex items-center gap-4" type="submit">
-            ENVOYER LA DEMANDE
-            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
-          </button>
-        </form>
-      </div>
-    </div>
-    <!-- Ghost enneagram bg -->
-    <div class="absolute right-8 top-1/2 -translate-y-1/2 pointer-events-none opacity-[0.04]">
-      <svg viewBox="0 0 440 440" class="w-[520px]" xmlns="http://www.w3.org/2000/svg">
-        <circle cx="220" cy="220" r="176" fill="none" stroke="white" stroke-width="1.5"/>
-        <polygon points="220,44 373,308 67,308" fill="none" stroke="white" stroke-width="1.5"/>
-        <polyline points="333,85 280,386 393,189 107,85 160,386 47,189 333,85" fill="none" stroke="white" stroke-width="1.5"/>
-      </svg>
-    </div>
-    <div class="absolute bottom-8 right-12">
-      <span class="font-label text-[10px] tracking-widest text-outline">05 // 05</span>
+      <form action="mailto:benjamin@ohayo.io" method="post" enctype="text/plain">
+        <label for="contact-nom" class="sr-only">Nom</label>
+        <input id="contact-nom" name="nom" type="text" autocomplete="name" placeholder="Votre nom" required/>
+        <label for="contact-email" class="sr-only">Courriel</label>
+        <input id="contact-email" name="courriel" type="email" autocomplete="email" placeholder="Votre courriel" required/>
+        <label for="contact-message" class="sr-only">Message</label>
+        <textarea id="contact-message" name="message" rows="3" placeholder="Ce qui vous amène"></textarea>
+        <button class="pill" type="submit">Demander un entretien <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></button>
+      </form>
+      <svg class="ghost" viewBox="0 0 440 440" aria-hidden="true"><g fill="none" stroke="#fff" stroke-width="2"><circle cx="220" cy="220" r="176"/><polygon points="220,44 373,308 67,308"/><polyline points="333,85 280,386 393,189 107,85 160,386 47,189 333,85"/></g></svg>
     </div>
   </section>
 
@@ -750,19 +453,38 @@
 <!-- ══════════════════════════════════
   FOOTER
 ══════════════════════════════════ -->
-<footer class="bg-[#000000] w-full py-10 mt-auto border-t-[0.5px] border-[#474747]">
+<footer class="bg-[#ffffff] w-full py-10 mt-auto border-t-[0.5px] border-[#e4e4e4]">
   <div class="flex justify-between items-center px-12 w-full">
-    <div class="font-label text-[11px] tracking-[0.1em] uppercase text-[#e2e2e2]">© 2026 BENJAMIN ALI ABOUDOU — FRANCE &amp; QUÉBEC</div>
+    <div class="font-label text-[11px] tracking-[0.1em] uppercase text-[#333333]">© 2026 BENJAMIN ALI ABOUDOU — FRANCE &amp; QUÉBEC</div>
     <div class="flex gap-10">
-      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#919191] hover:text-white transition-colors duration-400" href="mentions-legales.html">MENTIONS LÉGALES</a>
-      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#919191] hover:text-white transition-colors duration-400" href="cgv.html">CGV</a>
-      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#919191] hover:text-white transition-colors duration-400" href="confidentialite.html">CONFIDENTIALITÉ</a>
-      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#919191] hover:text-white transition-colors duration-400" href="ethique.html">ÉTHIQUE</a>
+      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#767676] hover:text-white transition-colors duration-400" href="mentions-legales.html">MENTIONS LÉGALES</a>
+      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#767676] hover:text-white transition-colors duration-400" href="cgv.html">CGV</a>
+      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#767676] hover:text-white transition-colors duration-400" href="confidentialite.html">CONFIDENTIALITÉ</a>
+      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#767676] hover:text-white transition-colors duration-400" href="ethique.html">ÉTHIQUE</a>
     </div>
   </div>
 </footer>
 
 <script>
+  (function () {
+    var tabs = document.querySelectorAll('.finder__tabs [role="tab"]');
+    function select(t) {
+      tabs.forEach(function (o) {
+        var on = o === t;
+        o.setAttribute('aria-selected', on);
+        o.tabIndex = on ? 0 : -1;
+        document.getElementById(o.getAttribute('aria-controls')).hidden = !on;
+      });
+    }
+    tabs.forEach(function (t, i) {
+      t.addEventListener('click', function () { select(t); });
+      t.addEventListener('keydown', function (e) {
+        if (e.key !== 'ArrowRight' && e.key !== 'ArrowLeft') return;
+        var n = tabs[(i + (e.key === 'ArrowRight' ? 1 : tabs.length - 1)) % tabs.length];
+        select(n); n.focus();
+      });
+    });
+  })();
   document.querySelectorAll('.faq-item').forEach(item => {
     const btn = item.querySelector('.faq-q');
     btn?.addEventListener('click', () => {
@@ -774,14 +496,6 @@
       if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
     });
   });
-</script>
-<script>
-(function(){
-  var d=document.getElementById('cursor-dot');
-  document.addEventListener('mousemove',function(e){d.style.left=e.clientX+'px';d.style.top=e.clientY+'px';});
-  document.addEventListener('mouseleave',function(){d.style.opacity='0';});
-  document.addEventListener('mouseenter',function(){d.style.opacity='1';});
-})();
 </script>
 </body>
 </html>
