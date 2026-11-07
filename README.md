@@ -19,3 +19,16 @@ python3 -m http.server 8000
 ```
 
 Puis ouvrir http://localhost:8000.
+
+## Infolettre (Brevo)
+
+Formulaire d'inscription (section `#infolettre`) sur les pages principales et les articles,
+envoyé en AJAX par `newsletter.js` à `api/newsletter.php`, qui appelle l'API Brevo côté serveur.
+
+La clé API n'est **jamais** versionnée ni exposée au navigateur. Sur Hostinger :
+
+1. Copier `api/newsletter-config.example.php` en `newsletter-config.php` **au-dessus de `public_html`**
+   (sinon dans `public_html/api/` — fichier ignoré par git et bloqué par `api/.htaccess`).
+2. Renseigner `api_key`, `list_id` (Brevo > Contacts > Listes) et, recommandé,
+   `doi_template_id` (modèle de double opt-in) pour envoyer un courriel de confirmation.
+3. Après confirmation, Brevo redirige vers `infolettre-confirmee.html`.

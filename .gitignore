@@ -1,0 +1,3 @@
+# Secrets — ne jamais versionner
+newsletter-config.php
+.env
