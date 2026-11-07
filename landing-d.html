@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html class="dark" lang="fr">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>ENNÉAGRAMME | Benjamin Ali Aboudou</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;700&family=Noto+Serif:ital,wght@0,400;1,400&family=Inter:wght@400;600&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      borderRadius: { DEFAULT: "0px", lg: "0px", xl: "0px", full: "0px" },
+      fontFamily: {
+        headline: ["Space Grotesk"],
+        body: ["Noto Serif"],
+        label: ["Inter"]
+      },
+      colors: {
+        "background":   "#131313",
+        "surface":      "#131313",
+        "surface-low":  "#1a1a1a",
+        "surface-high": "#1f1f1f",
+        "primary":      "#ffffff",
+        "on-surface":   "#e2e2e2",
+        "muted":        "#919191",
+        "border":       "#474747"
+      }
+    }
+  }
+}
+</script>
+<style>
+  body { background-color:#131313; color:#e2e2e2; overflow-x:hidden; }
+  .grid-line-v { width:0.5px; background:#474747; height:100%; position:absolute; pointer-events:none; }
+  .grid-line-h { height:0.5px; background:#474747; width:100%; position:absolute; pointer-events:none; }
+  .material-symbols-outlined { font-variation-settings:'FILL' 0,'wght' 200,'GRAD' 0,'opsz' 24; }
+  ::selection { background:#ffffff; color:#131313; }
+  .faq-ans { max-height:0; overflow:hidden; transition:max-height .35s ease, padding .35s ease; }
+  .faq-item.open .faq-ans { max-height:300px; padding-bottom:2rem; }
+  .faq-item.open .faq-toggle { transform:rotate(45deg); }
+  /* Fade in */
+  .fi { opacity:0; transform:translateY(16px); transition:opacity .65s ease, transform .65s ease; }
+  .fi.v { opacity:1; transform:none; }
+</style>
+</head>
+<body class="font-body">
+
+<!-- ════════════════════════════════════
+  BACKGROUND GRID LINES — Fixed overlay
+═════════════════════════════════════ -->
+<div class="fixed inset-0 pointer-events-none z-0 overflow-hidden">
+  <div class="grid-line-v left-12"></div>
+  <div class="grid-line-v left-1/4"></div>
+  <div class="grid-line-v left-1/2"></div>
+  <div class="grid-line-v left-3/4"></div>
+  <div class="grid-line-v right-12"></div>
+</div>
+
+<!-- ════════════════════════════════════
+  NAV
+═════════════════════════════════════ -->
+<header class="w-full h-20 flex items-center bg-[#131313] border-b-[0.5px] border-[#474747] sticky top-0 z-50">
+  <div class="flex justify-between items-center px-12 w-full">
+    <a class="font-headline text-xl font-bold tracking-tighter uppercase text-white" href="#">ENNÉAGRAMME</a>
+    <nav class="hidden md:flex space-x-10">
+      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-white border-b border-white pb-0.5" href="#">L'ENNÉAGRAMME</a>
+      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#919191] hover:text-white transition-colors duration-300" href="#">FORMATIONS</a>
+      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#919191] hover:text-white transition-colors duration-300" href="#">ACCOMPAGNEMENTS</a>
+      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#919191] hover:text-white transition-colors duration-300" href="#">FORMATEUR</a>
+      <a class="font-label text-[11px] tracking-[0.1em] uppercase text-[#919191] hover:text-white transition-colors duration-300" href="blog.html">BLOG</a>
+    </nav>
+    <a class="bg-white text-[#131313] font-label font-semibold text-[11px] tracking-[0.15em] uppercase px-8 py-3 hover:bg-[#e2e2e2] transition-colors duration-300" href="#">CONTACT →</a>
+  </div>
+</header>
+
+<!-- ════════════════════════════════════
+  HERO — 01 // 05
+═════════════════════════════════════ -->
+<section class="relative min-h-screen flex flex-col justify-end border-b-[0.5px] border-[#474747] px-12 pb-20">
+  <!-- Horizontal midline -->
+  <div class="grid-line-h top-1/2"></div>
+
+  <!-- Enneagram SVG — centered in top half -->
+  <div class="absolute top-0 left-0 right-0 flex items-center justify-center" style="height:50%">
+    <svg viewBox="0 0 440 440" class="w-64 md:w-80 opacity-30" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="220" cy="220" r="204" fill="none" stroke="white" stroke-width="0.5"/>
+      <circle cx="220" cy="220" r="176" fill="none" stroke="white" stroke-width="0.7"/>
+      <polygon points="220,44 373,308 67,308" fill="none" stroke="white" stroke-width="0.7"/>
+      <polyline points="333,85 280,386 393,189 107,85 160,386 47,189 333,85" fill="none" stroke="white" stroke-width="0.7"/>
+      <g fill="white">
+        <circle cx="220" cy="44"  r="2.5"/>
+        <circle cx="333" cy="85"  r="2.5"/>
+        <circle cx="393" cy="189" r="2.5"/>
+        <circle cx="373" cy="308" r="2.5"/>
+        <circle cx="280" cy="386" r="2.5"/>
+        <circle cx="160" cy="386" r="2.5"/>
+        <circle cx="67"  cy="308" r="2.5"/>
+        <circle cx="47"  cy="189" r="2.5"/>
+        <circle cx="107" cy="85"  r="2.5"/>
+        <circle cx="220" cy="220" r="2"/>
+      </g>
+      <g fill="rgba(255,255,255,0.3)" font-size="11" font-family="Inter, monospace">
+        <text x="220" y="28"  text-anchor="middle">9</text>
+        <text x="347" y="80"  text-anchor="middle">1</text>
+        <text x="412" y="192" text-anchor="middle">2</text>
+        <text x="393" y="325" text-anchor="middle">3</text>
+        <text x="293" y="408" text-anchor="middle">4</text>
+        <text x="147" y="408" text-anchor="middle">5</text>
+        <text x="47"  y="325" text-anchor="middle">6</text>
+        <text x="26"  y="192" text-anchor="middle">7</text>
+        <text x="93"  y="80"  text-anchor="middle">8</text>
+      </g>
+    </svg>
+  </div>
+
+  <!-- Text — bottom aligned -->
+  <div class="z-10 fi">
+    <p class="font-label text-[11px] tracking-[0.3em] uppercase mb-6 text-white opacity-50">BENJAMIN ALI ABOUDOU // MMXXI</p>
+    <h1 class="font-headline font-bold tracking-tighter uppercase text-white mb-10 leading-[0.85]" style="font-size:clamp(64px,10vw,140px)">
+      ENNÉA<br/>GRAMME
+    </h1>
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-10">
+      <p class="font-body text-lg max-w-md italic text-[#e2e2e2] opacity-80">
+        Un système de connaissance de soi — neuf profils de personnalité, leurs motivations profondes et leur chemin de transformation.
+      </p>
+      <a class="bg-white text-[#131313] font-label font-semibold text-[11px] tracking-[0.2em] uppercase px-10 py-4 hover:bg-[#e2e2e2] transition-colors duration-500" href="#">
+        DÉCOUVRIR LE SYSTÈME
+      </a>
+    </div>
+  </div>
+  <div class="absolute bottom-8 right-12">
+    <span class="font-label text-[10px] tracking-widest text-[#919191]">01 // 05</span>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+  I. L'ENNÉAGRAMME — 02 // 05
+═════════════════════════════════════ -->
+<section class="relative grid grid-cols-1 md:grid-cols-4 border-b-[0.5px] border-[#474747]">
+  <div class="md:col-span-1 border-r-[0.5px] border-[#474747] p-12">
+    <h2 class="font-label text-[11px] tracking-[0.2em] uppercase text-white sticky top-24">I. L'ENNÉAGRAMME</h2>
+  </div>
+  <div class="md:col-span-3 p-12 md:p-20 flex flex-col justify-center fi">
+    <div class="max-w-3xl space-y-20">
+      <div class="space-y-6">
+        <p class="font-headline text-4xl md:text-5xl font-light text-white tracking-tight leading-tight">
+          "L'Ennéagramme ne décrit pas ce que nous faisons, mais pourquoi nous le faisons."
+        </p>
+        <p class="font-label text-[11px] tracking-[0.12em] uppercase text-[#919191]">— HELEN PALMER, PIONNIÈRE DE L'ENNÉAGRAMME</p>
+        <p class="font-body text-base text-[#e2e2e2] opacity-75 leading-relaxed max-w-xl">
+          Contrairement aux tests de personnalité classiques, l'Ennéagramme explore les motivations inconscientes qui génèrent vos comportements — pas seulement leurs manifestations. Ce n'est pas une étiquette. C'est un miroir.
+        </p>
+      </div>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-px bg-[#474747]">
+        <div class="p-8 bg-[#131313] border-[0.5px] border-[#474747] group hover:border-white transition-colors duration-700 cursor-default">
+          <h3 class="font-headline text-xl font-bold mb-3 text-white tracking-tight">MOTIVATIONS</h3>
+          <p class="font-body text-sm text-[#e2e2e2] opacity-70 italic">Les peurs et désirs profonds qui orientent silencieusement chaque décision.</p>
+        </div>
+        <div class="p-8 bg-[#131313] border-[0.5px] border-[#474747] group hover:border-white transition-colors duration-700 cursor-default">
+          <h3 class="font-headline text-xl font-bold mb-3 text-white tracking-tight">TRANSFORMATION</h3>
+          <p class="font-body text-sm text-[#e2e2e2] opacity-70 italic">Un chemin de croissance — non seulement qui vous êtes, mais vers qui vous pouvez évoluer.</p>
+        </div>
+        <div class="p-8 bg-[#131313] border-[0.5px] border-[#474747] group hover:border-white transition-colors duration-700 cursor-default">
+          <h3 class="font-headline text-xl font-bold mb-3 text-white tracking-tight">RELATIONS</h3>
+          <p class="font-body text-sm text-[#e2e2e2] opacity-70 italic">Décrypter les dynamiques entre les profils pour transformer conflits en connexion.</p>
+        </div>
+        <div class="p-8 bg-[#131313] border-[0.5px] border-[#474747] group hover:border-white transition-colors duration-700 cursor-default">
+          <h3 class="font-headline text-xl font-bold mb-3 text-white tracking-tight">APPLICATION</h3>
+          <p class="font-body text-sm text-[#e2e2e2] opacity-70 italic">Couple, travail, parentalité, leadership — des clés concrètes dans chaque sphère.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-8 right-12">
+    <span class="font-label text-[10px] tracking-widest text-[#919191]">02 // 05</span>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+  II. FORMATIONS — 03 // 05
+═════════════════════════════════════ -->
+<section class="relative border-b-[0.5px] border-[#474747]">
+  <!-- Section label row -->
+  <div class="grid grid-cols-4 border-b-[0.5px] border-[#474747]">
+    <div class="col-span-1 border-r-[0.5px] border-[#474747] p-12">
+      <h2 class="font-label text-[11px] tracking-[0.2em] uppercase text-white">II. FORMATIONS</h2>
+    </div>
+    <div class="col-span-3 p-12">
+      <p class="font-body italic text-[#919191] text-sm max-w-lg">Des formats adaptés à chaque contexte — groupe, individuel, entreprise. En présentiel ou à distance, France & Québec.</p>
+    </div>
+  </div>
+
+  <!-- Table columns header -->
+  <div class="grid px-12 py-3 border-b-[0.5px] border-[#474747] bg-[#1a1a1a]"
+       style="grid-template-columns: 44px 1fr 160px 100px 32px">
+    <span class="font-label text-[9px] tracking-[0.18em] uppercase text-[#919191]">N°</span>
+    <span class="font-label text-[9px] tracking-[0.18em] uppercase text-[#919191]">SERVICE</span>
+    <span class="font-label text-[9px] tracking-[0.18em] uppercase text-[#919191]">PROFIL</span>
+    <span class="font-label text-[9px] tracking-[0.18em] uppercase text-[#919191]">FORMAT</span>
+    <span></span>
+  </div>
+
+  <!-- Service rows -->
+  <div class="fi">
+    <div class="grid px-12 py-6 border-b-[0.5px] border-[#474747] items-center group hover:bg-[#1a1a1a] transition-colors duration-400 cursor-crosshair"
+         style="grid-template-columns: 44px 1fr 160px 100px 32px">
+      <span class="font-label text-[10px] text-[#919191]">01</span>
+      <div>
+        <div class="font-headline font-bold text-lg text-white group-hover:tracking-wide transition-all duration-700">INTRODUCTION À L'ENNÉAGRAMME</div>
+        <div class="font-body italic text-[11px] text-[#919191] mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-700">Découverte des 9 profils — aucun prérequis</div>
+      </div>
+      <span class="font-label text-[10px] tracking-[0.08em] uppercase text-[#919191]">Formation</span>
+      <span class="font-label text-[10px] text-[#919191]">3h · Groupe</span>
+      <span class="font-label text-[11px] border-[0.5px] border-[#474747] group-hover:border-white px-3 py-1.5 text-[#919191] group-hover:text-white transition-all duration-400 text-center">↗</span>
+    </div>
+    <div class="grid px-12 py-6 border-b-[0.5px] border-[#474747] items-center group hover:bg-[#1a1a1a] transition-colors duration-400 cursor-crosshair"
+         style="grid-template-columns: 44px 1fr 160px 100px 32px">
+      <span class="font-label text-[10px] text-[#919191]">02</span>
+      <div>
+        <div class="font-headline font-bold text-lg text-white group-hover:tracking-wide transition-all duration-700">LES BASES DE L'ENNÉAGRAMME</div>
+        <div class="font-body italic text-[11px] text-[#919191] mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-700">Centres, ailes, niveaux de développement</div>
+      </div>
+      <span class="font-label text-[10px] tracking-[0.08em] uppercase text-[#919191]">Formation</span>
+      <span class="font-label text-[10px] text-[#919191]">1 jour</span>
+      <span class="font-label text-[11px] border-[0.5px] border-[#474747] group-hover:border-white px-3 py-1.5 text-[#919191] group-hover:text-white transition-all duration-400 text-center">↗</span>
+    </div>
+    <div class="grid px-12 py-6 border-b-[0.5px] border-[#474747] items-center group hover:bg-[#1a1a1a] transition-colors duration-400 cursor-crosshair"
+         style="grid-template-columns: 44px 1fr 160px 100px 32px">
+      <span class="font-label text-[10px] text-[#919191]">03</span>
+      <div>
+        <div class="font-headline font-bold text-lg text-white group-hover:tracking-wide transition-all duration-700">ENNÉAGRAMME À DOMICILE</div>
+        <div class="font-body italic text-[11px] text-[#919191] mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-700">Atelier privé — 3 à 8 personnes</div>
+      </div>
+      <span class="font-label text-[10px] tracking-[0.08em] uppercase text-[#919191]">Atelier</span>
+      <span class="font-label text-[10px] text-[#919191]">3h · Privé</span>
+      <span class="font-label text-[11px] border-[0.5px] border-[#474747] group-hover:border-white px-3 py-1.5 text-[#919191] group-hover:text-white transition-all duration-400 text-center">↗</span>
+    </div>
+    <div class="grid px-12 py-6 border-b-[0.5px] border-[#474747] items-center group hover:bg-[#1a1a1a] transition-colors duration-400 cursor-crosshair"
+         style="grid-template-columns: 44px 1fr 160px 100px 32px">
+      <span class="font-label text-[10px] text-[#919191]">04</span>
+      <div>
+        <div class="font-headline font-bold text-lg text-white group-hover:tracking-wide transition-all duration-700">ACCOMPAGNEMENT INDIVIDUEL</div>
+        <div class="font-body italic text-[11px] text-[#919191] mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-700">Identification du profil et chemin de croissance</div>
+      </div>
+      <span class="font-label text-[10px] tracking-[0.08em] uppercase text-[#919191]">Accompagnement</span>
+      <span class="font-label text-[10px] text-[#919191]">Individuel</span>
+      <span class="font-label text-[11px] border-[0.5px] border-[#474747] group-hover:border-white px-3 py-1.5 text-[#919191] group-hover:text-white transition-all duration-400 text-center">↗</span>
+    </div>
+    <div class="grid px-12 py-6 border-b-[0.5px] border-[#474747] items-center group hover:bg-[#1a1a1a] transition-colors duration-400 cursor-crosshair"
+         style="grid-template-columns: 44px 1fr 160px 100px 32px">
+      <span class="font-label text-[10px] text-[#919191]">05</span>
+      <div>
+        <div class="font-headline font-bold text-lg text-white group-hover:tracking-wide transition-all duration-700">ENNÉAGRAMME & COUPLE</div>
+        <div class="font-body italic text-[11px] text-[#919191] mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-700">Dynamiques relationnelles — communication entre profils</div>
+      </div>
+      <span class="font-label text-[10px] tracking-[0.08em] uppercase text-[#919191]">Thématique</span>
+      <span class="font-label text-[10px] text-[#919191]">Duo</span>
+      <span class="font-label text-[11px] border-[0.5px] border-[#474747] group-hover:border-white px-3 py-1.5 text-[#919191] group-hover:text-white transition-all duration-400 text-center">↗</span>
+    </div>
+    <div class="grid px-12 py-6 items-center group hover:bg-[#1a1a1a] transition-colors duration-400 cursor-crosshair"
+         style="grid-template-columns: 44px 1fr 160px 100px 32px">
+      <span class="font-label text-[10px] text-[#919191]">06</span>
+      <div>
+        <div class="font-headline font-bold text-lg text-white group-hover:tracking-wide transition-all duration-700">ENNÉAGRAMME EN ENTREPRISE</div>
+        <div class="font-body italic text-[11px] text-[#919191] mt-1 opacity-0 group-hover:opacity-100 transition-opacity duration-700">Cohésion d'équipe · RH · Management · Santé</div>
+      </div>
+      <span class="font-label text-[10px] tracking-[0.08em] uppercase text-[#919191]">Professionnel</span>
+      <span class="font-label text-[10px] text-[#919191]">Sur devis</span>
+      <span class="font-label text-[11px] border-[0.5px] border-[#474747] group-hover:border-white px-3 py-1.5 text-[#919191] group-hover:text-white transition-all duration-400 text-center">↗</span>
+    </div>
+  </div>
+
+  <div class="absolute bottom-8 right-12">
+    <span class="font-label text-[10px] tracking-widest text-[#919191]">03 // 05</span>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+  III. LE FORMATEUR — 04 // 05
+═════════════════════════════════════ -->
+<section class="relative grid grid-cols-1 md:grid-cols-4 border-b-[0.5px] border-[#474747]">
+  <div class="md:col-span-1 border-r-[0.5px] border-[#474747] p-12">
+    <h2 class="font-label text-[11px] tracking-[0.2em] uppercase text-white sticky top-24">III. LE FORMATEUR</h2>
+  </div>
+  <div class="md:col-span-3 p-12 md:p-20 fi">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
+      <!-- Photo -->
+      <div>
+        <div class="w-full aspect-[3/4] bg-[#1a1a1a] border-[0.5px] border-[#474747] flex items-center justify-center mb-4">
+          <span class="font-headline font-bold text-[80px] text-[#2a2a2a] tracking-tighter select-none">BA</span>
+        </div>
+        <div class="flex justify-between items-center">
+          <span class="font-label text-[9px] tracking-[0.12em] uppercase text-[#919191]">Benjamin Ali Aboudou</span>
+          <span class="font-label text-[9px] tracking-[0.12em] uppercase text-[#919191]">Formateur · Coach ACC</span>
+        </div>
+      </div>
+      <!-- Bio -->
+      <div class="flex flex-col justify-between gap-12">
+        <div class="space-y-8">
+          <h3 class="font-headline font-bold text-4xl md:text-5xl text-white tracking-tighter uppercase leading-none">
+            BENJAMIN<br/>
+            <span class="text-[#919191]">ALI ABOUDOU</span>
+          </h3>
+          <p class="font-body text-base text-[#e2e2e2] opacity-75 leading-relaxed">
+            Praticien-Formateur en Ennéagramme certifié et Coach Professionnel accrédité <span class="not-italic font-label font-semibold text-white text-[11px]">A.C.C</span> par l'International Coach Federation, Benjamin intervient en France et au Québec depuis 2021.
+          </p>
+          <p class="font-body text-base text-[#e2e2e2] opacity-75 leading-relaxed">
+            Sa démarche conjugue rigueur théorique et ancrage dans l'expérience humaine concrète. Membre de l'<span class="not-italic font-label text-white text-[11px]">IEA</span> et de <span class="not-italic font-label text-white text-[11px]">CANADA ENNÉAGRAMME</span>.
+          </p>
+        </div>
+        <!-- Certifications list -->
+        <div class="border-t-[0.5px] border-[#474747]">
+          <div class="flex justify-between items-baseline py-3 border-b-[0.5px] border-[#474747]">
+            <span class="font-label text-[11px] text-[#e2e2e2]">Certification A.C.C — International Coach Federation</span>
+            <span class="font-label text-[10px] text-[#919191] ml-4 shrink-0">2025</span>
+          </div>
+          <div class="flex justify-between items-baseline py-3 border-b-[0.5px] border-[#474747]">
+            <span class="font-label text-[11px] text-[#e2e2e2]">Praticien-Formateur — Dixit Ennéagramme</span>
+            <span class="font-label text-[10px] text-[#919191] ml-4 shrink-0">2021</span>
+          </div>
+          <div class="flex justify-between items-baseline py-3 border-b-[0.5px] border-[#474747]">
+            <span class="font-label text-[11px] text-[#e2e2e2]">Coach Professionnel — Mobius Coaching Management</span>
+            <span class="font-label text-[10px] text-[#919191] ml-4 shrink-0">2021</span>
+          </div>
+          <div class="flex justify-between items-baseline py-3 border-b-[0.5px] border-[#474747]">
+            <span class="font-label text-[11px] text-[#e2e2e2]">Membre IEA — International Enneagram Association</span>
+            <span class="font-label text-[10px] text-[#919191] ml-4 shrink-0">2021 —</span>
+          </div>
+          <div class="flex justify-between items-baseline py-3">
+            <span class="font-label text-[11px] text-[#e2e2e2]">Membre Canada Ennéagramme</span>
+            <span class="font-label text-[10px] text-[#919191] ml-4 shrink-0">2026 —</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="absolute bottom-8 right-12">
+    <span class="font-label text-[10px] tracking-widest text-[#919191]">04 // 05</span>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+  IV. QUESTIONS (FAQ)
+═════════════════════════════════════ -->
+<section class="relative grid grid-cols-1 md:grid-cols-4 border-b-[0.5px] border-[#474747]">
+  <div class="md:col-span-1 border-r-[0.5px] border-[#474747] p-12">
+    <h2 class="font-label text-[11px] tracking-[0.2em] uppercase text-white sticky top-24">IV. QUESTIONS</h2>
+  </div>
+  <div class="md:col-span-3 fi">
+    <div class="faq-item open border-b-[0.5px] border-[#474747]">
+      <div class="faq-q flex justify-between items-center px-12 py-7 cursor-pointer group">
+        <div class="flex items-center gap-8">
+          <span class="font-label text-[10px] text-[#919191]">01</span>
+          <span class="font-headline font-bold text-base text-white group-hover:tracking-wide transition-all duration-500">QU'EST-CE QUE L'ENNÉAGRAMME ?</span>
+        </div>
+        <span class="faq-toggle font-label text-[18px] text-[#919191] transition-transform duration-300 select-none">+</span>
+      </div>
+      <div class="faq-ans px-12 pl-32 font-body italic text-sm text-[#919191] leading-relaxed">
+        L'Ennéagramme est un système de connaissance de la personnalité décrivant neuf profils distincts, chacun guidé par des motivations et des peurs fondamentales. Il explore les mécanismes inconscients qui génèrent les comportements — pas seulement les comportements eux-mêmes.
+      </div>
+    </div>
+    <div class="faq-item border-b-[0.5px] border-[#474747]">
+      <div class="faq-q flex justify-between items-center px-12 py-7 cursor-pointer group">
+        <div class="flex items-center gap-8">
+          <span class="font-label text-[10px] text-[#919191]">02</span>
+          <span class="font-headline font-bold text-base text-white group-hover:tracking-wide transition-all duration-500">COMMENT DÉTERMINER MON PROFIL ?</span>
+        </div>
+        <span class="faq-toggle font-label text-[18px] text-[#919191] transition-transform duration-300 select-none">+</span>
+      </div>
+      <div class="faq-ans px-12 pl-32 font-body italic text-sm text-[#919191] leading-relaxed">
+        La découverte du profil n'est pas un simple questionnaire. C'est un processus d'introspection guidée qui se vit dans le cadre d'une formation ou d'un accompagnement. Benjamin propose un entretien exploratoire gratuit pour initier cette démarche.
+      </div>
+    </div>
+    <div class="faq-item border-b-[0.5px] border-[#474747]">
+      <div class="faq-q flex justify-between items-center px-12 py-7 cursor-pointer group">
+        <div class="flex items-center gap-8">
+          <span class="font-label text-[10px] text-[#919191]">03</span>
+          <span class="font-headline font-bold text-base text-white group-hover:tracking-wide transition-all duration-500">FAUT-IL DES CONNAISSANCES PRÉALABLES ?</span>
+        </div>
+        <span class="faq-toggle font-label text-[18px] text-[#919191] transition-transform duration-300 select-none">+</span>
+      </div>
+      <div class="faq-ans px-12 pl-32 font-body italic text-sm text-[#919191] leading-relaxed">
+        Non. L'atelier d'introduction est conçu pour des participants sans aucune connaissance de l'Ennéagramme. La seule condition : une curiosité sincère pour mieux se comprendre.
+      </div>
+    </div>
+    <div class="faq-item border-b-[0.5px] border-[#474747]">
+      <div class="faq-q flex justify-between items-center px-12 py-7 cursor-pointer group">
+        <div class="flex items-center gap-8">
+          <span class="font-label text-[10px] text-[#919191]">04</span>
+          <span class="font-headline font-bold text-base text-white group-hover:tracking-wide transition-all duration-500">INTERVENTIONS EN ENTREPRISE ?</span>
+        </div>
+        <span class="faq-toggle font-label text-[18px] text-[#919191] transition-transform duration-300 select-none">+</span>
+      </div>
+      <div class="faq-ans px-12 pl-32 font-body italic text-sm text-[#919191] leading-relaxed">
+        Oui. Benjamin propose des accompagnements pour les équipes RH, managériales et de soins. L'Ennéagramme est un outil de cohésion et de communication inter-personnelle efficace en contexte organisationnel.
+      </div>
+    </div>
+    <div class="faq-item">
+      <div class="faq-q flex justify-between items-center px-12 py-7 cursor-pointer group">
+        <div class="flex items-center gap-8">
+          <span class="font-label text-[10px] text-[#919191]">05</span>
+          <span class="font-headline font-bold text-base text-white group-hover:tracking-wide transition-all duration-500">INTERVENTIONS À DISTANCE ?</span>
+        </div>
+        <span class="faq-toggle font-label text-[18px] text-[#919191] transition-transform duration-300 select-none">+</span>
+      </div>
+      <div class="faq-ans px-12 pl-32 font-body italic text-sm text-[#919191] leading-relaxed">
+        Oui. Les accompagnements individuels et certains ateliers se tiennent en visioconférence, permettant d'intervenir aussi bien en France qu'au Québec et au-delà.
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+  V. COMMENCER — 05 // 05
+═════════════════════════════════════ -->
+<section class="relative min-h-[800px] flex items-center border-t-[0.5px] border-[#474747] overflow-hidden">
+  <div class="px-12 w-full grid grid-cols-1 md:grid-cols-4 gap-12">
+    <div class="md:col-start-2 md:col-span-2 space-y-14 fi">
+      <div>
+        <p class="font-label text-[11px] tracking-[0.3em] uppercase text-[#919191] mb-6">V. COMMENCER</p>
+        <h2 class="font-headline font-bold tracking-tighter uppercase text-white leading-none" style="font-size:clamp(40px,7vw,96px)">
+          DÉMARRER<br/>LA DÉMARCHE
+        </h2>
+      </div>
+      <p class="font-body italic text-lg text-[#e2e2e2] opacity-70 max-w-md">
+        Un entretien exploratoire gratuit de 30 minutes — sans engagement, juste de la curiosité pour mieux se comprendre.
+      </p>
+      <form class="space-y-10">
+        <div class="relative">
+          <input class="w-full bg-transparent border-0 border-b-[0.5px] border-[#474747] py-4 px-0 font-label text-[11px] tracking-widest text-white placeholder:text-[#919191] focus:ring-0 focus:border-white transition-colors duration-500 outline-none" placeholder="NOM" profil="text"/>
+        </div>
+        <div class="relative">
+          <input class="w-full bg-transparent border-0 border-b-[0.5px] border-[#474747] py-4 px-0 font-label text-[11px] tracking-widest text-white placeholder:text-[#919191] focus:ring-0 focus:border-white transition-colors duration-500 outline-none" placeholder="EMAIL" profil="email"/>
+        </div>
+        <div class="relative">
+          <textarea class="w-full bg-transparent border-0 border-b-[0.5px] border-[#474747] py-4 px-0 font-label text-[11px] tracking-widest text-white placeholder:text-[#919191] focus:ring-0 focus:border-white transition-colors duration-500 outline-none resize-none" placeholder="MESSAGE" rows="1"></textarea>
+        </div>
+        <button class="font-headline text-2xl font-bold text-white hover:tracking-[0.15em] transition-all duration-700 uppercase flex items-center gap-4" profil="submit">
+          ENVOYER LA DEMANDE
+          <span class="material-symbols-outlined">arrow_forward</span>
+        </button>
+      </form>
+    </div>
+  </div>
+  <!-- Large background enneagram -->
+  <div class="absolute right-0 top-1/2 -translate-y-1/2 pointer-events-none opacity-[0.04]">
+    <svg viewBox="0 0 440 440" class="w-[600px]" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="220" cy="220" r="176" fill="none" stroke="white" stroke-width="1"/>
+      <polygon points="220,44 373,308 67,308" fill="none" stroke="white" stroke-width="1"/>
+      <polyline points="333,85 280,386 393,189 107,85 160,386 47,189 333,85" fill="none" stroke="white" stroke-width="1"/>
+    </svg>
+  </div>
+  <div class="absolute bottom-8 right-12">
+    <span class="font-label text-[10px] tracking-widest text-[#919191]">05 // 05</span>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════
+  FOOTER
+═════════════════════════════════════ -->
+<footer class="w-full py-10 bg-[#131313] font-label text-[10px] tracking-[0.1em] uppercase border-t-[0.5px] border-[#474747]">
+  <div class="flex justify-between items-center px-12 w-full">
+    <div class="text-[#919191]">© 2026 BENJAMIN ALI ABOUDOU — FRANCE & QUÉBEC</div>
+    <div class="flex space-x-10">
+      <a class="text-[#919191] hover:text-white transition-colors duration-300" href="mentions-legales.html">MENTIONS LÉGALES</a>
+      <a class="text-[#919191] hover:text-white transition-colors duration-300" href="cgv.html">CGV</a>
+      <a class="text-[#919191] hover:text-white transition-colors duration-300" href="confidentialite.html">CONFIDENTIALITÉ</a>
+      <a class="text-[#919191] hover:text-white transition-colors duration-300" href="ethique.html">ÉTHIQUE</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // FAQ accordion
+  document.querySelectorAll('.faq-item').forEach(item => {
+    item.querySelector('.faq-q').addEventListener('click', () => {
+      const isOpen = item.classList.contains('open');
+      document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('open'));
+      if (!isOpen) item.classList.add('open');
+    });
+  });
+
+  // Fade-in on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach((e, i) => {
+      if (e.isIntersecting) {
+        setTimeout(() => e.target.classList.add('v'), i * 60);
+        io.unobserve(e.target);
+      }
+    });
+  }, { threshold: 0.06 });
+  document.querySelectorAll('.fi').forEach(el => io.observe(el));
+</script>
+</body>
+</html>

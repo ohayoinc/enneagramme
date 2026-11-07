@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://enneagramme.co/sitemap.xml
+
+# Bloquer les fichiers inutiles
+Disallow: /inspi/

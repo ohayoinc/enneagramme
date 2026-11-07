@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ennéagramme — Option A · Profond & Spirituel</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:        #080616;
+      --bg2:       #0F0C28;
+      --bg3:       #161030;
+      --text:      #EDE9FF;
+      --muted:     #7B72A0;
+      --gold:      #C9A84C;
+      --gold-l:    #E5C96A;
+      --gold-pale: rgba(201,168,76,0.12);
+      --border:    rgba(255,255,255,0.07);
+      --card:      rgba(255,255,255,0.035);
+      --radius:    16px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* ─── NOISE OVERLAY ─── */
+    body::before {
+      content: '';
+      position: fixed; inset: 0;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence profil='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+      pointer-events: none; z-index: 0; opacity: 0.35;
+    }
+
+    /* ─── TYPOGRAPHY ─── */
+    h1, h2, h3 { font-family: 'Playfair Display', serif; line-height: 1.2; }
+
+    .gold-text {
+      background: linear-gradient(135deg, #C9A84C 0%, #F0DC8A 50%, #C9A84C 100%);
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 5%;
+      background: rgba(8,6,22,0.7);
+      backdrop-filter: blur(24px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.25rem; font-weight: 600;
+      color: var(--text); text-decoration: none;
+      display: flex; align-items: center; gap: 0.5rem;
+    }
+    .nav-logo-dot {
+      width: 8px; height: 8px; border-radius: 50%;
+      background: var(--gold);
+      box-shadow: 0 0 12px var(--gold);
+    }
+
+    .nav-links {
+      display: flex; gap: 2rem; list-style: none;
+    }
+    .nav-links a {
+      color: var(--muted); text-decoration: none;
+      font-size: 0.875rem; font-weight: 500;
+      letter-spacing: 0.02em;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--text); }
+
+    .btn-gold {
+      background: linear-gradient(135deg, #C9A84C, #E5C96A);
+      color: #0B0919; font-weight: 600;
+      padding: 0.625rem 1.5rem; border-radius: 100px;
+      text-decoration: none; font-size: 0.875rem;
+      transition: opacity 0.2s, transform 0.2s;
+      border: none; cursor: pointer;
+    }
+    .btn-gold:hover { opacity: 0.88; transform: translateY(-1px); }
+
+    .btn-ghost {
+      border: 1px solid rgba(201,168,76,0.4);
+      color: var(--gold); font-weight: 500;
+      padding: 0.625rem 1.5rem; border-radius: 100px;
+      text-decoration: none; font-size: 0.875rem;
+      transition: all 0.2s; background: transparent; cursor: pointer;
+    }
+    .btn-ghost:hover {
+      background: var(--gold-pale);
+      border-color: var(--gold);
+    }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center; gap: 4rem;
+      padding: 7rem 5% 4rem;
+      position: relative;
+    }
+
+    .hero::after {
+      content: '';
+      position: absolute; bottom: 0; left: 0; right: 0; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: 0.3;
+    }
+
+    /* Radial glow behind SVG */
+    .hero-visual {
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+    .hero-visual::before {
+      content: '';
+      position: absolute;
+      width: 480px; height: 480px;
+      background: radial-gradient(ellipse, rgba(201,168,76,0.18) 0%, transparent 70%);
+      border-radius: 50%;
+      animation: breathe 6s ease-in-out infinite;
+    }
+
+    @keyframes breathe {
+      0%, 100% { transform: scale(1); opacity: 0.6; }
+      50% { transform: scale(1.12); opacity: 1; }
+    }
+
+    .enneagram-svg {
+      width: 420px; height: 420px;
+      position: relative; z-index: 1;
+      filter: drop-shadow(0 0 24px rgba(201,168,76,0.35));
+      animation: float 8s ease-in-out infinite;
+    }
+    @keyframes float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-16px); }
+    }
+
+    .enneagram-svg .ring {
+      stroke: rgba(201,168,76,0.6);
+      animation: ring-spin 80s linear infinite;
+      transform-origin: 150px 150px;
+    }
+    @keyframes ring-spin {
+      to { transform: rotate(360deg); }
+    }
+    .enneagram-svg .inner {
+      stroke: rgba(201,168,76,0.5);
+    }
+    .enneagram-svg .dots circle {
+      fill: var(--gold);
+    }
+
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 100px; padding: 0.375rem 0.875rem;
+      font-size: 0.75rem; font-weight: 500; letter-spacing: 0.08em;
+      text-transform: uppercase; color: var(--gold);
+      margin-bottom: 1.5rem;
+    }
+    .hero-tag-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--gold); animation: pulse 2s ease-in-out infinite;
+    }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 4rem);
+      font-weight: 700; margin-bottom: 1.5rem;
+      line-height: 1.15;
+    }
+
+    .hero-sub {
+      font-size: 1.1rem; color: var(--muted);
+      max-width: 480px; margin-bottom: 2.5rem;
+      line-height: 1.8; font-weight: 300;
+    }
+
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .hero-stats {
+      display: flex; gap: 2.5rem; margin-top: 3.5rem;
+      padding-top: 2rem;
+      border-top: 1px solid var(--border);
+    }
+    .stat-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.875rem; font-weight: 700;
+      line-height: 1;
+    }
+    .stat-label {
+      font-size: 0.75rem; color: var(--muted);
+      text-transform: uppercase; letter-spacing: 0.06em;
+      margin-top: 0.25rem;
+    }
+
+    /* ─── SECTION LAYOUTS ─── */
+    section { position: relative; z-index: 1; }
+
+    .section-tag {
+      font-size: 0.75rem; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.12em;
+      color: var(--gold); margin-bottom: 1rem;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 700; margin-bottom: 1.25rem;
+    }
+    .section-desc {
+      color: var(--muted); font-size: 1.05rem;
+      line-height: 1.8; max-width: 540px;
+    }
+
+    /* ─── PILLARS ─── */
+    .pillars {
+      padding: 7rem 5%;
+      background: var(--bg2);
+    }
+    .pillars-header { text-align: center; max-width: 680px; margin: 0 auto 4rem; }
+    .pillars-header .section-desc { margin: 0 auto; }
+
+    .pillars-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+      max-width: 1100px; margin: 0 auto;
+    }
+
+    .pillar-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem;
+      backdrop-filter: blur(8px);
+      transition: border-color 0.3s, transform 0.3s;
+      position: relative; overflow: hidden;
+    }
+    .pillar-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0; right: 0; height: 2px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      transform: scaleX(0); transition: transform 0.4s;
+    }
+    .pillar-card:hover { border-color: rgba(201,168,76,0.35); transform: translateY(-4px); }
+    .pillar-card:hover::before { transform: scaleX(1); }
+
+    .pillar-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 3rem; font-weight: 700;
+      color: rgba(201,168,76,0.15); line-height: 1;
+      margin-bottom: 1rem;
+    }
+    .pillar-icon {
+      width: 48px; height: 48px; margin-bottom: 1.25rem;
+      background: var(--gold-pale);
+      border: 1px solid rgba(201,168,76,0.2);
+      border-radius: 12px; display: flex; align-items: center;
+      justify-content: center; font-size: 1.5rem;
+    }
+    .pillar-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.2rem; font-weight: 600;
+      margin-bottom: 0.75rem;
+    }
+    .pillar-text { color: var(--muted); font-size: 0.9rem; line-height: 1.7; }
+
+    /* ─── SERVICES ─── */
+    .services {
+      padding: 7rem 5%;
+      max-width: 1200px; margin: 0 auto;
+    }
+    .services-inner {
+      display: grid; grid-template-columns: 1fr 2fr; gap: 5rem; align-items: start;
+    }
+    .services-grid {
+      display: flex; flex-direction: column; gap: 1.25rem;
+    }
+
+    .service-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 2rem 2rem 2rem 2.5rem;
+      display: grid; grid-template-columns: auto 1fr auto;
+      align-items: center; gap: 1.5rem;
+      cursor: pointer;
+      transition: all 0.3s; position: relative;
+    }
+    .service-card:hover {
+      background: rgba(201,168,76,0.07);
+      border-color: rgba(201,168,76,0.3);
+    }
+    .service-card-left-bar {
+      position: absolute; left: 0; top: 20%; bottom: 20%;
+      width: 3px; border-radius: 99px;
+      background: linear-gradient(180deg, transparent, var(--gold), transparent);
+      opacity: 0; transition: opacity 0.3s;
+    }
+    .service-card:hover .service-card-left-bar { opacity: 1; }
+
+    .service-icon {
+      font-size: 1.75rem; width: 52px; height: 52px;
+      display: flex; align-items: center; justify-content: center;
+      background: var(--gold-pale); border-radius: 12px;
+    }
+    .service-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.125rem; font-weight: 600; margin-bottom: 0.375rem;
+    }
+    .service-desc { color: var(--muted); font-size: 0.85rem; }
+    .service-arrow { color: var(--gold); font-size: 1.25rem; opacity: 0.5; transition: opacity 0.3s, transform 0.3s; }
+    .service-card:hover .service-arrow { opacity: 1; transform: translateX(4px); }
+
+    /* ─── ABOUT ─── */
+    .about {
+      padding: 7rem 5%;
+      background: var(--bg2);
+    }
+    .about-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr; gap: 5rem; align-items: center;
+    }
+    .about-img {
+      position: relative;
+    }
+    .about-photo {
+      width: 100%; aspect-ratio: 3/4;
+      background: linear-gradient(145deg, #1A1438, #0F0C28);
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .about-photo-placeholder {
+      font-family: 'Playfair Display', serif;
+      font-size: 5rem; color: rgba(201,168,76,0.15);
+    }
+    .about-badge {
+      position: absolute; bottom: -1.5rem; right: -1.5rem;
+      background: linear-gradient(135deg, #C9A84C, #E5C96A);
+      color: #0B0919; border-radius: 16px;
+      padding: 1.25rem 1.5rem; font-weight: 700;
+      text-align: center; min-width: 120px;
+    }
+    .about-badge-num {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.875rem; line-height: 1; display: block;
+    }
+    .about-badge-label { font-size: 0.7rem; text-transform: uppercase; letter-spacing: 0.08em; }
+
+    .about-text h2 { margin-bottom: 1.25rem; }
+    .about-text p { color: var(--muted); line-height: 1.9; margin-bottom: 1.25rem; font-size: 0.95rem; }
+
+    .certs {
+      display: flex; flex-direction: column; gap: 0.625rem; margin-top: 2rem;
+    }
+    .cert {
+      display: flex; align-items: center; gap: 0.75rem;
+      font-size: 0.85rem; color: var(--muted);
+    }
+    .cert-dot {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--gold); flex-shrink: 0;
+    }
+
+    /* ─── QUOTE ─── */
+    .quote-section {
+      padding: 6rem 5%;
+      text-align: center;
+    }
+    .quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 8rem; line-height: 0.5;
+      color: rgba(201,168,76,0.15);
+      display: block; margin-bottom: 1rem;
+    }
+    .quote-text {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(1.5rem, 3vw, 2.25rem);
+      font-style: italic; font-weight: 400;
+      max-width: 760px; margin: 0 auto 2rem;
+      line-height: 1.5;
+    }
+    .quote-author {
+      color: var(--gold); font-size: 0.875rem;
+      font-weight: 500; letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    /* ─── FAQ ─── */
+    .faq {
+      padding: 7rem 5%;
+      background: var(--bg2);
+    }
+    .faq-inner { max-width: 800px; margin: 0 auto; }
+    .faq-header { text-align: center; margin-bottom: 3.5rem; }
+
+    .faq-item {
+      border-bottom: 1px solid var(--border);
+      padding: 1.75rem 0;
+      cursor: pointer;
+    }
+    .faq-q {
+      display: flex; justify-content: space-between; align-items: center;
+      font-family: 'Playfair Display', serif;
+      font-size: 1.125rem; font-weight: 600;
+      gap: 1rem;
+    }
+    .faq-icon { color: var(--gold); font-size: 1.25rem; flex-shrink: 0; transition: transform 0.3s; }
+    .faq-item.open .faq-icon { transform: rotate(45deg); }
+    .faq-a {
+      color: var(--muted); font-size: 0.9rem; line-height: 1.8;
+      max-height: 0; overflow: hidden; transition: max-height 0.3s, padding 0.3s;
+    }
+    .faq-item.open .faq-a { max-height: 300px; padding-top: 1rem; }
+
+    /* ─── CTA ─── */
+    .cta {
+      padding: 7rem 5%;
+      position: relative; text-align: center; overflow: hidden;
+    }
+    .cta::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at center, rgba(201,168,76,0.12) 0%, transparent 70%);
+    }
+    .cta-inner { position: relative; z-index: 1; max-width: 680px; margin: 0 auto; }
+    .cta h2 { font-size: clamp(2rem, 4vw, 3.25rem); margin-bottom: 1.25rem; }
+    .cta p { color: var(--muted); margin-bottom: 2.5rem; font-size: 1.05rem; line-height: 1.8; }
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      padding: 3rem 5%;
+      border-top: 1px solid var(--border);
+      background: var(--bg2);
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1.5rem;
+    }
+    .footer-logo {
+      font-family: 'Playfair Display', serif;
+      font-size: 1.1rem; color: var(--text); text-decoration: none;
+    }
+    .footer-links {
+      display: flex; gap: 1.75rem; list-style: none;
+    }
+    .footer-links a {
+      color: var(--muted); text-decoration: none;
+      font-size: 0.8rem; transition: color 0.2s;
+    }
+    .footer-links a:hover { color: var(--gold); }
+    .footer-copy { color: var(--muted); font-size: 0.75rem; }
+
+    /* ─── DIVIDER LINE ─── */
+    .gold-line {
+      width: 60px; height: 2px;
+      background: linear-gradient(90deg, var(--gold), transparent);
+      margin-bottom: 1.5rem;
+    }
+
+    /* ─── FADE IN ─── */
+    .fade-in { opacity: 0; transform: translateY(28px); transition: opacity 0.7s ease, transform 0.7s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <span class="nav-logo-dot"></span>
+      Ennéagramme
+    </a>
+    <ul class="nav-links">
+      <li><a href="#">L'Ennéagramme</a></li>
+      <li><a href="#">Formations</a></li>
+      <li><a href="#">Accompagnements</a></li>
+      <li><a href="#">Le formateur</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
+    <a href="#" class="btn-gold">Prendre contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-content fade-in">
+      <div class="hero-tag">
+        <span class="hero-tag-dot"></span>
+        France & Québec
+      </div>
+      <h1>
+        Révélez<br/>
+        <span class="gold-text">ce qui vous</span><br/>
+        anime vraiment
+      </h1>
+      <p class="hero-sub">
+        L'Ennéagramme cartographie vos motivations profondes, vos peurs fondamentales et vos stratégies inconscientes. Une connaissance de soi transformatrice.
+      </p>
+      <div class="hero-btns">
+        <a href="#" class="btn-gold">Découvrir les formations</a>
+        <a href="#" class="btn-ghost">En savoir plus</a>
+      </div>
+      <div class="hero-stats">
+        <div>
+          <div class="stat-num gold-text">9</div>
+          <div class="stat-label">Profils de personnalité</div>
+        </div>
+        <div>
+          <div class="stat-num gold-text">5+</div>
+          <div class="stat-label">Années d'expérience</div>
+        </div>
+        <div>
+          <div class="stat-num gold-text">IEA</div>
+          <div class="stat-label">Membre certifié</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual fade-in">
+      <!-- ENNEAGRAMME SVG -->
+      <svg class="enneagram-svg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+        <!-- Outer ring (rotates) -->
+        <circle class="ring" cx="150" cy="150" r="138" fill="none" stroke-width="0.5" stroke-dasharray="4 6"/>
+        <!-- Main circle -->
+        <circle cx="150" cy="150" r="120" fill="none" stroke="rgba(201,168,76,0.55)" stroke-width="1.2" class="inner"/>
+        <!-- Triangle 3-6-9 -->
+        <polygon class="inner" points="150,30 254,210 46,210" fill="none" stroke="rgba(201,168,76,0.45)" stroke-width="1.2"/>
+        <!-- Hexad 1-4-2-8-5-7 -->
+        <polyline class="inner" points="227,58 191,263 268,129 73,58 109,263 32,129 227,58" fill="none" stroke="rgba(201,168,76,0.45)" stroke-width="1.2"/>
+        <!-- 9 points -->
+        <g class="dots">
+          <circle cx="150" cy="30"  r="5" opacity="0.9"/>
+          <circle cx="227" cy="58"  r="5" opacity="0.9"/>
+          <circle cx="268" cy="129" r="5" opacity="0.9"/>
+          <circle cx="254" cy="210" r="5" opacity="0.9"/>
+          <circle cx="191" cy="263" r="5" opacity="0.9"/>
+          <circle cx="109" cy="263" r="5" opacity="0.9"/>
+          <circle cx="46"  cy="210" r="5" opacity="0.9"/>
+          <circle cx="32"  cy="129" r="5" opacity="0.9"/>
+          <circle cx="73"  cy="58"  r="5" opacity="0.9"/>
+          <!-- Center -->
+          <circle cx="150" cy="150" r="4" opacity="0.6"/>
+        </g>
+        <!-- Number labels -->
+        <text x="150" y="18"  text-anchor="middle" fill="rgba(201,168,76,0.7)" font-size="11" font-family="Playfair Display, serif">9</text>
+        <text x="237" y="52"  text-anchor="middle" fill="rgba(201,168,76,0.7)" font-size="11" font-family="Playfair Display, serif">1</text>
+        <text x="280" y="133" text-anchor="middle" fill="rgba(201,168,76,0.7)" font-size="11" font-family="Playfair Display, serif">2</text>
+        <text x="268" y="222" text-anchor="middle" fill="rgba(201,168,76,0.7)" font-size="11" font-family="Playfair Display, serif">3</text>
+        <text x="200" y="280" text-anchor="middle" fill="rgba(201,168,76,0.7)" font-size="11" font-family="Playfair Display, serif">4</text>
+        <text x="100" y="280" text-anchor="middle" fill="rgba(201,168,76,0.7)" font-size="11" font-family="Playfair Display, serif">5</text>
+        <text x="30"  y="222" text-anchor="middle" fill="rgba(201,168,76,0.7)" font-size="11" font-family="Playfair Display, serif">6</text>
+        <text x="18"  y="133" text-anchor="middle" fill="rgba(201,168,76,0.7)" font-size="11" font-family="Playfair Display, serif">7</text>
+        <text x="62"  y="52"  text-anchor="middle" fill="rgba(201,168,76,0.7)" font-size="11" font-family="Playfair Display, serif">8</text>
+      </svg>
+    </div>
+  </section>
+
+  <!-- PILLARS -->
+  <section class="pillars">
+    <div class="pillars-header fade-in">
+      <div class="section-tag">L'Ennéagramme en 3 dimensions</div>
+      <h2 class="section-title">Un système vivant,<br/>pas une étiquette</h2>
+      <p class="section-desc">
+        Contrairement aux tests de personnalité classiques, l'Ennéagramme révèle les motivations profondes qui se cachent derrière chaque comportement.
+      </p>
+    </div>
+    <div class="pillars-grid">
+      <div class="pillar-card fade-in">
+        <div class="pillar-num">01</div>
+        <div class="pillar-icon">🧭</div>
+        <div class="pillar-title">Connaissance de soi</div>
+        <p class="pillar-text">Identifiez votre profil dominant et comprenez les peurs et désirs inconscients qui orientent silencieusement vos choix au quotidien.</p>
+      </div>
+      <div class="pillar-card fade-in">
+        <div class="pillar-num">02</div>
+        <div class="pillar-icon">🤝</div>
+        <div class="pillar-title">Relations éclairées</div>
+        <p class="pillar-text">Décryptez les dynamiques relationnelles entre les profils pour transformer malentendus et conflits en opportunités de connexion.</p>
+      </div>
+      <div class="pillar-card fade-in">
+        <div class="pillar-num">03</div>
+        <div class="pillar-icon">✦</div>
+        <div class="pillar-title">Transformation durable</div>
+        <p class="pillar-text">L'Ennéagramme est un outil de développement : il montre non seulement qui vous êtes, mais la direction vers qui vous pouvez devenir.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services">
+    <div class="services-inner">
+      <div class="fade-in">
+        <div class="section-tag">Mes services</div>
+        <div class="gold-line"></div>
+        <h2 class="section-title">Chaque chemin<br/>est unique</h2>
+        <p class="section-desc" style="margin-top: 1rem;">
+          Des formats adaptés à chaque contexte : groupe, individuel, entreprise. En présentiel ou à distance, en France et au Québec.
+        </p>
+        <br/>
+        <a href="#" class="btn-gold" style="display: inline-block; margin-top: 1rem;">Voir toutes les offres</a>
+      </div>
+      <div class="services-grid fade-in">
+        <div class="service-card">
+          <div class="service-card-left-bar"></div>
+          <div class="service-icon">🎓</div>
+          <div>
+            <div class="service-name">Formations & Ateliers</div>
+            <div class="service-desc">Groupes de 3h à une journée — Introduction, Bases, thématiques spécifiques</div>
+          </div>
+          <div class="service-arrow">→</div>
+        </div>
+        <div class="service-card">
+          <div class="service-card-left-bar"></div>
+          <div class="service-icon">💫</div>
+          <div>
+            <div class="service-name">Accompagnements individuels</div>
+            <div class="service-desc">Séances personnalisées pour approfondir votre profil et vos dynamiques personnelles</div>
+          </div>
+          <div class="service-arrow">→</div>
+        </div>
+        <div class="service-card">
+          <div class="service-card-left-bar"></div>
+          <div class="service-icon">🏢</div>
+          <div>
+            <div class="service-name">Ennéagramme en entreprise</div>
+            <div class="service-desc">Cohésion d'équipe, communication, management — RH, éducation, santé</div>
+          </div>
+          <div class="service-arrow">→</div>
+        </div>
+        <div class="service-card">
+          <div class="service-card-left-bar"></div>
+          <div class="service-icon">❤️</div>
+          <div>
+            <div class="service-name">Ennéagramme & Couple</div>
+            <div class="service-desc">Décryptage des dynamiques amoureuses et communication adaptée entre profils</div>
+          </div>
+          <div class="service-arrow">→</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="about-inner">
+      <div class="about-img fade-in">
+        <div class="about-photo">
+          <span class="about-photo-placeholder">BA</span>
+        </div>
+        <div class="about-badge">
+          <span class="about-badge-num">ACC</span>
+          <span class="about-badge-label">Coach ICF certifié</span>
+        </div>
+      </div>
+      <div class="about-text fade-in">
+        <div class="section-tag">Le formateur</div>
+        <div class="gold-line"></div>
+        <h2 class="section-title">Benjamin<br/>Ali Aboudou</h2>
+        <p>Praticien-Formateur en Ennéagramme certifié par Dixit Ennéagramme et Coach Professionnel accrédité par l'International Coach Federation, Benjamin intervient en France et au Québec depuis 2021.</p>
+        <p>Sa pédagogie allie rigueur théorique, expérience vécue des 9 profils et ancrage dans des situations concrètes — pour que l'Ennéagramme devienne un outil vivant, pas un concept abstrait.</p>
+        <div class="certs">
+          <div class="cert"><span class="cert-dot"></span> Certification A.C.C — International Coach Federation (2025)</div>
+          <div class="cert"><span class="cert-dot"></span> Praticien-Formateur Ennéagramme — Dixit Ennéagramme (2021)</div>
+          <div class="cert"><span class="cert-dot"></span> Coach Professionnel — Mobius Coaching Management (2021)</div>
+          <div class="cert"><span class="cert-dot"></span> Membre IEA & Canada Ennéagramme</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote-section fade-in">
+    <span class="quote-mark">"</span>
+    <p class="quote-text">
+      L'Ennéagramme ne décrit pas ce que nous faisons,<br/>mais <span class="gold-text">pourquoi</span> nous le faisons.
+    </p>
+    <div class="quote-author">— Helen Palmer, pionnière de l'Ennéagramme</div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="faq">
+    <div class="faq-inner">
+      <div class="faq-header fade-in">
+        <div class="section-tag">Questions fréquentes</div>
+        <h2 class="section-title">Ce que vous vous<br/>demandez sûrement</h2>
+      </div>
+      <div class="faq-item open">
+        <div class="faq-q">
+          Qu'est-ce que l'Ennéagramme exactement ?
+          <span class="faq-icon">+</span>
+        </div>
+        <p class="faq-a">L'Ennéagramme est un système de connaissance de la personnalité qui décrit neuf profils distincts, chacun guidé par des motivations et des peurs profondes. Contrairement aux tests de profil MBTI, il ne classe pas les comportements mais les motivations inconscientes qui les génèrent.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          Comment identifier mon profil Ennéagramme ?
+          <span class="faq-icon">+</span>
+        </div>
+        <p class="faq-a">Le profil se découvre rarement via un simple questionnaire. C'est un processus d'auto-observation guidé, souvent approfondi lors d'une formation ou d'un accompagnement. Benjamin propose des entretiens exploratoires pour vous aider à identifier votre dominante avec précision.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          Les formations sont-elles accessibles aux débutants ?
+          <span class="faq-icon">+</span>
+        </div>
+        <p class="faq-a">Oui, totalement. L'atelier "Introduction à l'Ennéagramme" est spécifiquement conçu pour des personnes qui n'ont aucune connaissance préalable du modèle. Aucun prérequis n'est nécessaire — seulement de la curiosité.</p>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q">
+          Intervenez-vous en entreprise ?
+          <span class="faq-icon">+</span>
+        </div>
+        <p class="faq-a">Oui, Benjamin propose des interventions en entreprise pour les équipes RH, managériales ou de soins. L'Ennéagramme est un outil puissant de cohésion d'équipe et de communication inter-personnelle dans un contexte professionnel.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="cta-inner fade-in">
+      <div class="section-tag">Commencer</div>
+      <h2 class="section-title">Prêt à vous<br/><span class="gold-text">découvrir autrement</span> ?</h2>
+      <p>Réservez un entretien exploratoire gratuit de 30 minutes pour découvrir comment l'Ennéagramme peut transformer votre relation à vous-même et aux autres.</p>
+      <div class="cta-btns">
+        <a href="#" class="btn-gold">Entretien exploratoire gratuit</a>
+        <a href="#" class="btn-ghost">Voir les formations</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <a href="#" class="footer-logo">Ennéagramme · Benjamin Ali Aboudou</a>
+      <ul class="footer-links">
+        <li><a href="#">Mentions légales</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+        <li><a href="#">Confidentialité</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 Benjamin Ali Aboudou. France & Québec.</p>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ toggle
+    document.querySelectorAll('.faq-item').forEach(item => {
+      item.querySelector('.faq-q').addEventListener('click', () => {
+        item.classList.toggle('open');
+      });
+    });
+
+    // Fade in on scroll
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 80);
+        }
+      });
+    }, { threshold: 0.1 });
+
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>

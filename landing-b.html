@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ennéagramme — Option B · Chaleureux & Humain</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,300;0,400;0,600;0,700;0,800;1,400;1,600&family=Lora:ital,wght@0,400;0,600;1,400;1,600&display=swap" rel="stylesheet"/>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:          #FAF5EE;
+      --bg-warm:     #F3EAD8;
+      --bg-card:     #FFFFFF;
+      --terra:       #C4622D;
+      --terra-l:     #D97840;
+      --terra-pale:  rgba(196,98,45,0.08);
+      --green:       #2D4A3E;
+      --green-l:     #3B6352;
+      --green-pale:  rgba(45,74,62,0.06);
+      --dark:        #2A1F1A;
+      --text:        #3D2B1F;
+      --muted:       #8A6D5C;
+      --border:      rgba(196,98,45,0.15);
+      --radius-sm:   12px;
+      --radius:      20px;
+      --radius-lg:   32px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: 'Nunito', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 { font-family: 'Lora', serif; line-height: 1.2; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+      display: flex; align-items: center; justify-content: space-between;
+      padding: 1.25rem 5%;
+      background: rgba(250,245,238,0.85);
+      backdrop-filter: blur(20px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-logo {
+      font-family: 'Lora', serif;
+      font-size: 1.2rem; font-weight: 600;
+      color: var(--dark); text-decoration: none;
+      display: flex; align-items: center; gap: 0.6rem;
+    }
+    .nav-logo-mark {
+      width: 32px; height: 32px;
+      background: var(--terra);
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+    }
+    .nav-logo-mark svg { width: 18px; height: 18px; }
+
+    .nav-links {
+      display: flex; gap: 2rem; list-style: none;
+    }
+    .nav-links a {
+      color: var(--muted); text-decoration: none;
+      font-size: 0.9rem; font-weight: 600;
+      transition: color 0.2s;
+    }
+    .nav-links a:hover { color: var(--terra); }
+
+    .btn-terra {
+      background: var(--terra);
+      color: #FFF; font-weight: 700;
+      padding: 0.65rem 1.625rem; border-radius: 100px;
+      text-decoration: none; font-size: 0.875rem;
+      transition: background 0.2s, transform 0.2s;
+      border: none; cursor: pointer; font-family: 'Nunito', sans-serif;
+    }
+    .btn-terra:hover { background: var(--terra-l); transform: translateY(-2px); }
+
+    .btn-outline {
+      border: 2px solid var(--terra);
+      color: var(--terra); font-weight: 700;
+      padding: 0.625rem 1.5rem; border-radius: 100px;
+      text-decoration: none; font-size: 0.875rem;
+      transition: all 0.2s; background: transparent;
+      cursor: pointer; font-family: 'Nunito', sans-serif;
+    }
+    .btn-outline:hover { background: var(--terra); color: #FFF; }
+
+    /* ─── HERO ─── */
+    .hero {
+      min-height: 100vh;
+      display: grid; grid-template-columns: 1fr 1fr;
+      align-items: center; gap: 3rem;
+      padding: 7rem 5% 4rem;
+      position: relative;
+    }
+
+    /* Organic background blob */
+    .hero::before {
+      content: '';
+      position: absolute;
+      top: 10%; right: -5%;
+      width: 600px; height: 600px;
+      background: radial-gradient(ellipse, rgba(196,98,45,0.12) 0%, transparent 65%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      background: var(--terra-pale);
+      border: 1px solid rgba(196,98,45,0.25);
+      border-radius: 100px; padding: 0.4rem 1rem;
+      font-size: 0.8rem; font-weight: 700; letter-spacing: 0.04em;
+      color: var(--terra); margin-bottom: 1.5rem;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      font-size: clamp(2.5rem, 5vw, 3.75rem);
+      font-weight: 600; color: var(--dark);
+      margin-bottom: 1.5rem;
+    }
+    .terra-text { color: var(--terra); }
+
+    .hero-sub {
+      font-size: 1.05rem; color: var(--muted);
+      max-width: 480px; margin-bottom: 2.5rem;
+      line-height: 1.85; font-weight: 400;
+    }
+
+    .hero-btns { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+    .hero-visual {
+      display: flex; align-items: center; justify-content: center;
+      position: relative;
+    }
+
+    .enneagram-wrap {
+      position: relative; width: 420px; height: 420px;
+    }
+
+    .enneagram-bg {
+      position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--terra-pale) 0%, rgba(45,74,62,0.07) 100%);
+      border-radius: 50%;
+    }
+
+    .enneagram-svg {
+      width: 100%; height: 100%;
+      position: relative; z-index: 1;
+      animation: gentle-float 7s ease-in-out infinite;
+    }
+    @keyframes gentle-float {
+      0%, 100% { transform: translateY(0) rotate(0deg); }
+      33% { transform: translateY(-10px) rotate(0.5deg); }
+      66% { transform: translateY(-6px) rotate(-0.5deg); }
+    }
+
+    /* Floating badges */
+    .float-badge {
+      position: absolute;
+      background: #FFF;
+      border-radius: var(--radius-sm);
+      padding: 0.75rem 1.25rem;
+      box-shadow: 0 8px 32px rgba(45,31,26,0.12);
+      display: flex; align-items: center; gap: 0.625rem;
+      font-size: 0.8rem; font-weight: 700; color: var(--dark);
+      animation: badge-float 5s ease-in-out infinite;
+    }
+    .float-badge:nth-child(2) { animation-delay: -2.5s; }
+    .float-badge-icon { font-size: 1.25rem; }
+    .badge-top { top: 10%; left: -8%; }
+    .badge-bottom { bottom: 15%; right: -8%; }
+    @keyframes badge-float {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-8px); }
+    }
+
+    /* Ribbon below hero */
+    .ribbon {
+      background: var(--green);
+      color: #FFF; padding: 1.5rem 5%;
+      display: flex; justify-content: center; gap: 5rem;
+      flex-wrap: wrap;
+    }
+    .ribbon-item { text-align: center; }
+    .ribbon-num {
+      font-family: 'Lora', serif;
+      font-size: 1.875rem; font-weight: 600;
+      line-height: 1; display: block;
+    }
+    .ribbon-label {
+      font-size: 0.75rem; opacity: 0.7;
+      text-transform: uppercase; letter-spacing: 0.06em;
+    }
+
+    /* ─── SECTION HELPERS ─── */
+    .section-label {
+      display: inline-flex; align-items: center; gap: 0.5rem;
+      font-size: 0.75rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      color: var(--terra); margin-bottom: 1rem;
+    }
+    .section-label::before {
+      content: '';
+      width: 24px; height: 2px;
+      background: var(--terra); border-radius: 99px;
+    }
+
+    .section-title {
+      font-size: clamp(1.75rem, 3.5vw, 2.75rem);
+      font-weight: 600; color: var(--dark);
+      margin-bottom: 1.25rem;
+    }
+    .section-text {
+      color: var(--muted); font-size: 1rem;
+      line-height: 1.85; max-width: 540px;
+    }
+
+    /* ─── WHAT ─── */
+    .what {
+      padding: 7rem 5%;
+    }
+    .what-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1.5fr; gap: 5rem; align-items: center;
+    }
+
+    .what-cards {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;
+    }
+
+    .what-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 2rem 1.5rem;
+      border: 1px solid rgba(196,98,45,0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+    .what-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 16px 48px rgba(45,31,26,0.1);
+    }
+    .what-card:last-child { grid-column: 1 / -1; }
+
+    .what-card-icon { font-size: 2rem; margin-bottom: 1rem; }
+    .what-card-title {
+      font-family: 'Lora', serif;
+      font-size: 1.05rem; font-weight: 600;
+      color: var(--dark); margin-bottom: 0.5rem;
+    }
+    .what-card-text { color: var(--muted); font-size: 0.85rem; line-height: 1.7; }
+
+    /* ─── SERVICES ─── */
+    .services {
+      padding: 7rem 5%;
+      background: var(--bg-warm);
+    }
+    .services-inner { max-width: 1200px; margin: 0 auto; }
+    .services-header { text-align: center; margin-bottom: 3.5rem; }
+    .services-header .section-label { justify-content: center; }
+    .services-header .section-label::before { display: none; }
+    .services-header .section-text { margin: 0 auto; }
+
+    .services-grid {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.5rem;
+    }
+
+    .service-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      padding: 2.5rem 2rem;
+      position: relative; overflow: hidden;
+      transition: transform 0.3s, box-shadow 0.3s;
+      border: 1px solid transparent;
+    }
+    .service-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 20px 60px rgba(45,31,26,0.12);
+      border-color: rgba(196,98,45,0.2);
+    }
+    .service-card-accent {
+      position: absolute; top: 0; left: 0; right: 0; height: 4px;
+      background: var(--terra);
+    }
+    .service-card:nth-child(2) .service-card-accent { background: var(--green); }
+    .service-card:nth-child(3) .service-card-accent { background: #8B4A2A; }
+
+    .service-tag {
+      display: inline-block;
+      padding: 0.25rem 0.75rem; border-radius: 100px;
+      font-size: 0.7rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.08em;
+      margin-bottom: 1.25rem;
+      background: var(--terra-pale); color: var(--terra);
+    }
+    .service-card:nth-child(2) .service-tag {
+      background: var(--green-pale); color: var(--green);
+    }
+    .service-card:nth-child(3) .service-tag {
+      background: rgba(139,74,42,0.08); color: #8B4A2A;
+    }
+
+    .service-icon { font-size: 2.25rem; margin-bottom: 1rem; }
+    .service-name {
+      font-family: 'Lora', serif;
+      font-size: 1.2rem; font-weight: 600;
+      color: var(--dark); margin-bottom: 0.75rem;
+    }
+    .service-desc { color: var(--muted); font-size: 0.875rem; line-height: 1.75; }
+
+    .service-link {
+      display: inline-flex; align-items: center; gap: 0.375rem;
+      color: var(--terra); font-weight: 700; font-size: 0.85rem;
+      text-decoration: none; margin-top: 1.5rem;
+      transition: gap 0.2s;
+    }
+    .service-link:hover { gap: 0.625rem; }
+
+    /* ─── ABOUT ─── */
+    .about {
+      padding: 7rem 5%;
+      background: var(--green);
+      color: #FFF;
+    }
+    .about-inner {
+      max-width: 1100px; margin: 0 auto;
+      display: grid; grid-template-columns: 1.2fr 1fr; gap: 5rem; align-items: center;
+    }
+
+    .about-text .section-label { color: rgba(255,255,255,0.6); }
+    .about-text .section-label::before { background: rgba(255,255,255,0.4); }
+    .about-text .section-title { color: #FFF; }
+    .about-text p { color: rgba(255,255,255,0.75); line-height: 1.9; font-size: 0.95rem; margin-bottom: 1.25rem; }
+
+    .certs { margin-top: 2rem; display: flex; flex-direction: column; gap: 0.75rem; }
+    .cert {
+      display: flex; align-items: center; gap: 0.875rem;
+      font-size: 0.85rem; color: rgba(255,255,255,0.7);
+    }
+    .cert-check {
+      width: 22px; height: 22px; border-radius: 50%;
+      background: rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; flex-shrink: 0; color: #FFF;
+    }
+
+    .about-visual { position: relative; }
+    .about-photo {
+      width: 100%; aspect-ratio: 1;
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.1);
+      border: 1px solid rgba(255,255,255,0.15);
+      display: flex; align-items: center; justify-content: center;
+      overflow: hidden;
+    }
+    .about-photo-inner {
+      font-family: 'Lora', serif;
+      font-size: 5rem; color: rgba(255,255,255,0.15);
+    }
+    .about-enneagram {
+      position: absolute; bottom: -2rem; left: -2rem;
+      width: 100px; height: 100px; opacity: 0.2;
+    }
+
+    /* ─── QUOTE ─── */
+    .quote-section {
+      padding: 6rem 5%; text-align: center;
+      background: var(--bg-warm);
+    }
+    .quote-inner { max-width: 720px; margin: 0 auto; }
+    .quote-flowers { font-size: 2rem; margin-bottom: 1rem; }
+    .quote-text {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.35rem, 2.5vw, 1.875rem);
+      font-style: italic;
+      color: var(--dark); line-height: 1.6;
+      margin-bottom: 2rem;
+    }
+    .quote-author {
+      color: var(--terra); font-weight: 700;
+      font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.08em;
+    }
+    .quote-bar {
+      width: 48px; height: 3px; border-radius: 99px;
+      background: var(--terra); margin: 1.25rem auto 0;
+    }
+
+    /* ─── PROCESS ─── */
+    .process {
+      padding: 7rem 5%;
+    }
+    .process-inner { max-width: 900px; margin: 0 auto; }
+    .process-header { text-align: center; margin-bottom: 4rem; }
+
+    .process-steps {
+      display: flex; flex-direction: column; gap: 2rem;
+      position: relative;
+    }
+    .process-steps::before {
+      content: '';
+      position: absolute; left: 24px; top: 0; bottom: 0; width: 2px;
+      background: linear-gradient(180deg, var(--terra), var(--green));
+    }
+
+    .process-step {
+      display: grid; grid-template-columns: 56px 1fr; gap: 1.75rem; align-items: start;
+    }
+    .step-num {
+      width: 50px; height: 50px; border-radius: 50%;
+      background: var(--bg-card);
+      border: 2px solid var(--terra);
+      display: flex; align-items: center; justify-content: center;
+      font-family: 'Lora', serif; font-weight: 600; font-size: 1.1rem;
+      color: var(--terra); flex-shrink: 0; z-index: 1; position: relative;
+    }
+    .step-content h3 {
+      font-family: 'Lora', serif;
+      font-size: 1.1rem; font-weight: 600; color: var(--dark);
+      margin-bottom: 0.5rem; padding-top: 0.75rem;
+    }
+    .step-content p { color: var(--muted); font-size: 0.9rem; line-height: 1.75; }
+
+    /* ─── CTA ─── */
+    .cta {
+      padding: 7rem 5%;
+      background: var(--terra);
+      text-align: center; color: #FFF;
+    }
+    .cta-inner { max-width: 680px; margin: 0 auto; }
+    .cta-eyebrow {
+      font-size: 0.75rem; font-weight: 800;
+      text-transform: uppercase; letter-spacing: 0.1em;
+      opacity: 0.7; margin-bottom: 1rem;
+    }
+    .cta h2 {
+      font-size: clamp(2rem, 4vw, 3rem);
+      font-weight: 600; margin-bottom: 1.25rem; color: #FFF;
+    }
+    .cta p { opacity: 0.85; margin-bottom: 2.5rem; font-size: 1.05rem; line-height: 1.8; }
+
+    .btn-white {
+      background: #FFF; color: var(--terra);
+      font-weight: 700; padding: 0.75rem 2rem;
+      border-radius: 100px; text-decoration: none;
+      font-size: 0.9rem; transition: all 0.2s;
+      display: inline-block;
+    }
+    .btn-white:hover { background: var(--bg-warm); transform: translateY(-2px); }
+
+    .btn-white-ghost {
+      border: 2px solid rgba(255,255,255,0.5);
+      color: #FFF; font-weight: 700;
+      padding: 0.7rem 1.75rem; border-radius: 100px;
+      text-decoration: none; font-size: 0.9rem;
+      transition: all 0.2s; display: inline-block;
+    }
+    .btn-white-ghost:hover { background: rgba(255,255,255,0.15); }
+
+    .cta-btns { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
+
+    /* ─── FOOTER ─── */
+    footer {
+      background: var(--dark);
+      color: rgba(255,255,255,0.5);
+      padding: 3rem 5%;
+    }
+    .footer-inner {
+      max-width: 1200px; margin: 0 auto;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 1.5rem;
+    }
+    .footer-logo {
+      font-family: 'Lora', serif;
+      font-size: 1.1rem; color: #FFF; text-decoration: none;
+    }
+    .footer-links { display: flex; gap: 1.75rem; list-style: none; }
+    .footer-links a { color: rgba(255,255,255,0.4); text-decoration: none; font-size: 0.8rem; transition: color 0.2s; }
+    .footer-links a:hover { color: rgba(255,255,255,0.8); }
+    .footer-copy { font-size: 0.75rem; }
+
+    /* ─── FADE IN ─── */
+    .fade-in { opacity: 0; transform: translateY(24px); transition: opacity 0.65s ease, transform 0.65s ease; }
+    .fade-in.visible { opacity: 1; transform: translateY(0); }
+  </style>
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav>
+    <a href="#" class="nav-logo">
+      <div class="nav-logo-mark">
+        <svg viewBox="0 0 300 300" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="150" cy="150" r="120" stroke="white" stroke-width="15" fill="none"/>
+          <polygon points="150,30 254,210 46,210" fill="none" stroke="white" stroke-width="12"/>
+          <polyline points="227,58 191,263 268,129 73,58 109,263 32,129 227,58" fill="none" stroke="white" stroke-width="12"/>
+        </svg>
+      </div>
+      Ennéagramme
+    </a>
+    <ul class="nav-links">
+      <li><a href="#">L'Ennéagramme</a></li>
+      <li><a href="#">Formations</a></li>
+      <li><a href="#">Accompagnements</a></li>
+      <li><a href="#">Le formateur</a></li>
+      <li><a href="#">Blog</a></li>
+    </ul>
+    <a href="#" class="btn-terra">Prendre contact</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="fade-in">
+      <div class="hero-tag">🌿 France & Québec</div>
+      <h1>
+        Mieux se comprendre,<br/>
+        <em class="terra-text">mieux vivre</em><br/>
+        ensemble
+      </h1>
+      <p class="hero-sub">
+        Formations, ateliers et accompagnements en Ennéagramme avec Benjamin Ali Aboudou — pour ceux qui veulent comprendre ce qui les anime vraiment.
+      </p>
+      <div class="hero-btns">
+        <a href="#" class="btn-terra">Découvrir les formations</a>
+        <a href="#" class="btn-outline">En savoir plus</a>
+      </div>
+    </div>
+    <div class="hero-visual fade-in">
+      <div class="enneagram-wrap">
+        <div class="enneagram-bg"></div>
+        <svg class="enneagram-svg" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="150" cy="150" r="120" fill="none" stroke="rgba(196,98,45,0.55)" stroke-width="1.5"/>
+          <polygon points="150,30 254,210 46,210" fill="none" stroke="rgba(45,74,62,0.6)" stroke-width="1.5"/>
+          <polyline points="227,58 191,263 268,129 73,58 109,263 32,129 227,58" fill="none" stroke="rgba(196,98,45,0.5)" stroke-width="1.5"/>
+          <g fill="var(--terra)">
+            <circle cx="150" cy="30"  r="5.5"/>
+            <circle cx="227" cy="58"  r="5.5"/>
+            <circle cx="268" cy="129" r="5.5"/>
+            <circle cx="254" cy="210" r="5.5"/>
+            <circle cx="191" cy="263" r="5.5"/>
+            <circle cx="109" cy="263" r="5.5"/>
+            <circle cx="46"  cy="210" r="5.5"/>
+            <circle cx="32"  cy="129" r="5.5"/>
+            <circle cx="73"  cy="58"  r="5.5"/>
+            <circle cx="150" cy="150" r="4" fill="rgba(45,74,62,0.5)"/>
+          </g>
+          <g fill="#2D4A3E" font-size="12" font-family="Lora, serif" font-weight="600">
+            <text x="150" y="17"  text-anchor="middle">9</text>
+            <text x="238" y="52"  text-anchor="middle">1</text>
+            <text x="283" y="133" text-anchor="middle">2</text>
+            <text x="269" y="224" text-anchor="middle">3</text>
+            <text x="201" y="282" text-anchor="middle">4</text>
+            <text x="99"  y="282" text-anchor="middle">5</text>
+            <text x="29"  y="224" text-anchor="middle">6</text>
+            <text x="16"  y="133" text-anchor="middle">7</text>
+            <text x="61"  y="52"  text-anchor="middle">8</text>
+          </g>
+        </svg>
+        <div class="float-badge badge-top">
+          <span class="float-badge-icon">✨</span>
+          <div>
+            <div style="font-size:0.7rem; color:var(--muted);">Certifié</div>
+            <div>IEA & ICF</div>
+          </div>
+        </div>
+        <div class="float-badge badge-bottom">
+          <span class="float-badge-icon">🎓</span>
+          <div>
+            <div style="font-size:0.7rem; color:var(--muted);">Depuis</div>
+            <div>2021</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RIBBON -->
+  <div class="ribbon">
+    <div class="ribbon-item">
+      <span class="ribbon-num">9</span>
+      <span class="ribbon-label">Profils de personnalité</span>
+    </div>
+    <div class="ribbon-item">
+      <span class="ribbon-num">27</span>
+      <span class="ribbon-label">Sous-types instinctuels</span>
+    </div>
+    <div class="ribbon-item">
+      <span class="ribbon-num">5+</span>
+      <span class="ribbon-label">Années d'expérience</span>
+    </div>
+    <div class="ribbon-item">
+      <span class="ribbon-num">2</span>
+      <span class="ribbon-label">Pays d'intervention</span>
+    </div>
+  </div>
+
+  <!-- WHAT IS ENNEAGRAM -->
+  <section class="what">
+    <div class="what-inner">
+      <div class="fade-in">
+        <div class="section-label">L'Ennéagramme</div>
+        <h2 class="section-title">Un miroir,<br/>pas une cage</h2>
+        <p class="section-text">
+          L'Ennéagramme n'est pas un test qui vous enferme dans une catégorie. C'est un système vivant qui révèle les motivations inconscientes derrière vos comportements — pour mieux vous comprendre et vous libérer.
+        </p>
+        <br/>
+        <a href="#" class="btn-terra" style="display: inline-block; margin-top: 1.5rem;">Explorer l'Ennéagramme</a>
+      </div>
+      <div class="what-cards fade-in">
+        <div class="what-card">
+          <div class="what-card-icon">🔍</div>
+          <div class="what-card-title">Motivations profondes</div>
+          <p class="what-card-text">Découvrez les peurs et désirs inconscients qui orientent silencieusement chaque décision de votre vie.</p>
+        </div>
+        <div class="what-card">
+          <div class="what-card-icon">💬</div>
+          <div class="what-card-title">Communication adaptée</div>
+          <p class="what-card-text">Apprenez à décoder et adapter votre langage à chaque profil pour améliorer toutes vos relations.</p>
+        </div>
+        <div class="what-card">
+          <div class="what-card-icon">🌱</div>
+          <div class="what-card-title">Chemin de croissance</div>
+          <p class="what-card-text">L'Ennéagramme montre non seulement qui vous êtes aujourd'hui, mais vers où vous pouvez évoluer.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES -->
+  <section class="services">
+    <div class="services-inner">
+      <div class="services-header fade-in">
+        <div class="section-label">Mes services</div>
+        <h2 class="section-title">Pour chaque besoin,<br/>le bon format</h2>
+        <p class="section-text">Des formations en groupe, des accompagnements individuels et des interventions en entreprise — en présentiel et à distance.</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card fade-in">
+          <div class="service-card-accent"></div>
+          <div class="service-tag">Groupe</div>
+          <div class="service-icon">🎓</div>
+          <div class="service-name">Formations & Ateliers</div>
+          <p class="service-desc">De l'introduction aux bases approfondies. Formats de 3h à une journée complète, en groupe de 4 à 15 personnes.</p>
+          <a href="#" class="service-link">Voir les formations →</a>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-card-accent"></div>
+          <div class="service-tag">Individuel</div>
+          <div class="service-icon">🤲</div>
+          <div class="service-name">Accompagnements personnalisés</div>
+          <p class="service-desc">Séances individuelles pour identifier votre profil, comprendre vos dynamiques et construire un chemin de croissance sur mesure.</p>
+          <a href="#" class="service-link">Découvrir →</a>
+        </div>
+        <div class="service-card fade-in">
+          <div class="service-card-accent"></div>
+          <div class="service-tag">Entreprise</div>
+          <div class="service-icon">🏢</div>
+          <div class="service-name">Ennéagramme professionnel</div>
+          <p class="service-desc">Cohésion d'équipe, communication managériale, gestion des conflits — pour RH, équipes soignantes, éducateurs.</p>
+          <a href="#" class="service-link">En savoir plus →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section class="about">
+    <div class="about-inner">
+      <div class="about-text fade-in">
+        <div class="section-label">Le formateur</div>
+        <h2 class="section-title">Benjamin<br/>Ali Aboudou</h2>
+        <p>Praticien-Formateur en Ennéagramme et Coach Professionnel certifié ACC par l'International Coach Federation, Benjamin accompagne des particuliers, des couples et des équipes en France et au Québec.</p>
+        <p>Sa démarche est ancrée dans la rigueur théorique et l'expérience humaine : l'Ennéagramme n'est pas un concept abstrait, c'est un outil concret qui transforme votre rapport à vous-même et aux autres.</p>
+        <div class="certs">
+          <div class="cert">
+            <div class="cert-check">✓</div>
+            Certification A.C.C — International Coach Federation (2025)
+          </div>
+          <div class="cert">
+            <div class="cert-check">✓</div>
+            Praticien-Formateur Ennéagramme — Dixit Ennéagramme (2021)
+          </div>
+          <div class="cert">
+            <div class="cert-check">✓</div>
+            Coach Professionnel — Mobius Coaching Management (2021)
+          </div>
+          <div class="cert">
+            <div class="cert-check">✓</div>
+            Membre IEA (depuis 2021) & Canada Ennéagramme (depuis 2026)
+          </div>
+        </div>
+      </div>
+      <div class="about-visual fade-in">
+        <div class="about-photo">
+          <div class="about-photo-inner">BA</div>
+        </div>
+        <svg class="about-enneagram" viewBox="0 0 300 300">
+          <circle cx="150" cy="150" r="120" fill="none" stroke="white" stroke-width="4"/>
+          <polygon points="150,30 254,210 46,210" fill="none" stroke="white" stroke-width="4"/>
+          <polyline points="227,58 191,263 268,129 73,58 109,263 32,129 227,58" fill="none" stroke="white" stroke-width="4"/>
+        </svg>
+      </div>
+    </div>
+  </section>
+
+  <!-- QUOTE -->
+  <section class="quote-section fade-in">
+    <div class="quote-inner">
+      <div class="quote-flowers">🌿</div>
+      <p class="quote-text">
+        « L'Ennéagramme ne décrit pas ce que nous faisons,<br/>mais <em>pourquoi</em> nous le faisons. »
+      </p>
+      <div class="quote-author">Helen Palmer — pionnière de l'Ennéagramme</div>
+      <div class="quote-bar"></div>
+    </div>
+  </section>
+
+  <!-- PROCESS -->
+  <section class="process">
+    <div class="process-inner">
+      <div class="process-header fade-in">
+        <div class="section-label" style="justify-content:center;">Comment ça se passe</div>
+        <h2 class="section-title" style="text-align:center;">3 étapes vers<br/>la connaissance de soi</h2>
+      </div>
+      <div class="process-steps">
+        <div class="process-step fade-in">
+          <div class="step-num">1</div>
+          <div class="step-content">
+            <h3>Entretien exploratoire gratuit</h3>
+            <p>30 minutes pour vous présenter l'Ennéagramme, répondre à vos questions et déterminer ensemble le format le plus adapté à vos besoins.</p>
+          </div>
+        </div>
+        <div class="process-step fade-in">
+          <div class="step-num">2</div>
+          <div class="step-content">
+            <h3>Formation ou accompagnement</h3>
+            <p>Vous intégrez un atelier, une formation ou démarrez un suivi individuel. La découverte de votre profil se fait par l'expérience, pas par un simple questionnaire.</p>
+          </div>
+        </div>
+        <div class="process-step fade-in">
+          <div class="step-num">3</div>
+          <div class="step-content">
+            <h3>Intégration au quotidien</h3>
+            <p>Armé d'une compréhension claire de vos mécanismes, vous appliquez l'Ennéagramme dans vos relations, votre travail et votre développement personnel.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="cta">
+    <div class="cta-inner fade-in">
+      <div class="cta-eyebrow">Commencer maintenant</div>
+      <h2>Prêt à vous découvrir autrement ?</h2>
+      <p>Réservez un entretien exploratoire gratuit de 30 minutes — sans engagement, juste de la curiosité.</p>
+      <div class="cta-btns">
+        <a href="#" class="btn-white">Entretien gratuit de 30 min</a>
+        <a href="#" class="btn-white-ghost">Voir les formations</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <a href="#" class="footer-logo">Ennéagramme · Benjamin Ali Aboudou</a>
+      <ul class="footer-links">
+        <li><a href="#">Mentions légales</a></li>
+        <li><a href="cgv.html">CGV</a></li>
+        <li><a href="#">Confidentialité</a></li>
+        <li><a href="#">Contact</a></li>
+      </ul>
+      <p class="footer-copy">© 2026 Benjamin Ali Aboudou. France & Québec.</p>
+    </div>
+  </footer>
+
+  <script>
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((e, i) => {
+        if (e.isIntersecting) {
+          setTimeout(() => e.target.classList.add('visible'), i * 80);
+        }
+      });
+    }, { threshold: 0.1 });
+    document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+  </script>
+</body>
+</html>
