@@ -142,6 +142,28 @@
     svg.appendChild(g);
   }
 
+  /* ───── 4. Habillage du hero : grands cercles très légers, en dérive lente ───── */
+  var HERO = {
+    /* a : deux ondes qui se croisent à droite du titre */
+    a: [{ x: .74, y: .52, k: 34, gap: 15 }, { x: .9, y: .3, k: 34, gap: 15 }],
+    /* b : un seul halo, coupé par le coin haut droit */
+    b: [{ x: 1.04, y: -.12, k: 80, gap: 12 }],
+    /* c : trois petites présences (les trois centres) */
+    c: [{ x: .68, y: .42, k: 18, gap: 11 }, { x: .83, y: .22, k: 18, gap: 11 }, { x: .86, y: .68, k: 18, gap: 11 }],
+    /* d : deux très grandes ondes qui traversent toute la largeur */
+    d: [{ x: .18, y: 1.15, k: 80, gap: 14 }, { x: .82, y: -.1, k: 80, gap: 14 }]
+  };
+  function hero(svg, variant, ink) {
+    var spec = HERO[variant] || HERO.a;
+    spec.forEach(function (c, i) {
+      var g = el('g', { class: 'drift drift--' + (i % 3), fill: 'none', stroke: ink, 'stroke-width': 0.8, 'vector-effect': 'non-scaling-stroke' });
+      var wrap = el('g', { transform: 'translate(' + f1(c.x * W) + ' ' + f1(c.y * H) + ')' });
+      for (var k = 1; k <= c.k; k++) g.appendChild(el('circle', { cx: 0, cy: 0, r: k * c.gap }));
+      wrap.appendChild(g);
+      svg.appendChild(wrap);
+    });
+  }
+
   function render(box) {
     if (box.firstChild) return;
     var style = box.getAttribute('data-style') || 'champ';
@@ -152,15 +174,16 @@
     var r = rng(hash(seedStr + style));
     /* la composition suit le format réel de l'emplacement (carte, bandeau…) */
     var ratio = box.clientWidth && box.clientHeight ? box.clientWidth / box.clientHeight : 1.6;
-    H = 400; W = Math.round(H * Math.max(1, Math.min(ratio, 3.2)));
+    H = 400; W = Math.round(H * Math.max(1, Math.min(ratio, style === 'hero' ? 6 : 3.2)));
     var svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, preserveAspectRatio: 'xMidYMid slice', 'aria-hidden': 'true', focusable: 'false' });
-    if (style === 'cercles') cercles(svg, n, r, ink);
+    if (style === 'hero') hero(svg, box.getAttribute('data-variant'), ink);
+    else if (style === 'cercles') cercles(svg, n, r, ink);
     else if (style === 'ennea') ennea(svg, n, r, ink, seedStr);
     else champ(svg, n, r, ink);
     box.appendChild(svg);
   }
 
-  function all() { Array.prototype.forEach.call(document.querySelectorAll('.art[data-style]'), render); }
+  function all() { Array.prototype.forEach.call(document.querySelectorAll('.art[data-style], .h-hero__art[data-style]'), render); }
   if (document.readyState !== 'loading') all(); else document.addEventListener('DOMContentLoaded', all);
   window.EnneaArt = { render: render, all: all };
 })();
