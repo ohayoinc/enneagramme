@@ -1,0 +1,5 @@
+# Interdit l'accès direct aux fichiers de configuration et au cache anti-abus.
+<FilesMatch "^(config|config\.example)\.php$">
+  Require all denied
+</FilesMatch>
+Options -Indexes
