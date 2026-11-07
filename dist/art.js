@@ -153,8 +153,12 @@
     /* d : deux très grandes ondes qui traversent toute la largeur */
     d: [{ x: .18, y: 1.15, k: 80, gap: 14 }, { x: .82, y: -.1, k: 80, gap: 14 }]
   };
-  function hero(svg, variant, ink) {
+  function hero(svg, variant, ink, centres) {
     var spec = HERO[variant] || HERO.a;
+    /* data-centres="x,y,k,gap;x,y,k,gap" : composition propre à une page */
+    if (centres) spec = centres.split(';').map(function (c) {
+      var v = c.split(',').map(parseFloat); return { x: v[0], y: v[1], k: v[2], gap: v[3] };
+    });
     spec.forEach(function (c, i) {
       var g = el('g', { class: 'drift drift--' + (i % 3), fill: 'none', stroke: ink, 'stroke-width': 0.8, 'vector-effect': 'non-scaling-stroke' });
       var wrap = el('g', { transform: 'translate(' + f1(c.x * W) + ' ' + f1(c.y * H) + ')' });
@@ -176,14 +180,14 @@
     var ratio = box.clientWidth && box.clientHeight ? box.clientWidth / box.clientHeight : 1.6;
     H = 400; W = Math.round(H * Math.max(1, Math.min(ratio, style === 'hero' ? 6 : 3.2)));
     var svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, preserveAspectRatio: 'xMidYMid slice', 'aria-hidden': 'true', focusable: 'false' });
-    if (style === 'hero') hero(svg, box.getAttribute('data-variant'), ink);
+    if (style === 'hero') hero(svg, box.getAttribute('data-variant'), ink, box.getAttribute('data-centres'));
     else if (style === 'cercles') cercles(svg, n, r, ink);
     else if (style === 'ennea') ennea(svg, n, r, ink, seedStr);
     else champ(svg, n, r, ink);
     box.appendChild(svg);
   }
 
-  function all() { Array.prototype.forEach.call(document.querySelectorAll('.art[data-style], .h-hero__art[data-style]'), render); }
+  function all() { Array.prototype.forEach.call(document.querySelectorAll('.art[data-style], .h-hero__art[data-style], .page-hero__art[data-style]'), render); }
   if (document.readyState !== 'loading') all(); else document.addEventListener('DOMContentLoaded', all);
   window.EnneaArt = { render: render, all: all };
 })();

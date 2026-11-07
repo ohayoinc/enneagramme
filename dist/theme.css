@@ -631,3 +631,29 @@ main:not(.home) > section:not([class*="px-"]) > .grid { border-left: 1px solid v
 .h-services .card:hover .card__art { opacity: .34; }
 .h-services .card:hover .card__art svg { transform: scale(1.06) translateX(-2%); }
 @media (max-width: 767px) { .h-services .card { min-height: 260px; } .h-services .card__art { opacity: .16; } }
+
+/* ───────── Heros des pages internes : cercles propres à chaque page ───────── */
+.page-hero { position: relative; overflow: hidden; }
+.page-hero > :not(.page-hero__art) { position: relative; z-index: 1; }
+.page-hero__art {
+  position: absolute; inset: 0; z-index: 0; pointer-events: none; opacity: .15;
+  -webkit-mask-image: linear-gradient(90deg, transparent 30%, #000 75%); mask-image: linear-gradient(90deg, transparent 30%, #000 75%);
+}
+.page-hero__art svg { width: 100%; height: 100%; display: block; }
+.page-hero__art .drift--0 { animation: drift-0 19s ease-in-out infinite alternate; }
+.page-hero__art .drift--1 { animation: drift-1 23s ease-in-out infinite alternate; }
+.page-hero__art .drift--2 { animation: drift-2 27s ease-in-out infinite alternate; }
+@media (max-width: 767px) { .page-hero__art { opacity: .1; -webkit-mask-image: linear-gradient(180deg, #000 0%, transparent 70%); mask-image: linear-gradient(180deg, #000 0%, transparent 70%); } }
+
+/* ───────── Tout arrondi : encadrés, étiquettes, boutons, champs ───────── */
+/* encadrés (bordure sur les quatre côtés) */
+[class~="border-[0.5px]"], [class~="border"] { border-radius: var(--r-md); }
+/* étiquettes et boutons encadrés : pilules */
+span[class~="border-[0.5px]"], a[class~="border-[0.5px]"], button[class~="border-[0.5px]"],
+button[class*="px-"][class*="py-"], a[class*="px-"][class*="py-"][class*="bg-"] { border-radius: var(--r-pill); }
+input[class~="border-[0.5px]"], select[class~="border-[0.5px]"] { border-radius: var(--r-pill); padding-left: 1.25rem; }
+textarea[class~="border-[0.5px]"] { border-radius: 14px; }
+/* grilles à filets partagés → cartes séparées et arrondies */
+.gap-px[class*="bg-outline"], .gap-px.bg-\[\#e4e4e4\] { gap: 14px !important; background: transparent !important; border: 0 !important; }
+.gap-px[class*="bg-outline"] > *, .gap-px.bg-\[\#e4e4e4\] > * { border: 1px solid var(--line); border-radius: var(--r-md); overflow: hidden; }
+main:not(.home) > section:not([class*="px-"]) > .grid.gap-px { border-left: 0; border-right: 0; padding-top: clamp(1.5rem, 3vw, 2.5rem); padding-bottom: clamp(1.5rem, 3vw, 2.5rem); }
