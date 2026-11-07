@@ -150,6 +150,9 @@
     var dark = box.getAttribute('data-tone') === 'dark';
     var ink = dark ? '#ffffff' : '#000000';
     var r = rng(hash(seedStr + style));
+    /* la composition suit le format réel de l'emplacement (carte, bandeau…) */
+    var ratio = box.clientWidth && box.clientHeight ? box.clientWidth / box.clientHeight : 1.6;
+    H = 400; W = Math.round(H * Math.max(1, Math.min(ratio, 3.2)));
     var svg = el('svg', { viewBox: '0 0 ' + W + ' ' + H, preserveAspectRatio: 'xMidYMid slice', 'aria-hidden': 'true', focusable: 'false' });
     if (style === 'cercles') cercles(svg, n, r, ink);
     else if (style === 'ennea') ennea(svg, n, r, ink, seedStr);
