@@ -771,3 +771,7 @@ main:not(.home) > section:not([class*="px-"]) > .grid.gap-px { border-left: 0; b
 @media (max-width: 899px) { .ap-ph--portrait { max-width: 260px; } .ap-ph--small { max-width: 200px; } }
 /* Tableaux (certifications, participations) : le texte passe à la ligne sur mobile */
 main .grid-cols-12 > * { min-width: 0; overflow-wrap: anywhere; }
+/* Articles sur fond pierre : l'illustration prend le blanc de la carte,
+   pour que chaque carte se détache nettement du fond de la section */
+.h-articles .post .art, .h-articles .post .post__art { background: #fff; }
+.h-articles .post { box-shadow: 0 0 0 1px rgba(0, 0, 0, .04); }
