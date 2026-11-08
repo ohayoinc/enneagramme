@@ -57,7 +57,7 @@ Il peut aussi être lancé à la main : onglet **Actions → Suivi SEO → Run w
    - GA4 → **Administration → Gestion des accès à la propriété → +** → rôle *Lecteur*.
 5. Dans GitHub : **Settings → Secrets and variables → Actions** :
    - onglet *Secrets* → `GOOGLE_SERVICE_ACCOUNT_JSON` = contenu complet du fichier JSON ;
-   - onglet *Variables* → `GA4_PROPERTY_ID` = identifiant **numérique** de la propriété GA4 (Administration → Détails de la propriété) ;
+   - propriété GA4 déjà renseignée dans le workflow (`488854221`) ; la variable `GA4_PROPERTY_ID` permet de la remplacer si besoin ;
    - optionnel, variable `GSC_SITE_URL` si la propriété n'est pas `sc-domain:enneagramme.co` (ex. `https://enneagramme.co/`).
 
 Sans ces secrets, le rapport hebdomadaire contient seulement l'audit technique.
