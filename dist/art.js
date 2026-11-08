@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════════════════════════════
-   ENNÉAGRAMME — illustrations génératives en noir et blanc
+   ENNÉAGRAMME : illustrations génératives en noir et blanc
    Chaque élément <div class="art" data-style="…" data-n="…" data-seed="…">
    reçoit un dessin SVG calculé, toujours identique pour un même seed.
 

@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════════════════════════════
-   ENNÉAGRAMME — Thème « Intemporel »
+   ENNÉAGRAMME : Thème « Intemporel »
    Fond blanc, noir pur, images toujours en noir et blanc.
    Grotesque nette (Instrument Sans) + italique serif en accent
    (Instrument Serif). Formes douces : pilules et angles arrondis.
@@ -290,7 +290,7 @@ footer a:hover { color: var(--ink) !important; }
 input, textarea, select { color: var(--ink) !important; font-family: var(--sans); }
 
 /* ════════════════════════════════════════════════════════════════
-   ACCUEIL (index.html) — composants propres
+   ACCUEIL (index.html) : composants propres
    ════════════════════════════════════════════════════════════════ */
 .wrap { max-width: calc(var(--wrap) + 2 * var(--gutter)); margin: 0 auto; padding-left: var(--gutter); padding-right: var(--gutter); }
 .home section { position: relative; }
@@ -492,7 +492,7 @@ a.card:hover { border-color: var(--ink); }
 .cta-panel .ghost { position: absolute; right: -6%; bottom: -30%; width: 46%; opacity: .07; pointer-events: none; }
 
 /* ════════════════════════════════════════════════════════════════
-   MOUVEMENT — activé par dist/motion.js (classe .motion sur <html>)
+   MOUVEMENT : activé par dist/motion.js (classe .motion sur <html>)
    ════════════════════════════════════════════════════════════════ */
 @keyframes soft-in { from { opacity: 0; transform: translateY(12px); } to { opacity: 1; transform: none; } }
 @keyframes page-in { from { opacity: 0; } to { opacity: 1; } }

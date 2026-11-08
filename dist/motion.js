@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════════════════════════════
-   ENNÉAGRAMME — mouvements doux
+   ENNÉAGRAMME : mouvements doux
    Apparitions au défilement, titres mot à mot, images en rideau,
    en-tête qui s'efface, transitions de page, curseur d'encre.
    Tout est désactivé si l'utilisateur préfère réduire les animations.
