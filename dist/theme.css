@@ -411,6 +411,32 @@ input, textarea, select { color: var(--ink) !important; font-family: var(--sans)
   .steps__options a svg { margin-top: 0; }
 }
 
+/* Démarche : dessin progressif (activé par motion.js, classe .play) */
+html.motion .steps__start .num { transform: scale(.4); opacity: 0; transition: transform 1s var(--ease), opacity .6s var(--ease); }
+html.motion .steps__start b, html.motion .steps__start .meta, html.motion .steps__fork { opacity: 0; transform: translate3d(0, 10px, 0); transition: opacity .9s var(--ease), transform 1.2s var(--ease); }
+html.motion .steps__start b { transition-delay: .2s; }
+html.motion .steps__start .meta { transition-delay: .3s; }
+html.motion .steps__fork { transition-delay: 1s; }
+html.motion .steps__fork::before, html.motion .steps__options::before, html.motion .steps__options li::before { transform: scaleY(0); transform-origin: top; transition: transform .5s var(--ease-io); }
+html.motion .steps__fork::before { transition-delay: .55s; }
+html.motion .steps__options::before { transition-delay: 1.45s; }
+html.motion .steps__options::after { transform: scaleX(0); transition: transform .8s var(--ease-io) 1.8s; }
+html.motion .steps__options li::before { transition-delay: 2.45s; }
+html.motion .steps__options li a { opacity: 0; transform: translate3d(0, 18px, 0); transition: opacity 1s var(--ease), transform 1.4s var(--ease), border-color .6s var(--ease); }
+html.motion .steps__options li:nth-child(1) a { transition-delay: 2.7s, 2.7s, 0s; }
+html.motion .steps__options li:nth-child(2) a { transition-delay: 2.82s, 2.82s, 0s; }
+html.motion .steps__options li:nth-child(3) a { transition-delay: 2.94s, 2.94s, 0s; }
+html.motion .steps__options li:nth-child(4) a { transition-delay: 3.06s, 3.06s, 0s; }
+html.motion .steps.play .steps__start .num,
+html.motion .steps.play .steps__start b, html.motion .steps.play .steps__start .meta,
+html.motion .steps.play .steps__fork, html.motion .steps.play .steps__options li a { opacity: 1; transform: none; }
+html.motion .steps.play .steps__fork::before, html.motion .steps.play .steps__options::before,
+html.motion .steps.play .steps__options::after, html.motion .steps.play .steps__options li::before { transform: none; }
+@media (max-width: 700px) {
+  html.motion .steps__options li:nth-child(n) a { transition-delay: calc(1.8s + var(--i, 0) * .12s), calc(1.8s + var(--i, 0) * .12s), 0s; }
+  html.motion .steps__options li:nth-child(2) { --i: 1; } html.motion .steps__options li:nth-child(3) { --i: 2; } html.motion .steps__options li:nth-child(4) { --i: 3; }
+}
+
 /* Bloc image + carte */
 .feature { position: relative; margin-top: clamp(3.5rem, 7vw, 5.5rem); border-radius: var(--r-lg); overflow: hidden; }
 .feature > img { width: 100%; height: clamp(420px, 46vw, 620px); object-fit: cover; object-position: 50% 45%; border-radius: 0; }
@@ -555,7 +581,7 @@ html.motion .split.in .w > span { transform: none; }
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
   *, *::before, *::after { animation-delay: 0s !important; animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
-  html.motion .rv, html.motion .rv-img img, html.motion .split .w > span { opacity: 1 !important; transform: none !important; clip-path: none !important; }
+  html.motion .rv, html.motion .rv-img img, html.motion .split .w > span, html.motion .steps * { opacity: 1 !important; transform: none !important; clip-path: none !important; }
   #cursor { display: none !important; }
 }
 
