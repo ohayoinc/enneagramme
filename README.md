@@ -5,6 +5,7 @@ Site statique de Benjamin Ali Aboudou — ateliers et accompagnement Ennéagramm
 - Production : https://enneagramme.co (hébergé chez Hostinger)
 - Pages HTML à la racine, feuille de style compilée dans `dist/styles.css`
 - `sitemap.xml`, `robots.txt`, `llms.txt`, `404.html` servis à la racine
+- Mesure d'audience (GA4 + bandeau de consentement) et suivi SEO : voir [`seo/README.md`](seo/README.md)
 
 ## Provenance
 
@@ -35,3 +36,13 @@ Fond blanc, encre noire, images toujours en noir et blanc, typographie éditoria
 
 Pour une nouvelle page : inclure `/dist/styles.css`, `/dist/theme.css`, `/dist/motion.js` (defer) et la police Google
 Fonts `Bodoni Moda` + `Jost` comme sur `index.html`.
+
+## Infolettre (Brevo)
+
+Formulaire d'inscription (section `#infolettre`) sur les pages principales et les articles,
+envoyé en AJAX par `newsletter.js` à `api/newsletter.php`, qui appelle l'API Brevo côté serveur.
+
+La clé API n'est **jamais** versionnée ni exposée au navigateur. Sur Hostinger, le fichier
+`public_html/api/newsletter-config.php` (modèle : `api/newsletter-config.example.php`, ignoré par git,
+bloqué par `api/.htaccess`) contient `api_key`, `list_id` et, optionnellement, `doi_template_id`.
+Après une double confirmation, Brevo redirige vers `infolettre-confirmee.html`.

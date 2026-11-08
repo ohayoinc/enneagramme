@@ -1,5 +1,5 @@
 /* ════════════════════════════════════════════════════════════════
-   ENNÉAGRAMME — illustrations génératives en noir et blanc
+   ENNÉAGRAMME : illustrations génératives en noir et blanc
    Chaque élément <div class="art" data-style="…" data-n="…" data-seed="…">
    reçoit un dessin SVG calculé, toujours identique pour un même seed.
 
@@ -228,7 +228,7 @@
     box.appendChild(svg);
   }
 
-  function all() { Array.prototype.forEach.call(document.querySelectorAll('.art[data-style], .h-hero__art[data-style], .page-hero__art[data-style]'), render); }
+  function all() { Array.prototype.forEach.call(document.querySelectorAll('.art[data-style], .h-hero__art[data-style], .page-hero__art[data-style], .end__art[data-style]'), render); }
   if (document.readyState !== 'loading') all(); else document.addEventListener('DOMContentLoaded', all);
   window.EnneaArt = { render: render, all: all };
 })();
