@@ -737,15 +737,6 @@ main:not(.home) > section:not([class*="px-"]) > .grid.gap-px { border-left: 0; b
   .end__actions .pill { flex: 1 1 auto; }
 }
 
-/* ───────── À propos : diptyque photo ───────── */
-.ap-photos { padding-top: clamp(3.5rem, 7vw, 6rem); padding-bottom: clamp(3.5rem, 7vw, 6rem); }
-.diptych { display: grid; gap: 14px; grid-template-columns: 1fr; }
-@media (min-width: 900px) { .diptych { grid-template-columns: 7fr 5fr; align-items: start; gap: clamp(14px, 2vw, 28px); } .diptych__b { margin-top: clamp(4rem, 12vw, 11rem); } }
-.diptych figure { margin: 0; }
-.diptych img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--r-lg); display: block; }
-.diptych__b img { aspect-ratio: 1 / 1; }
-.diptych figcaption { margin-top: 1rem; max-width: 46ch; font-size: 14px; line-height: 1.55; color: var(--muted); }
-
 /* Carte de présentation : même marge en haut, en bas et à droite.
    La photo remplit le cadre, qui grandit avec le texte de la carte. */
 @media (min-width: 768px) {
@@ -753,3 +744,34 @@ main:not(.home) > section:not([class*="px-"]) > .grid.gap-px { border-left: 0; b
   .feature > img { position: absolute; inset: 0; height: 100% !important; }
   .feature__card { position: relative; right: auto; top: auto; transform: none; align-self: center; }
 }
+
+/* ───────── À propos : parcours, portrait et photos verticales ───────── */
+.ap-story { padding-top: clamp(4rem, 8vw, 7rem); padding-bottom: clamp(4rem, 8vw, 7rem); }
+.ap-story__row1, .ap-story__row2 { display: grid; gap: clamp(2rem, 4vw, 4rem); }
+.ap-story__row2 { margin-top: clamp(4rem, 8vw, 7rem); }
+@media (min-width: 900px) { .ap-story__row1 { grid-template-columns: minmax(0, 320px) minmax(0, 1fr); align-items: center; column-gap: clamp(3rem, 6vw, 6rem); } .ap-story__row2 { grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); align-items: start; } }
+.ap-ph { margin: 0; }
+.ap-ph img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--r-lg); display: block; }
+.ap-ph figcaption { margin-top: .9rem; font-size: 13.5px; line-height: 1.5; color: var(--muted); max-width: 40ch; }
+.ap-lead { font-family: var(--serif); font-style: italic; font-size: clamp(1.7rem, 2.9vw, 2.6rem); line-height: 1.22; letter-spacing: -.01em; color: var(--ink); }
+.ap-body { margin-top: 2rem; } .ap-story__row2 .ap-body { margin-top: 0; }
+.ap-body p { font-size: 1.0625rem; line-height: 1.75; color: var(--ink-soft); } .ap-body p + p { margin-top: 1rem; }
+.ap-stats { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin-top: 2rem; }
+.ap-stats div { border: 1px solid var(--line); border-radius: var(--r-md); padding: 1.25rem 1.4rem; }
+.ap-stats small { display: block; font-size: 12px; color: var(--muted); }
+.ap-stats b { display: block; margin-top: .35rem; font-size: 2rem; font-weight: 500; letter-spacing: -.03em; }
+.ap-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; align-items: start; }
+.ap-pair > :nth-child(2) { margin-top: clamp(2rem, 6vw, 5rem); }
+@media (max-width: 600px) { .ap-stats div { padding: 1rem; } .ap-stats b { font-size: 1.5rem; } }
+
+.ap-ph--portrait { max-width: 320px; }
+.ap-ph--small { max-width: 240px; margin-top: 2.5rem; }
+.ap-ph--big img { aspect-ratio: 4 / 5; }
+.ap-story, .ap-story * { min-width: 0; }
+@media (max-width: 899px) { .ap-ph--portrait { max-width: 260px; } .ap-ph--small { max-width: 200px; } }
+/* Tableaux (certifications, participations) : le texte passe à la ligne sur mobile */
+main .grid-cols-12 > * { min-width: 0; overflow-wrap: anywhere; }
+/* Articles sur fond pierre : l'illustration prend le blanc de la carte,
+   pour que chaque carte se détache nettement du fond de la section */
+.h-articles .post .art, .h-articles .post .post__art { background: #fff; }
+.h-articles .post { box-shadow: 0 0 0 1px rgba(0, 0, 0, .04); }
