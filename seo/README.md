@@ -22,7 +22,7 @@ La validation DNS couvre `http`, `https`, `www` et sans `www` : aucune balise à
 
 1. <https://analytics.google.com> → **Administration → Créer → Propriété** (fuseau : Canada/Montréal, devise CAD).
 2. **Flux de données → Web** → `https://enneagramme.co`. Copier l'**ID de mesure** (`G-XXXXXXXXXX`).
-3. Le coller dans `assets/analytics.js` (`var GA_MEASUREMENT_ID = 'G-…';`), puis mettre le fichier en ligne sur Hostinger avec le reste du site.
+3. ✅ Fait : `G-YSH1XBCB1S` est renseigné dans `assets/analytics.js` (propriété `488854221`). Mettre le fichier en ligne sur Hostinger avec le reste du site.
 4. Dans GA4 : **Administration → Associations de produits → Search Console** pour croiser requêtes Google et comportement sur le site.
 5. Dans GA4 : **Administration → Événements** → marquer `contact_email`, `contact_phone` et `booking_click` comme **événements clés** (conversions).
 

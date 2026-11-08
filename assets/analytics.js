@@ -12,7 +12,7 @@
 (function () {
   'use strict';
 
-  var GA_MEASUREMENT_ID = ''; // ex. 'G-ABC123DEF4'
+  var GA_MEASUREMENT_ID = 'G-YSH1XBCB1S';
   var STORAGE_KEY = 'ennea-consent-v1';
   var CONSENT_MAX_AGE_DAYS = 395; // ~13 mois, durée maximale recommandée
 
