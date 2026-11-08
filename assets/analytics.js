@@ -1,5 +1,5 @@
 /*
- * Mesure d'audience — enneagramme.co
+ * Mesure d'audience : enneagramme.co
  *
  * Google Analytics 4, chargé UNIQUEMENT après consentement explicite du visiteur
  * (Loi 25 du Québec / RGPD). Tant que le visiteur n'a pas accepté, aucun script
