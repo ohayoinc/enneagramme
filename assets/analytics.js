@@ -16,6 +16,17 @@
   var STORAGE_KEY = 'ennea-consent-v1';
   var CONSENT_MAX_AGE_DAYS = 395; // ~13 mois, durée maximale recommandée
 
+  var IS_PROD = /^(www\.)?enneagramme\.co$/.test(location.hostname);
+
+  // Staging et autres copies : demander aux moteurs de ne pas indexer
+  // (robots.txt est commun aux deux sites puisqu'ils viennent du même dépôt).
+  if (!IS_PROD && location.hostname !== 'localhost' && location.hostname !== '127.0.0.1') {
+    var robots = document.createElement('meta');
+    robots.name = 'robots';
+    robots.content = 'noindex, nofollow';
+    document.head.appendChild(robots);
+  }
+
   if (!GA_MEASUREMENT_ID) return;
 
   function readConsent() {
@@ -45,7 +56,11 @@
     window.dataLayer = window.dataLayer || [];
     window.gtag = function () { window.dataLayer.push(arguments); };
     window.gtag('js', new Date());
-    window.gtag('config', GA_MEASUREMENT_ID, { anonymize_ip: true });
+    // Hors production (staging, local) : mode débogage, visible dans GA4 > DebugView
+    // et exclu des rapports par le filtre « Trafic des développeurs ».
+    var config = { anonymize_ip: true };
+    if (!IS_PROD) config.debug_mode = true;
+    window.gtag('config', GA_MEASUREMENT_ID, config);
     var s = document.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + encodeURIComponent(GA_MEASUREMENT_ID);
@@ -95,22 +110,23 @@
     banner.setAttribute('role', 'dialog');
     banner.setAttribute('aria-live', 'polite');
     banner.setAttribute('aria-label', 'Témoins de mesure d’audience');
+    // Reprend le thème du site (dist/theme.css) avec des valeurs de secours.
     banner.style.cssText = [
       'position:fixed', 'left:16px', 'right:16px', 'bottom:16px', 'z-index:9999',
-      'max-width:520px', 'margin:0 auto', 'padding:20px 22px',
-      'background:#fff', 'color:#000', 'border:1px solid #e6e6e6', 'border-radius:22px',
-      'font:14px/1.55 var(--sans,"Instrument Sans","Helvetica Neue",Arial,sans-serif)',
-      'box-shadow:0 12px 40px rgba(0,0,0,.12)',
-      'opacity:0', 'transform:translateY(12px)', 'transition:opacity .6s cubic-bezier(.22,1,.36,1),transform .8s cubic-bezier(.22,1,.36,1)'
+      'max-width:560px', 'margin:0 auto', 'padding:20px 22px',
+      'background:var(--paper,#fff)', 'color:var(--ink-soft,#2b2b2b)',
+      'border:1px solid var(--line,#e6e6e6)', 'border-radius:var(--r-lg,22px)',
+      'font:15px/1.5 var(--sans,"Instrument Sans","Helvetica Neue",Arial,sans-serif)',
+      'box-shadow:0 12px 40px rgba(0,0,0,.12)'
     ].join(';');
-    var btn = 'cursor:pointer;padding:10px 20px;border-radius:999px;font:inherit;font-weight:500;';
+    var btn = 'cursor:pointer;padding:10px 20px;border-radius:var(--r-pill,999px);font:inherit;font-weight:500;border:1px solid var(--ink,#000);';
     banner.innerHTML =
-      '<p style="margin:0 0 16px;color:#2b2b2b">J\u2019utilise des témoins de mesure d\u2019audience (Google Analytics) ' +
+      '<p style="margin:0 0 16px">J\u2019utilise des témoins de mesure d\u2019audience (Google Analytics) ' +
       'pour comprendre quelles pages vous sont utiles et améliorer le site. Ils ne sont déposés qu\u2019avec votre accord. ' +
-      '<a href="confidentialite.html#cookies" style="color:#000;text-decoration:underline;text-underline-offset:3px">En savoir plus</a></p>' +
+      '<a href="/confidentialite.html#cookies" style="color:var(--ink,#000);text-decoration:underline">En savoir plus</a></p>' +
       '<div style="display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end">' +
-      '<button type="button" data-consent="denied" style="' + btn + 'background:#fff;color:#000;border:1px solid #d0d0d0">Refuser</button>' +
-      '<button type="button" data-consent="granted" style="' + btn + 'background:#000;color:#fff;border:1px solid #000">Accepter</button>' +
+      '<button type="button" data-consent="denied" style="' + btn + 'background:transparent;color:var(--ink,#000)">Refuser</button>' +
+      '<button type="button" data-consent="granted" style="' + btn + 'background:var(--ink,#000);color:var(--paper,#fff)">Accepter</button>' +
       '</div>';
     banner.addEventListener('click', function (e) {
       var v = e.target.getAttribute && e.target.getAttribute('data-consent');
@@ -125,9 +141,6 @@
       }
     });
     document.body.appendChild(banner);
-    requestAnimationFrame(function () { requestAnimationFrame(function () {
-      if (banner) { banner.style.opacity = '1'; banner.style.transform = 'none'; }
-    }); });
   }
 
   /* Lien « Gérer mes témoins » : tout élément portant l'attribut data-consent-open. */
