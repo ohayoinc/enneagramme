@@ -57,7 +57,7 @@
 
     /* ───── 2. Éléments à révéler ───── */
     var SEL = [
-      '.card', '.post', '.quote', '.art--banner', '.steps li', '.tile', '.feature', '.stats', '.emblem', '.cta-panel form', '.faq-item',
+      '.card', '.post', '.quote', '.art--banner', '.steps__start', '.steps__options li', '.tile', '.feature', '.stats', '.emblem', '.cta-panel form', '.faq-item',
       'h1', 'h2', 'h3', 'h4', 'p', 'blockquote', 'li', 'figure', 'img',
       'a.group', 'article', '.faq-item', 'table',
       'section > .grid > div', 'section > .flex > a', '.w-px', '.h-px', 'span.font-label.block'
