@@ -1,0 +1,48 @@
+name: Mise en ligne (Hostinger)
+
+# Déploie le site sur Hostinger par FTP à chaque modification de la branche par défaut.
+# Secrets requis : FTP_SERVER, FTP_USERNAME, FTP_PASSWORD
+# Variables optionnelles : FTP_SERVER_DIR (défaut « public_html/ »), FTP_PROTOCOL (défaut « ftps »)
+
+on:
+  push:
+  workflow_dispatch:
+
+concurrency:
+  group: deploy-production
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    if: github.ref_name == github.event.repository.default_branch
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Audit SEO (bloque la mise en ligne en cas d'erreur)
+        run: python3 seo/audit.py
+
+      - name: Envoi des fichiers sur Hostinger
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ${{ vars.FTP_PROTOCOL || 'ftps' }}
+          server-dir: ${{ vars.FTP_SERVER_DIR || 'public_html/' }}
+          # Seuls les fichiers modifiés sont envoyés. Les fichiers présents sur le serveur
+          # mais absents du dépôt (.htaccess, etc.) ne sont jamais supprimés.
+          exclude: |
+            **/.git*
+            **/.git*/**
+            .github/**
+            seo/**
+            README.md
+
+      - name: Vérification du site en ligne
+        run: |
+          sleep 10
+          curl -fsS https://enneagramme.co/ -o page.html
+          grep -q 'assets/analytics.js' page.html || { echo "::error::analytics.js absent de la page d'accueil en ligne"; exit 1; }
+          curl -fsS https://enneagramme.co/assets/analytics.js | grep -q "G-YSH1XBCB1S" || { echo "::error::assets/analytics.js en ligne ne contient pas l'ID de mesure"; exit 1; }
+          echo "Site en ligne vérifié : Analytics et bandeau de consentement présents."

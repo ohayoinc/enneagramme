@@ -62,6 +62,17 @@ Il peut aussi être lancé à la main : onglet **Actions → Suivi SEO → Run w
 
 Sans ces secrets, le rapport hebdomadaire contient seulement l'audit technique.
 
+## Mise en ligne automatique
+
+Le workflow `Mise en ligne (Hostinger)` (`.github/workflows/deploy.yml`) envoie le site par FTP
+à chaque modification de la **branche par défaut** du dépôt, après un audit SEO réussi, puis vérifie le site en ligne.
+
+- Secrets requis (Settings → Secrets and variables → **Actions**) : `FTP_SERVER`, `FTP_USERNAME`, `FTP_PASSWORD`
+  (hPanel → Fichiers → Comptes FTP).
+- Variables optionnelles : `FTP_SERVER_DIR` (dossier du site vu depuis le compte FTP, défaut `public_html/`),
+  `FTP_PROTOCOL` (`ftps` par défaut, `ftp` si la connexion chiffrée échoue).
+- Seuls les fichiers modifiés sont envoyés ; rien n'est supprimé sur le serveur s'il n'a pas été envoyé par ce workflow.
+
 ## En local
 
 ```bash
