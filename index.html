@@ -104,10 +104,10 @@
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>✦</text></svg>"/>
-<link rel="stylesheet" href="/dist/styles.css?v=202611081200"/>
-<link rel="stylesheet" href="/dist/theme.css?v=202611081200"/>
-<script src="/dist/motion.js?v=202611081200" defer></script>
-<script src="/dist/art.js?v=202611072300" defer></script>
+<link rel="stylesheet" href="/dist/styles.css?v=202611082059"/>
+<link rel="stylesheet" href="/dist/theme.css?v=202611082059"/>
+<script src="/dist/motion.js?v=202611082059" defer></script>
+<script src="/dist/art.js?v=202611082059" defer></script>
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'"/>
 <noscript><link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wght@0,400..700;1,400..700&amp;family=Instrument+Serif:ital@0;1&amp;display=swap" rel="stylesheet"/></noscript>
 </head>
@@ -453,28 +453,30 @@
   </section>
 
   <!-- INFOLETTRE (Brevo) -->
-  <section id="infolettre" class="px-12 md:px-16 py-20" style="border-top:0.5px solid #e4e4e4">
-    <div class="flex flex-col md:flex-row justify-between items-start md:items-end gap-10">
-      <div class="max-w-xl">
-        <p class="font-label text-[11px] uppercase tracking-[0.2em] mb-6 text-outline">INFOLETTRE</p>
-        <h2 class="font-headline font-bold uppercase leading-[0.88] tracking-[-0.03em] text-primary" style="font-size:clamp(28px,3.5vw,52px)">Recevoir les nouveaux articles</h2>
-        <p class="font-body text-base leading-relaxed text-on-surface-variant mt-4">Réflexions sur l'Ennéagramme, prochains ateliers. Chaque dimanche, désinscription en un clic.</p>
+  <section class="end-wrap px-12 md:px-16" aria-label="Pour aller plus loin">
+  <div class="end end--v4">
+    <div id="infolettre" class="end__nl">
+      <div>
+        <p class="eyebrow">Infolettre</p>
+        <h2>Recevoir <em>les nouveaux articles</em></h2>
+        <p class="end__lede">Réflexions sur l'Ennéagramme, prochains ateliers. Chaque dimanche, désinscription en un clic.</p>
       </div>
-      <form data-newsletter action="/api/newsletter.php" method="post" class="w-full max-w-md" novalidate>
+      <form data-newsletter action="/api/newsletter.php" method="post" novalidate>
         <label for="infolettre-email" class="sr-only">Adresse courriel</label>
-        <div style="display:flex;gap:1.5rem;align-items:flex-end">
-          <input id="infolettre-email" name="email" type="email" required autocomplete="email" placeholder="COURRIEL" style="flex:1;min-width:0" class="bg-transparent border-0 border-b-[0.5px] border-outline-variant py-4 px-0 font-label text-[11px] tracking-widest text-white placeholder:text-outline focus:ring-0 focus:border-white transition-colors duration-500 outline-none"/>
-          <button type="submit" class="bg-primary text-on-primary px-10 py-4 font-label font-bold text-[11px] tracking-[0.2em] uppercase hover:bg-on-surface transition-colors duration-500 shrink-0">S'INSCRIRE</button>
+        <div class="nl-field">
+          <input id="infolettre-email" name="email" type="email" required autocomplete="email" placeholder="Votre courriel"/>
+          <button type="submit" class="pill pill--ink">S'inscrire</button>
         </div>
         <div aria-hidden="true" style="position:absolute;left:-9999px"><label>Site web <input type="text" name="site_web" tabindex="-1" autocomplete="off"/></label></div>
-        <label class="flex gap-3 items-start mt-4 font-body text-on-surface-variant" style="font-size:13px;line-height:1.5">
-          <input type="checkbox" name="consentement" value="1" required class="mt-1 shrink-0" style="accent-color:#111111"/>
-          <span>J'accepte de recevoir l'infolettre d'Enneagramme.co. Voir la <a href="confidentialite.html" class="underline">politique de confidentialité</a>.</span>
+        <label class="nl-consent">
+          <input type="checkbox" name="consentement" value="1" required/>
+          <span>J'accepte de recevoir l'infolettre d'Enneagramme.co. Voir la <a href="confidentialite.html">politique de confidentialité</a>.</span>
         </label>
-        <p data-newsletter-status role="status" aria-live="polite" class="font-label text-[11px] tracking-widest uppercase text-primary mt-4" style="min-height:1.5em"></p>
+        <p data-newsletter-status role="status" aria-live="polite" class="nl-status"></p>
       </form>
     </div>
-  </section>
+  </div>
+</section>
 <script src="/newsletter.js" defer></script>
 
 </main>

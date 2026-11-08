@@ -228,7 +228,7 @@
     box.appendChild(svg);
   }
 
-  function all() { Array.prototype.forEach.call(document.querySelectorAll('.art[data-style], .h-hero__art[data-style], .page-hero__art[data-style]'), render); }
+  function all() { Array.prototype.forEach.call(document.querySelectorAll('.art[data-style], .h-hero__art[data-style], .page-hero__art[data-style], .end__art[data-style]'), render); }
   if (document.readyState !== 'loading') all(); else document.addEventListener('DOMContentLoaded', all);
   window.EnneaArt = { render: render, all: all };
 })();
