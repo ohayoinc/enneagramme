@@ -736,3 +736,12 @@ main:not(.home) > section:not([class*="px-"]) > .grid.gap-px { border-left: 0; b
   .nl-field .pill { width: 100%; }
   .end__actions .pill { flex: 1 1 auto; }
 }
+
+/* ───────── À propos : diptyque photo ───────── */
+.ap-photos { padding-top: clamp(3.5rem, 7vw, 6rem); padding-bottom: clamp(3.5rem, 7vw, 6rem); }
+.diptych { display: grid; gap: 14px; grid-template-columns: 1fr; }
+@media (min-width: 900px) { .diptych { grid-template-columns: 7fr 5fr; align-items: start; gap: clamp(14px, 2vw, 28px); } .diptych__b { margin-top: clamp(4rem, 12vw, 11rem); } }
+.diptych figure { margin: 0; }
+.diptych img { width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: var(--r-lg); display: block; }
+.diptych__b img { aspect-ratio: 1 / 1; }
+.diptych figcaption { margin-top: 1rem; max-width: 46ch; font-size: 14px; line-height: 1.55; color: var(--muted); }
