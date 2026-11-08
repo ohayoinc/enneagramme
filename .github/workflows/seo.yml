@@ -1,0 +1,59 @@
+name: Suivi SEO
+
+on:
+  schedule:
+    - cron: "17 12 * * 1"   # chaque lundi vers 8 h (heure de Montréal)
+  workflow_dispatch:
+  push:
+    branches: [main, staging]
+    paths: ["**.html", "sitemap.xml", "robots.txt", "seo/**"]
+  pull_request:
+    paths: ["**.html", "sitemap.xml", "robots.txt", "seo/**"]
+
+permissions:
+  contents: read
+  issues: write
+
+jobs:
+  audit:
+    name: Audit SEO technique
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Audit des pages
+        run: python3 seo/audit.py --markdown audit.md
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: audit-seo
+          path: audit.md
+
+  rapport:
+    name: Rapport hebdomadaire Search Console / Analytics
+    if: github.event_name == 'schedule' || github.event_name == 'workflow_dispatch'
+    runs-on: ubuntu-latest
+    env:
+      GOOGLE_SERVICE_ACCOUNT_JSON: ${{ secrets.GOOGLE_SERVICE_ACCOUNT_JSON }}
+      GSC_SITE_URL: ${{ vars.GSC_SITE_URL }}
+      GA4_PROPERTY_ID: ${{ vars.GA4_PROPERTY_ID || '488854221' }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Audit technique
+        run: python3 seo/audit.py --markdown audit.md || true
+      - name: Données Search Console / GA4
+        run: |
+          if [ -z "$GOOGLE_SERVICE_ACCOUNT_JSON" ]; then
+            printf '# Suivi SEO\n\n_Secret GOOGLE_SERVICE_ACCOUNT_JSON non configuré : seul l’audit technique est inclus. Voir seo/README.md._\n' > rapport.md
+          else
+            pip install --quiet google-auth requests
+            python3 seo/report.py --markdown rapport.md
+          fi
+      - name: Publier le rapport dans une issue
+        run: |
+          { cat rapport.md; echo; echo '---'; echo; cat audit.md; } > issue.md
+          gh label create seo-report --color 0E8A16 --description "Rapport SEO hebdomadaire" 2>/dev/null || true
+          gh issue create --title "Suivi SEO — semaine du $(date +%F)" --label seo-report --body-file issue.md
