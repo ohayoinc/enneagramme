@@ -4,6 +4,7 @@ Site statique de Benjamin Ali Aboudou — ateliers et accompagnement Ennéagramm
 
 - Production : https://enneagramme.co (hébergé chez Hostinger)
 - Pages HTML à la racine, feuille de style compilée dans `dist/styles.css`
+- Mesure d'audience et suivi SEO : voir [`seo/README.md`](seo/README.md)
 - `sitemap.xml`, `robots.txt`, `llms.txt`, `404.html` servis à la racine
 
 ## Provenance
