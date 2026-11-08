@@ -57,7 +57,7 @@
 
     /* ───── 2. Éléments à révéler ───── */
     var SEL = [
-      '.card', '.post', '.quote', '.art--banner', '.steps__start', '.steps__options li', '.tile', '.feature', '.stats', '.emblem', '.cta-panel form', '.faq-item',
+      '.card', '.post', '.quote', '.art--banner', '.tile', '.feature', '.stats', '.emblem', '.cta-panel form', '.faq-item',
       'h1', 'h2', 'h3', 'h4', 'p', 'blockquote', 'li', 'figure', 'img',
       'a.group', 'article', '.faq-item', 'table',
       'section > .grid > div', 'section > .flex > a', '.w-px', '.h-px', 'span.font-label.block'
@@ -65,7 +65,7 @@
 
     var claimed = [];
     Array.prototype.forEach.call(main.querySelectorAll(SEL), function (el) {
-      if (el.closest('.faq-ans, header, nav, #mobile-menu, .finder')) return;
+      if (el.closest('.faq-ans, header, nav, #mobile-menu, .finder, .steps')) return;
       if (el.parentElement && el.parentElement.closest('.rv, .rv-img, .split')) return;
       if (el.classList.contains('split')) { claimed.push(el); return; }
 
@@ -101,6 +101,18 @@
         });
       }, { rootMargin: '0px 0px -8% 0px', threshold: 0.08 });
       claimed.forEach(function (el) { io.observe(el); });
+    }
+
+    /* ───── 2 bis. Démarche : l'arbre se dessine ───── */
+    var steps = main.querySelector('.steps');
+    if (steps) {
+      if (reduce) steps.classList.add('play');
+      else {
+        var so = new IntersectionObserver(function (en) {
+          if (en[0].isIntersecting) { steps.classList.add('play'); so.disconnect(); }
+        }, { threshold: 0.35 });
+        so.observe(steps);
+      }
     }
 
     /* ───── 3. En-tête : se resserre, s'efface en descendant ───── */
