@@ -86,7 +86,7 @@ appel à l'action principal · lien de désinscription Brevo en pied de page.
 
 ---
 
-## Recommandation
+## Recommandation (formule A retenue par défaut, voir `veille/modele-hebdomadaire.md`)
 
 - **Formule de base : A**, la plus complète. Elle utilise à la fois l'article et la veille, et se remplit facilement avec la fiche de veille du mercredi.
 - **Variante B une fois par mois** (premier dimanche) : elle crée de l'engagement, et les réponses des lecteurs donnent des sujets d'articles.
