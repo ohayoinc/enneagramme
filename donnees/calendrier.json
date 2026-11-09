@@ -1,5 +1,5 @@
 {
-  "_aide": "Une entrée par date. Après modification : python3 outils/calendrier.py. Les dates passées passent automatiquement dans « Dates passées ». Champs : slug (nom de la page, sans accents), titre, atelier (page de présentation de l'atelier), date (AAAA-MM-JJ), debut et fin (HH:MM, vides = horaire à confirmer), categorie, lieu (nom, adresse, ville ; ou en_ligne: true), prix, places, inscription (lien de réservation externe, sinon un courriel est proposé), complet (true/false), description (liste de paragraphes), exemple (true = date fictive, page non indexée).",
+  "_aide": "Une entrée par date. Après modification : python3 outils/calendrier.py. Les dates passées passent automatiquement dans « Dates passées ». Champs : slug (nom de la page, sans accents), titre, atelier (page de présentation de l'atelier), date (AAAA-MM-JJ), debut et fin (HH:MM, vides = horaire à confirmer), categorie, lieu (nom, adresse, ville ; ou en_ligne: true), prix (« Gratuit » ou un montant), places, inscription (lien de réservation externe, sinon un courriel est proposé), complet (true/false), description (liste de paragraphes), exemple (true = date fictive, page non indexée).",
   "evenements": [
     {
       "slug": "colere-peur-tristesse-apprivoiser-nos-2027-01-30",
@@ -9,11 +9,11 @@
       "debut": "",
       "fin": "",
       "lieu": {
-        "nom": "Lieu à confirmer",
-        "adresse": "",
-        "ville": ""
+        "en_ligne": true,
+        "nom": "En ligne",
+        "ville": "Visioconférence"
       },
-      "prix": "Tarif à confirmer",
+      "prix": "Gratuit",
       "places": "À confirmer",
       "inscription": "",
       "complet": false,
@@ -29,11 +29,11 @@
       "debut": "",
       "fin": "",
       "lieu": {
-        "nom": "Lieu à confirmer",
-        "adresse": "",
-        "ville": ""
+        "en_ligne": true,
+        "nom": "En ligne",
+        "ville": "Visioconférence"
       },
-      "prix": "Tarif à confirmer",
+      "prix": "Gratuit",
       "places": "À confirmer",
       "inscription": "",
       "complet": false,
@@ -49,11 +49,11 @@
       "debut": "",
       "fin": "",
       "lieu": {
-        "nom": "Lieu à confirmer",
-        "adresse": "",
-        "ville": ""
+        "en_ligne": true,
+        "nom": "En ligne",
+        "ville": "Visioconférence"
       },
-      "prix": "Tarif à confirmer",
+      "prix": "Gratuit",
       "places": "À confirmer",
       "inscription": "",
       "complet": false,
@@ -69,11 +69,11 @@
       "debut": "",
       "fin": "",
       "lieu": {
-        "nom": "Lieu à confirmer",
-        "adresse": "",
-        "ville": ""
+        "en_ligne": true,
+        "nom": "En ligne",
+        "ville": "Visioconférence"
       },
-      "prix": "Tarif à confirmer",
+      "prix": "Gratuit",
       "places": "À confirmer",
       "inscription": "",
       "complet": false,
@@ -89,11 +89,11 @@
       "debut": "",
       "fin": "",
       "lieu": {
-        "nom": "Lieu à confirmer",
-        "adresse": "",
-        "ville": ""
+        "en_ligne": true,
+        "nom": "En ligne",
+        "ville": "Visioconférence"
       },
-      "prix": "Tarif à confirmer",
+      "prix": "Gratuit",
       "places": "À confirmer",
       "inscription": "",
       "complet": false,
@@ -109,11 +109,11 @@
       "debut": "",
       "fin": "",
       "lieu": {
-        "nom": "Lieu à confirmer",
-        "adresse": "",
-        "ville": ""
+        "en_ligne": true,
+        "nom": "En ligne",
+        "ville": "Visioconférence"
       },
-      "prix": "Tarif à confirmer",
+      "prix": "Gratuit",
       "places": "À confirmer",
       "inscription": "",
       "complet": false,
@@ -129,11 +129,11 @@
       "debut": "",
       "fin": "",
       "lieu": {
-        "nom": "Lieu à confirmer",
-        "adresse": "",
-        "ville": ""
+        "en_ligne": true,
+        "nom": "En ligne",
+        "ville": "Visioconférence"
       },
-      "prix": "Tarif à confirmer",
+      "prix": "Gratuit",
       "places": "À confirmer",
       "inscription": "",
       "complet": false,
@@ -149,11 +149,11 @@
       "debut": "",
       "fin": "",
       "lieu": {
-        "nom": "Lieu à confirmer",
-        "adresse": "",
-        "ville": ""
+        "en_ligne": true,
+        "nom": "En ligne",
+        "ville": "Visioconférence"
       },
-      "prix": "Tarif à confirmer",
+      "prix": "Gratuit",
       "places": "À confirmer",
       "inscription": "",
       "complet": false,
@@ -169,11 +169,11 @@
       "debut": "",
       "fin": "",
       "lieu": {
-        "nom": "Lieu à confirmer",
-        "adresse": "",
-        "ville": ""
+        "en_ligne": true,
+        "nom": "En ligne",
+        "ville": "Visioconférence"
       },
-      "prix": "Tarif à confirmer",
+      "prix": "Gratuit",
       "places": "À confirmer",
       "inscription": "",
       "complet": false,
@@ -189,11 +189,11 @@
       "debut": "",
       "fin": "",
       "lieu": {
-        "nom": "Lieu à confirmer",
-        "adresse": "",
-        "ville": ""
+        "en_ligne": true,
+        "nom": "En ligne",
+        "ville": "Visioconférence"
       },
-      "prix": "Tarif à confirmer",
+      "prix": "Gratuit",
       "places": "À confirmer",
       "inscription": "",
       "complet": false,
@@ -209,11 +209,11 @@
       "debut": "",
       "fin": "",
       "lieu": {
-        "nom": "Lieu à confirmer",
-        "adresse": "",
-        "ville": ""
+        "en_ligne": true,
+        "nom": "En ligne",
+        "ville": "Visioconférence"
       },
-      "prix": "Tarif à confirmer",
+      "prix": "Gratuit",
       "places": "À confirmer",
       "inscription": "",
       "complet": false,
@@ -229,11 +229,11 @@
       "debut": "",
       "fin": "",
       "lieu": {
-        "nom": "Lieu à confirmer",
-        "adresse": "",
-        "ville": ""
+        "en_ligne": true,
+        "nom": "En ligne",
+        "ville": "Visioconférence"
       },
-      "prix": "Tarif à confirmer",
+      "prix": "Gratuit",
       "places": "À confirmer",
       "inscription": "",
       "complet": false,

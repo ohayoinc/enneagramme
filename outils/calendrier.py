@@ -136,6 +136,9 @@ def jsonld_evenement(ev):
         **({"startDate": dt(ev, "debut").isoformat(), "endDate": dt(ev, "fin").isoformat()} if ev.get("debut")
            else {"startDate": ev["date"], "endDate": ev["date"]}),
         "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": mode, "location": lieu,
+        **({"isAccessibleForFree": True, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CAD",
+            "availability": "https://schema.org/InStock", "url": f"{SITE}/evenement-{ev['slug']}.html"}}
+           if str(ev.get("prix", "")).lower() == "gratuit" else {}),
         "organizer": {"@type": "Person", "name": "Benjamin Ali Aboudou", "url": f"{SITE}/a-propos.html"},
         "url": f"{SITE}/evenement-{ev['slug']}.html", "inLanguage": "fr-CA",
     }
@@ -168,6 +171,7 @@ def ligne(ev, aujourd_hui):
           <span class="cal-row__when"><span>{JOURS[d.weekday()].capitalize()}</span> <span>{horaire(ev)}</span></span>
           <span class="cal-row__title">{('<small>' + e(ev['categorie']) + '</small>') if ev.get('categorie') else ''}{e(ev['titre'])}{etat}</span>
           <span class="cal-row__place">{e(lieu_court(ev))}</span>
+          <span class="cal-row__price">{e(ev.get('prix', ''))}</span>
           <span class="pill pill--sm cal-row__btn">Détails {FLECHE}</span>
         </a>
       </li>'''
@@ -197,6 +201,7 @@ def page_calendrier(evs, head, corps, infolettre, fin, aujourd_hui):
 
   <section class="cal px-12 md:px-16" aria-labelledby="cal-avenir">
     <h2 id="cal-avenir" class="sr-only">Dates à venir</h2>
+    <div class="cal-head" aria-hidden="true"><span>Date</span><span>Horaire</span><span>Atelier</span><span>Lieu</span><span>Prix</span><span></span></div>
     <ol class="cal-list" data-cal="avenir">
 {chr(10).join(ligne(ev, aujourd_hui) for ev in a_venir)}
     </ol>

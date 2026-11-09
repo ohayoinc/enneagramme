@@ -792,7 +792,7 @@ main .grid-cols-12 > * { min-width: 0; overflow-wrap: anywhere; }
   transition: background-color .6s var(--ease);
 }
 @media (min-width: 900px) {
-  .cal-row__link { grid-template-columns: 6.5rem 9rem minmax(0, 1.6fr) minmax(0, 1fr) auto; grid-template-areas: "date when title place btn"; padding: 1.75rem 1rem; }
+  .cal-row__link, .cal-head { grid-template-columns: 6.5rem 9rem minmax(0, 1.8fr) minmax(0, .8fr) minmax(0, .6fr) 7.5rem; grid-template-areas: "date when title place price btn"; padding: 1.75rem 1rem; }
 }
 .cal-row__link:hover { background: var(--stone); }
 .cal-row__date { grid-area: date; display: flex; flex-direction: column; line-height: 1; }
@@ -821,3 +821,11 @@ main .grid-cols-12 > * { min-width: 0; overflow-wrap: anywhere; }
 .ev-infos dt { font-size: 13px; color: var(--muted); }
 .ev-infos dd { margin: 0; font-size: 15px; color: var(--ink); }
 .cal-row__title small { display: block; margin-bottom: .3rem; font-size: 12.5px; font-weight: 400; letter-spacing: 0; color: var(--muted); }
+
+.cal-row__price { grid-area: price; font-size: 15px; font-weight: 500; }
+.cal-head { display: none; }
+@media (min-width: 900px) { .cal-head { display: grid; gap: .5rem 1.5rem; padding-top: 0; padding-bottom: .9rem; font-size: 12.5px; color: var(--muted); } .cal-row__btn { justify-self: end; } }
+@media (max-width: 899px) {
+  .cal-row__link { grid-template-areas: "date title btn" "date when btn" "date place btn" "date price btn"; }
+  .cal-row__price { font-size: 14px; }
+}

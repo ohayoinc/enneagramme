@@ -4,11 +4,11 @@ PRODID:-//enneagramme.co//Calendrier//FR
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
 UID:travailler-ensemble-sans-suser-2027-09-25@enneagramme.co
-DTSTAMP:20261109T103625Z
+DTSTAMP:20261109T104108Z
 DTSTART;VALUE=DATE:20270925
 DTEND;VALUE=DATE:20270926
 SUMMARY:Travailler ensemble sans s’user
-LOCATION:Lieu à confirmer
+LOCATION:En ligne\, par visioconférence
 DESCRIPTION:Mieux collaborer en comprenant les besoins\, les forces et les points de friction de chaque profil au travail. https://enneagramme.co/evenement-travailler-ensemble-sans-suser-2027-09-25.html
 URL:https://enneagramme.co/evenement-travailler-ensemble-sans-suser-2027-09-25.html
 END:VEVENT
