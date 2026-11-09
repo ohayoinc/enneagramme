@@ -829,3 +829,4 @@ main .grid-cols-12 > * { min-width: 0; overflow-wrap: anywhere; }
   .cal-row__link { grid-template-areas: "date title btn" "date when btn" "date place btn" "date price btn"; }
   .cal-row__price { font-size: 14px; }
 }
+.pill--soon { cursor: default; color: var(--muted) !important; border-color: var(--line) !important; }
