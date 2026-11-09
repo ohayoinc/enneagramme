@@ -1,0 +1,58 @@
+{
+  "_aide": "Une entrée par date. Après modification : python3 outils/calendrier.py. Les dates passées passent automatiquement dans « Dates passées ». Champs : slug (nom de la page, sans accents), titre, atelier (page de présentation de l'atelier), date (AAAA-MM-JJ), debut et fin (HH:MM), lieu (nom, adresse, ville ; ou en_ligne: true), prix, places, inscription (lien de réservation externe, sinon un courriel est proposé), complet (true/false), description (liste de paragraphes), exemple (true = date fictive, page non indexée).",
+  "evenements": [
+    {
+      "slug": "introduction-montreal-2026-12-05",
+      "titre": "Introduction à l'Ennéagramme",
+      "atelier": "atelier-introduction.html",
+      "date": "2026-12-05",
+      "debut": "09:30",
+      "fin": "12:30",
+      "lieu": { "nom": "Lieu à confirmer", "adresse": "", "ville": "Montréal" },
+      "prix": "Tarif à confirmer",
+      "places": "5 à 15 personnes",
+      "inscription": "",
+      "complet": false,
+      "exemple": true,
+      "description": [
+        "Trois heures pour découvrir les neuf profils de l'Ennéagramme, comprendre ce qui motive chacun et commencer à identifier votre propre structure.",
+        "Aucun prérequis : l'atelier s'adresse à toute personne curieuse de mieux se connaître et de mieux comprendre les autres."
+      ]
+    },
+    {
+      "slug": "les-bases-en-ligne-2027-01-14",
+      "titre": "Les bases de l'Ennéagramme",
+      "atelier": "atelier-les-bases.html",
+      "date": "2027-01-14",
+      "debut": "18:30",
+      "fin": "21:30",
+      "lieu": { "en_ligne": true, "nom": "En ligne", "ville": "Visioconférence" },
+      "prix": "Tarif à confirmer",
+      "places": "5 à 15 personnes",
+      "inscription": "",
+      "complet": false,
+      "exemple": true,
+      "description": [
+        "Un approfondissement des neuf profils, des trois centres d'intelligence et de leurs applications concrètes au quotidien.",
+        "Le lien de connexion est envoyé la veille de l'atelier."
+      ]
+    },
+    {
+      "slug": "conference-trois-rivieres-2027-01-24",
+      "titre": "L'Ennéagramme en Mauricie",
+      "atelier": "atelier-trois-rivieres.html",
+      "date": "2027-01-24",
+      "debut": "14:00",
+      "fin": "17:00",
+      "lieu": { "nom": "Lieu à confirmer", "adresse": "", "ville": "Trois-Rivières" },
+      "prix": "Tarif à confirmer",
+      "places": "5 à 20 personnes",
+      "inscription": "",
+      "complet": false,
+      "exemple": true,
+      "description": [
+        "Un après-midi pour découvrir l'Ennéagramme en présentiel à Trois-Rivières : les neuf profils, ce qui les met en mouvement et ce qui les freine."
+      ]
+    }
+  ]
+}

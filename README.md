@@ -46,3 +46,15 @@ La clé API n'est **jamais** versionnée ni exposée au navigateur. Sur Hostinge
 `public_html/api/newsletter-config.php` (modèle : `api/newsletter-config.example.php`, ignoré par git,
 bloqué par `api/.htaccess`) contient `api_key`, `list_id` et, optionnellement, `doi_template_id`.
 Après une double confirmation, Brevo redirige vers `infolettre-confirmee.html`.
+
+## Calendrier des ateliers
+
+- Données : `donnees/calendrier.json` (une entrée par date : titre, page de l'atelier, date, horaires, lieu,
+  tarif, places, lien de réservation, description).
+- Génération : `python3 outils/calendrier.py` produit `calendrier.html`, une page `evenement-<slug>.html`
+  par date (avec données structurées schema.org `Event`), un fichier `agenda/<slug>.ics` (« Ajouter à mon
+  agenda ») et met à jour `sitemap.xml`. Le gabarit (menu, pied de page, infolettre) est repris de
+  `atelier-introduction.html`.
+- Les dates passées passent automatiquement dans « Dates passées », même sans régénérer.
+- `"exemple": true` marque une date fictive : sa page n'est pas indexée et n'entre pas dans le sitemap.
+- Sans lien d'inscription, le bouton « Réserver ma place » ouvre un courriel prérempli.

@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//enneagramme.co//Calendrier//FR
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:introduction-montreal-2026-12-05@enneagramme.co
+DTSTAMP:20261109T102023Z
+DTSTART:20261205T143000Z
+DTEND:20261205T173000Z
+SUMMARY:Introduction à l'Ennéagramme
+LOCATION:Lieu à confirmer\, Montréal
+DESCRIPTION:Trois heures pour découvrir les neuf profils de l'Ennéagramme\, comprendre ce qui motive chacun et commencer à identifier votre propre structure. Aucun prérequis : l'atelier s'adresse à toute personne curieuse de mieux se connaître et de mieux comprendre les autres. https://enneagramme.co/evenement-introduction-montreal-2026-12-05.html
+URL:https://enneagramme.co/evenement-introduction-montreal-2026-12-05.html
+END:VEVENT
+END:VCALENDAR

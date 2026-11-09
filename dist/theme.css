@@ -775,3 +775,48 @@ main .grid-cols-12 > * { min-width: 0; overflow-wrap: anywhere; }
    pour que chaque carte se détache nettement du fond de la section */
 .h-articles .post .art, .h-articles .post .post__art { background: #fff; }
 .h-articles .post { box-shadow: 0 0 0 1px rgba(0, 0, 0, .04); }
+
+/* ───────── Calendrier : lignes façon « dates de tournée » ───────── */
+.cal-hero, .ev-hero { display: grid; gap: 2rem; align-items: end; margin-top: 1.5rem; }
+@media (min-width: 900px) { .cal-hero { grid-template-columns: 1fr minmax(0, 420px); } .ev-hero { grid-template-columns: 1fr minmax(0, 460px); } }
+.cal { padding-top: clamp(3rem, 6vw, 5rem); }
+.cal--past { padding-top: clamp(2.5rem, 5vw, 4rem); }
+.cal-subtitle { font-size: clamp(1.4rem, 2vw, 1.8rem); font-weight: 500; letter-spacing: -.02em; margin-bottom: 1.25rem; }
+.cal-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid var(--line); }
+.cal-row { border-bottom: 1px solid var(--line); }
+.cal-row__link {
+  display: grid; align-items: center; gap: .5rem 1.5rem;
+  grid-template-columns: 4.5rem minmax(0, 1fr) auto;
+  grid-template-areas: "date title btn" "date when btn" "date place btn";
+  padding: 1.4rem .75rem; border-radius: var(--r-md);
+  transition: background-color .6s var(--ease);
+}
+@media (min-width: 900px) {
+  .cal-row__link { grid-template-columns: 6.5rem 9rem minmax(0, 1.6fr) minmax(0, 1fr) auto; grid-template-areas: "date when title place btn"; padding: 1.75rem 1rem; }
+}
+.cal-row__link:hover { background: var(--stone); }
+.cal-row__date { grid-area: date; display: flex; flex-direction: column; line-height: 1; }
+.cal-row__date b { font-size: clamp(2.2rem, 3.4vw, 3rem); font-weight: 500; letter-spacing: -.04em; }
+.cal-row__date span { margin-top: .4rem; font-size: 13px; color: var(--muted); }
+.cal-row__when { grid-area: when; font-size: 14px; line-height: 1.45; color: var(--ink-soft); }
+.cal-row__title { grid-area: title; font-size: clamp(1.1rem, 1.5vw, 1.35rem); font-weight: 500; letter-spacing: -.02em; line-height: 1.25; }
+.cal-row__place { grid-area: place; font-size: 15px; color: var(--ink-soft); }
+.cal-row__btn { grid-area: btn; border: 1px solid var(--ink); color: var(--ink); }
+.cal-row__link:hover .cal-row__btn { background: var(--ink); color: #fff; }
+.cal-row__tag { display: inline-block; margin-left: .6rem; padding: .15rem .6rem; border-radius: var(--r-pill); border: 1px solid var(--line); font-size: 12px; font-weight: 500; color: var(--muted); vertical-align: middle; }
+.cal-row.is-past { opacity: .5; }
+.cal-row.is-past .cal-row__btn { display: none; }
+@media (max-width: 899px) { .cal-row__btn { font-size: 0; width: 38px; padding: 0; } .cal-row__btn svg { margin: 0; } .cal-row__when > span:first-child::after { content: ' ·'; } }
+@media (min-width: 900px) { .cal-row__when > span { display: block; } }
+.cal-empty { padding: 2.5rem 0; color: var(--ink-soft); }
+
+/* Page d'un événement */
+.ev-place { font-size: 1.05rem; line-height: 1.5; color: var(--ink-soft); margin-bottom: 1.5rem; }
+.ev-body { padding-top: clamp(3.5rem, 7vw, 6rem); }
+.ev-grid { display: grid; gap: clamp(2.5rem, 5vw, 5rem); }
+@media (min-width: 900px) { .ev-grid { grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); align-items: start; } }
+.ev-grid .ap-body { margin-top: 0; }
+.ev-infos { margin: 0; border-top: 1px solid var(--line); }
+.ev-infos > div { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
+.ev-infos dt { font-size: 13px; color: var(--muted); }
+.ev-infos dd { margin: 0; font-size: 15px; color: var(--ink); }

@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//enneagramme.co//Calendrier//FR
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:les-bases-en-ligne-2027-01-14@enneagramme.co
+DTSTAMP:20261109T102023Z
+DTSTART:20270114T233000Z
+DTEND:20270115T023000Z
+SUMMARY:Les bases de l'Ennéagramme
+LOCATION:En ligne\, par visioconférence
+DESCRIPTION:Un approfondissement des neuf profils\, des trois centres d'intelligence et de leurs applications concrètes au quotidien. Le lien de connexion est envoyé la veille de l'atelier. https://enneagramme.co/evenement-les-bases-en-ligne-2027-01-14.html
+URL:https://enneagramme.co/evenement-les-bases-en-ligne-2027-01-14.html
+END:VEVENT
+END:VCALENDAR
