@@ -1,0 +1,245 @@
+{
+  "_aide": "Une entrée par date. Après modification : python3 outils/calendrier.py. Les dates passées passent automatiquement dans « Dates passées ». Champs : slug (nom de la page, sans accents), titre, atelier (page de présentation de l'atelier), date (AAAA-MM-JJ), debut et fin (HH:MM, heure de Montréal ; debut vide = horaire à confirmer, fin vide = heure de début seule), categorie, lieu (nom, adresse, ville ; ou en_ligne: true), prix (« Gratuit » ou un montant), places, inscription (lien de réservation externe, sinon un courriel est proposé), complet (true/false), description (liste de paragraphes), exemple (true = date fictive, page non indexée).",
+  "evenements": [
+    {
+      "slug": "colere-peur-tristesse-apprivoiser-nos-2027-01-30",
+      "titre": "Colère, peur, tristesse : apprivoiser nos émotions",
+      "categorie": "Se comprendre",
+      "date": "2027-01-30",
+      "debut": "10:00",
+      "fin": "",
+      "lieu": {
+        "en_ligne": true,
+        "nom": "En ligne",
+        "ville": "Visioconférence"
+      },
+      "prix": "Gratuit",
+      "places": "À confirmer",
+      "inscription": "",
+      "complet": false,
+      "description": [
+        "Reconnaître ce que nos émotions cherchent à nous dire, et la façon dont chaque profil de l’Ennéagramme les vit, les cache ou les exprime."
+      ]
+    },
+    {
+      "slug": "aimer-sans-se-perdre-2027-02-27",
+      "titre": "Aimer sans se perdre",
+      "categorie": "Mieux vivre ses relations",
+      "date": "2027-02-27",
+      "debut": "10:00",
+      "fin": "",
+      "lieu": {
+        "en_ligne": true,
+        "nom": "En ligne",
+        "ville": "Visioconférence"
+      },
+      "prix": "Gratuit",
+      "places": "À confirmer",
+      "inscription": "",
+      "complet": false,
+      "description": [
+        "Trouver la juste place entre l’élan vers l’autre et le respect de soi, à la lumière de ce que chaque profil donne et attend dans la relation."
+      ]
+    },
+    {
+      "slug": "procrastination-passer-enfin-a-laction-2027-03-27",
+      "titre": "Procrastination : passer enfin à l’action",
+      "categorie": "Passer à l’action",
+      "date": "2027-03-27",
+      "debut": "10:00",
+      "fin": "",
+      "lieu": {
+        "en_ligne": true,
+        "nom": "En ligne",
+        "ville": "Visioconférence"
+      },
+      "prix": "Gratuit",
+      "places": "À confirmer",
+      "inscription": "",
+      "complet": false,
+      "description": [
+        "Comprendre ce qui nous retient vraiment avant d’agir, et repérer les leviers propres à chaque profil pour se mettre en mouvement."
+      ]
+    },
+    {
+      "slug": "traverser-les-grands-changements-2027-04-24",
+      "titre": "Traverser les grands changements",
+      "categorie": "Construire une vie qui nous ressemble",
+      "date": "2027-04-24",
+      "debut": "10:00",
+      "fin": "",
+      "lieu": {
+        "en_ligne": true,
+        "nom": "En ligne",
+        "ville": "Visioconférence"
+      },
+      "prix": "Gratuit",
+      "places": "À confirmer",
+      "inscription": "",
+      "complet": false,
+      "description": [
+        "Explorer la façon dont chacun réagit aux transitions de vie, et ce qui aide à les traverser sans se perdre de vue."
+      ]
+    },
+    {
+      "slug": "ce-que-le-stress-revele-2027-05-29",
+      "titre": "Ce que le stress révèle de nous",
+      "categorie": "Se comprendre",
+      "date": "2027-05-29",
+      "debut": "10:00",
+      "fin": "",
+      "lieu": {
+        "en_ligne": true,
+        "nom": "En ligne",
+        "ville": "Visioconférence"
+      },
+      "prix": "Gratuit",
+      "places": "À confirmer",
+      "inscription": "",
+      "complet": false,
+      "description": [
+        "Observer nos réactions sous pression et ce qu’elles disent de nos motivations profondes, profil par profil."
+      ]
+    },
+    {
+      "slug": "les-amities-qui-durent-2027-06-26",
+      "titre": "Les amitiés qui durent",
+      "categorie": "Mieux vivre ses relations",
+      "date": "2027-06-26",
+      "debut": "10:00",
+      "fin": "",
+      "lieu": {
+        "en_ligne": true,
+        "nom": "En ligne",
+        "ville": "Visioconférence"
+      },
+      "prix": "Gratuit",
+      "places": "À confirmer",
+      "inscription": "",
+      "complet": false,
+      "description": [
+        "Comprendre ce qui nourrit ou use nos amitiés, et ce que chaque profil apporte et attend de ses proches."
+      ]
+    },
+    {
+      "slug": "pourquoi-on-hesite-ou-pourquoi-2027-07-31",
+      "titre": "Pourquoi on hésite… ou pourquoi on fonce",
+      "categorie": "Passer à l’action",
+      "date": "2027-07-31",
+      "debut": "10:00",
+      "fin": "",
+      "lieu": {
+        "en_ligne": true,
+        "nom": "En ligne",
+        "ville": "Visioconférence"
+      },
+      "prix": "Gratuit",
+      "places": "À confirmer",
+      "inscription": "",
+      "complet": false,
+      "description": [
+        "Décrypter nos façons de décider, entre prudence et élan, et apprendre à reconnaître celle qui nous sert vraiment."
+      ]
+    },
+    {
+      "slug": "temps-et-energie-trouver-son-2027-08-28",
+      "titre": "Temps et énergie : trouver son équilibre",
+      "categorie": "Construire une vie qui nous ressemble",
+      "date": "2027-08-28",
+      "debut": "10:00",
+      "fin": "",
+      "lieu": {
+        "en_ligne": true,
+        "nom": "En ligne",
+        "ville": "Visioconférence"
+      },
+      "prix": "Gratuit",
+      "places": "À confirmer",
+      "inscription": "",
+      "complet": false,
+      "description": [
+        "Repérer où passent notre temps et notre énergie, et ce que notre profil nous pousse à donner ou à garder pour nous."
+      ]
+    },
+    {
+      "slug": "travailler-ensemble-sans-suser-2027-09-25",
+      "titre": "Travailler ensemble sans s’user",
+      "categorie": "Passer à l’action",
+      "date": "2027-09-25",
+      "debut": "10:00",
+      "fin": "",
+      "lieu": {
+        "en_ligne": true,
+        "nom": "En ligne",
+        "ville": "Visioconférence"
+      },
+      "prix": "Gratuit",
+      "places": "À confirmer",
+      "inscription": "",
+      "complet": false,
+      "description": [
+        "Mieux collaborer en comprenant les besoins, les forces et les points de friction de chaque profil au travail."
+      ]
+    },
+    {
+      "slug": "etre-son-propre-allie-2027-10-30",
+      "titre": "Être son propre allié",
+      "categorie": "Se comprendre",
+      "date": "2027-10-30",
+      "debut": "10:00",
+      "fin": "",
+      "lieu": {
+        "en_ligne": true,
+        "nom": "En ligne",
+        "ville": "Visioconférence"
+      },
+      "prix": "Gratuit",
+      "places": "À confirmer",
+      "inscription": "",
+      "complet": false,
+      "description": [
+        "Apprivoiser la voix intérieure qui juge ou qui pousse, et développer un regard plus juste et plus bienveillant sur soi."
+      ]
+    },
+    {
+      "slug": "desamorcer-les-conflits-du-quotidien-2027-11-27",
+      "titre": "Désamorcer les conflits du quotidien",
+      "categorie": "Mieux vivre ses relations",
+      "date": "2027-11-27",
+      "debut": "10:00",
+      "fin": "",
+      "lieu": {
+        "en_ligne": true,
+        "nom": "En ligne",
+        "ville": "Visioconférence"
+      },
+      "prix": "Gratuit",
+      "places": "À confirmer",
+      "inscription": "",
+      "complet": false,
+      "description": [
+        "Reconnaître ce qui déclenche les tensions selon les profils, et trouver des façons simples d’apaiser les échanges."
+      ]
+    },
+    {
+      "slug": "retrouver-ce-qui-nous-fait-2027-12-18",
+      "titre": "Retrouver ce qui nous fait vibrer",
+      "categorie": "Construire une vie qui nous ressemble",
+      "date": "2027-12-18",
+      "debut": "10:00",
+      "fin": "",
+      "lieu": {
+        "en_ligne": true,
+        "nom": "En ligne",
+        "ville": "Visioconférence"
+      },
+      "prix": "Gratuit",
+      "places": "À confirmer",
+      "inscription": "",
+      "complet": false,
+      "description": [
+        "Revenir à ce qui nous anime profondément, au-delà des automatismes de notre profil, pour bien commencer l’année qui vient."
+      ]
+    }
+  ]
+}
