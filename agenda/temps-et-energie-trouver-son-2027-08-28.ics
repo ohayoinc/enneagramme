@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//enneagramme.co//Calendrier//FR
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:temps-et-energie-trouver-son-2027-08-28@enneagramme.co
+DTSTAMP:20261109T103625Z
+DTSTART;VALUE=DATE:20270828
+DTEND;VALUE=DATE:20270829
+SUMMARY:Temps et énergie : trouver son équilibre
+LOCATION:Lieu à confirmer
+DESCRIPTION:Repérer où passent notre temps et notre énergie\, et ce que notre profil nous pousse à donner ou à garder pour nous. https://enneagramme.co/evenement-temps-et-energie-trouver-son-2027-08-28.html
+URL:https://enneagramme.co/evenement-temps-et-energie-trouver-son-2027-08-28.html
+END:VEVENT
+END:VCALENDAR

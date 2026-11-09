@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//enneagramme.co//Calendrier//FR
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:retrouver-ce-qui-nous-fait-2027-12-18@enneagramme.co
+DTSTAMP:20261109T103625Z
+DTSTART;VALUE=DATE:20271218
+DTEND;VALUE=DATE:20271219
+SUMMARY:Retrouver ce qui nous fait vibrer
+LOCATION:Lieu à confirmer
+DESCRIPTION:Revenir à ce qui nous anime profondément\, au-delà des automatismes de notre profil\, pour bien commencer l’année qui vient. https://enneagramme.co/evenement-retrouver-ce-qui-nous-fait-2027-12-18.html
+URL:https://enneagramme.co/evenement-retrouver-ce-qui-nous-fait-2027-12-18.html
+END:VEVENT
+END:VCALENDAR

@@ -10,7 +10,7 @@ du site, pour que les pages générées restent identiques au reste du site.
 import html
 import json
 import re
-from datetime import datetime, date
+from datetime import datetime, date, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
@@ -49,6 +49,8 @@ def date_longue(ev):
 
 
 def horaire(ev):
+    if not ev.get("debut"):
+        return "Horaire à confirmer"
     return f"{heure(ev['debut'])} – {heure(ev['fin'])}"
 
 
@@ -56,7 +58,7 @@ def lieu_court(ev):
     l = ev["lieu"]
     if l.get("en_ligne"):
         return "En ligne"
-    return ", ".join(x for x in (l.get("nom"), l.get("ville")) if x and x != "Lieu à confirmer") or l.get("ville", "")
+    return ", ".join(x for x in (l.get("nom"), l.get("ville")) if x and x != "Lieu à confirmer") or l.get("ville") or "Lieu à confirmer"
 
 
 def lieu_detail(ev):
@@ -131,7 +133,8 @@ def jsonld_evenement(ev):
     return {
         "@context": "https://schema.org", "@type": "Event", "name": ev["titre"],
         "description": " ".join(ev.get("description", [])),
-        "startDate": dt(ev, "debut").isoformat(), "endDate": dt(ev, "fin").isoformat(),
+        **({"startDate": dt(ev, "debut").isoformat(), "endDate": dt(ev, "fin").isoformat()} if ev.get("debut")
+           else {"startDate": ev["date"], "endDate": ev["date"]}),
         "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": mode, "location": lieu,
         "organizer": {"@type": "Person", "name": "Benjamin Ali Aboudou", "url": f"{SITE}/a-propos.html"},
         "url": f"{SITE}/evenement-{ev['slug']}.html", "inLanguage": "fr-CA",
@@ -146,7 +149,9 @@ def ics(ev):
     return "\r\n".join([
         "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//enneagramme.co//Calendrier//FR", "CALSCALE:GREGORIAN",
         "BEGIN:VEVENT", f"UID:{ev['slug']}@enneagramme.co", f"DTSTAMP:{f(datetime.now(TZ))}",
-        f"DTSTART:{f(dt(ev, 'debut'))}", f"DTEND:{f(dt(ev, 'fin'))}",
+        *([f"DTSTART:{f(dt(ev, 'debut'))}", f"DTEND:{f(dt(ev, 'fin'))}"] if ev.get("debut") else
+          [f"DTSTART;VALUE=DATE:{ev['date'].replace('-', '')}",
+           f"DTEND;VALUE=DATE:{(date.fromisoformat(ev['date']) + timedelta(days=1)).strftime('%Y%m%d')}"]),
         f"SUMMARY:{esc(ev['titre'])}", f"LOCATION:{esc(lieu_detail(ev))}",
         f"DESCRIPTION:{esc(' '.join(ev.get('description', [])) + ' ' + SITE + '/evenement-' + ev['slug'] + '.html')}",
         f"URL:{SITE}/evenement-{ev['slug']}.html", "END:VEVENT", "END:VCALENDAR", ""])
@@ -161,7 +166,7 @@ def ligne(ev, aujourd_hui):
         <a href="evenement-{ev['slug']}.html" class="cal-row__link">
           <span class="cal-row__date"><b>{d.day}</b><span>{MOIS_COURT[d.month - 1]} {d.year}</span></span>
           <span class="cal-row__when"><span>{JOURS[d.weekday()].capitalize()}</span> <span>{horaire(ev)}</span></span>
-          <span class="cal-row__title">{e(ev['titre'])}{etat}</span>
+          <span class="cal-row__title">{('<small>' + e(ev['categorie']) + '</small>') if ev.get('categorie') else ''}{e(ev['titre'])}{etat}</span>
           <span class="cal-row__place">{e(lieu_court(ev))}</span>
           <span class="pill pill--sm cal-row__btn">Détails {FLECHE}</span>
         </a>
@@ -246,7 +251,7 @@ def page_evenement(ev, head, corps, infolettre, fin, aujourd_hui):
 
   <section class="page-hero border-b-[0.5px] border-outline-variant px-12 md:px-16 pt-24 pb-20">
     <div class="page-hero__art" data-style="hero" data-centres="0.84,0.42,26,9" aria-hidden="true"></div>
-    <p class="eyebrow">{e(date_longue(ev))} · {horaire(ev)}</p>
+    <p class="eyebrow">{e(date_longue(ev))} · {horaire(ev)}{(' · ' + e(ev['categorie'])) if ev.get('categorie') else ''}</p>
     <div class="ev-hero">
       <h1 class="h-display" style="font-size:clamp(2.4rem,5vw,4.6rem);text-transform:none">{e(ev['titre'])}</h1>
       <div class="ev-hero__aside">
@@ -263,7 +268,7 @@ def page_evenement(ev, head, corps, infolettre, fin, aujourd_hui):
     <div class="ev-grid">
       <div class="ap-body">
         {paras}
-        <a class="textlink" href="{ev['atelier']}">Découvrir le contenu de l'atelier {FLECHE}</a>
+        <a class="textlink" href="{ev.get('atelier') or 'ateliers.html'}">{'Découvrir le contenu de l’atelier' if ev.get('atelier') else 'Découvrir les ateliers'} {FLECHE}</a>
       </div>
       <dl class="ev-infos">
         <div><dt>Date</dt><dd>{e(date_longue(ev))}</dd></div>
@@ -310,7 +315,7 @@ def sitemap(evs):
 
 def main():
     data = json.loads((RACINE / "donnees" / "calendrier.json").read_text(encoding="utf-8"))
-    evs = sorted(data["evenements"], key=lambda x: (x["date"], x["debut"]))
+    evs = sorted(data["evenements"], key=lambda x: (x["date"], x.get("debut") or ""))
     slugs = [ev["slug"] for ev in evs]
     assert len(slugs) == len(set(slugs)), "deux événements ont le même slug"
     for ev in evs:

@@ -820,3 +820,4 @@ main .grid-cols-12 > * { min-width: 0; overflow-wrap: anywhere; }
 .ev-infos > div { display: grid; grid-template-columns: 7rem 1fr; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--line); }
 .ev-infos dt { font-size: 13px; color: var(--muted); }
 .ev-infos dd { margin: 0; font-size: 15px; color: var(--ink); }
+.cal-row__title small { display: block; margin-bottom: .3rem; font-size: 12.5px; font-weight: 400; letter-spacing: 0; color: var(--muted); }

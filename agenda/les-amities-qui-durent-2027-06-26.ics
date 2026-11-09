@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//enneagramme.co//Calendrier//FR
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:les-amities-qui-durent-2027-06-26@enneagramme.co
+DTSTAMP:20261109T103625Z
+DTSTART;VALUE=DATE:20270626
+DTEND;VALUE=DATE:20270627
+SUMMARY:Les amitiés qui durent
+LOCATION:Lieu à confirmer
+DESCRIPTION:Comprendre ce qui nourrit ou use nos amitiés\, et ce que chaque profil apporte et attend de ses proches. https://enneagramme.co/evenement-les-amities-qui-durent-2027-06-26.html
+URL:https://enneagramme.co/evenement-les-amities-qui-durent-2027-06-26.html
+END:VEVENT
+END:VCALENDAR

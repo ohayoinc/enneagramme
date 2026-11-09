@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//enneagramme.co//Calendrier//FR
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:etre-son-propre-allie-2027-10-30@enneagramme.co
+DTSTAMP:20261109T103625Z
+DTSTART;VALUE=DATE:20271030
+DTEND;VALUE=DATE:20271031
+SUMMARY:Être son propre allié
+LOCATION:Lieu à confirmer
+DESCRIPTION:Apprivoiser la voix intérieure qui juge ou qui pousse\, et développer un regard plus juste et plus bienveillant sur soi. https://enneagramme.co/evenement-etre-son-propre-allie-2027-10-30.html
+URL:https://enneagramme.co/evenement-etre-son-propre-allie-2027-10-30.html
+END:VEVENT
+END:VCALENDAR
