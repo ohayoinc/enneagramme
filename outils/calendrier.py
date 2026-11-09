@@ -256,6 +256,9 @@ def page_evenement(ev, head, corps, infolettre, fin, aujourd_hui):
         bouton = '<span class="pill pill--line" aria-disabled="true">Complet</span>'
     elif passe:
         bouton = '<a class="pill pill--ink" href="calendrier.html">Voir les prochaines dates</a>'
+    elif not ev.get("inscription"):
+        # lien d'inscription pas encore créé
+        bouton = '<span class="pill pill--line pill--soon" aria-disabled="true">Inscription à venir</span>'
     else:
         cible = ' target="_blank" rel="noopener"' if externe else ""
         bouton = f'<a class="pill pill--ink" href="{e(resa)}"{cible}>Réserver ma place {FLECHE}</a>'

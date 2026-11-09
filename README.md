@@ -57,4 +57,4 @@ Après une double confirmation, Brevo redirige vers `infolettre-confirmee.html`.
   `atelier-introduction.html`.
 - Les dates passées passent automatiquement dans « Dates passées », même sans régénérer.
 - `"exemple": true` marque une date fictive : sa page n'est pas indexée et n'entre pas dans le sitemap.
-- Sans lien d'inscription, le bouton « Réserver ma place » ouvre un courriel prérempli.
+- Sans lien d'inscription, la page affiche « Inscription à venir » à la place du bouton « Réserver ma place ».
