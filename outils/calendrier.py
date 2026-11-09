@@ -261,8 +261,7 @@ def page_evenement(ev, head, corps, infolettre, fin, aujourd_hui):
         bouton = '<span class="pill pill--line pill--soon" aria-disabled="true">Inscription à venir</span>'
     else:
         cible = ' target="_blank" rel="noopener"' if externe else ""
-        libelle = "S’inscrire sur Facebook" if re.search(r"(facebook\.com|fb\.me)/", resa) else "Réserver ma place"
-        bouton = f'<a class="pill pill--ink" href="{e(resa)}"{cible}>{libelle} {FLECHE}</a>'
+        bouton = f'<a class="pill pill--ink" href="{e(resa)}"{cible}>S’inscrire {FLECHE}</a>'
     l = ev["lieu"]
     carte = ""
     if not l.get("en_ligne") and (l.get("adresse") or (l.get("nom") and l["nom"] != "Lieu à confirmer")):
