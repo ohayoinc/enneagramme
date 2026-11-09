@@ -51,7 +51,22 @@ def date_longue(ev):
 def horaire(ev):
     if not ev.get("debut"):
         return "Horaire à confirmer"
+    if not ev.get("fin"):
+        return heure(ev["debut"])
     return f"{heure(ev['debut'])} – {heure(ev['fin'])}"
+
+
+def horaire_detail(ev):
+    """Heure de Montréal, avec l'équivalent en France (ateliers suivis des deux côtés)."""
+    if not ev.get("debut"):
+        return "Horaire à confirmer"
+    fr = dt(ev, "debut").astimezone(ZoneInfo("Europe/Paris"))
+    return f"{horaire(ev)}, heure de Montréal ({heure(fr.strftime('%H:%M'))} en France)"
+
+
+def fin_ou_defaut(ev):
+    """Fin réelle, ou début + 1 h 30 pour les fichiers d'agenda quand la fin n'est pas précisée."""
+    return dt(ev, "fin") if ev.get("fin") else dt(ev, "debut") + timedelta(minutes=90)
 
 
 def lieu_court(ev):
@@ -133,7 +148,7 @@ def jsonld_evenement(ev):
     return {
         "@context": "https://schema.org", "@type": "Event", "name": ev["titre"],
         "description": " ".join(ev.get("description", [])),
-        **({"startDate": dt(ev, "debut").isoformat(), "endDate": dt(ev, "fin").isoformat()} if ev.get("debut")
+        **({"startDate": dt(ev, "debut").isoformat(), **({"endDate": dt(ev, "fin").isoformat()} if ev.get("fin") else {})} if ev.get("debut")
            else {"startDate": ev["date"], "endDate": ev["date"]}),
         "eventStatus": "https://schema.org/EventScheduled", "eventAttendanceMode": mode, "location": lieu,
         **({"isAccessibleForFree": True, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "CAD",
@@ -152,7 +167,7 @@ def ics(ev):
     return "\r\n".join([
         "BEGIN:VCALENDAR", "VERSION:2.0", "PRODID:-//enneagramme.co//Calendrier//FR", "CALSCALE:GREGORIAN",
         "BEGIN:VEVENT", f"UID:{ev['slug']}@enneagramme.co", f"DTSTAMP:{f(datetime.now(TZ))}",
-        *([f"DTSTART:{f(dt(ev, 'debut'))}", f"DTEND:{f(dt(ev, 'fin'))}"] if ev.get("debut") else
+        *([f"DTSTART:{f(dt(ev, 'debut'))}", f"DTEND:{f(fin_ou_defaut(ev))}"] if ev.get("debut") else
           [f"DTSTART;VALUE=DATE:{ev['date'].replace('-', '')}",
            f"DTEND;VALUE=DATE:{(date.fromisoformat(ev['date']) + timedelta(days=1)).strftime('%Y%m%d')}"]),
         f"SUMMARY:{esc(ev['titre'])}", f"LOCATION:{esc(lieu_detail(ev))}",
@@ -195,7 +210,7 @@ def page_calendrier(evs, head, corps, infolettre, fin, aujourd_hui):
     <p class="eyebrow">Calendrier</p>
     <div class="cal-hero">
       <h1 class="h-display" style="font-size:clamp(2.6rem,5.6vw,5rem);text-transform:none">Prochains <em>rendez-vous</em></h1>
-      <p class="lede">Ateliers, conférences et rencontres autour de l'Ennéagramme, à Montréal, en Mauricie et en ligne.</p>
+      <p class="lede">Ateliers, conférences et rencontres autour de l'Ennéagramme. Les horaires sont indiqués à l'heure de Montréal.</p>
     </div>
   </section>
 
@@ -277,7 +292,7 @@ def page_evenement(ev, head, corps, infolettre, fin, aujourd_hui):
       </div>
       <dl class="ev-infos">
         <div><dt>Date</dt><dd>{e(date_longue(ev))}</dd></div>
-        <div><dt>Horaire</dt><dd>{horaire(ev)}</dd></div>
+        <div><dt>Horaire</dt><dd>{horaire_detail(ev)}</dd></div>
         <div><dt>Lieu</dt><dd>{e(lieu_detail(ev))}{carte}</dd></div>
         <div><dt>Tarif</dt><dd>{e(ev.get('prix', ''))}</dd></div>
         <div><dt>Groupe</dt><dd>{e(ev.get('places', ''))}</dd></div>

@@ -4,9 +4,9 @@ PRODID:-//enneagramme.co//Calendrier//FR
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
 UID:retrouver-ce-qui-nous-fait-2027-12-18@enneagramme.co
-DTSTAMP:20261109T104108Z
-DTSTART;VALUE=DATE:20271218
-DTEND;VALUE=DATE:20271219
+DTSTAMP:20261109T104607Z
+DTSTART:20271218T150000Z
+DTEND:20271218T163000Z
 SUMMARY:Retrouver ce qui nous fait vibrer
 LOCATION:En ligne\, par visioconférence
 DESCRIPTION:Revenir à ce qui nous anime profondément\, au-delà des automatismes de notre profil\, pour bien commencer l’année qui vient. https://enneagramme.co/evenement-retrouver-ce-qui-nous-fait-2027-12-18.html

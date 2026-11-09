@@ -4,9 +4,9 @@ PRODID:-//enneagramme.co//Calendrier//FR
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
 UID:procrastination-passer-enfin-a-laction-2027-03-27@enneagramme.co
-DTSTAMP:20261109T104108Z
-DTSTART;VALUE=DATE:20270327
-DTEND;VALUE=DATE:20270328
+DTSTAMP:20261109T104607Z
+DTSTART:20270327T140000Z
+DTEND:20270327T153000Z
 SUMMARY:Procrastination : passer enfin à l’action
 LOCATION:En ligne\, par visioconférence
 DESCRIPTION:Comprendre ce qui nous retient vraiment avant d’agir\, et repérer les leviers propres à chaque profil pour se mettre en mouvement. https://enneagramme.co/evenement-procrastination-passer-enfin-a-laction-2027-03-27.html

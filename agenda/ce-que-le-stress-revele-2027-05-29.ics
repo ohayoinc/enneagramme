@@ -4,9 +4,9 @@ PRODID:-//enneagramme.co//Calendrier//FR
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
 UID:ce-que-le-stress-revele-2027-05-29@enneagramme.co
-DTSTAMP:20261109T104108Z
-DTSTART;VALUE=DATE:20270529
-DTEND;VALUE=DATE:20270530
+DTSTAMP:20261109T104607Z
+DTSTART:20270529T140000Z
+DTEND:20270529T153000Z
 SUMMARY:Ce que le stress révèle de nous
 LOCATION:En ligne\, par visioconférence
 DESCRIPTION:Observer nos réactions sous pression et ce qu’elles disent de nos motivations profondes\, profil par profil. https://enneagramme.co/evenement-ce-que-le-stress-revele-2027-05-29.html

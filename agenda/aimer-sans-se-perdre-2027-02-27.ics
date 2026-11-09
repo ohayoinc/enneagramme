@@ -4,9 +4,9 @@ PRODID:-//enneagramme.co//Calendrier//FR
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
 UID:aimer-sans-se-perdre-2027-02-27@enneagramme.co
-DTSTAMP:20261109T104108Z
-DTSTART;VALUE=DATE:20270227
-DTEND;VALUE=DATE:20270228
+DTSTAMP:20261109T104607Z
+DTSTART:20270227T150000Z
+DTEND:20270227T163000Z
 SUMMARY:Aimer sans se perdre
 LOCATION:En ligne\, par visioconférence
 DESCRIPTION:Trouver la juste place entre l’élan vers l’autre et le respect de soi\, à la lumière de ce que chaque profil donne et attend dans la relation. https://enneagramme.co/evenement-aimer-sans-se-perdre-2027-02-27.html

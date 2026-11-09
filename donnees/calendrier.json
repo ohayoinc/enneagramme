@@ -1,12 +1,12 @@
 {
-  "_aide": "Une entrée par date. Après modification : python3 outils/calendrier.py. Les dates passées passent automatiquement dans « Dates passées ». Champs : slug (nom de la page, sans accents), titre, atelier (page de présentation de l'atelier), date (AAAA-MM-JJ), debut et fin (HH:MM, vides = horaire à confirmer), categorie, lieu (nom, adresse, ville ; ou en_ligne: true), prix (« Gratuit » ou un montant), places, inscription (lien de réservation externe, sinon un courriel est proposé), complet (true/false), description (liste de paragraphes), exemple (true = date fictive, page non indexée).",
+  "_aide": "Une entrée par date. Après modification : python3 outils/calendrier.py. Les dates passées passent automatiquement dans « Dates passées ». Champs : slug (nom de la page, sans accents), titre, atelier (page de présentation de l'atelier), date (AAAA-MM-JJ), debut et fin (HH:MM, heure de Montréal ; debut vide = horaire à confirmer, fin vide = heure de début seule), categorie, lieu (nom, adresse, ville ; ou en_ligne: true), prix (« Gratuit » ou un montant), places, inscription (lien de réservation externe, sinon un courriel est proposé), complet (true/false), description (liste de paragraphes), exemple (true = date fictive, page non indexée).",
   "evenements": [
     {
       "slug": "colere-peur-tristesse-apprivoiser-nos-2027-01-30",
       "titre": "Colère, peur, tristesse : apprivoiser nos émotions",
       "categorie": "Se comprendre",
       "date": "2027-01-30",
-      "debut": "",
+      "debut": "10:00",
       "fin": "",
       "lieu": {
         "en_ligne": true,
@@ -26,7 +26,7 @@
       "titre": "Aimer sans se perdre",
       "categorie": "Mieux vivre ses relations",
       "date": "2027-02-27",
-      "debut": "",
+      "debut": "10:00",
       "fin": "",
       "lieu": {
         "en_ligne": true,
@@ -46,7 +46,7 @@
       "titre": "Procrastination : passer enfin à l’action",
       "categorie": "Passer à l’action",
       "date": "2027-03-27",
-      "debut": "",
+      "debut": "10:00",
       "fin": "",
       "lieu": {
         "en_ligne": true,
@@ -66,7 +66,7 @@
       "titre": "Traverser les grands changements",
       "categorie": "Construire une vie qui nous ressemble",
       "date": "2027-04-24",
-      "debut": "",
+      "debut": "10:00",
       "fin": "",
       "lieu": {
         "en_ligne": true,
@@ -86,7 +86,7 @@
       "titre": "Ce que le stress révèle de nous",
       "categorie": "Se comprendre",
       "date": "2027-05-29",
-      "debut": "",
+      "debut": "10:00",
       "fin": "",
       "lieu": {
         "en_ligne": true,
@@ -106,7 +106,7 @@
       "titre": "Les amitiés qui durent",
       "categorie": "Mieux vivre ses relations",
       "date": "2027-06-26",
-      "debut": "",
+      "debut": "10:00",
       "fin": "",
       "lieu": {
         "en_ligne": true,
@@ -126,7 +126,7 @@
       "titre": "Pourquoi on hésite… ou pourquoi on fonce",
       "categorie": "Passer à l’action",
       "date": "2027-07-31",
-      "debut": "",
+      "debut": "10:00",
       "fin": "",
       "lieu": {
         "en_ligne": true,
@@ -146,7 +146,7 @@
       "titre": "Temps et énergie : trouver son équilibre",
       "categorie": "Construire une vie qui nous ressemble",
       "date": "2027-08-28",
-      "debut": "",
+      "debut": "10:00",
       "fin": "",
       "lieu": {
         "en_ligne": true,
@@ -166,7 +166,7 @@
       "titre": "Travailler ensemble sans s’user",
       "categorie": "Passer à l’action",
       "date": "2027-09-25",
-      "debut": "",
+      "debut": "10:00",
       "fin": "",
       "lieu": {
         "en_ligne": true,
@@ -186,7 +186,7 @@
       "titre": "Être son propre allié",
       "categorie": "Se comprendre",
       "date": "2027-10-30",
-      "debut": "",
+      "debut": "10:00",
       "fin": "",
       "lieu": {
         "en_ligne": true,
@@ -206,7 +206,7 @@
       "titre": "Désamorcer les conflits du quotidien",
       "categorie": "Mieux vivre ses relations",
       "date": "2027-11-27",
-      "debut": "",
+      "debut": "10:00",
       "fin": "",
       "lieu": {
         "en_ligne": true,
@@ -226,7 +226,7 @@
       "titre": "Retrouver ce qui nous fait vibrer",
       "categorie": "Construire une vie qui nous ressemble",
       "date": "2027-12-18",
-      "debut": "",
+      "debut": "10:00",
       "fin": "",
       "lieu": {
         "en_ligne": true,

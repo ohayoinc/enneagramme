@@ -4,9 +4,9 @@ PRODID:-//enneagramme.co//Calendrier//FR
 CALSCALE:GREGORIAN
 BEGIN:VEVENT
 UID:desamorcer-les-conflits-du-quotidien-2027-11-27@enneagramme.co
-DTSTAMP:20261109T104108Z
-DTSTART;VALUE=DATE:20271127
-DTEND;VALUE=DATE:20271128
+DTSTAMP:20261109T104607Z
+DTSTART:20271127T150000Z
+DTEND:20271127T163000Z
 SUMMARY:Désamorcer les conflits du quotidien
 LOCATION:En ligne\, par visioconférence
 DESCRIPTION:Reconnaître ce qui déclenche les tensions selon les profils\, et trouver des façons simples d’apaiser les échanges. https://enneagramme.co/evenement-desamorcer-les-conflits-du-quotidien-2027-11-27.html
