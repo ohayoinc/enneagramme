@@ -23,7 +23,7 @@ La validation DNS couvre `http`, `https`, `www` et sans `www` : aucune balise à
 1. <https://analytics.google.com> → **Administration → Créer → Propriété** (fuseau : Canada/Montréal, devise CAD).
 2. **Flux de données → Web** → `https://enneagramme.co`. Copier l'**ID de mesure** (`G-XXXXXXXXXX`).
 3. ✅ Fait : `G-YSH1XBCB1S` est renseigné dans `assets/analytics.js` (propriété `488854221`). Sur le staging (et en local), GA4 fonctionne en mode débogage : activer dans GA4 **Administration → Filtres de données → Trafic des développeurs → Actif** pour l'exclure des rapports.
-4. Dans GA4 : **Administration → Associations de produits → Search Console** pour croiser requêtes Google et comportement sur le site.
+4. ✅ Fait : GA4 est associé à la propriété Search Console `https://enneagramme.co/` (Préfixe d'URL, déjà validée).
 5. Dans GA4 : **Administration → Événements** → marquer `contact_email`, `contact_phone` et `booking_click` comme **événements clés** (conversions).
 
 Tant que l'ID est vide, le script ne fait rien et aucun bandeau n'apparaît.
@@ -59,7 +59,7 @@ Il peut aussi être lancé à la main : onglet **Actions → Suivi SEO → Run w
 5. Dans GitHub : **Settings → Secrets and variables → Actions** :
    - onglet *Secrets* → `GOOGLE_SERVICE_ACCOUNT_JSON` = contenu complet du fichier JSON ;
    - propriété GA4 déjà renseignée dans le workflow (`488854221`) ; la variable `GA4_PROPERTY_ID` permet de la remplacer si besoin ;
-   - optionnel, variable `GSC_SITE_URL` si la propriété n'est pas `sc-domain:enneagramme.co` (ex. `https://enneagramme.co/`).
+   - optionnel, variable `GSC_SITE_URL` si la propriété n'est pas `https://enneagramme.co/` (ex. `sc-domain:enneagramme.co` pour une propriété Domaine).
 
 Sans ces secrets, le rapport hebdomadaire contient seulement l'audit technique.
 
