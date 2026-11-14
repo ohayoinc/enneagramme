@@ -13,7 +13,7 @@ const fixLen = f(FIXATIONS.end - FIXATIONS.start);
 const Test: React.FC = () => (
   <>
     <Sequence durationInFrames={introLen}>
-      <Intro episode={25} />
+      <Intro />
       <Audio src={staticFile(AUDIO)} trimBefore={f(INTRO.start)} />
     </Sequence>
     <Sequence from={introLen} durationInFrames={fixLen}>

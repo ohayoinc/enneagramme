@@ -14,6 +14,8 @@ et Instrument Serif italique (accents), cercles concentriques en trait fin, past
 - Vidéos d'illustration : **oui** sous le texte (questions, citations), **jamais** sur les scènes avec le
   diagramme de l'ennéagramme.
 - Scènes avec le diagramme : **pas de cercles concentriques derrière**, fond uni.
+- Vidéos toujours **en plein écran** (pas de cadre ni de cercle).
+- **Pas de numéro d'épisode** à l'écran : les vidéos doivent rester intemporelles.
 - Tout en noir et blanc.
 
 ## Organisation
