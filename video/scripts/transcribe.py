@@ -1,9 +1,12 @@
-import json, sys, time
+import json, subprocess, sys, time
+import numpy as np
 from faster_whisper import WhisperModel
 src, out, size = sys.argv[1], sys.argv[2], (sys.argv[3] if len(sys.argv) > 3 else "small")
 t = time.time()
 model = WhisperModel(size, device="cpu", compute_type="int8")
-segs, info = model.transcribe(src, language="fr", word_timestamps=True, vad_filter=True)
+pcm = subprocess.run(["ffmpeg", "-v", "quiet", "-i", src, "-ac", "1", "-ar", "16000", "-f", "s16le", "-"], capture_output=True, check=True).stdout
+audio = np.frombuffer(pcm, np.int16).astype(np.float32) / 32768.0
+segs, info = model.transcribe(audio, language="fr", word_timestamps=True, vad_filter=True)
 res = []
 for s in segs:
     res.append({"start": s.start, "end": s.end, "text": s.text.strip(),
