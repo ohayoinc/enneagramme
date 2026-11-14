@@ -1,4 +1,4 @@
-# Titres et descriptions proposés
+# Titres et descriptions (validés et appliqués le 14 novembre 2026)
 
 Règles suivies : titre de 60 caractères au plus (au-delà, Google le coupe), mot-clé recherché au début, « Montréal » sur les pages de services, plus de « | Benjamin Ali Aboudou » sur les articles (Google affiche déjà le nom du site au-dessus du titre). Les descriptions ne sont réécrites que si elles dépassaient 160 caractères ou si la page est prioritaire. Les titres H1 affichés sur les pages ne changent pas.
 
@@ -407,4 +407,5 @@ Règles suivies : titre de 60 caractères au plus (au-delà, Google le coupe), m
 ## Pages d'événements (12 pages générées par `outils/calendrier.py`)
 
 - Actuel : « Colère, peur, tristesse : apprivoiser nos émotions · Samedi 30 janvier 2027 | Benjamin Ali Aboudou » (98 car.)
-- Proposé : « Colère, peur, tristesse : apprivoiser nos émotions | Atelier Ennéagramme » ; la date reste dans la description et sur la page. Modification faite une seule fois dans le générateur.
+- Appliqué : « Titre | Atelier Ennéagramme » si le total tient en 60 caractères, sinon « Titre | Ennéagramme », sinon le titre seul ; la date reste dans la description et sur la page. Modification faite dans le générateur.
+- Page Calendrier : « Calendrier des ateliers Ennéagramme | Montréal, en ligne ».
