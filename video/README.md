@@ -19,6 +19,7 @@ et Instrument Serif italique (accents), cercles concentriques en trait fin, past
 - `src/scenes/` — scènes (`Intro`, `NeufFixations`)
 - `scripts/transcribe.py` — `python3 scripts/transcribe.py public/audio/25.mp3 audio/25.transcript.json small`
 - `scripts/pexels.mjs` — `node scripts/pexels.mjs <nom> "<recherche en anglais>" [index]` → `public/inserts/<nom>.mp4`
+- `scripts/pixabay.mjs` — même usage, avec `PIXABAY_API_KEY` (source utilisée)
 
 ## Rendu
 
@@ -35,7 +36,7 @@ Dans l'environnement cloud, avant le rendu :
 
 1. ✅ Test validé par l'auteur (« absolument génial ») : intro (0:00–0:31) + neuf fixations (2:56–4:11),
    composition `Test` dans `src/Root.tsx`.
-2. ⏳ **Inserts vidéo Pexels** : la clé `PEXELS_API_KEY` doit être ajoutée à l'environnement cloud
+2. ⏳ **Inserts vidéo** : Pexels ne délivre plus de nouvelles clés (nov. 2026), on passe par **Pixabay** (`scripts/pixabay.mjs`, clé `PIXABAY_API_KEY`). La clé doit être ajoutée à l'environnement cloud
    (une nouvelle session la voit). Le composant `Insert` (noir et blanc, grain, zoom lent) et le script
    `pexels.mjs` sont prêts. Prochaine étape : ajouter 3–4 inserts au test, un par présentation, pour
    que l'auteur choisisse :
