@@ -201,7 +201,7 @@ def page_calendrier(evs, head, corps, infolettre, fin, aujourd_hui):
           "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": f"{SITE}/evenement-{ev['slug']}.html"} for i, ev in enumerate(a_venir)]}
     vide = ('<p class="cal-empty"' + ('' if not a_venir else ' hidden') + '>Aucune date annoncée pour le moment. '
             'Inscrivez-vous à l\'infolettre ci-dessous pour être prévenu des prochains ateliers.</p>')
-    out = tete(head, "Calendrier des ateliers Ennéagramme | Benjamin Ali Aboudou", desc, url, ld)
+    out = tete(head, "Calendrier des ateliers Ennéagramme | Montréal, en ligne", desc, url, ld)
     out += menu_actif(corps).rstrip() + ariane(("Accueil", "/"), ("Calendrier", None)) + f'''
 <main class="flex flex-col">
 
@@ -248,7 +248,9 @@ def page_calendrier(evs, head, corps, infolettre, fin, aujourd_hui):
 
 def page_evenement(ev, head, corps, infolettre, fin, aujourd_hui):
     url = f"{SITE}/evenement-{ev['slug']}.html"
-    titre_page = f"{ev['titre']} · {date_longue(ev)} | Benjamin Ali Aboudou"
+    # Titre court (Google coupe vers 60 caractères) ; la date reste dans la description.
+    titre_page = next((t for t in (f"{ev['titre']} | Atelier Ennéagramme",
+                                   f"{ev['titre']} | Ennéagramme") if len(t) <= 60), ev["titre"])
     desc = f"{ev['titre']} le {date_longue(ev).lower()}, {horaire(ev)}, {lieu_court(ev)}. " + (ev.get("description") or [""])[0]
     resa, externe = lien_reservation(ev)
     passe = date.fromisoformat(ev["date"]) < aujourd_hui

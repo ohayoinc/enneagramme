@@ -6,7 +6,7 @@ les opportunités (requêtes en page 1–2 avec beaucoup d'impressions mais peu 
 
 Variables d'environnement :
   GOOGLE_SERVICE_ACCOUNT_JSON  contenu JSON de la clé du compte de service (obligatoire)
-  GSC_SITE_URL                 propriété Search Console (défaut : sc-domain:enneagramme.co)
+  GSC_SITE_URL                 propriété Search Console (défaut : https://enneagramme.co/)
   GA4_PROPERTY_ID              identifiant numérique de la propriété GA4 (optionnel)
 
 Dépendances : pip install google-auth requests
@@ -26,7 +26,7 @@ SCOPES = [
     "https://www.googleapis.com/auth/webmasters.readonly",
     "https://www.googleapis.com/auth/analytics.readonly",
 ]
-SITE = os.environ.get("GSC_SITE_URL") or "sc-domain:enneagramme.co"
+SITE = os.environ.get("GSC_SITE_URL") or "https://enneagramme.co/"
 GA4 = os.environ.get("GA4_PROPERTY_ID", "").strip()
 
 
