@@ -1,0 +1,286 @@
+{
+ "chaine": {
+  "nom": "Ennéagramme | Benjamin Ali Aboudou",
+  "url": "https://www.youtube.com/@Enneagrammeco",
+  "id": "UCg1xRv0TcFr0S99O3o7wIAg"
+ },
+ "themes": {
+  "comprendre": "Comprendre l'Ennéagramme",
+  "sous-types": "Sous-types et instincts",
+  "couple": "Ennéagramme et couple",
+  "equipe": "Ennéagramme en équipe"
+ },
+ "_note": "date = date de publication sur YouTube (AAAA-MM-JJ). Laisser null si inconnue : la vidéo est intégrée mais pas déclarée à Google tant que la date manque (YouTube Studio > Contenu). L'ordre compte : la première vidéo associée à une page est celle affichée dans le lecteur.",
+ "videos": [
+  {
+   "id": "yhR6Cv-VkuA",
+   "titre": "L'Ennéagramme exploite-t-il le fameux effet Barnum ? La réponse peut surprendre ! B. Forer",
+   "duree": "13:51",
+   "date": "2026-02-16",
+   "description": "L’Ennéagramme n’est-il qu’un ensemble de descriptions vagues dans lesquelles tout le monde pourrait se reconnaître ?",
+   "page": "decouvrir-son-profil-pieges-enneagramme.html",
+   "theme": "comprendre"
+  },
+  {
+   "id": "K5J1TDiEk_0",
+   "titre": "Ennéagramme : ce que votre colère révèle sur vous (et sur votre couple) | S. Dion & D. Daniels",
+   "duree": "12:38",
+   "date": "2026-02-09",
+   "description": "On parle souvent de communication dans le couple, mais rarement de colère. Pourtant, c'est l'une des émotions qui influence le plus nos relations. Dans cette vidéo, nous découvrons, profil par profil, ce qui active notre colère et comment elle a tendance à s'exprimer. Nous pourrions être surpris de ce que nous allons reconnaître chez nous… et/ou chez nos partenaire.",
+   "page": "cycles-conflits-reconciliations-enneagramme.html",
+   "theme": "couple"
+  },
+  {
+   "id": "nawTNGHdCSU",
+   "titre": "Ennéagramme : comprendre ce que c’est (et ce que ce n’est pas)",
+   "duree": "13:35",
+   "date": "2026-02-01",
+   "description": "L'Ennéagramme fascine autant qu'il interroge. Outil de transformation pour certains, simple mode passagère pour d'autres. Mais qu'est-ce que l'Ennéagramme, vraiment ?",
+   "page": "lenneagramme.html",
+   "theme": "comprendre"
+  },
+  {
+   "id": "ESbILB8lE6I",
+   "titre": "Présentation de la chaîne Ennéagramme",
+   "duree": "8:13",
+   "date": "2026-01-25",
+   "description": "Cette chaîne est dédiée à l’exploration de l’Ennéagramme.",
+   "page": null,
+   "theme": "comprendre"
+  },
+  {
+   "id": "x36GvMLxPkI",
+   "titre": "Se connaître pour être au collectif via l'Ennéagramme, cartographie de personnalité | Peter Senge",
+   "duree": "8:06",
+   "date": "2025-12-19",
+   "description": "Dans cet épisode, nous explorons comment la connaissance de soi permet de trouver une place authentique dans un collectif, à partir de la notion de maîtrise personnelle développée par Peter Senge dans La Cinquième Discipline. Nous montrons en quoi l’Ennéagramme constitue un outil central pour développer l’observateur intérieur, clarifier notre contribution naturelle au groupe et nous positionner sans trahir notre authenticité. Comprendre nos automatismes, nos filtres perceptuels et nos mécanismes de défense devient alors une condition essentielle pour participer consciemment à un projet collectif et contribuer à une organisation réellement apprenante.",
+   "page": "enneagramme-professionnel.html",
+   "theme": "equipe"
+  },
+  {
+   "id": "PkZGX4XJtTg",
+   "titre": "Pourquoi nous ne voyons pas le monde pareil dans le couple ? L'Ennéagramme nous aide | Jon Gottman",
+   "duree": "8:06",
+   "date": "2025-12-18",
+   "description": "Pourquoi certaines incompréhensions reviennent-elles sans cesse dans le couple ?",
+   "page": "quatre-cavaliers-couple-enneagramme-gottman.html",
+   "theme": "couple"
+  },
+  {
+   "id": "bW1GtPyne38",
+   "titre": "Ennéagramme – Survie, Social, Tête à Tête, les sous-types expliqués | Béatrice Chestnut",
+   "duree": "11:02",
+   "date": null,
+   "description": null,
+   "page": "sous-types-instinctifs-enneagramme.html",
+   "theme": "sous-types"
+  },
+  {
+   "id": "LNkpYj1puHE",
+   "titre": "Ennéagramme et instincts : Le fonctionnement du sous-type survie | Béatrice Chestnut",
+   "duree": "8:47",
+   "date": "2025-12-16",
+   "description": "Dans cet épisode, nous explorons le sous-type survie dans l’Ennéagramme à partir des travaux de Beatrice Chestnut. Nous expliquons comment l’instinct de conservation oriente l’attention vers la santé, la sécurité matérielle, le confort et l’autonomie, bien au-delà d’une simple prudence ou d’une anxiété apparente. Nous montrons comment cet instinct reconfigure chacun des neuf profils et comment il se manifeste concrètement dans la vie quotidienne, à travers la gestion des ressources, l’habitat, les routines et le rapport au bien-être physique. Comprendre le sous-type survie permet d’affiner la connaissance de soi et d’éviter les erreurs de lecture basées uniquement sur le profil de base.",
+   "page": "sous-types-instinctifs-enneagramme.html",
+   "theme": "sous-types"
+  },
+  {
+   "id": "_lvDsr6Fq2s",
+   "titre": "Comprendre les logiques du conflit : Ennéagramme et médiation | Kenneth Thomas et Ralph Kilmann",
+   "duree": "6:24",
+   "date": "2025-12-12",
+   "description": "Dans cet épisode, nous explorons la gestion des conflits en équipe en croisant le modèle Thomas-Kilmann et l’Ennéagramme. Nous montrons comment les conflits ne naissent pas uniquement de désaccords factuels, mais de motivations, de besoins et de stratégies psychologiques différentes. En analysant les profils Ennéagramme et leurs tendances naturelles face au conflit, nous expliquons pourquoi certaines tensions se répètent et comment les désamorcer plus efficacement. Nous abordons également les applications concrètes pour la médiation, le management et la prévention des conflits, afin de transformer les divergences en leviers de coopération et de développement collectif.",
+   "page": "conflits-projet-collectif-enneagramme-lencioni.html",
+   "theme": "equipe"
+  },
+  {
+   "id": "aFEAz1t7D_4",
+   "titre": "Explication sur le mythe du couple Idéal selon les profils Ennéagramme | Don Riso",
+   "duree": "7:01",
+   "date": "2025-12-11",
+   "description": "Dans cet épisode, nous déconstruisons une idée reçue majeure : l’Ennéagramme ne sert pas à déterminer la compatibilité entre deux profils. Nous analysons pourquoi la logique du “matching” est un piège, et comment l’Ennéagramme doit plutôt être utilisé comme un outil de compréhension mutuelle. Nous expliquons les mécanismes internes de chaque type, les différences de perception, et la manière dont ces écarts créent des incompréhensions lorsqu’ils ne sont pas explicités. Nous montrons ensuite comment l’adaptation consciente transforme les relations, quels que soient les profils impliqués. Une analyse structurée pour clarifier la fonction réelle de l’Ennéagramme dans les relations.",
+   "page": "enneagramme-couple.html",
+   "theme": "couple"
+  },
+  {
+   "id": "IQO0-n-QYuE",
+   "titre": "Ennéagramme : Une explication de la structure du sous-type tête-à-tête | Claudio Naranjo",
+   "duree": "14:40",
+   "date": "2025-12-09",
+   "description": "Dans cet épisode, nous explorons en profondeur le sous-type tête-à-tête de l’Ennéagramme, tel que conceptualisé par Claudio Naranjo. Nous analysons comment cet instinct organise l’attention, l’énergie et la présence relationnelle, et comment il structure la recherche d’intensité, la polarité attraction-répulsion et les mécanismes de séduction instinctuelle. Nous examinons aussi la dynamique binaire de l’énergie, les mécanismes de défense associés et l’interaction avec les neuf profils. Enfin, nous présentons les axes de développement conscient permettant de transformer l’intensité compulsive en présence choisie. Une lecture structurée pour comprendre la logique psychologique du sous-type tête-à-tête dans son architecture complète.",
+   "page": "sous-types-instinctifs-enneagramme.html",
+   "theme": "sous-types"
+  },
+  {
+   "id": "fWqV5a4jUCk",
+   "titre": "Intégration d’équipe : L’Ennéagramme comme cartographie de lecture Interne | Helen Palmer",
+   "duree": "8:36",
+   "date": "2025-12-05",
+   "description": "Dans cet épisode, nous analysons l’intégration d’un employé à la lumière de l’Ennéagramme, en nous appuyant sur les travaux d’Oscar Ichazo et Claudio Naranjo. Nous expliquons comment la structure égotique influence les premières interactions en équipe, comment les mécanismes de défense affectent la perception du milieu professionnel, et comment les fixations d’attention orientent la présence et la collaboration. Nous explorons aussi le rôle des passions, des vertus et de la diversité structurelle dans la contribution d’un employé. Une lecture claire et rigoureuse pour comprendre l’intégration comme un processus psychologique profond et conscient.",
+   "page": "etapes-developpement-equipe-enneagramme-tuckman.html",
+   "theme": "equipe"
+  },
+  {
+   "id": "Jntga9kvuq4",
+   "titre": "Couple et ennéagramme : Comprendre les dynamiques profondes de la relation | Claudio Naranjo",
+   "duree": "17:34",
+   "date": "2025-12-04",
+   "description": "Dans cet épisode, nous explorons en profondeur la dynamique du couple à travers l’Ennéagramme. Nous montrons comment la structure de l’ego influence nos réactions, nos besoins et nos zones de sensibilité, et comment les sous-types instinctifs — auto-conservation, social et tête-à-tête — transforment radicalement la manière dont chaque type se vit en relation. Nous examinons aussi les lignes d’intégration et de désintégration, les besoins psychologiques propres à chaque type et la manière dont le couple devient un espace de croissance mutuelle. Cet épisode propose une compréhension structurelle, rigoureuse et nuancée de la vie conjugale à la lumière de l’Ennéagramme.",
+   "page": "enneagramme-couple.html",
+   "theme": "couple"
+  },
+  {
+   "id": "snAseBjQo94",
+   "titre": "Ennéagramme : Personnalité, caractère ou égo ? Comprendre les 3 niveaux clés | Ginger Lapid Bogda",
+   "duree": "11:12",
+   "date": "2025-12-02",
+   "description": "Dans cet épisode, nous clarifions une confusion fréquente : l’Ennéagramme décrit-il la personnalité, le caractère ou la structure de l’Ego ? Nous explorons trois niveaux essentiels : la personnalité observable, le caractère forgé dans l’enfance, et la structure de l’Ego qui organise nos motivations profondes. Nous montrons comment l’Ennéagramme se situe au niveau de l’Ego, pourquoi les comportements ne suffisent pas à déterminer un type, et comment la distinction entre personnalité, caractère et Ego permet une compréhension plus fine de nos mécanismes internes. Une mise au point nécessaire pour utiliser l’Ennéagramme avec rigueur, discernement et précision.",
+   "page": "essence-personnalite-enneagramme-almaas.html",
+   "theme": "comprendre"
+  },
+  {
+   "id": "Q_aNkaIfipQ",
+   "titre": "Comprendre les dynamiques de pouvoir en équipe avec l'Ennéagramme | Michel Crozier",
+   "duree": "10:50",
+   "date": "2025-11-28",
+   "description": "Dans cet épisode, nous explorons les dynamiques de pouvoir dans les groupes en croisant les travaux de Michel Crozier avec l’Ennéagramme. Nous montrons comment le pouvoir circule réellement dans une équipe, au-delà de la hiérarchie formelle, et comment chaque profil Ennéagramme développe un style propre d’influence. Nous expliquons les zones d’incertitude, les stratégies invisibles, les leviers d’autorité informelle et les mécanismes qui façonnent la coopération. Nous proposons ensuite des méthodes concrètes pour rendre ces dynamiques visibles, rééquilibrer l’influence et renforcer la collaboration au sein d’un collectif.",
+   "page": "dynamiques-pouvoir-groupe-enneagramme-crozier.html",
+   "theme": "equipe"
+  },
+  {
+   "id": "RJ9_f1DF52k",
+   "titre": "Comprendre notre couple à travers l'Ennéagramme et les blessures d’attachement | Suzanne Dion",
+   "duree": "11:55",
+   "date": "2025-11-26",
+   "description": "Pourquoi rejouons-nous souvent les mêmes disputes dans notre couple ?",
+   "page": "blessures-attachement-couple-enneagramme.html",
+   "theme": "couple"
+  },
+  {
+   "id": "ek1rURwrCNk",
+   "titre": "Les processus de décision: Décision rapide, consultatif ou consensus avec L'Ennéagramme | Kurt Lewin",
+   "duree": "9:07",
+   "date": null,
+   "description": null,
+   "page": "decisions-equipe-enneagramme-kurt-lewin.html",
+   "theme": "equipe"
+  },
+  {
+   "id": "QAqY3ES7GVA",
+   "titre": "Les mêmes conflits reviennent ? Les contrats invisibles du couple via l'Ennéagramme | David Daniels",
+   "duree": "14:06",
+   "date": null,
+   "description": null,
+   "page": "attentes-implicites-explicites-couple-enneagramme.html",
+   "theme": "couple"
+  },
+  {
+   "id": "Hqfi0GseF2c",
+   "titre": "Ennéagramme : les angles morts des 9 profils – Ce que vous ne voyez pas de vous-même | Helen Palmer",
+   "duree": "8:40",
+   "date": null,
+   "description": null,
+   "page": "neuf-profils-cartographie-enneagramme.html",
+   "theme": "comprendre"
+  },
+  {
+   "id": "krSeFGISkfQ",
+   "titre": "Les clés d’un leadership authentique et flexible avec l'appui de l’Ennéagramme | Ginger Lapid-Bogda",
+   "duree": "12:35",
+   "date": null,
+   "description": null,
+   "page": "enneagramme-leadership-ginger-lapid-bogda.html",
+   "theme": "equipe"
+  },
+  {
+   "id": "VhvuDsbYCdQ",
+   "titre": "Mieux aimer grâce à l’Ennéagramme : comprendre les patterns d’attention du couple | Helen Palmer",
+   "duree": "6:35",
+   "date": "2025-11-12",
+   "description": null,
+   "page": "enneagramme-couple-comprendre-helen-palmer.html",
+   "theme": "couple"
+  },
+  {
+   "id": "sLxrPrsnPfw",
+   "titre": "L’Ennéagramme, entre tradition et psychologie : un des retours aux sources | Oscar Ichazo",
+   "duree": "20:09",
+   "date": null,
+   "description": null,
+   "page": "histoire-origines-enneagramme-ichazo-naranjo.html",
+   "theme": "comprendre"
+  },
+  {
+   "id": "iku1NNByYzE",
+   "titre": "Intelligence collective : créer une vision partagée avec l'appui de l’Ennéagramme | Peter Senge",
+   "duree": "14:36",
+   "date": null,
+   "description": null,
+   "page": "enneagramme-equipe-vision-partagee-peter-senge.html",
+   "theme": "equipe"
+  },
+  {
+   "id": "LyyzTVXfkYY",
+   "titre": "Aimer sans se renier : construire une vision commune avec l'appui de  l’Ennéagramme | Esther Perel",
+   "duree": "14:33",
+   "date": null,
+   "description": null,
+   "page": "enneagramme-couple-vision-commune-esther-perel.html",
+   "theme": "couple"
+  },
+  {
+   "id": "jtq9a0exM3s",
+   "titre": "Comment l’Ennéagramme aide à mieux réagir, décider et coopérer chaque jour | Eric Salmon",
+   "duree": "14:48",
+   "date": null,
+   "description": null,
+   "page": "enneagramme-quotidien-applications-pratiques-eric-salmon.html",
+   "theme": "comprendre"
+  },
+  {
+   "id": "0r1mv2XhlR0",
+   "titre": "Comment chaque profil Ennéagramme donne et reçoit le feedback ? | Kim Scott",
+   "duree": "15:36",
+   "date": null,
+   "description": null,
+   "page": "enneagramme-feedback-candeur-radicale-kim-scott.html",
+   "theme": "equipe"
+  },
+  {
+   "id": "wRf6X549f_U",
+   "titre": "Comprendre les répétitions familiales dans le couple. L’Ennéagramme et l’attachement | John Bowlby",
+   "duree": "15:34",
+   "date": null,
+   "description": null,
+   "page": "enneagramme-couple-scenarios-familiaux-bowlby.html",
+   "theme": "couple"
+  },
+  {
+   "id": "V8tgbOyfVxI",
+   "titre": "Comprendre nos fixations pour révéler nos vertus, basés sur l'Ennéagramme | Sandra Maitri",
+   "duree": "13:53",
+   "date": null,
+   "description": null,
+   "page": "vertus-fixations-enneagramme.html",
+   "theme": "comprendre"
+  },
+  {
+   "id": "c99CJOlLfTo",
+   "titre": "Ennéagramme au travail : maîtriser le stress collectif, bâtir une équipe résiliente | Amy Edmondson",
+   "duree": "16:52",
+   "date": null,
+   "description": null,
+   "page": "stress-resilience-equipe-enneagramme-edmondson.html",
+   "theme": "equipe"
+  },
+  {
+   "id": "hPjTyxvZnF4",
+   "titre": "Comprendre notre couple en profondeur - Les 5 langages de l’amour et l’Ennéagramme | Gary Chapman",
+   "duree": "18:34",
+   "date": null,
+   "description": null,
+   "page": "langages-amour-couple-enneagramme-chapman.html",
+   "theme": "couple"
+  }
+ ]
+}
