@@ -90,7 +90,7 @@
         window.gtag('event', 'contact_email', { link_url: href });
       } else if (href.indexOf('tel:') === 0) {
         window.gtag('event', 'contact_phone', { link_url: href });
-      } else if (/calendly|zcal|cal\.com|tidycal|acuityscheduling|eventbrite|zeffy|stripe|paypal/i.test(href)) {
+      } else if (/calendar\.app\.google|calendly|zcal|cal\.com|tidycal|acuityscheduling|eventbrite|zeffy|stripe|paypal/i.test(href)) {
         window.gtag('event', 'booking_click', { link_url: a.href, link_text: (a.textContent || '').trim().slice(0, 80) });
       } else if (a.hostname && a.hostname !== location.hostname) {
         window.gtag('event', 'outbound_click', { link_url: a.href });
