@@ -2,7 +2,6 @@ import React from 'react';
 import {AbsoluteFill, interpolate, useCurrentFrame} from 'remotion';
 import {CircleWipe} from '../components/CircleWipe';
 import {Enneagram} from '../components/Enneagram';
-import {Insert} from '../components/Insert';
 import {Pill} from '../components/Pill';
 import {Reveal} from '../components/Reveal';
 import {Rings} from '../components/Rings';
@@ -57,10 +56,6 @@ export const NeufFixations: React.FC = () => {
       {/* Cartographie, fond noir */}
       <CircleWipe at={wipeAt} x={CX} y={CY}>
         <AbsoluteFill style={{background: noir.bg, color: noir.fg}}>
-          <Rings color={noir.fg} opacity={0.18} speed={0.3} clusters={[{cx: CX, cy: CY, maxR: 560, step: 14}]} />
-          {/* Vidéos d'illustration dans le cercle, sous les traits de l'ennéagramme */}
-          <Insert src="inserts/cafe.mp4" mode="cercle" x={CX} y={CY} w={2 * R - 60} at={rel(189.2) + 10} out={rel(196.2)} />
-          <Insert src="inserts/foule.mp4" mode="cercle" x={CX} y={CY} w={2 * R - 60} at={rel(228.4) + 10} out={rel(234.9)} />
           <Enneagram t={noir} cx={CX} cy={CY} r={R} drawAt={wipeAt + 10} lit={lit} labels={labels} current={current?.n} />
 
           <Reveal at={wipeAt + 20} style={{position: 'absolute', left: 120, top: 104}}>

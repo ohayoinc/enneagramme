@@ -9,6 +9,13 @@ Reprise des visuels Facebook « Les samedis pour soi » : noir et blanc (`src/th
 noir `#0d0d0d`, blanc, graphite `#545454`, gris clair `#e4e4e4`), Instrument Sans (titres)
 et Instrument Serif italique (accents), cercles concentriques en trait fin, pastilles arrondies.
 
+## Règles de style (validées par l'auteur)
+
+- Vidéos d'illustration : **oui** sous le texte (questions, citations), **jamais** sur les scènes avec le
+  diagramme de l'ennéagramme.
+- Scènes avec le diagramme : **pas de cercles concentriques derrière**, fond uni.
+- Tout en noir et blanc.
+
 ## Organisation
 
 - `public/audio/25.mp3` — audio de l'épisode 25 (13 min 50 s)
