@@ -58,3 +58,17 @@ Après une double confirmation, Brevo redirige vers `infolettre-confirmee.html`.
 - Les dates passées passent automatiquement dans « Dates passées », même sans régénérer.
 - `"exemple": true` marque une date fictive : sa page n'est pas indexée et n'entre pas dans le sitemap.
 - Sans lien d'inscription, la page affiche « Inscription à venir » à la place du bouton « Réserver ma place ».
+
+## Vidéos YouTube
+
+La chaîne https://www.youtube.com/@Enneagrammeco est reliée au site par `outils/videos.py`, à partir de `donnees/videos.json`.
+
+- Chaque vidéo associée à une page (`page`) y est intégrée en haut de l'article, avec les autres vidéos du même sujet.
+  L'ordre du fichier fixe la vidéo principale de chaque page.
+- `videos.html` liste toutes les vidéos par thème, chacune reliée à son article ; pied de page : liens « Vidéos » et « YouTube ».
+- Lecteur sans YouTube avant le clic (miniatures dans `images/videos/`, lecteur youtube-nocookie.com) : rien n'est
+  envoyé à Google sans action du visiteur. `assets/video.js`, `assets/video.css`.
+- Données structurées `VideoObject` : seulement pour les vidéos dont la `date` de publication est renseignée.
+
+Ajouter une vidéo : l'ajouter dans `donnees/videos.json`, déposer `ID-640.webp` et `ID-1280.webp` (16:9) dans
+`images/videos/`, puis `python3 outils/videos.py`. Le script est idempotent (on peut le relancer sans risque).
