@@ -1,5 +1,6 @@
 import React from 'react';
 import {AbsoluteFill} from 'remotion';
+import {Insert} from '../components/Insert';
 import {Pill} from '../components/Pill';
 import {Reveal} from '../components/Reveal';
 import {Rings} from '../components/Rings';
@@ -22,6 +23,11 @@ export const Intro: React.FC<{episode: number}> = ({episode}) => {
         ]}
       />
 
+      {/* Vidéos d'illustration (Pixabay) */}
+      <Insert src="inserts/repetition.mp4" mode="plein" dim={0.62} at={f(qs[0].at)} out={f(qs[1].at)} />
+      <Insert src="inserts/eclosion.mp4" mode="cadre" x={1200} y={270} w={600} h={540} at={f(qs[1].at) + 10} out={f(qs[2].at)} />
+      <Insert src="inserts/encre.mp4" mode="plein" dim={0.35} at={f(qs[2].at)} out={f(INTRO.end) + 20} />
+
       {/* En-tête : marque + numéro d'épisode */}
       <Reveal at={8} style={{position: 'absolute', left: 120, top: 104, display: 'flex', alignItems: 'center', gap: 28}}>
         <p style={{margin: 0, fontSize: 42, fontWeight: 500, letterSpacing: '-0.02em'}}>
@@ -42,7 +48,7 @@ export const Intro: React.FC<{episode: number}> = ({episode}) => {
 
       {/* Les trois questions, l'une après l'autre */}
       {qs.map((q, i) => (
-        <div key={i} style={{position: 'absolute', left: 120, top: 0, bottom: 0, width: 1240, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 28}}>
+        <div key={i} style={{position: 'absolute', left: 120, top: 0, bottom: 0, width: i === 1 ? 980 : 1240, display: 'flex', flexDirection: 'column', justifyContent: 'center', gap: 28}}>
           <Reveal at={f(q.at)} out={i < qs.length - 1 ? f(qs[i + 1].at) : f(INTRO.end)}>
             <p style={{margin: 0, fontSize: 58, lineHeight: 1.2, fontWeight: 500, letterSpacing: '-0.02em'}}>{q.avant}</p>
           </Reveal>

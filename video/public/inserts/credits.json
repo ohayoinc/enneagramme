@@ -1,0 +1,38 @@
+{
+  "repetition": {
+    "query": "id:6387",
+    "id": 6387,
+    "source": "https://pixabay.com/videos/id-6387/",
+    "auteur": "Coverr-Free-Footage",
+    "duree": 14,
+    "largeur": 1920
+  },
+  "eclosion": {
+    "query": "seed sprouting",
+    "source": "https://pixabay.com/videos/id-163333/",
+    "auteur": "adege",
+    "duree": 41,
+    "largeur": 1920
+  },
+  "encre": {
+    "query": "ink in water",
+    "source": "https://pixabay.com/videos/id-27794/",
+    "auteur": "FreeCreativeStuff",
+    "duree": 20,
+    "largeur": 1920
+  },
+  "cafe": {
+    "query": "people cafe watching",
+    "source": "https://pixabay.com/videos/id-6409/",
+    "auteur": "Life-Of-Vids",
+    "duree": 20,
+    "largeur": 1920
+  },
+  "foule": {
+    "query": "city crowd timelapse",
+    "source": "https://pixabay.com/videos/id-23258/",
+    "auteur": "RafterJr72",
+    "duree": 18,
+    "largeur": 1920
+  }
+}

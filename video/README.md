@@ -36,7 +36,7 @@ Dans l'environnement cloud, avant le rendu :
 
 1. ✅ Test validé par l'auteur (« absolument génial ») : intro (0:00–0:31) + neuf fixations (2:56–4:11),
    composition `Test` dans `src/Root.tsx`.
-2. ⏳ **Inserts vidéo** : Pexels ne délivre plus de nouvelles clés (nov. 2026), on passe par **Pixabay** (`scripts/pixabay.mjs`, clé `PIXABAY_API_KEY`). La clé doit être ajoutée à l'environnement cloud
+2. ✅ **Inserts vidéo** (Pixabay, `scripts/pixabay.mjs`, clé `PIXABAY_API_KEY`) : 5 clips dans `public/inserts/` (crédits dans `credits.json`), intégrés au test en plein écran, cadre et cercle. Pexels ne délivre plus de clés (nov. 2026). La clé doit être ajoutée à l'environnement cloud
    (une nouvelle session la voit). Le composant `Insert` (noir et blanc, grain, zoom lent) et le script
    `pexels.mjs` sont prêts. Prochaine étape : ajouter 3–4 inserts au test, un par présentation, pour
    que l'auteur choisisse :

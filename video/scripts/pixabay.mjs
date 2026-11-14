@@ -1,5 +1,6 @@
 // Cherche une vidéo sur Pixabay et la télécharge dans public/inserts/.
 // Usage : node scripts/pixabay.mjs <nom> "<recherche en anglais>" [index]
+//         node scripts/pixabay.mjs <nom> id:<identifiant Pixabay>   (clip précis)
 // Exemple : node scripts/pixabay.mjs tasse "chipped cup"
 // Nécessite la variable d'environnement PIXABAY_API_KEY.
 // Les crédits (auteur, lien) sont ajoutés à public/inserts/credits.json.
@@ -18,14 +19,15 @@ if (!key) {
 }
 
 const url = new URL('https://pixabay.com/api/videos/');
-url.search = new URLSearchParams({key, q: query, per_page: '15', safesearch: 'true'}).toString();
+const byId = query.startsWith('id:');
+url.search = new URLSearchParams(byId ? {key, id: query.slice(3)} : {key, q: query, per_page: '15', safesearch: 'true'}).toString();
 const res = await fetch(url);
 if (!res.ok) throw new Error(`Pixabay : ${res.status} ${await res.text()}`);
 const {hits} = await res.json();
 if (!hits?.length) throw new Error(`Aucun résultat pour « ${query} »`);
 
 hits.forEach((v, i) => console.log(`${i === Number(index) ? '→' : ' '} ${i}  ${v.duration}s  ${v.pageURL}`));
-const v = hits[Number(index)];
+const v = hits[byId ? 0 : Number(index)];
 
 // Le plus grand fichier qui ne dépasse pas 1920 de large.
 const file = Object.values(v.videos)
@@ -41,6 +43,6 @@ fs.writeFileSync(out, data);
 
 const creditsPath = path.join(dir, 'credits.json');
 const credits = fs.existsSync(creditsPath) ? JSON.parse(fs.readFileSync(creditsPath, 'utf8')) : {};
-credits[name] = {query, source: v.pageURL, auteur: v.user, duree: v.duration, largeur: file.width};
+credits[name] = {query, id: v.id, source: v.pageURL, auteur: v.user, duree: v.duration, largeur: file.width};
 fs.writeFileSync(creditsPath, JSON.stringify(credits, null, 2) + '\n');
 console.log(`OK ${out} (${file.width}x${file.height}, ${(data.length / 1e6).toFixed(1)} Mo, ${v.duration}s) — vidéo de ${v.user}`);

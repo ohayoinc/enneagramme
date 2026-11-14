@@ -1,10 +1,10 @@
 import React from 'react';
-import {AbsoluteFill, interpolate, OffthreadVideo, random, staticFile, useCurrentFrame} from 'remotion';
+import {AbsoluteFill, interpolate, OffthreadVideo, random, Sequence, staticFile, useCurrentFrame} from 'remotion';
 
 export type InsertMode = 'plein' | 'cadre' | 'cercle';
 
 /**
- * Vidéo d'illustration (Pexels) passée en noir et blanc, avec un léger grain,
+ * Vidéo d'illustration (Pixabay) passée en noir et blanc, avec un léger grain,
  * pour rester dans la charte. Trois présentations :
  *  - plein  : plein écran, assombri pour que le texte reste lisible par-dessus
  *  - cadre  : fenêtre aux coins arrondis (x, y, w, h)
@@ -29,7 +29,9 @@ export const Insert: React.FC<{
   // léger zoom lent (effet « Ken Burns »)
   const zoom = interpolate(frame, [at, out], [1.04, 1.12]);
 
+  // La Sequence fait démarrer le clip à son début au moment où il apparaît.
   const video = (
+    <Sequence from={at} layout="none">
     <OffthreadVideo
       src={staticFile(src)}
       muted
@@ -42,6 +44,7 @@ export const Insert: React.FC<{
         filter: 'grayscale(1) contrast(1.08) brightness(0.95)',
       }}
     />
+    </Sequence>
   );
   const grain = (
     <AbsoluteFill
