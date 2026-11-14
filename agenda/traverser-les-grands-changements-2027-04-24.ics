@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//enneagramme.co//Calendrier//FR
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:traverser-les-grands-changements-2027-04-24@enneagramme.co
+DTSTAMP:20261109T112012Z
+DTSTART:20270424T140000Z
+DTEND:20270424T153000Z
+SUMMARY:Traverser les grands changements
+LOCATION:En ligne\, par visioconférence
+DESCRIPTION:Explorer la façon dont chacun réagit aux transitions de vie\, et ce qui aide à les traverser sans se perdre de vue. https://enneagramme.co/evenement-traverser-les-grands-changements-2027-04-24.html
+URL:https://enneagramme.co/evenement-traverser-les-grands-changements-2027-04-24.html
+END:VEVENT
+END:VCALENDAR

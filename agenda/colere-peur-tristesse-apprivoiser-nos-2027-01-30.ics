@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//enneagramme.co//Calendrier//FR
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:colere-peur-tristesse-apprivoiser-nos-2027-01-30@enneagramme.co
+DTSTAMP:20261109T112012Z
+DTSTART:20270130T150000Z
+DTEND:20270130T163000Z
+SUMMARY:Colère\, peur\, tristesse : apprivoiser nos émotions
+LOCATION:En ligne\, par visioconférence
+DESCRIPTION:Reconnaître ce que nos émotions cherchent à nous dire\, et la façon dont chaque profil de l’Ennéagramme les vit\, les cache ou les exprime. https://enneagramme.co/evenement-colere-peur-tristesse-apprivoiser-nos-2027-01-30.html
+URL:https://enneagramme.co/evenement-colere-peur-tristesse-apprivoiser-nos-2027-01-30.html
+END:VEVENT
+END:VCALENDAR

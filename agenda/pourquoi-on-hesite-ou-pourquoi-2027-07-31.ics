@@ -1,0 +1,15 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:-//enneagramme.co//Calendrier//FR
+CALSCALE:GREGORIAN
+BEGIN:VEVENT
+UID:pourquoi-on-hesite-ou-pourquoi-2027-07-31@enneagramme.co
+DTSTAMP:20261109T112012Z
+DTSTART:20270731T140000Z
+DTEND:20270731T153000Z
+SUMMARY:Pourquoi on hésite… ou pourquoi on fonce
+LOCATION:En ligne\, par visioconférence
+DESCRIPTION:Décrypter nos façons de décider\, entre prudence et élan\, et apprendre à reconnaître celle qui nous sert vraiment. https://enneagramme.co/evenement-pourquoi-on-hesite-ou-pourquoi-2027-07-31.html
+URL:https://enneagramme.co/evenement-pourquoi-on-hesite-ou-pourquoi-2027-07-31.html
+END:VEVENT
+END:VCALENDAR
