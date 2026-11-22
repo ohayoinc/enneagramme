@@ -386,9 +386,9 @@ Règles suivies : titre de 60 caractères au plus (au-delà, Google le coupe), m
 ## 60. `decouvrir-son-profil-pieges-enneagramme.html`
 
 - **Titre actuel** (99 car.) : Découvrir son profil de l'Ennéagramme : tests, confusions et pièges à éviter | Benjamin Ali Aboudou
-- **Titre proposé** (57 car.) : **Trouver son profil Ennéagramme : tests et pièges à éviter**
+- **Titre proposé** (57 car.) : **Test Ennéagramme gratuit : pourquoi un test ne suffit pas** (mis à jour le 14 nov. : vise la requête « test ennéagramme gratuit »)
 - Description actuelle (192 car.) : Un test en ligne peut-il vous dire qui vous êtes ? Découvrez pourquoi la motivation compte plus que le comportement, les confusions fréquentes entre profils et comment explorer à votre rythme.
-- **Description proposée** (151 car.) : Un test en ligne peut-il dire qui vous êtes ? Pourquoi la motivation compte plus que le comportement, les confusions entre profils et comment explorer.
+- **Description proposée** (154 car.) : Vous cherchez un test Ennéagramme gratuit ? Pourquoi un questionnaire ne suffit pas, les confusions fréquentes entre profils et comment explorer le vôtre.
 
 ## 61. `differenciation-autonomie-couple-enneagramme-schnarch.html`
 
