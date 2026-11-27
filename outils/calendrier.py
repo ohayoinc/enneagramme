@@ -196,12 +196,12 @@ def page_calendrier(evs, head, corps, infolettre, fin, aujourd_hui):
     a_venir = [ev for ev in evs if date.fromisoformat(ev["date"]) >= aujourd_hui]
     passes = sorted([ev for ev in evs if date.fromisoformat(ev["date"]) < aujourd_hui], key=lambda x: x["date"], reverse=True)
     url = f"{SITE}/calendrier.html"
-    desc = "Les prochains ateliers et conférences Ennéagramme de Benjamin Ali Aboudou, à Montréal, Trois-Rivières et en ligne : dates, horaires et lieux."
+    desc = "Toutes les dates des ateliers Ennéagramme de Benjamin Ali Aboudou : en ligne et gratuits chaque mois, à Montréal ou à Trois-Rivières. Dates et inscription."
     ld = {"@context": "https://schema.org", "@type": "ItemList", "name": "Calendrier des ateliers Ennéagramme",
           "itemListElement": [{"@type": "ListItem", "position": i + 1, "url": f"{SITE}/evenement-{ev['slug']}.html"} for i, ev in enumerate(a_venir)]}
     vide = ('<p class="cal-empty"' + ('' if not a_venir else ' hidden') + '>Aucune date annoncée pour le moment. '
             'Inscrivez-vous à l\'infolettre ci-dessous pour être prévenu des prochains ateliers.</p>')
-    out = tete(head, "Calendrier des ateliers Ennéagramme | Montréal, en ligne", desc, url, ld)
+    out = tete(head, "Calendrier des ateliers Ennéagramme : dates et inscription", desc, url, ld)
     out += menu_actif(corps).rstrip() + ariane(("Accueil", "/"), ("Calendrier", None)) + f'''
 <main class="flex flex-col">
 
@@ -209,8 +209,8 @@ def page_calendrier(evs, head, corps, infolettre, fin, aujourd_hui):
     <div class="page-hero__art" data-style="hero" data-centres="0.7,0.3,14,10;0.78,0.62,14,10;0.86,0.3,14,10;0.94,0.62,14,10" aria-hidden="true"></div>
     <p class="eyebrow">Calendrier</p>
     <div class="cal-hero">
-      <h1 class="h-display" style="font-size:clamp(2.6rem,5.6vw,5rem);text-transform:none">Prochains <em>rendez-vous</em></h1>
-      <p class="lede">Ateliers, conférences et rencontres autour de l'Ennéagramme. Les horaires sont indiqués à l'heure de Montréal.</p>
+      <h1 class="h-display" style="font-size:clamp(2.6rem,5.6vw,5rem);text-transform:none">Prochains <em>rendez-vous</em> Ennéagramme</h1>
+      <p class="lede">Ateliers, conférences et rencontres autour de l'Ennéagramme. Un samedi par mois, un atelier thématique gratuit a lieu en ligne, ouvert à tous, débutants compris. Les horaires sont indiqués à l'heure de Montréal.</p>
     </div>
   </section>
 
