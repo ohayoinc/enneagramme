@@ -72,3 +72,9 @@ La chaîne https://www.youtube.com/@Enneagrammeco est reliée au site par `outil
 
 Ajouter une vidéo : l'ajouter dans `donnees/videos.json`, déposer `ID-640.webp` et `ID-1280.webp` (16:9) dans
 `images/videos/`, puis `python3 outils/videos.py`. Le script est idempotent (on peut le relancer sans risque).
+
+## Blog : publication programmée
+
+Les articles sont rédigés dans `contenu/articles/` et publiés automatiquement à leur date
+(un par lundi) par `outils/publier.py`, que la tâche GitHub « Publication programmée des articles »
+lance chaque matin. Voir `contenu/articles/LISEZMOI.md`.
